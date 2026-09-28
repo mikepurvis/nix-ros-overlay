@@ -14,11 +14,16 @@
 , postFixup ? ""
 , passthru ? { }
 , separateDebugInfo ? true
+# ROS packages named by <exec_depend>. These are needed at runtime but not to
+# build downstream packages, so rather than being propagated, buildEnv follows
+# them to assemble the runtime closure of an environment.
+, rosExecDepends ? [ ]
+, propagatedBuildInputs ? [ ]
 , ...
 }@args:
 
 (if buildType == "ament_python" then python3Packages.buildPythonPackage
-else stdenv.mkDerivation) (args // {
+else stdenv.mkDerivation) ((removeAttrs args [ "rosExecDepends" ]) // {
   inherit doCheck dontWrapQtApps separateDebugInfo;
 
   # Disable warnings that cause "Log limit exceeded" errors on Hydra in lots of
@@ -27,10 +32,14 @@ else stdenv.mkDerivation) (args // {
 
   passthru = passthru // {
     rosPackage = true;
-    inherit rosDistro rosVersion;
+    inherit rosDistro rosVersion rosExecDepends;
   };
 } // lib.optionalAttrs (buildType == "ament_python") {
   dontUseCmakeConfigure = true;
+
+  # Python programs are wrapped with a PYTHONPATH built from propagated inputs,
+  # so Python packages still need their runtime ROS dependencies propagated.
+  propagatedBuildInputs = propagatedBuildInputs ++ rosExecDepends;
 
   # Modeled after colcon.
   # As of 0.12.1, colcon uses the legacy distutils install.py script, so we do

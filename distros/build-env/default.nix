@@ -28,7 +28,9 @@ let
     partitionedPackages = partition (d: (d.rosPackage or false) || (hasAttr "pythonModule" d)) validPackages;
     rosPackages = partitionedPackages.right;
     otherPackages = partitionedPackages.wrong;
-    rosPropagatedPackages = unique (concatLists (catAttrs "propagatedBuildInputs" rosPackages));
+    rosPropagatedPackages = unique (concatLists (
+      catAttrs "propagatedBuildInputs" rosPackages ++
+      catAttrs "rosExecDepends" rosPackages));
     recurse = propagatePackages rosPropagatedPackages;
   in if length validPackages == 0 then {
       rosPackages = [];

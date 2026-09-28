@@ -8,11 +8,11 @@ buildPythonPackage rec {
   version = "0.3.3-unstable-2026-05-05";
 
   src = fetchFromGitHub {
-    owner = "wentasah";
+    owner = "mikepurvis";
     repo = "superflore";
-    # ref = "refs/heads/nixos";
-    rev = "aff8023df227627276df064b84fc9d1a4795450f";
-    hash = "sha256-siYTIdWffRXLdLKIis4hEMFMjxEW3EqPhVLxmEPHDXM=";
+    # ref = "refs/heads/nix-passthru-deps";
+    rev = "dd5ef4146f814db14b43ed7ea16ef978d44cac01";
+    hash = "sha256-mCKkYthdImKPvgWbcTcQF+yX/lq9nb+ZQDhNFcHaimE=";
     # date = "2026-09-20T19:33:50+02:00";
   };
 
