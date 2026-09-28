@@ -14,11 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake opencv.cxxdev rclcpp sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake opencv.cxxdev std-msgs ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake rmw-implementation-cmake ];
-  propagatedBuildInputs = [ opencv ];
+  propagatedBuildInputs = [ opencv rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ rclcpp sensor-msgs ];
 
   meta = {
     description = "Demonstrations of intra process communication.";

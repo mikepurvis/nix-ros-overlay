@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
+  propagatedBuildInputs = [ builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
-  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ROS 2 custom interface examples using ROBOTIS DYNAMIXEL SDK";

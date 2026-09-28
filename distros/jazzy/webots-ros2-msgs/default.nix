@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators std-msgs vision-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ builtin-interfaces geometry-msgs std-msgs vision-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
-  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs vision-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Services and Messages of the webots_ros2 packages.";

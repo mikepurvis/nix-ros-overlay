@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ action-msgs ament-cmake builtin-interfaces rosidl-default-generators sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-common ];
+  propagatedBuildInputs = [ action-msgs builtin-interfaces sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
-  rosExecDepends = [ action-msgs builtin-interfaces rosidl-default-runtime sensor-msgs std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "RealSense camera_msgs package containing realsense camera messages definitions";

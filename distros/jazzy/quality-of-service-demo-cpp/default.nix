@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-components rcutils rmw rmw-implementation-cmake sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake rmw-implementation-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common launch launch-testing ];
+  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-components rcutils rmw sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ example-interfaces launch-ros rclcpp rclcpp-components rcutils rmw sensor-msgs std-msgs ];
+  rosExecDepends = [ launch-ros ];
 
   meta = {
     description = "C++ Demo applications for Quality of Service features";

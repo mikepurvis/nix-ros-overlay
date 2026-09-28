@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ rosidl-default-runtime sensor-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "A package containing orbbec camera messages definitions.";

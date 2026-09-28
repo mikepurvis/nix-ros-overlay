@@ -14,11 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake opencv.cxxdev rclcpp rclcpp-components sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake opencv.cxxdev ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-ros launch-testing launch-testing-ament-cmake launch-testing-ros rmw-implementation-cmake ];
-  propagatedBuildInputs = [ opencv ];
+  propagatedBuildInputs = [ opencv rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "Tools to capture and play back images to and from DDS subscriptions and publications.";

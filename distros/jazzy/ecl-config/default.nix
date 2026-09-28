@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ecl-license ];
+  buildInputs = [ ament-cmake-ros ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ ecl-build ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ ecl-build ecl-license ];
 
   meta = {
     description = "These tools inspect and describe your system with macros, types

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
+  propagatedBuildInputs = [ builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Custom messages for communicating with rcss3d_agent";

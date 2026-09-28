@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ecl-license ecl-type-traits ];
+  buildInputs = [ ament-cmake-ros ecl-build ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ ecl-license ecl-type-traits ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ ecl-license ecl-type-traits ];
 
   meta = {
     description = "This package provides simple support to cmath, filling in holes

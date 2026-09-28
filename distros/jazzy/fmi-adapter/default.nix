@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake fmilibrary-vendor rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
+  buildInputs = [ ament-cmake fmilibrary-vendor ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing rcutils ];
+  propagatedBuildInputs = [ rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ launch launch-ros rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
+  rosExecDepends = [ launch launch-ros ];
 
   meta = {
     description = "Wraps FMUs for co-simulation";

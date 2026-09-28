@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake geometry-msgs launch-ros launch-testing nav-msgs nav2-amcl nav2-behavior-tree nav2-common nav2-lifecycle-manager nav2-map-server nav2-minimal-tb3-sim nav2-msgs nav2-navfn-planner nav2-planner nav2-util rclcpp rclpy std-msgs tf2-geometry-msgs visualization-msgs ];
-  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch python3Packages.pyzmq ];
-  propagatedBuildInputs = [ lcov ];
+  buildInputs = [ ament-cmake nav2-common ];
+  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-ros launch-testing python3Packages.pyzmq ];
+  propagatedBuildInputs = [ geometry-msgs launch-ros launch-testing lcov nav-msgs nav2-amcl nav2-behavior-tree nav2-lifecycle-manager nav2-map-server nav2-minimal-tb3-sim nav2-msgs nav2-navfn-planner nav2-planner nav2-util rclcpp rclpy std-msgs tf2-geometry-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ geometry-msgs launch-ros launch-testing nav-msgs nav2-amcl nav2-behavior-tree nav2-bringup nav2-lifecycle-manager nav2-map-server nav2-minimal-tb3-sim nav2-msgs nav2-navfn-planner nav2-planner nav2-util navigation2 rclcpp rclpy robot-state-publisher std-msgs tf2-geometry-msgs visualization-msgs ];
+  rosExecDepends = [ nav2-bringup navigation2 robot-state-publisher ];
 
   meta = {
     description = "A sets of system-level tests for Nav2 usually involving full robot simulation";

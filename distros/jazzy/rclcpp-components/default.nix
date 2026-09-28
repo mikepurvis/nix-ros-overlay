@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ament-index-cpp class-loader composition-interfaces rclcpp rcpputils ];
+  buildInputs = [ ament-cmake-ros rcpputils ];
   checkInputs = [ ament-cmake-google-benchmark ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing std-msgs ];
+  propagatedBuildInputs = [ ament-index-cpp class-loader composition-interfaces rclcpp ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ ament-index-cpp class-loader composition-interfaces rclcpp ];
 
   meta = {
     description = "Package containing tools for dynamically loadable components";

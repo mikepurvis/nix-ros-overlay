@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators std-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ geometry-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
-  rosExecDepends = [ geometry-msgs rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Messages for interfacing with various computer vision pipelines, such as

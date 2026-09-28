@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros rosidl-typesupport-introspection-c ];
+  buildInputs = [ ament-cmake-ros ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake python3 rosidl-cmake rosidl-generator-c rosidl-generator-cpp rosidl-pycommon rosidl-runtime-c rosidl-runtime-cpp ];
+  propagatedBuildInputs = [ ament-cmake python3 rosidl-cmake rosidl-generator-c rosidl-generator-cpp rosidl-pycommon rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-introspection-c ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros python3 rosidl-generator-c rosidl-generator-cpp rosidl-pycommon ];
-  rosExecDepends = [ ament-index-python rosidl-cli rosidl-parser rosidl-typesupport-interface rosidl-typesupport-introspection-c ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-parser rosidl-typesupport-interface ];
 
   meta = {
     description = "Generate the message type support for dynamic message construction in C++.";

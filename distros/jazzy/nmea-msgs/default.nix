@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators std-msgs ];
-  propagatedBuildInputs = [ builtin-interfaces ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
+  propagatedBuildInputs = [ builtin-interfaces std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
-  rosExecDepends = [ rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "The nmea_msgs package contains messages related to data in the NMEA format.";

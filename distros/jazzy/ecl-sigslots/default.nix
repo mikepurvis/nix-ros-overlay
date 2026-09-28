@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-license ecl-threads ];
+  buildInputs = [ ament-cmake-ros ecl-build ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ ecl-config ecl-license ecl-threads ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ ecl-config ecl-license ecl-threads ];
 
   meta = {
     description = "Provides a signal/slot mechanism (in the same vein as qt sigslots,

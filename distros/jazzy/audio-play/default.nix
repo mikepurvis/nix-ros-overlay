@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake audio-common-msgs boost rclcpp rclcpp-components ];
-  propagatedBuildInputs = [ gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer ];
+  buildInputs = [ ament-cmake boost ];
+  propagatedBuildInputs = [ audio-common-msgs gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ audio-common-msgs launch-xml rclcpp rclcpp-components ];
+  rosExecDepends = [ launch-xml ];
 
   meta = {
     description = "Outputs audio to a speaker from a source node.";

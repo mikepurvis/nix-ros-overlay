@@ -14,10 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  buildInputs = [ rmf-building-map-msgs ];
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.fiona python3Packages.pyproj python3Packages.pyyaml python3Packages.requests python3Packages.rtree python3Packages.shapely sqlite yaml-cpp ];
-  rosExecDepends = [ ament-index-python gz-fuel-tools-vendor rclpy rmf-building-map-msgs rmf-site-map-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.fiona python3Packages.pyproj python3Packages.pyyaml python3Packages.requests python3Packages.rtree python3Packages.shapely rmf-building-map-msgs sqlite yaml-cpp ];
+  rosExecDepends = [ ament-index-python gz-fuel-tools-vendor rclpy rmf-site-map-msgs std-msgs ];
 
   meta = {
     description = "RMF Building map tools";

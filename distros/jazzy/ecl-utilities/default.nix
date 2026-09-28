@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ecl-concepts ecl-license ecl-mpl ];
+  buildInputs = [ ament-cmake-ros ecl-build ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ ecl-concepts ecl-license ecl-mpl ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ ecl-concepts ecl-license ecl-mpl ];
 
   meta = {
     description = "Includes various supporting tools and utilities for c++ programming.";

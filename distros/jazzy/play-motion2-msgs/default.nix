@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs ];
+  propagatedBuildInputs = [ action-msgs builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Play a pre-recorded motion on a robot";

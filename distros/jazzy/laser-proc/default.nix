@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake class-loader rclcpp rclcpp-components sensor-msgs ];
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
+  propagatedBuildInputs = [ class-loader rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ class-loader rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "laser_proc";

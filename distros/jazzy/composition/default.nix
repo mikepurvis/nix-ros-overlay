@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-components rcutils std-msgs ];
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros rmw-implementation-cmake ];
+  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-components rcutils std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ example-interfaces launch-ros rclcpp rclcpp-components rcutils std-msgs ];
+  rosExecDepends = [ launch-ros ];
 
   meta = {
     description = "Examples for composing multiple nodes in a single process.";

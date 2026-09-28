@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto builtin-interfaces geometry-msgs rosidl-default-generators shape-msgs std-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-auto builtin-interfaces rosidl-default-generators ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
+  propagatedBuildInputs = [ geometry-msgs shape-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ geometry-msgs rosidl-default-runtime shape-msgs std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Contains message and service definitions used by the ZED ROS2 nodes.";

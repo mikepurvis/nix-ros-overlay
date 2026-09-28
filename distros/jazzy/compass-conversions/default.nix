@@ -14,11 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h angles magnetic-model pluginlib rclcpp-components tf2-geometry-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   checkInputs = [ ament-cmake-gtest ament-cmake-ros cras-lint ];
-  propagatedBuildInputs = [ compass-interfaces cras-cpp-common geographiclib geometry-msgs message-filters rclcpp sensor-msgs std-msgs tf2 tf2-ros ];
+  propagatedBuildInputs = [ angles compass-interfaces cras-cpp-common geographiclib geometry-msgs magnetic-model message-filters pluginlib rclcpp rclcpp-components sensor-msgs std-msgs tf2 tf2-geometry-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
-  rosExecDepends = [ angles magnetic-model pluginlib rclcpp-components tf2-geometry-msgs ];
 
   meta = {
     description = "Common conversions for compass data.";

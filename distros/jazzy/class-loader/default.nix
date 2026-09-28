@@ -14,11 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros console-bridge-vendor ];
+  buildInputs = [ ament-cmake ament-cmake-ros ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ console-bridge rcpputils ];
+  propagatedBuildInputs = [ console-bridge console-bridge-vendor rcpputils ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
-  rosExecDepends = [ console-bridge-vendor ];
 
   meta = {
     description = "The class_loader package is a ROS-independent package for loading plugins during runtime and the foundation of the higher level ROS \"pluginlib\" library.

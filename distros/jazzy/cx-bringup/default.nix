@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake launch-ros ];
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cx-protobuf-plugin cx-ros-comm-gen example-interfaces std-msgs std-srvs ];
+  propagatedBuildInputs = [ cx-protobuf-plugin cx-ros-comm-gen example-interfaces launch-ros std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ cx-ament-index-plugin cx-clips-env-manager cx-config-plugin cx-example-plugin cx-executive-plugin cx-file-load-plugin cx-ros-msgs-plugin launch-ros ];
+  rosExecDepends = [ cx-ament-index-plugin cx-clips-env-manager cx-config-plugin cx-example-plugin cx-executive-plugin cx-file-load-plugin cx-ros-msgs-plugin ];
 
   meta = {
     description = "Central CX bringup scripts and parameters for launching CLIPS example programs";

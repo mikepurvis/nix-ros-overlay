@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-target-dependencies eigen geographiclib git rclcpp-lifecycle ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-target-dependencies eigen geographiclib git ros-environment rosidl-default-generators ];
   checkInputs = [ ament-cmake-gtest ament-cpplint ];
-  propagatedBuildInputs = [ diagnostic-updater geometry-msgs lifecycle-msgs microstrain-inertial-msgs nav-msgs nmea-msgs rtcm-msgs sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
+  propagatedBuildInputs = [ diagnostic-updater geometry-msgs lifecycle-msgs microstrain-inertial-msgs nav-msgs nmea-msgs rclcpp-lifecycle rtcm-msgs sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
   nativeBuildInputs = [ git rosidl-default-generators ];
-  rosExecDepends = [ diagnostic-aggregator rclcpp-lifecycle rosidl-default-runtime ];
+  rosExecDepends = [ diagnostic-aggregator rosidl-default-runtime ];
 
   meta = {
     description = "The ros_mscl package provides a driver for the LORD/Microstrain inertial products.";

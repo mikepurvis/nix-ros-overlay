@@ -14,11 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp std-msgs ];
+  propagatedBuildInputs = [ builtin-interfaces rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ros msgs for the rslidar_sdk project";

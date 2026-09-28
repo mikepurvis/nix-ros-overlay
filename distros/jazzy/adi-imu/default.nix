@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ rosidl-default-generators ];
   checkInputs = [ ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-xmllint ament-copyright ament-lint-auto ament-pep257 ];
-  propagatedBuildInputs = [ ament-cmake geometry-msgs libiio rclcpp sensor-msgs std-msgs ];
-  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
+  propagatedBuildInputs = [ ament-cmake builtin-interfaces geometry-msgs libiio rclcpp sensor-msgs std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Publisher for ADI IMUs";

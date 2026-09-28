@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake depthai depthai-bridge generate-parameter-library rclcpp rclcpp-components sensor-msgs ];
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
+  propagatedBuildInputs = [ depthai depthai-bridge generate-parameter-library rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ depthai depthai-bridge generate-parameter-library rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "Oak camera pipeline for Rapha Rover";

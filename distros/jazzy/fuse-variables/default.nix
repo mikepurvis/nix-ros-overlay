@@ -14,11 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros fuse-core pluginlib rclcpp ];
-  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ceres-solver ];
+  buildInputs = [ ament-cmake-ros ];
+  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common rclcpp ];
+  propagatedBuildInputs = [ ceres-solver fuse-core pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake-ros ];
-  rosExecDepends = [ fuse-core pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_variables package provides a set of commonly used variable types, such as 2D and 3D positions, \\

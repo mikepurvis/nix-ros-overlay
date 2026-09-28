@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake cv-bridge geometry-msgs image-transport message-filters ros-environment rosidl-default-generators sensor-msgs std-msgs std-srvs ];
-  propagatedBuildInputs = [ builtin-interfaces qt5.qtbase rclcpp tf2 tf2-geometry-msgs tf2-ros zlib ];
+  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  propagatedBuildInputs = [ builtin-interfaces cv-bridge geometry-msgs image-transport message-filters qt5.qtbase rclcpp sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros zlib ];
   nativeBuildInputs = [ ament-cmake ];
-  rosExecDepends = [ cv-bridge geometry-msgs image-transport message-filters rosidl-default-runtime sensor-msgs std-msgs std-srvs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "The find_object_2d package";

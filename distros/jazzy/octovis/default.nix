@@ -14,10 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake octomap ];
-  propagatedBuildInputs = [ libGL libGLU libsForQt5.libqglviewer qt5.qtbase ];
+  buildInputs = [ cmake ];
+  propagatedBuildInputs = [ libGL libGLU libsForQt5.libqglviewer octomap qt5.qtbase ];
   nativeBuildInputs = [ cmake ];
-  rosExecDepends = [ octomap ];
 
   meta = {
     description = "octovis is visualization tool for the OctoMap library based on Qt and libQGLViewer. See
