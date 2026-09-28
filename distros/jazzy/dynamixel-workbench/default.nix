@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ dynamixel-workbench-toolbox ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dynamixel-workbench-toolbox ];
 
   meta = {
     description = "Dynamixel-Workbench is dynamixel solution for ROS.

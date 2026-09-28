@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ _unresolved_ament_python ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ cv-bridge message-filters python3Packages.numpy python3Packages.opencv4 python3Packages.scipy rclpy sensor-msgs sensor-msgs-py std-msgs tf2-ros visualization-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 python3Packages.scipy ];
   nativeBuildInputs = [ _unresolved_ament_python ];
+  rosExecDepends = [ cv-bridge message-filters rclpy sensor-msgs sensor-msgs-py std-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "trackdlo_perception: Visualization and parameter tuning tools";

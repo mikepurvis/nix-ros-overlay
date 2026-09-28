@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs nav-msgs off-highway-premium-radar off-highway-radar rclcpp rclcpp-components ];
+  propagatedBuildInputs = [ geometry-msgs nav-msgs rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ off-highway-premium-radar off-highway-radar ];
 
   meta = {
     description = "The off_highway_sensor_drivers_examples package";

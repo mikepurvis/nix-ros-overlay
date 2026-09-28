@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rdl-benchmark rdl-dynamics rdl-urdfreader ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rdl-benchmark rdl-dynamics rdl-urdfreader ];
 
   meta = {
     description = "The rdl meta-package";

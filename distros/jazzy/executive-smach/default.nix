@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ smach smach-msgs smach-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ smach smach-msgs smach-ros ];
 
   meta = {
     description = "This metapackage depends on the SMACH library and ROS SMACH integration

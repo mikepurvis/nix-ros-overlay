@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime ];
+  propagatedBuildInputs = [ builtin-interfaces geometry-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "foxglove_msgs provides visualization messages that are supported by Foxglove.";

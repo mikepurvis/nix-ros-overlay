@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ ament-index-cpp glfw3 libGL libGLU rclcpp rclpy ros2launch std-msgs ];
+  propagatedBuildInputs = [ ament-index-cpp glfw3 libGL libGLU rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rclpy ros2launch std-msgs ];
 
   meta = {
     description = "Lightweight C++ GUI to inspect a ROS 2 node's live connections and diagnose

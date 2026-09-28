@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-default-runtime ];
+  propagatedBuildInputs = [ builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Interface definitions for rosapi package.";

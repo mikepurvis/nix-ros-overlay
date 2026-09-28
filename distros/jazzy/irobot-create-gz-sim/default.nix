@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ irobot-create-gz-bringup irobot-create-gz-plugins irobot-create-gz-toolbox ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ irobot-create-gz-bringup irobot-create-gz-plugins irobot-create-gz-toolbox ];
 
   meta = {
     description = "Metapackage for the iRobot(R) Create(R) 3 robot Ignition simulator";

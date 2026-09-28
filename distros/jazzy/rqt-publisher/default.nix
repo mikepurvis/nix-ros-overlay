@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python-qt-binding python3Packages.numpy qt-gui-py-common rclpy rosidl-runtime-py rqt-gui rqt-gui-py rqt-py-common ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
+  rosExecDepends = [ ament-index-python python-qt-binding qt-gui-py-common rclpy rosidl-runtime-py rqt-gui rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "rqt_publisher provides a GUI plugin for publishing arbitrary messages with fixed or computed field values.";

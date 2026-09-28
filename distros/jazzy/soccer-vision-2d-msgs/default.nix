@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime soccer-vision-attribute-msgs vision-msgs ];
+  propagatedBuildInputs = [ soccer-vision-attribute-msgs vision-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "A package containing some 2D vision related message definitions in the soccer domain.";

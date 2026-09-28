@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces diagnostic-msgs rosidl-default-runtime sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ builtin-interfaces diagnostic-msgs sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Messages and service definitions for the camera_aravis2 package.";

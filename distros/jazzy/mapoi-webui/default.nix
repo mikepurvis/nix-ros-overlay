@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ mapoi-interfaces mapoi-server python3Packages.flask python3Packages.pillow python3Packages.pyyaml rclpy std-msgs std-srvs tf2-ros ];
+  propagatedBuildInputs = [ mapoi-interfaces python3Packages.flask python3Packages.pillow python3Packages.pyyaml rclpy std-msgs std-srvs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ mapoi-server ];
 
   meta = {
     description = "Web UI for mapoi - POI editing, navigation, and robot monitoring";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ leo leo-example-follow-aruco-marker leo-example-line-follower leo-example-object-detection ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ leo leo-example-follow-aruco-marker leo-example-line-follower leo-example-object-detection ];
 
   meta = {
     description = "A collection of ROS2 packages that show an example usage of functionalities on a stock Leo Rover.";

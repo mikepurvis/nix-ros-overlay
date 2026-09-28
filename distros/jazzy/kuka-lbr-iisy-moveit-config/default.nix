@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ rviz2 ];
-  propagatedBuildInputs = [ controller-manager kuka-resources moveit moveit-planners robot-state-publisher urdf xacro ];
+  propagatedBuildInputs = [ urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager kuka-resources moveit moveit-planners robot-state-publisher ];
 
   meta = {
     description = "Package containing moveit configurations for KUKA LBR iisy family";

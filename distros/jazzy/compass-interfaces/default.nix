@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-gen-version-h rosidl-default-generators ];
   checkInputs = [ ament-cmake-gtest cras-lint ];
-  propagatedBuildInputs = [ cras-cpp-common rosidl-default-runtime std-msgs ];
+  propagatedBuildInputs = [ cras-cpp-common std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Messages related to compass";

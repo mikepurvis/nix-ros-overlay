@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ raph-description raph-interfaces raph-teleop ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ raph-description raph-interfaces raph-teleop ];
 
   meta = {
     description = "Packages for Raph Rover common to the robot and desktop";

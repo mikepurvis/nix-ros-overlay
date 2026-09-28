@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ cv-bridge opencv opencv.cxxdev python3Packages.opencv4 rclpy ros2bag rosbag2-py rosidl-runtime-py ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.opencv4 ];
+  rosExecDepends = [ cv-bridge rclpy ros2bag rosbag2-py rosidl-runtime-py ];
 
   meta = {
     description = "Command line tool to create a video from a rosbag recording";

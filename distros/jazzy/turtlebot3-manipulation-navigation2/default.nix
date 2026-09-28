@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ navigation2 rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ navigation2 rviz2 ];
 
   meta = {
     description = "ROS 2 launch scripts for navigation2";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-clang-format ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs std-msgs ];
-  propagatedBuildInputs = [ ament-cmake-clang-format rclcpp rclcpp-components rosidl-default-runtime ];
+  propagatedBuildInputs = [ ament-cmake-clang-format rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ros2 package for syncing variable number of topics";

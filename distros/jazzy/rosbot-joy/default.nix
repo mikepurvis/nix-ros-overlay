@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest python3Packages.pyyaml ];
-  propagatedBuildInputs = [ joy launch launch-ros teleop-twist-joy ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joy launch launch-ros teleop-twist-joy ];
 
   meta = {
     description = "The rosbot_joy package to handle joystick inputs for the rosbot drive (via teleop_twist_joy).";

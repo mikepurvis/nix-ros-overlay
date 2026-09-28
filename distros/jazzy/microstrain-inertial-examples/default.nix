@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ microstrain-inertial-driver rviz-imu-plugin rviz2 sensor-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ microstrain-inertial-driver rviz-imu-plugin rviz2 sensor-msgs tf2-ros ];
 
   meta = {
     description = "Simple examples using the microstrain_inertial_driver for MicroStrain sensors.";

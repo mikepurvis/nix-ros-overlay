@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ROS messages for interaction between cie_thread_configurator and callback_isolated_executor.";

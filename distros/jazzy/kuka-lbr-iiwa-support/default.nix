@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ launch-testing-ament-cmake rviz2 ];
-  propagatedBuildInputs = [ joint-state-publisher-gui kuka-resources launch-ros robot-state-publisher urdf xacro ];
+  propagatedBuildInputs = [ urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joint-state-publisher-gui kuka-resources launch-ros robot-state-publisher ];
 
   meta = {
     description = "ROS2 support package for the KUKA LBR iiwa";

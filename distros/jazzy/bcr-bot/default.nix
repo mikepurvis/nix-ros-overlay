@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-index-python launch launch-ros robot-state-publisher xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python launch launch-ros robot-state-publisher xacro ];
 
   meta = {
     description = "bcr_bot";

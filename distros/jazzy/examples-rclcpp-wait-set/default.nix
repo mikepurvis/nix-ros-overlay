@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-components std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-components std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Example of how to use the rclcpp::WaitSet directly.";

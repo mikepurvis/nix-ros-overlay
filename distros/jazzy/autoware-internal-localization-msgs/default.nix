@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ autoware-common-msgs geometry-msgs rosidl-default-runtime std-msgs ];
+  propagatedBuildInputs = [ autoware-common-msgs geometry-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "The autoware_internal_localization_msgs package";

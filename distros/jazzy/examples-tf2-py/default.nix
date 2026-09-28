@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs launch-ros rclpy sensor-msgs tf2-ros-py ];
+  rosExecDepends = [ geometry-msgs launch-ros rclpy sensor-msgs tf2-ros-py ];
 
   meta = {
     description = "Has examples of using the tf2 Python API.";

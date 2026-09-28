@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clearpath-config nav2-bringup slam-toolbox ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-config nav2-bringup slam-toolbox ];
 
   meta = {
     description = "Nav2 demos for Clearpath robots";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ robot-state-publisher ros2-control ros2-controllers rviz2 turtlebot3-manipulation-description xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ robot-state-publisher ros2-control ros2-controllers rviz2 turtlebot3-manipulation-description xacro ];
 
   meta = {
     description = "ROS 2 package for turtlebot3_manipulation";

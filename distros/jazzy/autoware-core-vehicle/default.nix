@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto autoware-cmake ];
   checkInputs = [ ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ robot-state-publisher ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosExecDepends = [ robot-state-publisher ];
 
   meta = {
     description = "The autoware_core_vehicle package";

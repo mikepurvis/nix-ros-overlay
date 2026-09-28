@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ cv-bridge python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml rcl-interfaces rclpy sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ cv-bridge rcl-interfaces rclpy sensor-msgs ];
 
   meta = {
     description = "Object Detection Example for Leo Rover.";

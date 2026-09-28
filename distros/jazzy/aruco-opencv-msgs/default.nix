@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-cmake-lint-cmake ament-lint-auto ];
-  propagatedBuildInputs = [ geometry-msgs rosidl-default-runtime std-msgs ];
+  propagatedBuildInputs = [ geometry-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Message definitions for aruco_opencv package.";

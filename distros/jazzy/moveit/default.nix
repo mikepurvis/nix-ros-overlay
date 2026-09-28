@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-core moveit-planners moveit-plugins moveit-ros moveit-setup-assistant ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ moveit-core moveit-planners moveit-plugins moveit-ros moveit-setup-assistant ];
 
   meta = {
     description = "Meta package that contains all essential packages of MoveIt 2";

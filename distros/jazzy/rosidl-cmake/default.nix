@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake python3Packages.empy rosidl-pycommon ];
+  propagatedBuildInputs = [ ament-cmake python3Packages.empy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python3Packages.empy ];
+  rosExecDepends = [ rosidl-pycommon ];
 
   meta = {
     description = "The CMake functionality to invoke code generation for ROS interface files.";

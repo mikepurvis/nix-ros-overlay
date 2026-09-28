@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest launch launch-pytest launch-ros nav-msgs python3Packages.pytest python3Packages.pyyaml rclpy sensor-msgs ];
-  propagatedBuildInputs = [ launch launch-ros rosbot-controller rosbot-joy rosbot-localization rosbot-mavlink-bridge rosbot-utils tf-namespace-bridge ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros rosbot-controller rosbot-joy rosbot-localization rosbot-mavlink-bridge rosbot-utils tf-namespace-bridge ];
 
   meta = {
     description = "ROSbot Series bringup package";

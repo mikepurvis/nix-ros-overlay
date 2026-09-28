@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ clearpath-common clearpath-description joint-state-publisher-gui nav2-rviz-plugins rqt-robot-monitor rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-common clearpath-description joint-state-publisher-gui nav2-rviz-plugins rqt-robot-monitor rviz2 ];
 
   meta = {
     description = "Visualization launchers for Clearpath Platforms.";

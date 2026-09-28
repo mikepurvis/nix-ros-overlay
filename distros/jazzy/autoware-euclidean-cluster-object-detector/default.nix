@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto autoware-cmake ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-crop-box-filter autoware-perception-msgs autoware-point-types autoware-utils-debug autoware-utils-diagnostics autoware-utils-system geometry-msgs pcl pcl-conversions rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ autoware-perception-msgs autoware-point-types autoware-utils-debug autoware-utils-diagnostics autoware-utils-system geometry-msgs pcl pcl-conversions rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosExecDepends = [ autoware-crop-box-filter ];
 
   meta = {
     description = "The autoware_euclidean_cluster_object_detector package";

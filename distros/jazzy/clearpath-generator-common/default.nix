@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake moveit-setup-srdf-plugins ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ _unresolved_python3-apt clearpath-config clearpath-control clearpath-description clearpath-diagnostics clearpath-manipulators ];
+  propagatedBuildInputs = [ _unresolved_python3-apt ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-config clearpath-control clearpath-description clearpath-diagnostics clearpath-manipulators ];
 
   meta = {
     description = "Clearpath Common Generator";

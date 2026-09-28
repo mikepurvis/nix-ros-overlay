@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ joint-state-publisher joint-state-publisher-gui realsense2-description robot-state-publisher rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joint-state-publisher joint-state-publisher-gui realsense2-description robot-state-publisher rviz2 ];
 
   meta = {
     description = "open_manipulator_description ROS 2 package.";

@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ bcr-arm-description bcr-arm-gazebo bcr-arm-moveit-config ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ bcr-arm-description bcr-arm-gazebo bcr-arm-moveit-config ];
 
   meta = {
     description = "TODO: Package description (metapackage)";

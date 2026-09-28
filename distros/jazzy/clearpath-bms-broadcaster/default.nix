@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake generate-parameter-library ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface-testing ros2-control-test-assets ];
-  propagatedBuildInputs = [ backward-ros controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle rosidl-default-runtime sensor-msgs ];
+  propagatedBuildInputs = [ backward-ros controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ros2_control battery state broadcaster controller";

@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-ros ros-environment rosidl-typesupport-introspection-cpp ];
-  propagatedBuildInputs = [ ament-cmake-core ament-index-python fmt nlohmann_json rcpputils rcutils rosidl-cli rosidl-generator-c rosidl-generator-type-description rosidl-pycommon rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-c rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
+  propagatedBuildInputs = [ ament-cmake-core fmt nlohmann_json rcpputils rcutils rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-c rosidlcpp-generator-core rosidlcpp-parser ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-ros ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-generator-c rosidl-generator-type-description rosidl-pycommon rosidl-typesupport-interface ];
 
   meta = {
     description = "Generate the type support for C++ messages.";

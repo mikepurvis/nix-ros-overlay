@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ rclpy soccer-vision-3d-msgs soccer-vision-attribute-msgs visualization-msgs ];
+  rosExecDepends = [ rclpy soccer-vision-3d-msgs soccer-vision-attribute-msgs visualization-msgs ];
 
   meta = {
     description = "Package that converts soccer_vision_3d_msgs to RViz markers";

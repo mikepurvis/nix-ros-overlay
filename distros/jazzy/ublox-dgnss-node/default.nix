@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake pkg-config ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-uncrustify ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-cpp libusb1 rclcpp rclcpp-components rtcm-msgs std-msgs ublox-ubx-interfaces ublox-ubx-msgs ];
+  propagatedBuildInputs = [ ament-index-cpp libusb1 rclcpp rclcpp-components rtcm-msgs ublox-ubx-interfaces ublox-ubx-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ std-msgs ];
 
   meta = {
     description = "Provides a ublox_gnss node for a u-blox GPS GNSS receiver using Gen 9 and Gen 20 UBX Protocol";

@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-copyright ];
+  rosExecDepends = [ ament-copyright ];
 
   meta = {
     description = "Check PickNik-specific copyright headers.";

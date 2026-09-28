@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake pkg-config ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-uncrustify ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ curl rclcpp rclcpp-components rtcm-msgs std-msgs ];
+  propagatedBuildInputs = [ curl rclcpp rclcpp-components rtcm-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ std-msgs ];
 
   meta = {
     description = "Publishes RTCM ntrip messages from an external mountpoint";

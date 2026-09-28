@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ urdf xacro ];
+  propagatedBuildInputs = [ urdf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ xacro ];
 
   meta = {
     description = "This package contains common urdf / xacro resources used by KUKA robot support packages within the ROS-Industrial program.";

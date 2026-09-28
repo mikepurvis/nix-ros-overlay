@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-cmake-flake8 python3Packages.pytest ];
-  propagatedBuildInputs = [ joy launch-ros teleop-twist-joy teleop-twist-keyboard ];
+  rosExecDepends = [ joy launch-ros teleop-twist-joy teleop-twist-keyboard ];
 
   meta = {
     description = "Example launch files for teleoperating the iRobot(R) Create(R) 3 Educational Robot.";

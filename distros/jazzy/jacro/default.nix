@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest pre-commit std-msgs ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.jinja2 python3Packages.rich ];
+  propagatedBuildInputs = [ python3Packages.jinja2 python3Packages.rich ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "TODO: Project Short Description";

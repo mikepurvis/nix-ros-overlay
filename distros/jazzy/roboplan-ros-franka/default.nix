@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-manager joint-state-broadcaster joint-trajectory-controller mujoco-ros2-control parallel-gripper-controller roboplan roboplan-example-models roboplan-ros-examples robot-state-publisher topic-tools xacro ];
+  propagatedBuildInputs = [ roboplan roboplan-example-models roboplan-ros-examples xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager joint-state-broadcaster joint-trajectory-controller mujoco-ros2-control parallel-gripper-controller robot-state-publisher topic-tools ];
 
   meta = {
     description = "Franka arm ROS example for RoboPlan.";

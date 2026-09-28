@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ cv-bridge depth-obstacle-detect-ros-msgs image-transport rclcpp rclcpp-components rclpy ros2launch sensor-msgs ];
+  propagatedBuildInputs = [ cv-bridge depth-obstacle-detect-ros-msgs image-transport rclcpp rclcpp-components rclpy sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ros2launch ];
 
   meta = {
     description = "The depth based obstacle detection package";

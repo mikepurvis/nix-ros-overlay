@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "The robot_upstart package provides scripts which may be used to install

@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ cv-bridge geometry-msgs rclpy sensor-msgs tf2-ros ];
+  rosExecDepends = [ cv-bridge geometry-msgs rclpy sensor-msgs tf2-ros ];
 
   meta = {
     description = "ArUco Tracker for TurtleBot3 Examples.";

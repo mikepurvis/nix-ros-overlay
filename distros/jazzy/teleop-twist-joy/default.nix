@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common launch-ros launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ geometry-msgs joy rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ geometry-msgs rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joy ];
 
   meta = {
     description = "Generic joystick teleop for twist robots.";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake nav-msgs rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ nav-msgs rosidl-default-runtime sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ nav-msgs rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "This package defines messages commonly used in mapping packages.";

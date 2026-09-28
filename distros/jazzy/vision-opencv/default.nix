@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ cv-bridge image-geometry ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ cv-bridge image-geometry ];
 
   meta = {
     description = "Packages for interfacing ROS2 with OpenCV, a library of programming functions for real time computer vision.";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs python3Packages.numpy rclpy sensor-msgs std-msgs tf2-ros vision-msgs visualization-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclpy sensor-msgs std-msgs tf2-ros vision-msgs visualization-msgs ];
 
   meta = {
     description = "Reusable ROS 2 LiDAR-camera fusion. Matches 2D object detections

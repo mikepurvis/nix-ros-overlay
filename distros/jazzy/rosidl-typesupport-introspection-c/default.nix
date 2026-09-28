@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-ros ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake ament-index-python python3 rosidl-cli rosidl-cmake rosidl-generator-c rosidl-parser rosidl-pycommon rosidl-runtime-c rosidl-typesupport-interface ];
+  propagatedBuildInputs = [ ament-cmake python3 rosidl-cmake rosidl-generator-c rosidl-pycommon rosidl-runtime-c rosidl-typesupport-interface ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros python3 rosidl-generator-c rosidl-pycommon ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-parser ];
 
   meta = {
     description = "Generate the message type support for dynamic message construction in C.";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest rclcpp ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs orocos-kdl-vendor python-orocos-kdl-vendor tf2 tf2-ros tf2-ros-py ];
+  propagatedBuildInputs = [ builtin-interfaces geometry-msgs orocos-kdl-vendor tf2 tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ python-orocos-kdl-vendor tf2-ros-py ];
 
   meta = {
     description = "KDL binding for tf2";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ _unresolved_gazebo_ros_pkgs dolly-follow ros2launch rviz2 ];
+  propagatedBuildInputs = [ _unresolved_gazebo_ros_pkgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dolly-follow ros2launch rviz2 ];
 
   meta = {
     description = "Launch Gazebo simulation with Dolly robot.";

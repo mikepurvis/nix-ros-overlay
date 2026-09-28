@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.construct rcgcrd-spl-4 ];
+  propagatedBuildInputs = [ python3Packages.construct ];
+  rosExecDepends = [ rcgcrd-spl-4 ];
 
   meta = {
     description = "Converts RoboCup SPL GameController Return Data V4 between ROS msg and UDP raw bytes";

@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ example-interfaces rclpy ];
+  rosExecDepends = [ example-interfaces rclpy ];
 
   meta = {
     description = "Examples of minimal action servers using rclpy.";

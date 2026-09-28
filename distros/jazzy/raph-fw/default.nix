@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-lint-auto ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.rich python3Packages.zeroconf ];
+  propagatedBuildInputs = [ python3Packages.rich python3Packages.zeroconf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "Binary releases of the RaphCore firmware and related utilities";

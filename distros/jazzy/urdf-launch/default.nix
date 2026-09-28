@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ joint-state-publisher joint-state-publisher-gui launch-ros robot-state-publisher rviz-common rviz-default-plugins rviz2 xacro ];
+  propagatedBuildInputs = [ rviz-common rviz-default-plugins ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joint-state-publisher joint-state-publisher-gui launch-ros robot-state-publisher rviz2 xacro ];
 
   meta = {
     description = "Launch files for common URDF operations";

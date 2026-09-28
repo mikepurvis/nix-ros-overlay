@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ example-interfaces python3Packages.i2c-tools python3Packages.pyserial rclpy std-msgs ];
+  propagatedBuildInputs = [ python3Packages.i2c-tools python3Packages.pyserial ];
+  rosExecDepends = [ example-interfaces rclpy std-msgs ];
 
   meta = {
     description = "Bosch BNO055 IMU driver for ROS2";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake python3Packages.pyqt5 qt5.qtbase ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-python python-qt-binding python3Packages.catkin-pkg tango-icons-vendor ];
+  propagatedBuildInputs = [ python3Packages.catkin-pkg ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python python-qt-binding tango-icons-vendor ];
 
   meta = {
     description = "qt_gui provides the infrastructure for an integrated graphical user interface based on Qt.

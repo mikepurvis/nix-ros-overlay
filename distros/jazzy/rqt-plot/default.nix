@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright python3Packages.pytest test-msgs ];
-  propagatedBuildInputs = [ python-qt-binding python3Packages.catkin-pkg python3Packages.matplotlib python3Packages.numpy qt-gui-py-common rclpy rosidl-runtime-py rqt-gui rqt-gui-py rqt-py-common std-msgs ];
+  propagatedBuildInputs = [ python3Packages.catkin-pkg python3Packages.matplotlib python3Packages.numpy ];
+  rosExecDepends = [ python-qt-binding qt-gui-py-common rclpy rosidl-runtime-py rqt-gui rqt-gui-py rqt-py-common std-msgs ];
 
   meta = {
     description = "rqt_plot provides a GUI plugin visualizing numeric values in a 2D plot using different plotting backends.";

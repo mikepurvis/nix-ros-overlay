@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
-  propagatedBuildInputs = [ xacro ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ xacro ];
 
   meta = {
     description = "The autoware_sample_vehicle_description package";

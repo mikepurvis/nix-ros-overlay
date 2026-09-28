@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ example-interfaces python3Packages.pytest python3Packages.typing-extensions std-msgs std-srvs ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs launch message-filters rclpy tf2-msgs tf2-ros-py ];
+  rosExecDepends = [ action-msgs geometry-msgs launch message-filters rclpy tf2-msgs tf2-ros-py ];
 
   meta = {
     description = "RAI Institute wrappers for ROS2";

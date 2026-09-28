@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ autoware-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-default-runtime std-msgs ];
+  propagatedBuildInputs = [ builtin-interfaces std-msgs ];
   nativeBuildInputs = [ autoware-cmake rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Robosense message types for Nebula";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-black ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ ament-index-python geometry-msgs image-proc launch launch-ros leo-description leo-filters leo-fw leo-msgs python3Packages.smbus2 rclpy robot-state-publisher rosapi rosbridge-server sensor-msgs tf-transformations web-video-server xacro ];
+  propagatedBuildInputs = [ python3Packages.smbus2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python geometry-msgs image-proc launch launch-ros leo-description leo-filters leo-fw leo-msgs rclpy robot-state-publisher rosapi rosbridge-server sensor-msgs tf-transformations web-video-server xacro ];
 
   meta = {
     description = "Scripts and launch files for starting basic Leo Rover functionalities.";

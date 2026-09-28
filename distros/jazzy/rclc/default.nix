@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros rosidl-typesupport-c ];
+  buildInputs = [ ament-cmake-ros rcl rcutils rosidl-generator-c rosidl-typesupport-c ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common example-interfaces launch-testing osrf-testing-tools-cpp rclcpp rclcpp-action std-msgs test-msgs ];
-  propagatedBuildInputs = [ rcl rcl-action rcutils rosidl-generator-c ];
+  propagatedBuildInputs = [ rcl-action ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ rcl rcutils rosidl-generator-c ];
 
   meta = {
     description = "The ROS client library in C.";

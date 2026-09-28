@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ds-dbw-can ds-dbw-msgs joy rclcpp rclcpp-components sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ds-dbw-can joy ];
 
   meta = {
     description = "Demonstration of drive-by-wire with joystick";

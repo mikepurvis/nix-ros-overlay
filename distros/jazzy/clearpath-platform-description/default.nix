@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ robot-state-publisher urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ robot-state-publisher urdf xacro ];
 
   meta = {
     description = "Clearpath Platform URDF descriptions";

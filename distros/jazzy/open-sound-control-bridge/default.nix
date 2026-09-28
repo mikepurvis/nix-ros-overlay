@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ open-sound-control-msgs std-msgs ];
+  rosExecDepends = [ open-sound-control-msgs std-msgs ];
 
   meta = {
     description = "Bridge node for converting between OSC and ROS messages";

@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
-  propagatedBuildInputs = [ chafa python3 rclcpp ros2cli ros2node ros2service ros2topic sensor-msgs ];
+  propagatedBuildInputs = [ chafa python3 rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ ros2cli ros2node ros2service ros2topic ];
 
   meta = {
     description = "Terminal-first helper tools for ROS 2";

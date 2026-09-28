@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake eigen libtins libzip pcl rosidl-default-generators tf2-eigen ];
   checkInputs = [ ament-cmake-gtest gtest ];
-  propagatedBuildInputs = [ class-loader curl cv-bridge geometry-msgs jsoncpp launch launch-ros ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle rosidl-default-runtime sensor-msgs spdlog std-msgs std-srvs tf2-ros ];
+  propagatedBuildInputs = [ class-loader curl cv-bridge geometry-msgs jsoncpp ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs spdlog std-msgs std-srvs tf2-ros ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ launch launch-ros rosidl-default-runtime ];
 
   meta = {
     description = "Ouster ROS2 driver";

@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ament-index-python geometry-msgs python-qt-binding rclpy rqt-gui rqt-gui-py ];
+  rosExecDepends = [ ament-index-python geometry-msgs python-qt-binding rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "rqt_robot_steering provides a GUI plugin for steering a robot using Twist messages.";

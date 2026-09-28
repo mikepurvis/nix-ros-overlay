@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto rclcpp-lifecycle sensor-msgs ];
-  propagatedBuildInputs = [ builtin-interfaces rclcpp rclpy rcutils std-msgs ];
+  propagatedBuildInputs = [ rclcpp rcutils std-msgs ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
+  rosExecDepends = [ builtin-interfaces rclpy ];
 
   meta = {
     description = "A set of ROS 2 message filters which take in messages and may output those messages at a later time, based on the conditions that filter needs met.";

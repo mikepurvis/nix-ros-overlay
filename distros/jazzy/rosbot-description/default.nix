@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest xacro ];
-  propagatedBuildInputs = [ dynamixel-hardware-interface husarion-components-description joint-state-publisher launch launch-ros open-manipulator-description robot-state-publisher rviz2 xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dynamixel-hardware-interface husarion-components-description joint-state-publisher launch launch-ros open-manipulator-description robot-state-publisher rviz2 xacro ];
 
   meta = {
     description = "The rosbot_description package";

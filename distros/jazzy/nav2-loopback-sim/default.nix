@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs nav-msgs nav2-simple-commander python3Packages.transforms3d rclpy tf-transformations tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.transforms3d ];
+  rosExecDepends = [ geometry-msgs nav-msgs nav2-simple-commander rclpy tf-transformations tf2-ros ];
 
   meta = {
     description = "A loopback simulator to replace physics simulation";

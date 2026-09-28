@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ compressed-depth-image-transport compressed-image-transport theora-image-transport zstd-image-transport ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ compressed-depth-image-transport compressed-image-transport theora-image-transport zstd-image-transport ];
 
   meta = {
     description = "A set of plugins for publishing and subscribing to sensor_msgs/Image topics

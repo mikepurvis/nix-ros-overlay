@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ compressed-image-transport cv-bridge image-transport rclpy sensor-msgs std-msgs ];
+  rosExecDepends = [ compressed-image-transport cv-bridge image-transport rclpy sensor-msgs std-msgs ];
 
   meta = {
     description = "YOLO-based object detection for TurtleBot3";

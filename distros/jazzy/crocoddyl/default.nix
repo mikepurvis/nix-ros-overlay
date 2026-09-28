@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "cmake";
   buildInputs = [ cmake doxygen git jrl-cmakemodules ];
   checkInputs = [ ffmpeg python3Packages.nbconvert python3Packages.notebook python3Packages.scipy ];
-  propagatedBuildInputs = [ ament-cmake boost eigenpy ipopt pinocchio python3 python3Packages.numpy ];
+  propagatedBuildInputs = [ boost eigenpy ipopt pinocchio python3 python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
+  rosExecDepends = [ ament-cmake ];
 
   meta = {
     description = "Crocoddyl optimal control library";

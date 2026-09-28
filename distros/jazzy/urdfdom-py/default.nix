@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ python3Packages.lxml python3Packages.pyyaml rclpy ];
+  propagatedBuildInputs = [ python3Packages.lxml python3Packages.pyyaml ];
+  rosExecDepends = [ rclpy ];
 
   meta = {
     description = "Python implementation of the URDF parser.";

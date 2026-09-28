@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-python ros2cli ];
+  rosExecDepends = [ ament-index-python ros2cli ];
 
   meta = {
     description = "ros2cli extension for rclgd: create/edit Godot packages and manage the Godot runtime";

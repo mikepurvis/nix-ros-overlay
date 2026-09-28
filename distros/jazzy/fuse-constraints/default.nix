@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros fuse-core fuse-graphs fuse-variables geometry-msgs pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common gbenchmark ];
-  propagatedBuildInputs = [ ceres-solver eigen fuse-core fuse-graphs fuse-variables geometry-msgs pluginlib rclcpp suitesparse ];
+  propagatedBuildInputs = [ ceres-solver eigen suitesparse ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ fuse-core fuse-graphs fuse-variables geometry-msgs pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_constraints package provides a set of commonly used constraint types, such as direct measurements on \\

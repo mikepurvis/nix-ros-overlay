@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater laser-filters rclcpp rclcpp-components rclcpp-lifecycle rcutils sensor-msgs ];
+  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rclcpp-lifecycle rcutils sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ laser-filters ];
 
   meta = {
     description = "This package published a laser scan message out of a Sick S300 laser scanner.";

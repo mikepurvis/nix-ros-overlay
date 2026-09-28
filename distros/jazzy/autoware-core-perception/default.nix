@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto autoware-cmake ];
   checkInputs = [ ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-euclidean-cluster-object-detector autoware-ground-filter autoware-perception-objects-converter ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosExecDepends = [ autoware-euclidean-cluster-object-detector autoware-ground-filter autoware-perception-objects-converter ];
 
   meta = {
     description = "The autoware_core_perception package";

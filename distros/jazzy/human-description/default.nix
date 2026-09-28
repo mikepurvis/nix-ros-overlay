@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
   checkInputs = [ ament-lint-auto ament-lint-common launch-testing-ament-cmake robot-state-publisher urdf-test ];
-  propagatedBuildInputs = [ launch launch-pal launch-param-builder launch-ros xacro ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ launch launch-pal launch-param-builder launch-ros xacro ];
 
   meta = {
     description = "This package contains a parametric kinematic description of humans. 

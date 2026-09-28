@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h angles compass-conversions magnetometer-pipeline message-filters pluginlib rclcpp-components std-msgs tf2 tf2-geometry-msgs tf2-sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-ros builtin-interfaces cras-lint ];
-  propagatedBuildInputs = [ angles compass-conversions compass-interfaces cras-cpp-common eigen geometry-msgs magnetometer-pipeline message-filters pluginlib rclcpp rclcpp-components sensor-msgs std-msgs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs ];
+  propagatedBuildInputs = [ compass-interfaces cras-cpp-common eigen geometry-msgs rclcpp sensor-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosExecDepends = [ angles compass-conversions magnetometer-pipeline message-filters pluginlib rclcpp-components std-msgs tf2 tf2-geometry-msgs tf2-sensor-msgs ];
 
   meta = {
     description = "Compass based on a 3-axis magnetometer, attitude readings and possibly also GNSS.";

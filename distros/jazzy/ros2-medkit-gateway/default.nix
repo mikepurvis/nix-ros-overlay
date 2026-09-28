@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ros2-medkit-cmake ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common example-interfaces rclcpp-action ];
-  propagatedBuildInputs = [ action-msgs ament-index-cpp ament-index-python httplib launch launch-ros lifecycle-msgs nlohmann_json openssl rcl-interfaces rclcpp ros2-medkit-action-status-bridge ros2-medkit-diagnostic-bridge ros2-medkit-fault-manager ros2-medkit-log-bridge ros2-medkit-msgs ros2-medkit-serialization rosidl-parser rosidl-runtime-py rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs sqlite std-msgs std-srvs yaml-cpp-vendor ];
+  propagatedBuildInputs = [ action-msgs ament-index-cpp httplib lifecycle-msgs nlohmann_json openssl rcl-interfaces rclcpp ros2-medkit-msgs ros2-medkit-serialization rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs sqlite std-msgs std-srvs yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosExecDepends = [ ament-index-python launch launch-ros ros2-medkit-action-status-bridge ros2-medkit-diagnostic-bridge ros2-medkit-fault-manager ros2-medkit-log-bridge rosidl-parser rosidl-runtime-py ];
 
   meta = {
     description = "HTTP gateway for ros2_medkit diagnostics system";

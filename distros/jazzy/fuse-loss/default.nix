@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros fuse-core pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common libsForQt5.qwt qt5.qtbase ];
-  propagatedBuildInputs = [ ceres-solver fuse-core pluginlib rclcpp ];
+  propagatedBuildInputs = [ ceres-solver ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ fuse-core pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_loss package provides a set of commonly used loss functions, such as the basic ones provided by Ceres.";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake cv-bridge geometry-msgs message-filters rclcpp ros-environment rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge geometry-msgs message-filters rclcpp rosidl-default-runtime sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ cv-bridge geometry-msgs message-filters rclcpp rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "posedetection_msgs provides messages and services to facilitate passing pose detection results and features.";

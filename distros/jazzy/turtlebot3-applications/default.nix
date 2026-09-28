@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ turtlebot3-aruco-tracker turtlebot3-automatic-parking turtlebot3-automatic-parking-vision turtlebot3-follower turtlebot3-panorama turtlebot3-yolo-object-detection ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ turtlebot3-aruco-tracker turtlebot3-automatic-parking turtlebot3-automatic-parking-vision turtlebot3-follower turtlebot3-panorama turtlebot3-yolo-object-detection ];
 
   meta = {
     description = "ROS packages for the turtlebot3 applications (meta package)";

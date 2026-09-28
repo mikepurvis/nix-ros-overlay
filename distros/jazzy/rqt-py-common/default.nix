@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python-cmake-module rosidl-default-generators rosidl-default-runtime ];
-  propagatedBuildInputs = [ python-qt-binding qt-gui qt5.qtbase rclpy ];
+  propagatedBuildInputs = [ qt5.qtbase rclpy ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ python-qt-binding qt-gui ];
 
   meta = {
     description = "rqt_py_common provides common functionality for rqt plugins written in Python.

@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ geometry-msgs nav-msgs python3Packages.numpy python3Packages.opencv4 python3Packages.scipy rclpy sensor-msgs std-msgs tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 python3Packages.scipy ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclpy sensor-msgs std-msgs tf2-ros ];
 
   meta = {
     description = "Using aruco package for turtlebot3_home_service_challenge";

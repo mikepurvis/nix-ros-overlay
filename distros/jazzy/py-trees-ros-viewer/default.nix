@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   buildInputs = [ python3Packages.setuptools qt5.qttools.dev ];
-  propagatedBuildInputs = [ py-trees-js py-trees-ros-interfaces python3Packages.pyqt5 python3Packages.pyqtwebengine rclpy unique-identifier-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyqt5 python3Packages.pyqtwebengine ];
+  rosExecDepends = [ py-trees-js py-trees-ros-interfaces rclpy unique-identifier-msgs ];
 
   meta = {
     description = "A Qt-JS application for visualisation of executing/log-replayed behaviour trees in a ROS2 ecosystem.";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ bluez diagnostic-msgs diagnostic-updater rclpy std-msgs ];
+  propagatedBuildInputs = [ bluez ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater rclpy std-msgs ];
 
   meta = {
     description = "Clearpath bluetooth joy controller signal quality monitoring node";

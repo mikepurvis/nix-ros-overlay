@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-manager moveit-ros-move-group nav2-bringup nav2-bt-navigator turtlebot3-manipulation-bringup turtlebot3-manipulation-moveit-config turtlebot3-manipulation-navigation2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager moveit-ros-move-group nav2-bringup nav2-bt-navigator turtlebot3-manipulation-bringup turtlebot3-manipulation-moveit-config turtlebot3-manipulation-navigation2 ];
 
   meta = {
     description = "turtlebot3_home_service_challenge_tools";

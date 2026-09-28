@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-license ecl-type-traits ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ecl-config ecl-license ecl-type-traits ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ ecl-config ecl-license ecl-type-traits ];
 
   meta = {
     description = "Introduces a compile time concept checking mechanism that can be used

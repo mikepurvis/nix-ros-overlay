@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clearpath-generator-common python3Packages.watchdog rclpy xacro ];
+  propagatedBuildInputs = [ python3Packages.watchdog ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ clearpath-generator-common rclpy xacro ];
 
   meta = {
     description = "Live URDF Updater from Clearpath Configuration.";

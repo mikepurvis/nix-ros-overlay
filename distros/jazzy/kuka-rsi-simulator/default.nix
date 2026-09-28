@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ros2launch ];
+  rosExecDepends = [ ros2launch ];
 
   meta = {
     description = "Simple package for simulating the KUKA RSI interface";

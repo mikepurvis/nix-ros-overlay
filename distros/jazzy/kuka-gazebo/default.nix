@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ launch-testing launch-testing-ament-cmake ros2run ];
-  propagatedBuildInputs = [ controller-manager gz-ros2-control joint-state-broadcaster joint-trajectory-controller rclcpp robot-state-publisher ros-gz-bridge ros-gz-sim std-msgs urdf xacro ];
+  propagatedBuildInputs = [ rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager gz-ros2-control joint-state-broadcaster joint-trajectory-controller robot-state-publisher ros-gz-bridge ros-gz-sim urdf xacro ];
 
   meta = {
     description = "A helper package for Gazebo support with KUKA robots";

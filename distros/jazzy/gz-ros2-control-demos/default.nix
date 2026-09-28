@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pluginlib rclcpp-action ];
-  propagatedBuildInputs = [ ackermann-steering-controller ament-index-python control-msgs control-toolbox diff-drive-controller force-torque-sensor-broadcaster forward-command-controller geometry-msgs gz-ros2-control gz-sim-vendor hardware-interface imu-sensor-broadcaster joint-state-broadcaster joint-trajectory-controller launch launch-ros mecanum-drive-controller rclcpp rclcpp-lifecycle robot-state-publisher ros-gz-bridge ros-gz-sim ros2-control-cmake ros2controlcli ros2launch std-msgs tricycle-controller xacro ];
+  buildInputs = [ ament-cmake geometry-msgs pluginlib rclcpp rclcpp-action std-msgs ];
+  propagatedBuildInputs = [ control-msgs control-toolbox gz-ros2-control gz-sim-vendor hardware-interface rclcpp-lifecycle ros2-control-cmake ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ackermann-steering-controller ament-index-python diff-drive-controller force-torque-sensor-broadcaster forward-command-controller geometry-msgs imu-sensor-broadcaster joint-state-broadcaster joint-trajectory-controller launch launch-ros mecanum-drive-controller rclcpp robot-state-publisher ros-gz-bridge ros-gz-sim ros2controlcli ros2launch std-msgs tricycle-controller xacro ];
 
   meta = {
     description = "gz_ros2_control_demos";

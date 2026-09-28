@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ nodl-schema python3Packages.jinja2 python3Packages.pyyaml python3Packages.sphinx ];
+  propagatedBuildInputs = [ python3Packages.jinja2 python3Packages.pyyaml python3Packages.sphinx ];
+  rosExecDepends = [ nodl-schema ];
 
   meta = {
     description = "Documentation generation and Sphinx rendering of ROS 2 Node Definition Language (NoDL) documents.";

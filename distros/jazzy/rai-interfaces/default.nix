@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs nav2-msgs nav2-simple-commander portaudio rosidl-default-runtime sensor-msgs std-msgs tf-transformations vision-msgs ];
+  propagatedBuildInputs = [ action-msgs geometry-msgs portaudio sensor-msgs std-msgs vision-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ nav2-msgs nav2-simple-commander rosidl-default-runtime tf-transformations ];
 
   meta = {
     description = "Interfaces for RAI communication";

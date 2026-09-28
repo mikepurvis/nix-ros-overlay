@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-simple-controller-manager ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ moveit-simple-controller-manager ];
 
   meta = {
     description = "Metapackage for MoveIt plugins.";

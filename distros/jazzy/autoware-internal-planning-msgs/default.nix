@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ autoware-common-msgs autoware-perception-msgs autoware-planning-msgs autoware-vehicle-msgs builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs unique-identifier-msgs ];
+  propagatedBuildInputs = [ autoware-common-msgs autoware-perception-msgs autoware-planning-msgs autoware-vehicle-msgs builtin-interfaces geometry-msgs std-msgs unique-identifier-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "The autoware_internal_planning_msgs package";

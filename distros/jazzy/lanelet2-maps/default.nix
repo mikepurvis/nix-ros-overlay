@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-core ];
-  propagatedBuildInputs = [ lanelet2-core mrt-cmake-modules ];
+  propagatedBuildInputs = [ mrt-cmake-modules ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core ];
 
   meta = {
     description = "Example maps in the lanelet2-format";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rclcpp std-msgs ];
 
   meta = {
     description = "Examples of minimal publisher nodes";

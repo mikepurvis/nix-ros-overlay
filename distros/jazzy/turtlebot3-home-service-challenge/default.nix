@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ turtlebot3-home-service-challenge-aruco turtlebot3-home-service-challenge-core turtlebot3-home-service-challenge-manipulator turtlebot3-home-service-challenge-tools ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ turtlebot3-home-service-challenge-aruco turtlebot3-home-service-challenge-core turtlebot3-home-service-challenge-manipulator turtlebot3-home-service-challenge-tools ];
 
   meta = {
     description = "ROS packages for the Turtlebot3 Home Service Challenge (meta package)";

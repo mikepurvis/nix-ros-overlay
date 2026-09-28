@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ pcl-conversions pcl-msgs pcl-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ pcl-conversions pcl-msgs pcl-ros ];
 
   meta = {
     description = "PCL (Point Cloud Library) ROS interface stack. PCL-ROS is the preferred

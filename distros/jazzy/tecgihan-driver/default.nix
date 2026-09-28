@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs python3Packages.pyserial rclpy robot-state-publisher rviz2 xacro ];
+  propagatedBuildInputs = [ python3Packages.pyserial ];
+  rosExecDepends = [ geometry-msgs rclpy robot-state-publisher rviz2 xacro ];
 
   meta = {
     description = "Linux and ROS driver software for Tec Gihan sensor amplifiers for robots";

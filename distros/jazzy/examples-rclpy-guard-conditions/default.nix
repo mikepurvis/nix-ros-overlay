@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ rclpy ];
+  rosExecDepends = [ rclpy ];
 
   meta = {
     description = "Examples of using guard conditions.";

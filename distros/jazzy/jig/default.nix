@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library rosidl-default-generators ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python lifecycle-msgs message-filters python3Packages.jinja2 python3Packages.jsonschema python3Packages.pyyaml rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle rosidl-default-runtime tf2-ros ];
+  propagatedBuildInputs = [ lifecycle-msgs message-filters python3Packages.jinja2 python3Packages.jsonschema python3Packages.pyyaml rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library ];
+  rosExecDepends = [ ament-index-python rosidl-default-runtime ];
 
   meta = {
     description = "Declarative ROS 2 node scaffolding with built-in best practice.";

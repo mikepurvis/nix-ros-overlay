@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ds-dbw-can ds-dbw-joystick-demo ds-dbw-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ds-dbw-can ds-dbw-joystick-demo ds-dbw-msgs ];
 
   meta = {
     description = "Interface to the Dataspeed Inc. Drive-By-Wire kits";

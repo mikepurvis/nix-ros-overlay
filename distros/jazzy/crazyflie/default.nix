@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ crazyflie-description crazyflie-interfaces crazyflie-server-cpp eigen geometry-msgs rclcpp rclpy sensor-msgs std-srvs ];
+  propagatedBuildInputs = [ crazyflie-interfaces eigen geometry-msgs rclcpp rclpy sensor-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ crazyflie-description crazyflie-server-cpp ];
 
   meta = {
     description = "ROS 2 Package for Bitcraze Crazyflie robots";

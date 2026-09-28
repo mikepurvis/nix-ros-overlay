@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   buildInputs = [ ament-cmake ament-cmake-python ];
-  propagatedBuildInputs = [ rclpy smach smach-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ rclpy smach smach-msgs std-msgs std-srvs ];
 
   meta = {
     description = "The smach_ros package contains extensions for the SMACH library to

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
-  propagatedBuildInputs = [ autoware-sample-sensor-kit-description velodyne-description xacro ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ autoware-sample-sensor-kit-description velodyne-description xacro ];
 
   meta = {
     description = "The autoware_awsim_sensor_kit_description package";

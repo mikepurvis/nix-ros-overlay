@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces rclpy tf-transformations webots-ros2-driver ];
+  rosExecDepends = [ builtin-interfaces rclpy tf-transformations webots-ros2-driver ];
 
   meta = {
     description = "ROS2 package for Crazyflie webots simulator";

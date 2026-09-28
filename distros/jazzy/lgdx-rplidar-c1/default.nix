@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ boost rclcpp rclcpp-components sensor-msgs ];
+  buildInputs = [ ament-cmake rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake boost rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "Lyrical RPLIDAR C1 ROS 2 wrapper for LGDXRobot2";

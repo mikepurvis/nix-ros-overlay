@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ rosidl-default-generators ];
-  propagatedBuildInputs = [ action-msgs rosidl-default-runtime ];
+  propagatedBuildInputs = [ action-msgs ];
   nativeBuildInputs = [ rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Messages for controlling Pan-Tilt and Pan-Tilt-Zoom devices";

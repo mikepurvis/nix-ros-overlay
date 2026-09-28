@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ clearpath-motor-msgs clearpath-platform-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-motor-msgs clearpath-platform-msgs ];
 
   meta = {
     description = "Metapackage for Clearapth messages.";

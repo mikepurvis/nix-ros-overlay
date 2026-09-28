@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ velodyne-driver velodyne-laserscan velodyne-msgs velodyne-pointcloud ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ velodyne-driver velodyne-laserscan velodyne-msgs velodyne-pointcloud ];
 
   meta = {
     description = "Basic ROS support for the Velodyne 3D LIDARs.";

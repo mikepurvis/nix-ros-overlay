@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ublox-gps ublox-msgs ublox-serialization ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ublox-gps ublox-msgs ublox-serialization ];
 
   meta = {
     description = "Provides a ublox_gps node for u-blox GPS receivers, messages, and serialization packages for the binary UBX protocol.";

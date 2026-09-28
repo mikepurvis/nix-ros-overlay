@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ compressed-depth-image-transport compressed-image-transport depth-image-proc image-proc image-transport laser-filters raph-description raph-interfaces raph-oak rosapi rosbridge-server rplidar-ros web-video-server ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ compressed-depth-image-transport compressed-image-transport depth-image-proc image-proc image-transport laser-filters raph-description raph-interfaces raph-oak rosapi rosbridge-server rplidar-ros web-video-server ];
 
   meta = {
     description = "Scripts and launch files for starting basic Raph Rover functionalities.";

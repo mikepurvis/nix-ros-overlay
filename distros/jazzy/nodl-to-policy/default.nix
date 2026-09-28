@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-lint-auto ament-mypy ament-pep257 ament-pycodestyle python3Packages.pytest python3Packages.pytest-mock ros-testing test-msgs ];
-  propagatedBuildInputs = [ _unresolved_nodl_python python3Packages.argcomplete python3Packages.lxml ros2cli ros2nodl ros2run sros2 ];
+  propagatedBuildInputs = [ _unresolved_nodl_python python3Packages.argcomplete python3Packages.lxml ];
+  rosExecDepends = [ ros2cli ros2nodl ros2run sros2 ];
 
   meta = {
     description = "Package to generate a ROS 2 Access Control Policy from the NoDL description of a ROS system";

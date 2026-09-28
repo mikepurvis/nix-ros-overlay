@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ launch launch-ros robot-localization ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros robot-localization ];
 
   meta = {
     description = "The rosbot_localization package";

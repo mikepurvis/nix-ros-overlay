@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ raspimouse-fake raspimouse-gazebo ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ raspimouse-fake raspimouse-gazebo ];
 
   meta = {
     description = "ROS 2 package suite for Raspberry Pi Mouse Simulator";

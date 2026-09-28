@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "cmake";
   buildInputs = [ cmake doxygen git jrl-cmakemodules ];
-  propagatedBuildInputs = [ ament-cmake boost eigen graphviz ];
+  propagatedBuildInputs = [ boost eigen graphviz ];
   nativeBuildInputs = [ cmake ];
+  rosExecDepends = [ ament-cmake ];
 
   meta = {
     description = "Eiquadprog a QP solver using active sets";

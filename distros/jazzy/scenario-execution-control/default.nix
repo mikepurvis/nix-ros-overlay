@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ rclpy scenario-execution scenario-execution-interfaces std-srvs ];
+  propagatedBuildInputs = [ rclpy ];
+  rosExecDepends = [ scenario-execution scenario-execution-interfaces std-srvs ];
 
   meta = {
     description = "Scenario Execution Control";

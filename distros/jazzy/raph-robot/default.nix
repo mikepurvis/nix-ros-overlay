@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ raph raph-bringup raph-fw raph-oak ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ raph raph-bringup raph-fw raph-oak ];
 
   meta = {
     description = "Packages for Raph Rover running on the robot.";

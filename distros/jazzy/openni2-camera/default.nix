@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces camera-info-manager depth-image-proc image-transport openni2 rclcpp rclcpp-components rosidl-default-runtime sensor-msgs ];
+  propagatedBuildInputs = [ builtin-interfaces camera-info-manager image-transport openni2 rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ depth-image-proc rosidl-default-runtime ];
 
   meta = {
     description = "Drivers for the Asus Xtion and Primesense Devices. For using a kinect

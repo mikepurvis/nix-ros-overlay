@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ moveit-msgs rosidl-default-runtime visualization-msgs ];
+  propagatedBuildInputs = [ moveit-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Messages for MoveIt Task Pipeline";

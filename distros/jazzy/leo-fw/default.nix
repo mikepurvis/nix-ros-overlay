@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python leo-msgs nav-msgs rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-black ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-mypy ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ ament-index-python geometry-msgs leo-msgs nav-msgs python3Packages.dbus-python python3Packages.pyyaml python3Packages.whichcraft rcl-interfaces rclcpp rclcpp-components rclpy ros2cli sensor-msgs std-msgs std-srvs ];
+  propagatedBuildInputs = [ python3Packages.dbus-python python3Packages.pyyaml python3Packages.whichcraft ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ ament-index-python geometry-msgs leo-msgs nav-msgs rcl-interfaces rclcpp rclcpp-components rclpy ros2cli sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Binary releases of Leo Rover firmware and related utilities";

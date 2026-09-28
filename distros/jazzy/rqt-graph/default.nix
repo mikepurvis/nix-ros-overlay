@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python-qt-binding qt-dotgraph rqt-gui rqt-gui-py ];
+  rosExecDepends = [ ament-index-python python-qt-binding qt-dotgraph rqt-gui rqt-gui-py ];
 
   meta = {
     description = "rqt_graph provides a GUI plugin for visualizing the ROS

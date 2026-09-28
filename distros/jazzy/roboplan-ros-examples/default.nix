@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ];
-  propagatedBuildInputs = [ control-msgs rclpy roboplan sensor-msgs std-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake-python ];
+  rosExecDepends = [ control-msgs rclpy roboplan sensor-msgs std-msgs visualization-msgs ];
 
   meta = {
     description = "Examples of using RoboPlan in the ROS ecosystem.";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ image-transport image-transport-plugins velodyne-pointcloud ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ image-transport image-transport-plugins velodyne-pointcloud ];
 
   meta = {
     description = "Launch files for decompressing and consuming high-bandwidth sensor data on offboard computers";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ axis-msgs camera-info-manager-py ptz-action-server-msgs python3Packages.requests sensor-msgs std-srvs ];
+  propagatedBuildInputs = [ python3Packages.requests ];
+  rosExecDepends = [ axis-msgs camera-info-manager-py ptz-action-server-msgs sensor-msgs std-srvs ];
 
   meta = {
     description = "ROS 2 driver for fixed and PTZ Axis cameras";

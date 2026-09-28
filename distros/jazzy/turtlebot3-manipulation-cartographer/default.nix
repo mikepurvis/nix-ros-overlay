@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ cartographer-ros rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ cartographer-ros rviz2 ];
 
   meta = {
     description = "ROS 2 launch scripts for cartographer";

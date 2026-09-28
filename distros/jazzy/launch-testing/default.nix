@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 launch ];
-  propagatedBuildInputs = [ ament-index-python launch launch-xml launch-yaml osrf-pycommon python3Packages.pytest ];
+  propagatedBuildInputs = [ python3Packages.pytest ];
+  rosExecDepends = [ ament-index-python launch launch-xml launch-yaml osrf-pycommon ];
 
   meta = {
     description = "A package to create tests which involve launch files and multiple processes.";

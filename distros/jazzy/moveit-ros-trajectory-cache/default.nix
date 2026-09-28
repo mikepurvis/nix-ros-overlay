@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ament-cmake-uncrustify launch-pytest launch-testing-ament-cmake moveit-configs-utils moveit-planners-ompl moveit-resources python3Packages.pytest rmf-utils robot-state-publisher ros2-control warehouse-ros-sqlite ];
-  propagatedBuildInputs = [ geometry-msgs moveit-common moveit-ros moveit-ros-planning-interface python3Packages.pyyaml rclcpp rclcpp-action tf2-ros trajectory-msgs xacro ];
+  propagatedBuildInputs = [ geometry-msgs moveit-common moveit-ros-planning-interface python3Packages.pyyaml rclcpp rclcpp-action tf2-ros trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ moveit-ros xacro ];
 
   meta = {
     description = "A trajectory cache for MoveIt 2 motion plans and cartesian plans.";

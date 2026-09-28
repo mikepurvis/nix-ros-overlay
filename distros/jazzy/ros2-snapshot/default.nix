@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ demo-nodes-py python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python graphviz python3Packages.graphviz python3Packages.psutil python3Packages.pydantic python3Packages.pyyaml rclpy ros2cli ros2component ros2node ros2param ros2pkg ros2service std-srvs ];
+  propagatedBuildInputs = [ graphviz python3Packages.graphviz python3Packages.psutil python3Packages.pydantic python3Packages.pyyaml ];
+  rosExecDepends = [ ament-index-python rclpy ros2cli ros2component ros2node ros2param ros2pkg ros2service std-srvs ];
 
   meta = {
     description = "ROS2 Snapshot - contains workspace modeler and snapshot tools";

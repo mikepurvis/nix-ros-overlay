@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
-  propagatedBuildInputs = [ camera-info-manager diagnostic-msgs diagnostic-updater image-proc image-transport message-filters rclcpp rclcpp-components sensor-msgs std-msgs stereo-image-proc ];
+  propagatedBuildInputs = [ camera-info-manager diagnostic-msgs diagnostic-updater image-transport message-filters rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ image-proc stereo-image-proc ];
 
   meta = {
     description = "Camera driver for Allied Vision Technologies (AVT) cameras, based on their Vimba SDK.";

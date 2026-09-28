@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ rclpy std-msgs ];
+  rosExecDepends = [ rclpy std-msgs ];
 
   meta = {
     description = "Examples of minimal publishers using rclpy.";

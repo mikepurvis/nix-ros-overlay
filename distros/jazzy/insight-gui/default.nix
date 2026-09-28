@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ adwaita-icon-theme glib gobject-introspection gtk4 libadwaita python3Packages.networkx python3Packages.pygobject3 python3Packages.pygraphviz rclpy ros2cli ros2launch tf-transformations tf2-ros turtlesim ];
+  propagatedBuildInputs = [ adwaita-icon-theme glib gobject-introspection gtk4 libadwaita python3Packages.networkx python3Packages.pygobject3 python3Packages.pygraphviz ];
+  rosExecDepends = [ rclpy ros2cli ros2launch tf-transformations tf2-ros turtlesim ];
 
   meta = {
     description = "Insight is a minimalist GUI alternative to rqt. It is a GTK4-based tool for exploring ROS2 topics, services, and messages, featuring the GNOME Adwaita style.";

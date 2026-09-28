@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest moveit-resources-panda-moveit-config ros-testing ];
-  propagatedBuildInputs = [ control-msgs controller-manager generate-parameter-library geometry-msgs gripper-controllers joint-state-broadcaster joint-trajectory-controller joy launch-param-builder moveit-common moveit-configs-utils moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface moveit-ros-visualization pluginlib realtime-tools robot-state-publisher sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
+  propagatedBuildInputs = [ control-msgs generate-parameter-library geometry-msgs moveit-common moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface pluginlib realtime-tools sensor-msgs std-msgs std-srvs tf2-eigen trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager gripper-controllers joint-state-broadcaster joint-trajectory-controller joy launch-param-builder moveit-configs-utils moveit-ros-visualization robot-state-publisher tf2-ros ];
 
   meta = {
     description = "Provides real-time manipulator Cartesian and joint servoing.";

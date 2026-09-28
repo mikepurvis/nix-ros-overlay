@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ _unresolved_ament_python ];
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ cv-bridge python3Packages.numpy python3Packages.opencv4 rclpy sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ _unresolved_ament_python ];
+  rosExecDepends = [ cv-bridge rclpy sensor-msgs ];
 
   meta = {
     description = "Pluggable segmentation interface for trackdlo_perception";

@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ autoware-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
+  propagatedBuildInputs = [ std-msgs ];
   nativeBuildInputs = [ autoware-cmake rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Services for Continental sensors";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ lttngpy procps ];
+  propagatedBuildInputs = [ procps ];
+  rosExecDepends = [ lttngpy ];
 
   meta = {
     description = "Tools for setting up tracing sessions.";

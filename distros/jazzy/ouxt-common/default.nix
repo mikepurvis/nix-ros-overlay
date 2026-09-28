@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ouxt-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ouxt-lint-common ];
 
   meta = {
     description = "common settings for OUXT Polaris ROS2 packages";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-nodl nodl-common-interfaces nodl-generator-cpp nodl-schema ros2nodl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-nodl nodl-common-interfaces nodl-generator-cpp nodl-schema ros2nodl ];
 
   meta = {
     description = "ROS 2 Node Definition Language (NoDL) metapackage.";

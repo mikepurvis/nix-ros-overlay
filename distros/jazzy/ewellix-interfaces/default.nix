@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "catkin";
   buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Ewellix lift ROS 2 driver";

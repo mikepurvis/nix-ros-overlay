@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ kuka-rsi-simulator launch-testing-ament-cmake ros2lifecycle ];
-  propagatedBuildInputs = [ controller-manager controller-manager-msgs hardware-interface joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-drivers-core kuka-event-broadcaster kuka-external-control-sdk kuka-kss-message-handler pluginlib std-msgs tinyxml-vendor ];
+  propagatedBuildInputs = [ controller-manager-msgs hardware-interface kuka-drivers-core kuka-external-control-sdk pluginlib std-msgs tinyxml-vendor ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ controller-manager joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-event-broadcaster kuka-kss-message-handler ];
 
   meta = {
     description = "A ROS2 hardware interface for use with KUKA RSI";

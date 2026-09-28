@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces easynav-interfaces geometry-msgs rclpy std-msgs ];
+  rosExecDepends = [ builtin-interfaces easynav-interfaces geometry-msgs rclpy std-msgs ];
 
   meta = {
     description = "Support utilities for EasyNav in Python: GoalManagerClient and tests.";

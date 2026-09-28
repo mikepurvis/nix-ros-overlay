@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
-  propagatedBuildInputs = [ pluginlib point-cloud-transport pybind11-vendor rclcpp rpyutils sensor-msgs ];
+  propagatedBuildInputs = [ pluginlib point-cloud-transport pybind11-vendor rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
+  rosExecDepends = [ rpyutils ];
 
   meta = {
     description = "Python API for point_cloud_transport";

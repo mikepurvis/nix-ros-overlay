@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-cmake-pytest launch launch-pytest launch-ros launch-testing python3Packages.pytest python3Packages.pyyaml rclpy ];
-  propagatedBuildInputs = [ alsa-utils generate-parameter-library launch-ros python3Packages.argcomplete python3Packages.libgpiod python3Packages.pyftdi python3Packages.pyserial python3Packages.pyudev python3Packages.sh rclcpp sensor-msgs std-srvs stm32flash usbutils ];
+  propagatedBuildInputs = [ alsa-utils generate-parameter-library python3Packages.argcomplete python3Packages.libgpiod python3Packages.pyftdi python3Packages.pyserial python3Packages.pyudev python3Packages.sh rclcpp sensor-msgs std-srvs stm32flash usbutils ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ launch-ros ];
 
   meta = {
     description = "Utilities for ROSbot Series";

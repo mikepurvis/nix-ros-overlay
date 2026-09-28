@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cheese-interfaces cv-bridge launch launch-ros nlohmann_json opencv opencv.cxxdev rclcpp sensor-msgs std-msgs std-srvs ];
+  propagatedBuildInputs = [ cheese-interfaces cv-bridge nlohmann_json opencv opencv.cxxdev rclcpp sensor-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros ];
 
   meta = {
     description = "Trigger-based image capture node for raw and compressed camera topics.";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ etsi-its-coding etsi-its-conversion etsi-its-msgs etsi-its-msgs-utils ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ etsi-its-coding etsi-its-conversion etsi-its-msgs etsi-its-msgs-utils ];
 
   meta = {
     description = "ROS support for ETSI ITS messages";

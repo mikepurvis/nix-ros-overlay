@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-lint-auto ament-lint-common lifecycle ros-testing ];
-  propagatedBuildInputs = [ lifecycle-msgs rclpy std-msgs ];
+  rosExecDepends = [ lifecycle-msgs rclpy std-msgs ];
 
   meta = {
     description = "Package containing demos for rclpy lifecycle implementation";

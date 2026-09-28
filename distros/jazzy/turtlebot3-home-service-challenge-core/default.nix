@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ geometry-msgs nav2-msgs rclpy std-msgs turtlebot3-home-service-challenge-aruco turtlebot3-home-service-challenge-manipulator ];
+  rosExecDepends = [ geometry-msgs nav2-msgs rclpy std-msgs turtlebot3-home-service-challenge-aruco turtlebot3-home-service-challenge-manipulator ];
 
   meta = {
     description = "Core package for turtlebot3_home_service_challenge";

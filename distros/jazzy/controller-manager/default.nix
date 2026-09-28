@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock ament-cmake-pytest diagnostic-msgs example-interfaces hardware-interface-testing launch-testing launch-testing-ament-cmake python3Packages.coverage robot-state-publisher ros2-control-test-assets ros2pkg ];
-  propagatedBuildInputs = [ backward-ros controller-interface controller-manager-msgs diagnostic-updater fmt generate-parameter-library hardware-interface launch launch-ros launch-testing-ros libstatistics-collector lifecycle-msgs pluginlib python3Packages.filelock python3Packages.pyyaml rcl-interfaces rclcpp rclpy realtime-tools ros2param sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ backward-ros controller-interface controller-manager-msgs diagnostic-updater fmt generate-parameter-library hardware-interface libstatistics-collector lifecycle-msgs pluginlib python3Packages.filelock python3Packages.pyyaml rclcpp realtime-tools std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python ];
+  rosExecDepends = [ launch launch-ros launch-testing-ros rcl-interfaces rclpy ros2param sensor-msgs ];
 
   meta = {
     description = "The main runnable entrypoint of ros2_control and home of controller management and resource management.";

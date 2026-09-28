@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ros2run ];
-  propagatedBuildInputs = [ ament-index-cpp plansys2-core pluginlib popf rclcpp ];
+  propagatedBuildInputs = [ ament-index-cpp plansys2-core pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ popf ];
 
   meta = {
     description = "This package contains the PDDL-based Planner module for the ROS2 Planning System";

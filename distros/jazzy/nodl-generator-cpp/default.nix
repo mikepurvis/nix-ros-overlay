@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ nodl-schema python3Packages.pytest ];
-  propagatedBuildInputs = [ generate-parameter-library generate-parameter-library-py nodl-schema ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ generate-parameter-library generate-parameter-library-py nodl-schema ];
 
   meta = {
     description = "Generate an rclcpp base-node class from a NoDL document.";

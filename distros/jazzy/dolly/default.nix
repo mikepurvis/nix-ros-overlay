@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ dolly-follow dolly-gazebo dolly-ignition ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dolly-follow dolly-gazebo dolly-ignition ];
 
   meta = {
     description = "Meta-package for Dolly, the robot sheep.";

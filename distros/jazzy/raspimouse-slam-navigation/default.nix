@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ raspimouse-navigation raspimouse-slam ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ raspimouse-navigation raspimouse-slam ];
 
   meta = {
     description = "SLAM and navigation packages for Raspberry Pi Mouse V3";

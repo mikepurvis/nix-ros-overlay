@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ecl-build ecl-license ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ecl-build ecl-license ];
 
   meta = {
     description = "Tools and utilities for ecl development.";

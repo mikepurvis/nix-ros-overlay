@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake geometry-msgs ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "This package provides all olive custom interfaces";

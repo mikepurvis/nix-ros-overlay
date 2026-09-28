@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.construct splsm-7 ];
+  propagatedBuildInputs = [ python3Packages.construct ];
+  rosExecDepends = [ splsm-7 ];
 
   meta = {
     description = "Converts Standard Platform League Standard Message V7 between ROS msg and UDP raw bytes";

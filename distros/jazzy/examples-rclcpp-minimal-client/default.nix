@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ example-interfaces rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ example-interfaces rclcpp ];
 
   meta = {
     description = "Examples of minimal service clients";

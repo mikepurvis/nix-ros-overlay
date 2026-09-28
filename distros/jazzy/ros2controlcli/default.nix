@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ controller-manager controller-manager-msgs python3Packages.graphviz rcl-interfaces rclpy ros2cli ros2node ros2param rosidl-runtime-py ];
+  propagatedBuildInputs = [ controller-manager controller-manager-msgs python3Packages.graphviz rcl-interfaces rclpy ros2cli ros2node ros2param ];
+  rosExecDepends = [ rosidl-runtime-py ];
 
   meta = {
     description = "The ROS 2 command line tools for ros2_control.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h angles ];
   checkInputs = [ ament-cmake-gtest cras-lint ];
-  propagatedBuildInputs = [ angles cras-cpp-common geographiclib geometry-msgs rclcpp sensor-msgs ];
+  propagatedBuildInputs = [ cras-cpp-common geographiclib geometry-msgs rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosExecDepends = [ angles ];
 
   meta = {
     description = "World Magnetic Model ROS API.";

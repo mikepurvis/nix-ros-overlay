@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python boost urdfdom-headers ];
+  buildInputs = [ ament-cmake ament-cmake-python boost console-bridge-vendor tinyxml2-vendor urdf urdfdom-headers ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-cmake ];
-  propagatedBuildInputs = [ console-bridge console-bridge-vendor tinyxml2-vendor urdf urdfdom-py ];
+  propagatedBuildInputs = [ console-bridge ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ console-bridge-vendor tinyxml2-vendor urdf urdfdom-py ];
 
   meta = {
     description = "Parser for Semantic Robot Description Format (SRDF).";

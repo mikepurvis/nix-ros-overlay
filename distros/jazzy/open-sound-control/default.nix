@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ open-sound-control-bridge open-sound-control-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ open-sound-control-bridge open-sound-control-msgs ];
 
   meta = {
     description = "Metapackage for ROS/Open Sound Control bridge";

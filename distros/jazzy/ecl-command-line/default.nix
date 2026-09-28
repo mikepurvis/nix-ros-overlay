@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-license ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ ecl-license ];
 
   meta = {
     description = "Embeds the TCLAP library inside the ecl. This is a very convenient

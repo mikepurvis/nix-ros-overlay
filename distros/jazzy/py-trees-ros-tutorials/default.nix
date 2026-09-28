@@ -16,7 +16,8 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ python3Packages.setuptools qt5.qttools.dev ];
   checkInputs = [ action-msgs py-trees py-trees-ros python3Packages.pytest rclpy ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs launch launch-ros py-trees py-trees-ros py-trees-ros-interfaces python3Packages.pyqt5 rcl-interfaces rclpy ros2launch ros2param ros2run ros2service ros2topic sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyqt5 ];
+  rosExecDepends = [ action-msgs geometry-msgs launch launch-ros py-trees py-trees-ros py-trees-ros-interfaces rcl-interfaces rclpy ros2launch ros2param ros2run ros2service ros2topic sensor-msgs std-msgs ];
 
   meta = {
     description = "Tutorials for py_trees on ROS2.";

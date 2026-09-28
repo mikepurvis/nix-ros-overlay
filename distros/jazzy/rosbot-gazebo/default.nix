@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest python3Packages.pyyaml rosbot-description ];
-  propagatedBuildInputs = [ gz-ros2-control husarion-gz-worlds launch launch-ros ros-gz-bridge ros-gz-sim rosbot-controller rosbot-joy rosbot-localization rosbot-utils rviz2 tf-namespace-bridge ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ gz-ros2-control husarion-gz-worlds launch launch-ros ros-gz-bridge ros-gz-sim rosbot-controller rosbot-joy rosbot-localization rosbot-utils rviz2 tf-namespace-bridge ];
 
   meta = {
     description = "Gazebo simulation for ROSbot Series";

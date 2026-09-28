@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ joint-state-broadcaster ros2-controllers ros2launch rsl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joint-state-broadcaster ros2-controllers ros2launch rsl ];
 
   meta = {
     description = "Provides the diff-drive controller for the iRobot(R) Create(R) 3 Educational Robot.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake bond bondcpp builtin-interfaces interactive-markers lifecycle-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-lifecycle rosidl-default-generators sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-cpplint ament-cmake-flake8 ament-cmake-gtest ament-cmake-uncrustify ament-lint-auto launch launch-testing ];
-  propagatedBuildInputs = [ bond bondcpp boost builtin-interfaces ceres-solver eigen interactive-markers liblapack lifecycle-msgs message-filters nav-msgs onetbb pluginlib qt5.qtbase rclcpp rclcpp-lifecycle rosidl-default-generators rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs std-msgs std-srvs suitesparse tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs visualization-msgs ];
+  propagatedBuildInputs = [ boost ceres-solver eigen liblapack onetbb qt5.qtbase rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering suitesparse ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ bond bondcpp builtin-interfaces interactive-markers lifecycle-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-lifecycle rosidl-default-generators sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs visualization-msgs ];
 
   meta = {
     description = "This package provides a sped up improved slam karto with updated SDK and visualization and modification toolsets";

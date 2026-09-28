@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ control-msgs geometry-msgs moveit-configs-utils moveit-core moveit-kinematics moveit-msgs moveit-planners moveit-ros-move-group moveit-ros-planning moveit-ros-planning-interface moveit-ros-visualization moveit-servo moveit-setup-assistant moveit-simple-controller-manager rclcpp rclcpp-action rosbot-description rosbot-joy rviz-common rviz-default-plugins rviz2 sensor-msgs trajectory-msgs ];
+  propagatedBuildInputs = [ control-msgs geometry-msgs moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface moveit-servo rclcpp rclcpp-action sensor-msgs trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ moveit-configs-utils moveit-kinematics moveit-planners moveit-ros-move-group moveit-ros-visualization moveit-setup-assistant moveit-simple-controller-manager rosbot-description rosbot-joy rviz-common rviz-default-plugins rviz2 ];
 
   meta = {
     description = "An automatically generated package with all the configuration and launch files for using the rosbot_xl with the MoveIt Motion Planning Framework";

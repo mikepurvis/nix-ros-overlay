@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-core ament-index-python python3 rosidl-cli rosidl-cmake rosidl-generator-c rosidl-generator-type-description rosidl-parser rosidl-pycommon rosidl-runtime-cpp ];
+  propagatedBuildInputs = [ ament-cmake-core python3 rosidl-cmake rosidl-generator-c rosidl-pycommon rosidl-runtime-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-core python3 rosidl-pycommon ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-generator-type-description rosidl-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in C++.";

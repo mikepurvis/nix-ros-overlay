@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs nmea-msgs python3Packages.numpy python3Packages.pyserial rclpy sensor-msgs tf-transformations ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.pyserial ];
+  rosExecDepends = [ geometry-msgs nmea-msgs rclpy sensor-msgs tf-transformations ];
 
   meta = {
     description = "Package to parse NMEA strings and publish a very simple GPS message. Does not

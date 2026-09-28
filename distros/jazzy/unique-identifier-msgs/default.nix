@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-core-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-core-runtime ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
+  rosExecDepends = [ rosidl-core-runtime ];
 
   meta = {
     description = "ROS messages for universally unique identifiers.";

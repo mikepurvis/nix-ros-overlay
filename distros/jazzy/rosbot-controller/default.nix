@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest python3Packages.pyyaml rosbot-description xacro ];
-  propagatedBuildInputs = [ controller-manager diff-drive-controller husarion-mecanum-drive-controller imu-sensor-broadcaster joint-state-broadcaster launch launch-ros nav2-common position-controllers ros2controlcli rosbot-description rosbot-hardware-interfaces rosbot-moveit rosbot-utils udev xacro ];
+  propagatedBuildInputs = [ udev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager diff-drive-controller husarion-mecanum-drive-controller imu-sensor-broadcaster joint-state-broadcaster launch launch-ros nav2-common position-controllers ros2controlcli rosbot-description rosbot-hardware-interfaces rosbot-moveit rosbot-utils xacro ];
 
   meta = {
     description = "Hardware configuration for ROSbot Series";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ urdf xacro ];
 
   meta = {
     description = "URDF and meshes describing Velodyne laser scanners.";

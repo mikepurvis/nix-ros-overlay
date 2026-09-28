@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ leo-description leo-msgs leo-teleop ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ leo-description leo-msgs leo-teleop ];
 
   meta = {
     description = "Metapackage of software for Leo Rover common to the robot and ROS desktop";

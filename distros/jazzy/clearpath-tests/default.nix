@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ can-utils clearpath-config clearpath-generator-common clearpath-motor-msgs clearpath-platform-msgs diagnostic-msgs geometry-msgs nav-msgs rclpy sensor-msgs simple-term-menu-vendor std-msgs stress tf-transformations tf2-geometry-msgs tf2-msgs wireless-msgs ];
+  propagatedBuildInputs = [ can-utils stress ];
+  rosExecDepends = [ clearpath-config clearpath-generator-common clearpath-motor-msgs clearpath-platform-msgs diagnostic-msgs geometry-msgs nav-msgs rclpy sensor-msgs simple-term-menu-vendor std-msgs tf-transformations tf2-geometry-msgs tf2-msgs wireless-msgs ];
 
   meta = {
     description = "Clearpath Tests";

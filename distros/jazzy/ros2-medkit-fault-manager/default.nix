@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ros2-medkit-cmake ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common launch-ros launch-testing-ament-cmake launch-testing-ros rosbag2-py rosbag2-storage-mcap sensor-msgs std-msgs ];
-  propagatedBuildInputs = [ ament-index-python launch launch-ros nlohmann_json rclcpp ros2-medkit-msgs ros2-medkit-serialization rosbag2-cpp rosbag2-storage sqlite ];
+  propagatedBuildInputs = [ nlohmann_json rclcpp ros2-medkit-msgs ros2-medkit-serialization rosbag2-cpp rosbag2-storage sqlite ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosExecDepends = [ ament-index-python launch launch-ros ];
 
   meta = {
     description = "Central fault manager node for ros2_medkit fault management system";

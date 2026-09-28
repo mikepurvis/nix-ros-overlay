@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-errors ecl-license ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ecl-build ecl-config ecl-errors ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ ecl-build ecl-config ecl-errors ecl-license ];
 
   meta = {
     description = "Cross platform filesystem utilities (until c++11 makes its way in).";

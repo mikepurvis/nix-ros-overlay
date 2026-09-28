@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python diagnostic-msgs python-qt-binding python3Packages.rospkg qt-gui rclpy rqt-gui rqt-gui-py ];
+  propagatedBuildInputs = [ python3Packages.rospkg ];
+  rosExecDepends = [ ament-index-python diagnostic-msgs python-qt-binding qt-gui rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "rqt_runtime_monitor provides a GUI plugin viewing DiagnosticsArray messages.";

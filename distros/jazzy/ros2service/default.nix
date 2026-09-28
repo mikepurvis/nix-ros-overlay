@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint launch launch-ros launch-testing launch-testing-ros python3Packages.pytest python3Packages.pytest-timeout test-msgs ];
-  propagatedBuildInputs = [ python3Packages.pyyaml rclpy ros2cli ros2topic rosidl-runtime-py ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosExecDepends = [ rclpy ros2cli ros2topic rosidl-runtime-py ];
 
   meta = {
     description = "The service command for ROS 2 command line tools.";

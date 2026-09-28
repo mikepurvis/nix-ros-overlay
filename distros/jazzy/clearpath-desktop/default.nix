@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ clearpath-config-live clearpath-offboard-sensors clearpath-platform-msgs clearpath-viz ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-config-live clearpath-offboard-sensors clearpath-platform-msgs clearpath-viz ];
 
   meta = {
     description = "Packages for working with Clearpath Platforms from a ROS 2 desktop.";

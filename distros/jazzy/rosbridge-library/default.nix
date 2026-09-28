@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ament-cmake-ros ];
   checkInputs = [ action-msgs ament-cmake-mypy builtin-interfaces control-msgs diagnostic-msgs example-interfaces geometry-msgs nav-msgs rosbridge-test-msgs sensor-msgs std-msgs std-srvs stereo-msgs tf2-msgs trajectory-msgs visualization-msgs ];
-  propagatedBuildInputs = [ python3Packages.cbor2 python3Packages.numpy python3Packages.pillow python3Packages.pymongo python3Packages.ujson rcl-interfaces rclpy ];
+  propagatedBuildInputs = [ python3Packages.cbor2 python3Packages.numpy python3Packages.pillow python3Packages.pymongo python3Packages.ujson ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros ];
+  rosExecDepends = [ rcl-interfaces rclpy ];
 
   meta = {
     description = "The core rosbridge package, responsible for interpreting JSON and performing the appropriate

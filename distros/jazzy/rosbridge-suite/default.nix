@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rosapi rosbridge-library rosbridge-server ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosapi rosbridge-library rosbridge-server ];
 
   meta = {
     description = "Rosbridge provides a JSON API to ROS functionality for non-ROS programs.

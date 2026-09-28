@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-flake8 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ rqt-gui rqt-gui-py rqt-msg ];
+  rosExecDepends = [ rqt-gui rqt-gui-py rqt-msg ];
 
   meta = {
     description = "A Python GUI plugin for introspecting available ROS service types.";

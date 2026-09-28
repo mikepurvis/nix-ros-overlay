@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs lifecycle-msgs nav2-msgs rclpy ];
+  rosExecDepends = [ action-msgs geometry-msgs lifecycle-msgs nav2-msgs rclpy ];
 
   meta = {
     description = "An importable library for writing mobile robot applications in python3";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ fusioncore-ros geometry-msgs nav-msgs rclpy robot-localization rosgraph-msgs sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ fusioncore-ros geometry-msgs nav-msgs rclpy robot-localization rosgraph-msgs sensor-msgs ];
 
   meta = {
     description = "NCLT dataset adapter and benchmark pipeline for FusionCore vs robot_localization";

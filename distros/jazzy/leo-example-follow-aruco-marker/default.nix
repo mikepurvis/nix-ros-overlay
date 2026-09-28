@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ aruco-opencv aruco-opencv-msgs generate-parameter-library geometry-msgs nav-msgs rclpy tf-transformations ];
+  propagatedBuildInputs = [ generate-parameter-library ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ aruco-opencv aruco-opencv-msgs geometry-msgs nav-msgs rclpy tf-transformations ];
 
   meta = {
     description = "Follow Aruco Marker Example for Leo Rover.";

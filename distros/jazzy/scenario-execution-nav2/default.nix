@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs lifecycle-msgs nav2-msgs nav2-simple-commander rclpy scenario-execution-ros tf2-ros ];
+  propagatedBuildInputs = [ scenario-execution-ros ];
+  rosExecDepends = [ geometry-msgs lifecycle-msgs nav2-msgs nav2-simple-commander rclpy tf2-ros ];
 
   meta = {
     description = "Scenario Execution library for Nav2";

@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ agnocast-ioctl-wrapper ament-index-python ];
+  rosExecDepends = [ agnocast-ioctl-wrapper ament-index-python ];
 
   meta = {
     description = "The ROS 2 command line tool extension for Agnocast.";

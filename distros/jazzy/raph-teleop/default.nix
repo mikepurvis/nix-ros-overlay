@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-cmake-copyright ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ ackermann-msgs joy-linux rclpy sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ ackermann-msgs joy-linux rclpy sensor-msgs ];
 
   meta = {
     description = "Scripts and launch files for Raph Rover teleoperation";

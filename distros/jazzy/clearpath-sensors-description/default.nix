@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ axis-description flir-ptu-description microstrain-inertial-description realsense2-description velodyne-description zed-description ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ axis-description flir-ptu-description microstrain-inertial-description realsense2-description velodyne-description zed-description ];
 
   meta = {
     description = "Clearpath sensors URDF descriptions";

@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces rclpy webots-ros2-driver ];
+  rosExecDepends = [ builtin-interfaces rclpy webots-ros2-driver ];
 
   meta = {
     description = "Mavic 2 Pro robot ROS2 interface for Webots.";

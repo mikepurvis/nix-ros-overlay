@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.defusedxml python3Packages.pexpect python3Packages.pytest ];
-  propagatedBuildInputs = [ scenario-execution ];
+  rosExecDepends = [ scenario-execution ];
 
   meta = {
     description = "Robotics Scenario Execution Coverage Tools";

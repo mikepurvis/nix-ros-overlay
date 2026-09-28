@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ joint-state-publisher python-qt-binding rclpy ];
+  rosExecDepends = [ joint-state-publisher python-qt-binding rclpy ];
 
   meta = {
     description = "This package contains a GUI tool for setting and publishing joint state values for a given URDF.";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config python-qt-binding qt5.qtbase ];
+  buildInputs = [ ament-cmake pkg-config pluginlib python-qt-binding qt5.qtbase tinyxml2-vendor ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ pluginlib qt-gui tinyxml2-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ pluginlib qt-gui tinyxml2-vendor ];
 
   meta = {
     description = "qt_gui_cpp provides the foundation for C++-bindings for qt_gui and creates bindings for every generator available.

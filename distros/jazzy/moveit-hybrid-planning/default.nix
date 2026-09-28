@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-gtest controller-manager moveit-configs-utils moveit-planners-ompl moveit-resources-panda-moveit-config moveit-simple-controller-manager position-controllers robot-state-publisher ros-testing ];
-  propagatedBuildInputs = [ ament-index-cpp controller-manager moveit-common moveit-core moveit-msgs moveit-resources-panda-moveit-config moveit-ros-planning moveit-ros-planning-interface pluginlib position-controllers rclcpp rclcpp-action rclcpp-components robot-state-publisher rviz2 std-msgs std-srvs tf2-ros trajectory-msgs ];
+  propagatedBuildInputs = [ ament-index-cpp moveit-common moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface pluginlib rclcpp rclcpp-action rclcpp-components std-msgs std-srvs tf2-ros trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager moveit-resources-panda-moveit-config position-controllers robot-state-publisher rviz2 ];
 
   meta = {
     description = "Hybrid planning components of MoveIt 2";

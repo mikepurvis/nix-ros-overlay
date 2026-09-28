@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs rclpy std-msgs ];
+  rosExecDepends = [ geometry-msgs rclpy std-msgs ];
 
   meta = {
     description = "ROS2 package for converting between Twist and TwistStamped messages";

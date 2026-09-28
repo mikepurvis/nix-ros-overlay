@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ geometry-msgs rclpy ];
+  rosExecDepends = [ geometry-msgs rclpy ];
 
   meta = {
     description = "Teleoperation node using keyboard for TurtleBot3.";

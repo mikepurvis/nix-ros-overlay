@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright python3Packages.numpy python3Packages.pillow python3Packages.pycodestyle python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces python3Packages.lark python3Packages.pycollada xacro ];
+  propagatedBuildInputs = [ python3Packages.lark python3Packages.pycollada ];
+  rosExecDepends = [ builtin-interfaces xacro ];
 
   meta = {
     description = "This package allows to convert URDF and XACRO files into Webots PROTO files.";

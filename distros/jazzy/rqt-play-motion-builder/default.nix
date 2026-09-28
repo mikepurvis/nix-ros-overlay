@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto class-loader qt5.qtbase ];
-  propagatedBuildInputs = [ play-motion-builder play-motion-builder-msgs play-motion2-msgs pluginlib rclcpp rclcpp-action rqt-gui rqt-gui-cpp sensor-msgs urdf ];
+  buildInputs = [ ament-cmake-auto class-loader play-motion-builder-msgs play-motion2-msgs pluginlib qt5.qtbase sensor-msgs ];
+  propagatedBuildInputs = [ play-motion-builder rclcpp rclcpp-action rqt-gui-cpp urdf ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ play-motion-builder-msgs play-motion2-msgs pluginlib rqt-gui sensor-msgs ];
 
   meta = {
     description = "The rqt_play_motion_builder package, a front-end interface for play_motion_builder";

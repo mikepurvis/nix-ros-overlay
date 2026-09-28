@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-core-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-core-runtime ];
+  propagatedBuildInputs = [ builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
+  rosExecDepends = [ rosidl-core-runtime ];
 
   meta = {
     description = "Messages definitions common among all ROS services";

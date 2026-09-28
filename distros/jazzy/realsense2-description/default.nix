@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ launch-ros rclcpp rclcpp-components realsense2-camera-msgs xacro ];
+  propagatedBuildInputs = [ rclcpp rclcpp-components realsense2-camera-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch-ros xacro ];
 
   meta = {
     description = "RealSense description package for RealSense 3D D400 cameras";

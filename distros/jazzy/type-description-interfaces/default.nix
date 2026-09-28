@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-core-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-core-runtime service-msgs ];
+  propagatedBuildInputs = [ service-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
+  rosExecDepends = [ rosidl-core-runtime ];
 
   meta = {
     description = "A package containing message and service definitions for describing and communicating descriptions of other types.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rclcpp rclcpp-components ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ camera-info-manager cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ camera-info-manager cv-bridge image-transport sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ rclcpp rclcpp-components ];
 
   meta = {
     description = "A ROS 2 camera driver using Video4Linux2";

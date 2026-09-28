@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ launch-testing launch-testing-ros python3Packages.pytest ];
-  propagatedBuildInputs = [ control-msgs controller-manager-msgs python-qt-binding python3Packages.rospkg qt-gui rclpy rqt-gui rqt-gui-py trajectory-msgs ];
+  propagatedBuildInputs = [ python3Packages.rospkg ];
+  rosExecDepends = [ control-msgs controller-manager-msgs python-qt-binding qt-gui rclpy rqt-gui rqt-gui-py trajectory-msgs ];
 
   meta = {
     description = "Graphical frontend for interacting with joint_trajectory_controller instances.";

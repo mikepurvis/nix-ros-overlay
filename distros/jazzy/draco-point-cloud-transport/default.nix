@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake pluginlib ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ draco pluginlib point-cloud-interfaces point-cloud-transport rclcpp rcpputils sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ draco point-cloud-interfaces point-cloud-transport rclcpp rcpputils sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ pluginlib ];
 
   meta = {
     description = "draco_point_cloud_transport provides a plugin to point_cloud_transport for sending point clouds

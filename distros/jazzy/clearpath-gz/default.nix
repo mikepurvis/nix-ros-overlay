@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clearpath-common clearpath-generator-gz clearpath-viz gz-ros2-control ros-gz ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-common clearpath-generator-gz clearpath-viz gz-ros2-control ros-gz ];
 
   meta = {
     description = "Clearpath Gazebo Simulator";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ fri-configuration-controller fri-state-broadcaster joint-group-impedance-controller kuka-control-mode-handler kuka-event-broadcaster kuka-kss-message-handler ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ fri-configuration-controller fri-state-broadcaster joint-group-impedance-controller kuka-control-mode-handler kuka-event-broadcaster kuka-kss-message-handler ];
 
   meta = {
     description = "ROS2 controllers for KUKA robots";

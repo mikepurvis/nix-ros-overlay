@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 launch-testing launch-testing-ros python3Packages.pytest rosbag2-storage-default-plugins rosbag2-test-common ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.pyyaml rclpy ros2cli rosbag2-py rosbag2-storage-default-plugins ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosExecDepends = [ ament-index-python rclpy ros2cli rosbag2-py rosbag2-storage-default-plugins ];
 
   meta = {
     description = "Entry point for rosbag in ROS 2";

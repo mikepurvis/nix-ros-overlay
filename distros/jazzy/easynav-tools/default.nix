@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ easynav-interfaces easynav-support-py geometry-msgs python3Packages.platformdirs python3Packages.rich python3Packages.typing-extensions rclpy ros2cli rosidl-runtime-py ];
+  propagatedBuildInputs = [ geometry-msgs python3Packages.platformdirs python3Packages.rich python3Packages.typing-extensions rclpy rosidl-runtime-py ];
+  rosExecDepends = [ easynav-interfaces easynav-support-py ros2cli ];
 
   meta = {
     description = "ROS 2 Navigation tools: TUI + ros2cli commands for EasyNav.";

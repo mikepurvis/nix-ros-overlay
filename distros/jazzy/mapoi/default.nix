@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ mapoi-interfaces mapoi-rviz-plugins mapoi-server mapoi-webui ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ mapoi-interfaces mapoi-rviz-plugins mapoi-server mapoi-webui ];
 
   meta = {
     description = "Metapackage for mapoi: map and POI management for Navigation2";

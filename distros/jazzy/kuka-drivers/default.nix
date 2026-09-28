@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ kuka-controllers kuka-driver-interfaces kuka-drivers-core kuka-iiqka-eac-driver kuka-rsi-driver kuka-rsi-simulator kuka-sunrise-fri-driver ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ kuka-controllers kuka-driver-interfaces kuka-drivers-core kuka-iiqka-eac-driver kuka-rsi-driver kuka-rsi-simulator kuka-sunrise-fri-driver ];
 
   meta = {
     description = "ROS2 drivers for KUKA robots";

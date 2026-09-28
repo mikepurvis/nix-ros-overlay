@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-ros-planning-interface rclcpp std-msgs turtlebot3-home-service-challenge-tools ];
+  propagatedBuildInputs = [ moveit-ros-planning-interface rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ turtlebot3-home-service-challenge-tools ];
 
   meta = {
     description = "Manipulator controller package for turtlebot3_home_service_challenge";

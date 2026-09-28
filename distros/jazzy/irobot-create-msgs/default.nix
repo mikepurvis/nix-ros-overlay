@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Package containing action, message, and service definitions used by the iRobot(R) Create(R) platform";

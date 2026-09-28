@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake dataspeed-can-msg-filters ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ can-msgs dataspeed-can-usb ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ can-msgs ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dataspeed-can-usb ];
 
   meta = {
     description = "Interface to the Dataspeed Inc. Drive-By-Wire kit";

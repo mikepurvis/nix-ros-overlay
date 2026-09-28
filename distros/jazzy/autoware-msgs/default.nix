@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ autoware-common-msgs autoware-control-msgs autoware-localization-msgs autoware-map-msgs autoware-perception-msgs autoware-planning-msgs autoware-sensing-msgs autoware-simulation-msgs autoware-system-msgs autoware-v2x-msgs autoware-vehicle-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ autoware-common-msgs autoware-control-msgs autoware-localization-msgs autoware-map-msgs autoware-perception-msgs autoware-planning-msgs autoware-sensing-msgs autoware-simulation-msgs autoware-system-msgs autoware-v2x-msgs autoware-vehicle-msgs ];
 
   meta = {
     description = "Meta package for the autoware_msgs packages";

@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ launch launch-ros realsense2-camera robot-state-publisher rviz2 tf2-ros trackdlo-core trackdlo-segmentation trackdlo-utils xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros realsense2-camera robot-state-publisher rviz2 tf2-ros trackdlo-core trackdlo-segmentation trackdlo-utils xacro ];
 
   meta = {
     description = "trackdlo_perception: Launch files, configuration, and bringup";

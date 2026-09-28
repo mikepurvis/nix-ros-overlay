@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ qt-dotgraph qt-gui qt-gui-app qt-gui-cpp qt-gui-py-common ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ qt-dotgraph qt-gui qt-gui-app qt-gui-cpp qt-gui-py-common ];
 
   meta = {
     description = "Integration of the ROS package system and ROS-specific plugins for a Qt-based GUI.";

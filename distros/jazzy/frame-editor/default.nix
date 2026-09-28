@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs interactive-markers qt-gui-py-common rclpy rosidl-default-runtime rqt-gui rqt-gui-py std-msgs tf-transformations tf2-ros visualization-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-python builtin-interfaces rosidl-default-generators ];
+  propagatedBuildInputs = [ geometry-msgs interactive-markers rclpy rqt-gui rqt-gui-py std-msgs tf-transformations tf2-ros visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  rosExecDepends = [ builtin-interfaces qt-gui-py-common rosidl-default-runtime ];
 
   meta = {
     description = "The frame_editor package";

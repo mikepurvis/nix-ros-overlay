@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ];
-  propagatedBuildInputs = [ ecl-config ecl-errors ecl-license ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-errors ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosExecDepends = [ ecl-config ecl-errors ecl-license ];
 
   meta = {
     description = "Template based exceptions - these are simple and practical

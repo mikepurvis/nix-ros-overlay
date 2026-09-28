@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ rqt-gui rqt-gui-cpp rqt-gui-py rqt-py-common ];
+  rosExecDepends = [ rqt-gui rqt-gui-cpp rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "rqt is a Qt-based framework for GUI development for ROS.";

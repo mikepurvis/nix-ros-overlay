@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rqt-gui-py ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rqt-gui-py ];
 
   meta = {
     description = "This packages proposes a slider-based publisher node similar to the joint_state_publisher, but that can publish any type of message or call services.";

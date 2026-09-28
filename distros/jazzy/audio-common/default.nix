@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ audio-capture audio-common-msgs audio-play sound-play sound-play-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ audio-capture audio-common-msgs audio-play sound-play sound-play-msgs ];
 
   meta = {
     description = "Common code for working with audio in ROS";

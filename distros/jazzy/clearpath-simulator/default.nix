@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clearpath-generator-gz clearpath-gz ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ clearpath-generator-gz clearpath-gz ];
 
   meta = {
     description = "Clearpath Simulator Metapackage";

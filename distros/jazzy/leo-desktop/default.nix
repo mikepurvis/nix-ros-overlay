@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ leo leo-viz ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ leo leo-viz ];
 
   meta = {
     description = "Metapackage of software for operating Leo Rover from ROS desktop";

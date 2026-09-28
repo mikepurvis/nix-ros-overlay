@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake pybind11-vendor ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python geometry-msgs moveit-core moveit-ros-planning moveit-ros-planning-interface octomap-msgs rclcpp rclpy ];
+  propagatedBuildInputs = [ geometry-msgs moveit-core moveit-ros-planning moveit-ros-planning-interface octomap-msgs rclcpp rclpy ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "Python binding for MoveIt 2";

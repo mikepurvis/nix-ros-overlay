@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto autoware-cmake ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs glog launch launch-ros message-filters rclcpp rclcpp-components tf2 tf2-ros ];
+  propagatedBuildInputs = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs glog message-filters rclcpp rclcpp-components tf2 tf2-ros ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosExecDepends = [ launch launch-ros ];
 
   meta = {
     description = "Wrapper macros for Agnocast (true zero-copy communication library)";

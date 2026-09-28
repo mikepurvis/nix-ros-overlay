@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-core-generators ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-core-runtime ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
+  rosExecDepends = [ rosidl-core-runtime ];
 
   meta = {
     description = "A package containing message and service definitions for types defined in the OMG IDL Platform Specific Model.";

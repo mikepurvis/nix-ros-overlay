@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ xacro ];
 
   meta = {
     description = "Mechanical, kinematic and visual description

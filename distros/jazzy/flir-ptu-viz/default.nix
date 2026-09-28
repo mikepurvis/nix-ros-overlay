@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ flir-ptu-description flir-ptu-driver interactive-markers joint-state-publisher joint-state-publisher-gui rclpy robot-state-publisher rviz2 sensor-msgs visualization-msgs xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ flir-ptu-description flir-ptu-driver interactive-markers joint-state-publisher joint-state-publisher-gui rclpy robot-state-publisher rviz2 sensor-msgs visualization-msgs xacro ];
 
   meta = {
     description = "Launch files and RViz configs to assist with visualizing the FLIR PTUs.";

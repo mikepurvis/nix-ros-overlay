@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ _unresolved_ros_ign_bridge _unresolved_ros_ign_gazebo dolly-follow ros2launch rviz2 ];
+  propagatedBuildInputs = [ _unresolved_ros_ign_bridge _unresolved_ros_ign_gazebo ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ dolly-follow ros2launch rviz2 ];
 
   meta = {
     description = "Launch Ignition simulation with Dolly robot.";

@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ qml6-ros2-plugin qt6.qtdeclarative rqml-core ];
+  propagatedBuildInputs = [ qt6.qtdeclarative rqml-core ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ qml6-ros2-plugin ];
 
   meta = {
     description = "An example plugin for RQml";

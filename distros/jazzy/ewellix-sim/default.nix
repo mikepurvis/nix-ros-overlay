@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ewellix-interfaces ewellix-moveit-config gz-ros2-control ros-gz rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ewellix-interfaces ewellix-moveit-config gz-ros2-control ros-gz rviz2 ];
 
   meta = {
     description = "Clearpath's simulation package for Ewellix TLT lifting columns";

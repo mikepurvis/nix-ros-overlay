@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 python3Packages.pytest python3Packages.pytest-timeout ros-testing test-msgs ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.argcomplete python3Packages.cryptography python3Packages.importlib-resources python3Packages.lxml rclpy ros2cli ];
+  propagatedBuildInputs = [ python3Packages.argcomplete python3Packages.cryptography python3Packages.importlib-resources python3Packages.lxml ];
+  rosExecDepends = [ ament-index-python rclpy ros2cli ];
 
   meta = {
     description = "Command line tools for managing SROS2 keys";

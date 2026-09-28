@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ urdf xacro ];
 
   meta = {
     description = "URDF description of the FLIR PTUs.";

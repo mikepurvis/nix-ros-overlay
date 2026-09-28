@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ action-msgs geometry-msgs sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Interfaces between core Autoware.Auto components";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.numpy rclpy sensor-msgs sensor-msgs-py std-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
+  rosExecDepends = [ rclpy sensor-msgs sensor-msgs-py std-msgs ];
 
   meta = {
     description = "Example on how to publish a Pointcloud2 message";

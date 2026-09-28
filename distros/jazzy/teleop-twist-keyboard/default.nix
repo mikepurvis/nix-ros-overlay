@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs rcl-interfaces rclpy ];
+  rosExecDepends = [ geometry-msgs rcl-interfaces rclpy ];
 
   meta = {
     description = "A robot-agnostic teleoperation node to convert keyboard commands to Twist

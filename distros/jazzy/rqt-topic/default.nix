@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-flake8 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-qt-binding rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
+  rosExecDepends = [ python-qt-binding rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "rqt_topic provides a GUI plugin for displaying debug information about ROS topics including publishers, subscribers, publishing rate, and ROS Messages.";

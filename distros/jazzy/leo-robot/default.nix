@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ leo leo-bringup leo-filters leo-fw ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ leo leo-bringup leo-filters leo-fw ];
 
   meta = {
     description = "Metapackage of software to install on Leo Rover.";

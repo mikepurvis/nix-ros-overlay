@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-lint-auto ];
-  propagatedBuildInputs = [ irobot-create-control urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ irobot-create-control urdf xacro ];
 
   meta = {
     description = "Provides the model description for the iRobot(R) Create(R) 3 Educational Robot.";

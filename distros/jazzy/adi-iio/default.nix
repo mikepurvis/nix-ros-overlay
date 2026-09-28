@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-ros ament-cmake-xmllint ament-copyright ament-lint-auto ament-lint-common ament-pep257 launch launch-pytest launch-ros launch-testing launch-testing-ament-cmake python3Packages.scipy rclpy ];
-  propagatedBuildInputs = [ libiio rclcpp ros2launch rosidl-default-runtime rosidl-typesupport-introspection-cpp std-msgs ];
+  propagatedBuildInputs = [ libiio rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosExecDepends = [ ros2launch rosidl-default-runtime ];
 
   meta = {
     description = "ROS package to interface with IIO devices";

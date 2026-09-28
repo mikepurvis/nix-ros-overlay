@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "catkin";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ROS messages used by the axis_camera package to control Axis PTZ and fixed cameras";

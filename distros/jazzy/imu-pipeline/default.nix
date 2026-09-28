@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ imu-processors imu-transformer ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ imu-processors imu-transformer ];
 
   meta = {
     description = "imu_pipeline";

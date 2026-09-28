@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-python ament-cmake-ros ];
   checkInputs = [ action-msgs ament-cmake-mypy example-interfaces launch launch-ros launch-testing-ament-cmake python3Packages.autobahn python3Packages.twisted rcl-interfaces std-srvs ];
-  propagatedBuildInputs = [ python3Packages.tornado rclpy rosapi rosbridge-library rosbridge-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.tornado ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros ];
+  rosExecDepends = [ rclpy rosapi rosbridge-library rosbridge-msgs std-msgs ];
 
   meta = {
     description = "A WebSocket interface to rosbridge.";

@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros ];
   checkInputs = [ cras-lint ];
-  propagatedBuildInputs = [ builtin-interfaces cv-bridge python3Packages.marisa python3Packages.matplotlib python3Packages.tqdm rclpy rosbag2-py rosidl-runtime-py sensor-msgs tf2-msgs ];
+  propagatedBuildInputs = [ python3Packages.marisa python3Packages.matplotlib python3Packages.tqdm ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros ];
+  rosExecDepends = [ builtin-interfaces cv-bridge rclpy rosbag2-py rosidl-runtime-py sensor-msgs tf2-msgs ];
 
   meta = {
     description = "Various utilities to work with bag files";

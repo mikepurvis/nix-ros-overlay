@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python example-interfaces rcl-interfaces rclpy std-msgs ];
+  rosExecDepends = [ ament-index-python example-interfaces rcl-interfaces rclpy std-msgs ];
 
   meta = {
     description = "Python nodes which were previously in the ros2/examples repository but are now just used for demo purposes.";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint geometry-msgs launch launch-ros launch-testing launch-testing-ros python3Packages.pytest python3Packages.pytest-timeout std-msgs test-msgs ];
-  propagatedBuildInputs = [ _unresolved_python3-openai-pip _unresolved_python3-validators curl ros2cli ];
+  propagatedBuildInputs = [ _unresolved_python3-openai-pip _unresolved_python3-validators curl ];
+  rosExecDepends = [ ros2cli ];
 
   meta = {
     description = "The OpenAI command for ROS 2 command line tools.";

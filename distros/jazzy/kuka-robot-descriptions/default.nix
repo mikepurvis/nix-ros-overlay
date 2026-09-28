@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ kuka-agilus-support kuka-cybertech-support kuka-fortec-support kuka-gazebo kuka-iontec-support kuka-kl-support kuka-kr-moveit-config kuka-lbr-iisy-moveit-config kuka-lbr-iisy-support kuka-lbr-iiwa-moveit-config kuka-lbr-iiwa-support kuka-mock-hardware-interface kuka-quantec-support kuka-resources ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ kuka-agilus-support kuka-cybertech-support kuka-fortec-support kuka-gazebo kuka-iontec-support kuka-kl-support kuka-kr-moveit-config kuka-lbr-iisy-moveit-config kuka-lbr-iisy-support kuka-lbr-iiwa-moveit-config kuka-lbr-iiwa-support kuka-mock-hardware-interface kuka-quantec-support kuka-resources ];
 
   meta = {
     description = "Robot descriptions and moveit configurations for KUKA robots";

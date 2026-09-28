@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake boost ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch ];
-  propagatedBuildInputs = [ launch-ros rclcpp rclcpp-components rcutils rmw rmw-implementation-cmake std-msgs std-srvs yaml-cpp-vendor ];
+  propagatedBuildInputs = [ rclcpp rclcpp-components rcutils rmw rmw-implementation-cmake std-msgs std-srvs yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch-ros ];
 
   meta = {
     description = "ros2 parameter server that other nodes can write/read parameters including persistent parameters.";

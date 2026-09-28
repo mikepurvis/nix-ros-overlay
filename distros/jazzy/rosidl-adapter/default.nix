@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-core python3 python3Packages.empy rosidl-cli ];
+  propagatedBuildInputs = [ ament-cmake-core python3 python3Packages.empy ];
   nativeBuildInputs = [ ament-cmake-core python3 ];
+  rosExecDepends = [ rosidl-cli ];
 
   meta = {
     description = "API and scripts to parse .msg/.srv/.action files and convert them to .idl.";

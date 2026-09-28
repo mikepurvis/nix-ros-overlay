@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch xacro ];
-  propagatedBuildInputs = [ rclpy urdfdom ];
+  propagatedBuildInputs = [ rclpy ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ urdfdom ];
 
   meta = {
     description = "The urdf_test package";

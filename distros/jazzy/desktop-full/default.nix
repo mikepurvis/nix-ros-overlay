@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ desktop perception ros-gz-sim-demos simulation ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ desktop perception ros-gz-sim-demos simulation ];
 
   meta = {
     description = "Provides a 'batteries included' experience to novice users.";

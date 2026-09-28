@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ apriltag-ros geometry-msgs rclpy sensor-msgs tf-transformations tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ apriltag-ros geometry-msgs rclpy sensor-msgs tf-transformations tf2-ros ];
 
   meta = {
     description = "A package that estimates the hitch joint state between a robot and a

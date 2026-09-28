@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ bcr-arm-description bcr-arm-gazebo bcr-arm-moveit-config ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ bcr-arm-description bcr-arm-gazebo bcr-arm-moveit-config ];
 
   meta = {
     description = "Metapackage for the BCR Arm robot stack";

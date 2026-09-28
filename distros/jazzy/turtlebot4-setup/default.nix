@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ chrony curl networkmanager rmw-cyclonedds-cpp rmw-fastrtps-cpp robot-upstart simple-term-menu-vendor socat ];
+  propagatedBuildInputs = [ chrony curl networkmanager socat ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rmw-cyclonedds-cpp rmw-fastrtps-cpp robot-upstart simple-term-menu-vendor ];
 
   meta = {
     description = "Turtlebot4 setup scripts";

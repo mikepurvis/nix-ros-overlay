@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ launch launch-ros ros-gz-sim ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros ros-gz-sim ];
 
   meta = {
     description = "Package containing the gazebo worlds and model";
