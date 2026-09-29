@@ -72,7 +72,11 @@ else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepend
 
   # Python programs are wrapped with a PYTHONPATH built from propagated inputs,
   # so Python packages still need their runtime ROS dependencies propagated.
-  propagatedBuildInputs = propagatedBuildInputs ++ lib.unique (rosBuildExportDepends ++ rosExecDepends);
+  # Their out output specifically: propagating a split package would otherwise
+  # pick its dev output, putting headers and CMake configs (and the -dev
+  # outputs those name) in the runtime closure of every Python package.
+  propagatedBuildInputs = propagatedBuildInputs
+    ++ map (d: d.out or d) (lib.unique (rosBuildExportDepends ++ rosExecDepends));
 
   # Modeled after colcon.
   # As of 0.12.1, colcon uses the legacy distutils install.py script, so we do
