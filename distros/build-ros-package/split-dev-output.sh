@@ -17,13 +17,27 @@
 #
 # include/ moves wholesale, so ${pkg_DIR}/../../../include stays correct.
 
+# Like moveToOutput, but merges into a directory that already exists, as when
+# a package honours the absolute CMAKE_INSTALL_INCLUDEDIR for some headers but
+# installs others to a hardcoded include/.
+_mergeToDev() {
+    [ -e "$out/$1" ] || return 0
+    if [ -e "$dev/$1" ]; then
+        echo "Merging $out/$1 into $dev/$1"
+        cp -a --no-target-directory "$out/$1" "$dev/$1"
+        rm -rf "${out:?}/$1"
+    else
+        moveToOutput "$1" "$dev"
+    fi
+}
+
 splitDevOutput() {
     if [ -z "${dev:-}" ] || [ "$dev" = "$out" ]; then return 0; fi
 
-    moveToOutput include "$dev"
-    moveToOutput lib/cmake "$dev"
-    moveToOutput lib/pkgconfig "$dev"
-    moveToOutput share/pkgconfig "$dev"
+    _mergeToDev include
+    _mergeToDev lib/cmake
+    _mergeToDev lib/pkgconfig
+    _mergeToDev share/pkgconfig
 
     local cmakedir pkgdir pkg entry
     for cmakedir in "$out"/share/*/cmake; do
@@ -46,7 +60,7 @@ splitDevOutput() {
 
     # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX,
     # which is computed from the file's own location.
-    find "$dev" -type f \( -name '*Targets*.cmake' -o -name '*Export*.cmake' -o -name '*Config.cmake' \) -print0 \
+    find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + \
         | xargs -0r sed -i -E \
             -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g"
 
