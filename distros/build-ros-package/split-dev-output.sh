@@ -83,11 +83,15 @@ splitDevOutput() {
 
     _repointMovedDirs
 
-    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX,
-    # which is computed from the file's own location.
+    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX.
+    # That is computed from the file's own location, or is $out when the
+    # export dir was given absolute, as with iceoryx's
+    # ${CMAKE_INSTALL_LIBDIR}/cmake; either way only one of lib/ and include/
+    # is under it, so both are made absolute.
     { find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true; } \
         | xargs -0r sed -i -E \
-            -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g"
+            -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g" \
+            -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
 
     # pkg-config files moved to dev still say prefix=$out; point includedir at
     # the headers' new home.
