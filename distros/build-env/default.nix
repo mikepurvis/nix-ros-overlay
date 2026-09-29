@@ -61,6 +61,9 @@ let
     "${ament-package}/${python3.sitePackages}/ament_package/template/prefix_level";
 
   # A plain script to source, for using the environment without nix develop.
+  # NIX_STORE makes nixpkgs' gcc mangle store paths in __FILE__, as it does in
+  # Nix builds; otherwise logging macros in headers (rclcpp's, for one) bake
+  # the -dev output into every binary built against the environment.
   setup-sh = runCommand "ros-env-setup.sh" {
     nativeBuildInputs = [ buildPackages.python3 ];
   } ''
@@ -73,6 +76,7 @@ let
       --set ROS_PYTHON_VERSION '${lib.versions.major python3.version}' \
       --set NIX_BINTOOLS_WRAPPER_TARGET_HOST_${stdenv.cc.bintools.suffixSalt} 1 \
       --set NIX_CC_WRAPPER_TARGET_HOST_${stdenv.cc.suffixSalt} 1 \
+      --set NIX_STORE '${builtins.storeDir}' \
       ${concatMapStringsSep " " (d: concatMapStringsSep " " (o: d.${o}) (d.outputs or [ "out" ])) otherClosure}
   '';
 
