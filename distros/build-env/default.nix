@@ -82,6 +82,9 @@ let
     # ROS dependencies to the environment, while propagating other packages like
     # nix-shell -p does.
     paths = propagatedPaths.rosPackages;
+    # ROS packages keep headers and CMake configs in dev, which a development
+    # environment needs alongside the runtime out.
+    extraOutputsToInstall = [ "dev" ] ++ (args.extraOutputsToInstall or [ ]);
 
     derivationArgs = {
       nativeBuildInputs = optional wrapPrograms makeWrapper;

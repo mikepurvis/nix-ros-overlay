@@ -14,6 +14,10 @@
 , postFixup ? ""
 , passthru ? { }
 , separateDebugInfo ? true
+# Put headers and CMake configs in a dev output, so that runtime environments,
+# which only need out, don't carry them or the -dev outputs they refer to.
+, splitDev ? rosVersion == 2 && buildType != "ament_python"
+, preFixup ? ""
 # ROS dependencies are not propagated. Instead, each package records which ROS
 # packages it exports to dependents (<build_export_depend> and friends) and
 # which it needs at runtime (<exec_depend>). Following colcon, a package is
@@ -40,7 +44,7 @@ let
 in
 
 (if buildType == "ament_python" then python3Packages.buildPythonPackage
-else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepends" "rosExecDepends" ]) // {
+else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepends" "rosExecDepends" "splitDev" ]) // {
   inherit doCheck dontWrapQtApps separateDebugInfo;
 
   buildInputs = buildInputs ++ rosBuildClosure;
@@ -49,6 +53,13 @@ else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepend
   # packages that use Eigen
   CXXFLAGS = CXXFLAGS + "-Wno-deprecated-declarations -Wno-deprecated-copy";
 
+} // lib.optionalAttrs splitDev {
+  outputs = args.outputs or [ "out" "dev" ];
+  preFixup = ''
+    source ${./split-dev-output.sh}
+    splitDevOutput
+  '' + preFixup;
+} // {
   passthru = passthru // {
     rosPackage = true;
     inherit rosDistro rosVersion rosBuildExportDepends rosExecDepends;
