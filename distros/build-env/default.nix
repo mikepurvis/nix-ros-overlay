@@ -27,7 +27,10 @@ let
   propagatePackages = packages: let
     validPackages = filter (d: d != null) packages;
     partitionedPackages = partition (d: (d.rosPackage or false) || (hasAttr "pythonModule" d)) validPackages;
-    rosPackages = partitionedPackages.right;
+    # A package's propagatedBuildInputs attribute holds what stdenv chose to
+    # propagate, which for a split package is its dev output alone. Taking
+    # out here lets extraOutputsToInstall add dev back, so both are linked.
+    rosPackages = map (d: d.out or d) partitionedPackages.right;
     otherPackages = partitionedPackages.wrong;
     rosPropagatedPackages = unique (concatLists (
       catAttrs "propagatedBuildInputs" rosPackages ++
