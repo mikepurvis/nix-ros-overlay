@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 77014c6..05a1b38 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -65,7 +65,8 @@ ament_package(
+   CONFIG_EXTRAS "ament_cmake_pytest-extras.cmake"
+ )
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )

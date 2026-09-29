@@ -3,103 +3,129 @@
 # runtime environments reference, no longer carries -dev paths of system
 # libraries baked into include-dir and link-library lists.
 #
-# ament and rosidl write CMake configs that find everything by walking up
-# from their own location (${pkg_DIR}/../../../lib, ${pkg_DIR}/../resource),
-# which is wrong once share/<pkg>/cmake lives in a different store path from
-# lib/ and share/<pkg>. The fixups below turn those into absolute paths:
-#
-#   - lib/ and bin/ references are rewritten to $out. They have to be
-#     absolute, since a library found through $dev would put $dev in the
-#     RPATH of every dependent.
-#   - The rest of share/<pkg> is symlinked into $dev/share/<pkg>, so that
-#     templates and .idl files that other packages look up relative to
-#     ${pkg_DIR} still resolve. Those are only read at build time.
-#
-# include/ moves wholesale, so ${pkg_DIR}/../../../include stays correct.
+# ament_cmake itself does most of this: buildRosPackage passes
+# AMENT_CMAKE_CONFIG_INSTALL_PREFIX=$dev (ament/ament_cmake#641), so configs
+# are installed to $dev/share/<pkg>/cmake and name $out absolutely. What is
+# left here covers packages and templates that still assume a single prefix.
+# Each rule records itself in $dev/nix-support/split-dev-fixups when it
+# fires, so a build's report shows which upstream assumptions remain.
+
+_splitDevFixup() {
+    echo "split-dev-fixup: $1: $2"
+    mkdir -p "$dev/nix-support"
+    echo "$1 $2" >> "$dev/nix-support/split-dev-fixups"
+}
+
+_splitDevRel() {
+    local p=${1/#$out/\$out}
+    echo "${p/#$dev/\$dev}"
+}
+
+# Before configuring: packages that ship CMake helpers next to their config
+# install them with a literal share/${PROJECT_NAME}, which would leave them
+# in out while the config that includes them goes to dev. This is the same
+# swap ament_cmake#641 makes in ament_cmake's own packages.
+splitDevPrePatch() {
+    local f
+    while IFS= read -r -d '' f; do
+        if grep -qzE 'install\(\s*DIRECTORY\s+cmake/?\s+DESTINATION\s+"?share/\$\{PROJECT_NAME\}/?"?\s*\)' "$f"; then
+            sed -i -z -E 's#install\(\s*DIRECTORY\s+cmake/?\s+DESTINATION\s+"?share/\$\{PROJECT_NAME\}/?"?\s*\)#ament_package_config_install_dir(_nix_config_install_dir)\ninstall(DIRECTORY cmake/ DESTINATION ${_nix_config_install_dir})#g' "$f"
+            _splitDevFixup cmake-dir-install "${f#./}"
+        fi
+    done < <(find . -name CMakeLists.txt -print0)
+}
 
 # Like moveToOutput, but merges into a directory that already exists, as when
 # a package honours the absolute CMAKE_INSTALL_INCLUDEDIR for some headers but
 # installs others to a hardcoded include/.
-#
-# Files that baked the absolute $out path of what moved (a config that
-# honoured CMAKE_INSTALL_LIBDIR and adds $out/lib/cmake/<pkg> to
-# CMAKE_MODULE_PATH, say) are pointed at the new location.
 _mergeToDev() {
     [ -e "$out/$1" ] || return 0
     if [ -e "$dev/$1" ]; then
-        echo "Merging $out/$1 into $dev/$1"
         cp -a --no-target-directory "$out/$1" "$dev/$1"
         rm -rf "${out:?}/$1"
     else
         moveToOutput "$1" "$dev"
     fi
     _movedToDev+=("$1")
+    _splitDevFixup "moved:${2:-$1}" "$1"
 }
 
-# Run once everything has moved, since a config can name any moved directory.
-_repointMovedDirs() {
-    local d
-    for d in "${_movedToDev[@]}"; do
-        { grep -rlZF "$out/$d" "$dev" --include='*.cmake' --include='*.pc' || true; } \
-            | xargs -0r sed -i -e "s#$out/$d\([/\"; )]\|\$\)#$dev/$d\1#g"
-    done
+# Rewrites a file in place with sed, recording the rule if anything changed.
+_splitDevSed() {
+    local rule=$1 f=$2; shift 2
+    local before
+    before=$(cksum < "$f")
+    sed -i -E "$@" "$f"
+    [ "$before" = "$(cksum < "$f")" ] || _splitDevFixup "$rule" "$(_splitDevRel "$f")"
 }
 
 splitDevOutput() {
     if [ -z "${dev:-}" ] || [ "$dev" = "$out" ]; then return 0; fi
     _movedToDev=()
+    local f d
 
+    # Headers installed to a literal include/ rather than
+    # CMAKE_INSTALL_INCLUDEDIR, and configs of plain CMake packages, which
+    # nixpkgs would move to dev anyway.
     _mergeToDev include
     _mergeToDev lib/cmake
     _mergeToDev lib/pkgconfig
     _mergeToDev share/pkgconfig
 
-    local cmakedir pkgdir pkg entry
-    for cmakedir in "$out"/share/*/cmake; do
-        [ -d "$cmakedir" ] || continue
-        pkgdir=$(dirname "$cmakedir")
-        pkg=$(basename "$pkgdir")
-        _mergeToDev "share/$pkg/cmake"
-
-        for entry in "$pkgdir"/*; do
-            [ -e "$entry" ] || continue
-            ln -s "$entry" "$dev/share/$pkg/$(basename "$entry")"
-        done
-
-        # ament_cmake_export_libraries, rosidl typesupport libraries, rosidl
-        # generator executables and Python modules.
-        find "$dev/share/$pkg/cmake" -type f -name '*.cmake' -print0 | xargs -0r sed -i -E \
-            -e "s#\\\$\{$pkg""_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g" \
-            -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g"
-    done
-
-    # Configs installed somewhere else entirely, such as urdfdom_headers'
+    # Configs that bypassed ament_package(): a hand-written install to
+    # share/<pkg>/cmake, or somewhere else entirely, such as urdfdom_headers'
     # ${CMAKE_INSTALL_LIBDIR}/urdfdom_headers/cmake.
-    local d
     while IFS= read -r -d '' d; do
-        [ -n "$(find "$d" \( -name '*Config.cmake' -o -name '*-config.cmake' \) -print -quit)" ] || continue
-        _mergeToDev "${d#"$out"/}"
+        [ -n "$(find "$d" \( -name '*Config.cmake' -o -name '*-config.cmake' -o -name '*Export.cmake' -o -name '*-extras.cmake' \) -print -quit)" ] || continue
+        _mergeToDev "${d#"$out"/}" config-outside-dev
     done < <(find "$out" -depth -type d \( -name cmake -o -name CMake \) -print0)
 
-    _repointMovedDirs
+    # A config that baked the absolute $out path of something that then moved.
+    for d in "${_movedToDev[@]}"; do
+        while IFS= read -r -d '' f; do
+            _splitDevSed repoint "$f" -e "s#$out/$d([/\"; )]|\$)#$dev/$d\1#g"
+        done < <(grep -rlZF "$out/$d" "$dev" --include='*.cmake' --include='*.pc' || true)
+    done
 
-    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX.
-    # That is computed from the file's own location, or is $out when the
-    # export dir was given absolute, as with iceoryx's
-    # ${CMAKE_INSTALL_LIBDIR}/cmake; either way only one of lib/ and include/
-    # is under it, so both are made absolute.
-    { find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true; } \
-        | xargs -0r sed -i -E \
+    local cmakedir pkg entry
+    for cmakedir in "$dev"/share/*/cmake; do
+        [ -d "$cmakedir" ] || continue
+        pkg=$(basename "$(dirname "$cmakedir")")
+
+        # rosidl consumers find a dependency's .idl files, and generators
+        # their templates, relative to ${pkg_DIR}; those live in out.
+        if [ -d "$out/share/$pkg" ]; then
+            for entry in "$out/share/$pkg"/*; do
+                [ -e "$entry" ] || continue
+                ln -s "$entry" "$dev/share/$pkg/$(basename "$entry")"
+            done
+        fi
+
+        # Templates that find libraries, executables and Python modules as
+        # ${pkg_DIR}/../../../lib: rosidl's generator and typesupport extras.
+        while IFS= read -r -d '' f; do
+            _splitDevSed relative-lib-walk "$f" \
+                -e "s#\\\$\{$pkg""_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g" \
+                -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g"
+        done < <(find "$cmakedir" -type f -name '*.cmake' -print0)
+    done
+
+    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX:
+    # $out when the export dir is absolute, as #641 makes it, or the file's own
+    # location for an export a package installs itself. Either way only one of
+    # lib/ and include/ is under it.
+    while IFS= read -r -d '' f; do
+        _splitDevSed import-prefix "$f" \
             -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g" \
             -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
+    done < <(find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true)
 
-    # pkg-config files moved to dev still say prefix=$out; point includedir at
-    # the headers' new home.
-    local pcdir
-    for pcdir in "$dev/lib/pkgconfig" "$dev/share/pkgconfig"; do
-        [ -d "$pcdir" ] || continue
-        find "$pcdir" -name '*.pc' -print0 \
-            | xargs -0r sed -i -E -e "s#^includedir=\\\$\{prefix\}/include#includedir=$dev/include#"
+    # pkg-config files moved to dev still say prefix=$out.
+    for d in "$dev/lib/pkgconfig" "$dev/share/pkgconfig"; do
+        [ -d "$d" ] || continue
+        while IFS= read -r -d '' f; do
+            _splitDevSed pc-includedir "$f" -e "s#^includedir=\\\$\{prefix\}/include#includedir=$dev/include#"
+        done < <(find "$d" -name '*.pc' -print0)
     done
 
     # moveToOutput prunes emptied parents, which takes out itself with it for
@@ -108,10 +134,7 @@ splitDevOutput() {
 
     # Anything left in out that names dev is a reference cycle; Nix would
     # only say which outputs are involved, so name the files.
-    local leaks
-    leaks=$(grep -rlF "$dev" "$out" || true)
-    if [ -n "$leaks" ]; then
-        echo "splitDevOutput: out still references dev in:" >&2
-        echo "$leaks" >&2
-    fi
+    while IFS= read -r f; do
+        _splitDevFixup leak "$(_splitDevRel "$f")"
+    done < <(grep -rlF "$dev" "$out" || true)
 }

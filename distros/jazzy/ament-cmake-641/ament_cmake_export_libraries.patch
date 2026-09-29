@@ -1,0 +1,53 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f499433..e0856ca 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,7 +8,8 @@ ament_package(
+   CONFIG_EXTRAS "ament_cmake_export_libraries-extras.cmake"
+ )
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )
+diff --git a/cmake/ament_cmake_export_libraries-extras.cmake.in b/cmake/ament_cmake_export_libraries-extras.cmake.in
+index bd47853..4129707 100644
+--- a/cmake/ament_cmake_export_libraries-extras.cmake.in
++++ b/cmake/ament_cmake_export_libraries-extras.cmake.in
+@@ -39,7 +39,11 @@ if(NOT _exported_libraries STREQUAL "")
+       set(_lib "NOTFOUND")
+       find_library(
+         _lib NAMES "${_library}"
+-        PATHS "${@PROJECT_NAME@_DIR}/../../../lib"
++        PATHS
++        # This is for packages that install libraries to destinations using GNUInstallDirs variables.
++        "@_AMENT_EXPORT_LIBRARIES_LIBDIR@"
++        # Historically ROS packages have installed libraries to this hardcoded lib directory.
++        "@_AMENT_EXPORT_LIBRARIES_PREFIX@/lib"
+         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
+       )
+ 
+diff --git a/cmake/ament_cmake_export_libraries_package_hook.cmake b/cmake/ament_cmake_export_libraries_package_hook.cmake
+index 6231b73..7905b2f 100644
+--- a/cmake/ament_cmake_export_libraries_package_hook.cmake
++++ b/cmake/ament_cmake_export_libraries_package_hook.cmake
+@@ -18,6 +18,16 @@
+ # as well as linker flags
+ 
+ # generate and register extra file for libraries
++include(GNUInstallDirs)
++ament_package_install_prefix(_AMENT_EXPORT_LIBRARIES_PREFIX "\${${PROJECT_NAME}_DIR}/../../..")
++# An absolute CMAKE_INSTALL_LIBDIR can be outside the install prefix, for
++# instance when libraries and CMake files are installed to separate
++# locations, so it is used as is.
++if(IS_ABSOLUTE "${CMAKE_INSTALL_LIBDIR}")
++  set(_AMENT_EXPORT_LIBRARIES_LIBDIR "${CMAKE_INSTALL_LIBDIR}")
++else()
++  set(_AMENT_EXPORT_LIBRARIES_LIBDIR "${_AMENT_EXPORT_LIBRARIES_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
++endif()
+ set(_generated_extra_file
+   "${CMAKE_CURRENT_BINARY_DIR}/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
+ configure_file(

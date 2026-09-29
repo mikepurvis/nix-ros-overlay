@@ -1,0 +1,37 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a33f1a1..553be88 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -17,7 +17,8 @@ if(BUILD_TESTING)
+   add_subdirectory(test)
+ endif()
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )
+diff --git a/cmake/ament_vendor.cmake b/cmake/ament_vendor.cmake
+index c9b963c..36db986 100644
+--- a/cmake/ament_vendor.cmake
++++ b/cmake/ament_vendor.cmake
+@@ -122,6 +122,7 @@ macro(ament_vendor TARGET_NAME)
+         ament_environment_hooks(${ament_cmake_vendor_package_DIR}/templates/vendor_package_cmake_prefix.dsv.in)
+         ament_environment_hooks(${ament_cmake_vendor_package_DIR}/templates/vendor_package_cmake_prefix.sh.in)
+       else()
++        ament_package_install_prefix(_AMENT_VENDOR_INSTALL_PREFIX "\${CMAKE_CURRENT_LIST_DIR}/../../..")
+         list(APPEND ${PROJECT_NAME}_CONFIG_EXTRAS ${ament_cmake_vendor_package_DIR}/templates/vendor_package_cmake_prefix.cmake.in)
+       endif()
+ 
+diff --git a/cmake/templates/vendor_package_cmake_prefix.cmake.in b/cmake/templates/vendor_package_cmake_prefix.cmake.in
+index 810d981..526fa5d 100644
+--- a/cmake/templates/vendor_package_cmake_prefix.cmake.in
++++ b/cmake/templates/vendor_package_cmake_prefix.cmake.in
+@@ -1,4 +1,4 @@
+ # generated from ament_cmake_vendor_package/cmake/templates/vendor_package_cmake_prefix.cmake.in
+ 
+ # External project installation prefix relative to the installation directory of this file.
+-list(PREPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_LIST_DIR}/../../../opt/@PROJECT_NAME@")
++list(PREPEND CMAKE_PREFIX_PATH "@_AMENT_VENDOR_INSTALL_PREFIX@/opt/@PROJECT_NAME@")

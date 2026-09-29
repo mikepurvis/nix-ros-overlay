@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 52ad290..a8303e0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,7 +11,8 @@ ament_package(
+   CONFIG_EXTRAS "ament_cmake_test-extras.cmake"
+ )
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )

@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3d5b867..b3a594b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -13,7 +13,8 @@ if(BUILD_TESTING)
+   add_subdirectory(test)
+ endif()
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )

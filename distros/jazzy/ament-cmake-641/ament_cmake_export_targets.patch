@@ -1,0 +1,32 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c31eeef..e9323ab 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,7 +8,8 @@ ament_package(
+   CONFIG_EXTRAS "ament_cmake_export_targets-extras.cmake"
+ )
+ 
++ament_package_config_install_dir(_config_install_dir)
+ install(
+-  DIRECTORY cmake
+-  DESTINATION share/${PROJECT_NAME}
++  DIRECTORY cmake/
++  DESTINATION ${_config_install_dir}
+ )
+diff --git a/cmake/ament_cmake_export_targets_package_hook.cmake b/cmake/ament_cmake_export_targets_package_hook.cmake
+index a500f5b..6cfa5ed 100644
+--- a/cmake/ament_cmake_export_targets_package_hook.cmake
++++ b/cmake/ament_cmake_export_targets_package_hook.cmake
+@@ -24,10 +24,11 @@ list(APPEND ${PROJECT_NAME}_CONFIG_EXTRAS "${_generated_extra_file}")
+ 
+ # install export files for targets
+ if(NOT _AMENT_CMAKE_EXPORT_TARGETS STREQUAL "")
++  ament_package_config_install_dir(_config_install_dir)
+   foreach(_target ${_AMENT_CMAKE_EXPORT_TARGETS})
+     install(
+       EXPORT "${_target}"
+-      DESTINATION share/${PROJECT_NAME}/cmake
++      DESTINATION ${_config_install_dir}
+       NAMESPACE "${_AMENT_CMAKE_EXPORT_TARGETS_NAMESPACE}"
+       FILE "${_target}Export.cmake"
+     )

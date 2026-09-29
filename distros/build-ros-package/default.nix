@@ -18,6 +18,8 @@
 # which only need out, don't carry them or the -dev outputs they refer to.
 , splitDev ? rosVersion == 2 && buildType != "ament_python"
 , preFixup ? ""
+, postPatch ? ""
+, preConfigure ? ""
 # ROS dependencies are not propagated. Instead, each package records which ROS
 # packages it exports to dependents (<build_export_depend> and friends) and
 # which it needs at runtime (<exec_depend>). Following colcon, a package is
@@ -57,6 +59,15 @@ else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepend
 
 } // lib.optionalAttrs splitDev {
   outputs = args.outputs or [ "out" "dev" ];
+  postPatch = postPatch + ''
+    source ${./split-dev-output.sh}
+    splitDevPrePatch
+  '';
+  # ament/ament_cmake#641: install CMake configs into dev. Appended here since
+  # $dev isn't known when cmakeFlags is written.
+  preConfigure = ''
+    appendToVar cmakeFlags "-DAMENT_CMAKE_CONFIG_INSTALL_PREFIX=$dev"
+  '' + preConfigure;
   preFixup = ''
     source ${./split-dev-output.sh}
     splitDevOutput
