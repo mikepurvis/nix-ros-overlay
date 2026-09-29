@@ -107,15 +107,24 @@ splitDevOutput() {
         done < <(find "$cmakedir" -type f -name '*.cmake' -print0)
     done
 
-    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX:
-    # $out when the export dir is absolute, as #641 makes it, or the file's own
-    # location for an export a package installs itself. Either way only one of
-    # lib/ and include/ is under it.
-    while IFS= read -r -d '' f; do
-        _splitDevSed import-prefix "$f" \
-            -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g" \
-            -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
-    done < <(find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true)
+    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX.
+    # With #641 the export dir is absolute and CMake sets it to $out, so only a
+    # literal include/ destination (headers since moved to dev) needs fixing.
+    # An export a package installs itself to a relative share/<pkg>/cmake
+    # computes it from the file's location, which is now dev, so lib/ does too.
+    local exportdir
+    while IFS= read -r exportdir; do
+        local libs=1
+        grep -qsF "set(_IMPORT_PREFIX \"$out\")" "$exportdir"/*.cmake && libs=
+        while IFS= read -r -d '' f; do
+            _splitDevSed import-prefix-include "$f" \
+                -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
+            if [ -n "$libs" ]; then
+                _splitDevSed import-prefix-lib "$f" \
+                    -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g"
+            fi
+        done < <(grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' "$exportdir"/*.cmake || true)
+    done < <(find "$dev" -type f -name '*.cmake' -exec grep -lE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + 2>/dev/null | xargs -r -n1 dirname | sort -u)
 
     # pkg-config files moved to dev still say prefix=$out.
     for d in "$dev/lib/pkgconfig" "$dev/share/pkgconfig"; do
