@@ -20,6 +20,10 @@
 # Like moveToOutput, but merges into a directory that already exists, as when
 # a package honours the absolute CMAKE_INSTALL_INCLUDEDIR for some headers but
 # installs others to a hardcoded include/.
+#
+# Files that baked the absolute $out path of what moved (a config that
+# honoured CMAKE_INSTALL_LIBDIR and adds $out/lib/cmake/<pkg> to
+# CMAKE_MODULE_PATH, say) are pointed at the new location.
 _mergeToDev() {
     [ -e "$out/$1" ] || return 0
     if [ -e "$dev/$1" ]; then
@@ -29,6 +33,8 @@ _mergeToDev() {
     else
         moveToOutput "$1" "$dev"
     fi
+    { grep -rlZF "$out/$1" "$dev" --include='*.cmake' --include='*.pc' || true; } \
+        | xargs -0r sed -i -e "s#$out/$1\([/\"; )]\|\$\)#$dev/$1\1#g"
 }
 
 splitDevOutput() {
@@ -44,7 +50,7 @@ splitDevOutput() {
         [ -d "$cmakedir" ] || continue
         pkgdir=$(dirname "$cmakedir")
         pkg=$(basename "$pkgdir")
-        moveToOutput "share/$pkg/cmake" "$dev"
+        _mergeToDev "share/$pkg/cmake"
 
         for entry in "$pkgdir"/*; do
             [ -e "$entry" ] || continue
