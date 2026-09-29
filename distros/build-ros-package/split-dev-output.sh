@@ -64,6 +64,14 @@ splitDevOutput() {
             -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g"
     done
 
+    # Configs installed somewhere else entirely, such as urdfdom_headers'
+    # ${CMAKE_INSTALL_LIBDIR}/urdfdom_headers/cmake.
+    local d
+    while IFS= read -r -d '' d; do
+        [ -n "$(find "$d" \( -name '*Config.cmake' -o -name '*-config.cmake' \) -print -quit)" ] || continue
+        _mergeToDev "${d#"$out"/}"
+    done < <(find "$out" -depth -type d \( -name cmake -o -name CMake \) -print0)
+
     # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX,
     # which is computed from the file's own location.
     { find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true; } \
@@ -78,4 +86,13 @@ splitDevOutput() {
         find "$pcdir" -name '*.pc' -print0 \
             | xargs -0r sed -i -E -e "s#^includedir=\\\$\{prefix\}/include#includedir=$dev/include#"
     done
+
+    # Anything left in out that names dev is a reference cycle; Nix would
+    # only say which outputs are involved, so name the files.
+    local leaks
+    leaks=$(grep -rlF "$dev" "$out" || true)
+    if [ -n "$leaks" ]; then
+        echo "splitDevOutput: out still references dev in:" >&2
+        echo "$leaks" >&2
+    fi
 }
