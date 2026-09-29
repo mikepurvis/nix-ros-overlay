@@ -33,12 +33,21 @@ _mergeToDev() {
     else
         moveToOutput "$1" "$dev"
     fi
-    { grep -rlZF "$out/$1" "$dev" --include='*.cmake' --include='*.pc' || true; } \
-        | xargs -0r sed -i -e "s#$out/$1\([/\"; )]\|\$\)#$dev/$1\1#g"
+    _movedToDev+=("$1")
+}
+
+# Run once everything has moved, since a config can name any moved directory.
+_repointMovedDirs() {
+    local d
+    for d in "${_movedToDev[@]}"; do
+        { grep -rlZF "$out/$d" "$dev" --include='*.cmake' --include='*.pc' || true; } \
+            | xargs -0r sed -i -e "s#$out/$d\([/\"; )]\|\$\)#$dev/$d\1#g"
+    done
 }
 
 splitDevOutput() {
     if [ -z "${dev:-}" ] || [ "$dev" = "$out" ]; then return 0; fi
+    _movedToDev=()
 
     _mergeToDev include
     _mergeToDev lib/cmake
@@ -71,6 +80,8 @@ splitDevOutput() {
         [ -n "$(find "$d" \( -name '*Config.cmake' -o -name '*-config.cmake' \) -print -quit)" ] || continue
         _mergeToDev "${d#"$out"/}"
     done < <(find "$out" -depth -type d \( -name cmake -o -name CMake \) -print0)
+
+    _repointMovedDirs
 
     # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX,
     # which is computed from the file's own location.
