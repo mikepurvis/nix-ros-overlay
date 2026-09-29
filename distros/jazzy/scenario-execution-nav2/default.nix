@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ scenario-execution-ros ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ scenario-execution-ros ];
+  rosBuildExportDepends = [ scenario-execution-ros ];
   rosExecDepends = [ geometry-msgs lifecycle-msgs nav2-msgs nav2-simple-commander rclpy tf2-ros ];
 
   meta = {

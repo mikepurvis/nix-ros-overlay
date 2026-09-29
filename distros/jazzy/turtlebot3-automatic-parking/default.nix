@@ -14,8 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  buildInputs = [ geometry-msgs nav-msgs sensor-msgs std-msgs ];
-  propagatedBuildInputs = [ rclpy ];
+  buildInputs = [ geometry-msgs nav-msgs rclpy sensor-msgs std-msgs ];
+  rosBuildExportDepends = [ rclpy ];
 
   meta = {
     description = "Package for turtlebot3 automatic_parking.";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros cv-bridge event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components rosbag2-cpp std-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components rosbag2-cpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  rosBuildExportDepends = [ cv-bridge event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components rosbag2-cpp std-msgs ];
 
   meta = {
     description = "frequency cam ROS/ROS2 package for event based cameras";

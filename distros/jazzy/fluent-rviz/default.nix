@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ];
+  buildInputs = [ ament-cmake-auto geometry-msgs rclcpp std-msgs visualization-msgs ];
   checkInputs = [ ament-lint-auto ouxt-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs rclcpp std-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp std-msgs visualization-msgs ];
 
   meta = {
     description = "A library which makes Rviz fluent. Powered by C++17";

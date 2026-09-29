@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ agnocast-cie-thread-configurator agnocast-components agnocastlib ament-cmake rclcpp rclcpp-components std-msgs ];
   checkInputs = [ agnocast-cie-config-msgs launch-testing-ament-cmake ];
-  propagatedBuildInputs = [ agnocast-cie-thread-configurator agnocast-components agnocastlib rclcpp rclcpp-components std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ agnocast-cie-thread-configurator agnocast-components agnocastlib rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "E2E test for Agnocast.";

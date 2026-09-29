@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ];
+  buildInputs = [ ament-cmake bond pkg-config rclcpp rclcpp-lifecycle smclib ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ bond rclcpp rclcpp-lifecycle smclib util-linux ];
+  propagatedBuildInputs = [ util-linux ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ bond rclcpp rclcpp-lifecycle smclib ];
 
   meta = {
     description = "C++ implementation of bond, a mechanism for checking when

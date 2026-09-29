@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs pluginlib prox-mpc-core proxsuite rclcpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen geometry-msgs pluginlib prox-mpc-core proxsuite rclcpp ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs pluginlib prox-mpc-core proxsuite rclcpp ];
 
   meta = {
     description = "Test-fixture prox_mpc::Model plugins for the ProxMPC stack. These

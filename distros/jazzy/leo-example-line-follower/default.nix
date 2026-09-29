@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python generate-parameter-library ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ generate-parameter-library python3Packages.numpy python3Packages.opencv4 ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ generate-parameter-library ];
   rosExecDepends = [ cv-bridge geometry-msgs rclpy sensor-msgs ];
 
   meta = {

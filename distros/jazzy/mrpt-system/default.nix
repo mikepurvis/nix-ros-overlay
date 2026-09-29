@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake python3 python3Packages.pybind11 ];
-  propagatedBuildInputs = [ mrpt-common mrpt-containers ];
+  buildInputs = [ cmake mrpt-common mrpt-containers python3 python3Packages.pybind11 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-containers ];
 
   meta = {
     description = "The MRPT C++ library mrpt_system";

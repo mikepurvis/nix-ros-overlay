@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-planning-msgs autoware-trajectory autoware-utils-geometry autoware-utils-math geometry-msgs rclcpp rclcpp-components tf2-ros ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common autoware-pyplot autoware-test-utils ];
-  propagatedBuildInputs = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-planning-msgs autoware-trajectory autoware-utils-geometry autoware-utils-math geometry-msgs rclcpp rclcpp-components tf2-ros yaml-cpp ];
+  propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-planning-msgs autoware-trajectory autoware-utils-geometry autoware-utils-math geometry-msgs rclcpp rclcpp-components tf2-ros ];
 
   meta = {
     description = "The route_handling package";

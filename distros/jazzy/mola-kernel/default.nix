@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-common mola-yaml mrpt-libmaps mrpt-libobs ];
+  buildInputs = [ cmake mola-common mola-yaml mrpt-libmaps mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mola-yaml mrpt-libmaps mrpt-libobs ];
 
   meta = {
     description = "Fundamental C++ virtual interfaces and data types for the rest of MOLA modules";

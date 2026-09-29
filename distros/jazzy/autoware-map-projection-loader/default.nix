@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-component-interface-specs autoware-lanelet2-extension autoware-map-msgs rclcpp rclcpp-components ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto autoware-lint-common launch-testing-ament-cmake ros-testing ];
-  propagatedBuildInputs = [ autoware-component-interface-specs autoware-lanelet2-extension autoware-map-msgs rclcpp rclcpp-components yaml-cpp ];
+  propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-component-interface-specs autoware-lanelet2-extension autoware-map-msgs rclcpp rclcpp-components ];
 
   meta = {
     description = "autoware_map_projection_loader package as a ROS 2 node";

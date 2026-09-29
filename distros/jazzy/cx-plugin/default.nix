@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake clips-vendor cx-utils pluginlib rclcpp-lifecycle ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clips-vendor cx-utils pluginlib rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ clips-vendor cx-utils pluginlib rclcpp-lifecycle ];
 
   meta = {
     description = "Base class for CLIPS plugins";

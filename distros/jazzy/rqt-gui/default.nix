@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ qt-gui ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ python3Packages.catkin-pkg qt-gui ];
+  propagatedBuildInputs = [ python3Packages.catkin-pkg ];
+  rosBuildExportDepends = [ qt-gui ];
   rosExecDepends = [ ament-index-python python-qt-binding rclpy ];
 
   meta = {

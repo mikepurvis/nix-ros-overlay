@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake tinyxml2-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ python3 python3Packages.black python3Packages.pybind11 qt5.qtbase qt5.qtsvg tinyxml2-vendor ];
+  propagatedBuildInputs = [ python3 python3Packages.black python3Packages.pybind11 qt5.qtbase qt5.qtsvg ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ tinyxml2-vendor ];
 
   meta = {
     description = "ROS 2 Package Creator";

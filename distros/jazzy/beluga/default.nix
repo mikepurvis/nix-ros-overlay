@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake sophus ];
   checkInputs = [ clang gbenchmark gtest ];
-  propagatedBuildInputs = [ eigen hdf5 onetbb range-v3 sophus ];
+  propagatedBuildInputs = [ eigen hdf5 onetbb range-v3 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ sophus ];
 
   meta = {
     description = "A generic MCL library for ROS2.";

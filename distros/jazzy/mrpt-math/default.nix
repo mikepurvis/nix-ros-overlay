@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen python3 python3Packages.pybind11 ];
+  buildInputs = [ cmake eigen mrpt-common mrpt-random mrpt-serialization mrpt-system nanoflann-vendor python3 python3Packages.pybind11 ];
   checkInputs = [ mrpt-io ];
-  propagatedBuildInputs = [ mrpt-common mrpt-random mrpt-serialization mrpt-system nanoflann-vendor ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-random mrpt-serialization mrpt-system nanoflann-vendor ];
 
   meta = {
     description = "The MRPT C++ library mrpt_math";

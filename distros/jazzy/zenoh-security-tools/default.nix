@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ nlohmann_json ];
+  buildInputs = [ nlohmann_json rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
+  rosBuildExportDepends = [ rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
 
   meta = {
     description = "This package generates config files to enforce security with Zenoh";

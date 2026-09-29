@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python crazyflie-interfaces rclpy ];
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ crazyflie-interfaces python3Packages.transforms3d rclpy ];
+  propagatedBuildInputs = [ python3Packages.transforms3d ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ crazyflie-interfaces rclpy ];
 
   meta = {
     description = "Simulator for the Crazyswarm2 ROS stack";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp rclcpp ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ ament-index-cpp glfw3 libGL libGLU rclcpp ];
+  propagatedBuildInputs = [ glfw3 libGL libGLU ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp rclcpp ];
   rosExecDepends = [ rclpy ros2launch std-msgs ];
 
   meta = {

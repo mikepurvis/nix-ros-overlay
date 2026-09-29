@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ freeglut glfw3 libGL libGLU mola-kernel mrpt-libgui mrpt-libmaps mrpt-libobs mrpt-libopengl ];
+  buildInputs = [ cmake mola-kernel mrpt-libgui mrpt-libmaps mrpt-libobs mrpt-libopengl ];
+  propagatedBuildInputs = [ freeglut glfw3 libGL libGLU ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-kernel mrpt-libgui mrpt-libmaps mrpt-libobs mrpt-libopengl ];
 
   meta = {
     description = "Dear ImGui (docking branch) GUI backend for MOLA";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake python3 python3Packages.pybind11 ];
+  buildInputs = [ cmake mrpt-common mrpt-math python3 python3Packages.pybind11 ];
   checkInputs = [ python3Packages.numpy ];
-  propagatedBuildInputs = [ mrpt-common mrpt-math ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-math ];
 
   meta = {
     description = "The MRPT C++ library mrpt_topography";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ];
+  buildInputs = [ ament-cmake gz-msgs-vendor gz-transport-vendor image-transport pkg-config rclcpp ros-gz-bridge sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ gz-msgs-vendor gz-transport-vendor image-transport rclcpp ros-gz-bridge sensor-msgs ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
+  rosBuildExportDepends = [ gz-msgs-vendor gz-transport-vendor image-transport rclcpp ros-gz-bridge sensor-msgs ];
 
   meta = {
     description = "Image utilities for Gazebo simulation with ROS.";

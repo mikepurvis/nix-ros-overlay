@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action ros-gz-interfaces std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros visualization-msgs yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action ros-gz-interfaces std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros visualization-msgs yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action ros-gz-interfaces std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros visualization-msgs yaml-cpp-vendor ];
   rosExecDepends = [ ros-gz-bridge ];
 
   meta = {

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ urdf ];
+  buildInputs = [ ament-cmake urdf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ urdf ];
   rosExecDepends = [ xacro ];
 
   meta = {

@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ scenario-execution-ros ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.defusedxml python3Packages.transforms3d scenario-execution-ros ];
+  propagatedBuildInputs = [ python3Packages.defusedxml python3Packages.transforms3d ];
+  rosBuildExportDepends = [ scenario-execution-ros ];
   rosExecDepends = [ py-trees rclpy simulation-interfaces ];
 
   meta = {

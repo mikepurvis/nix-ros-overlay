@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ ament-index-python launch osrf-pycommon rclpy system-modes-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python launch osrf-pycommon python3Packages.importlib-metadata python3Packages.pyyaml rclpy system-modes-msgs ];
+  propagatedBuildInputs = [ python3Packages.importlib-metadata python3Packages.pyyaml ];
+  rosBuildExportDepends = [ ament-index-python launch osrf-pycommon rclpy system-modes-msgs ];
 
   meta = {
     description = "System modes specific extensions to the launch tool, i.e. launch actions, events, and event

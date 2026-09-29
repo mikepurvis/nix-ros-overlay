@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python geometry-msgs polygon-msgs ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ geometry-msgs polygon-msgs python3Packages.shapely ];
+  propagatedBuildInputs = [ python3Packages.shapely ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ geometry-msgs polygon-msgs ];
 
   meta = {
     description = "Utilities for working with polygons, including triangulation";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake gz-gui-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ gz-gui-vendor qt5.qtquickcontrols ];
+  propagatedBuildInputs = [ qt5.qtquickcontrols ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ gz-gui-vendor ];
 
   meta = {
     description = "Turtlebot4 Gazebo Simulator GUI Plugins";

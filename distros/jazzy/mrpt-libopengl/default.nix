@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
-  propagatedBuildInputs = [ mrpt-libbase mrpt-libposes ];
+  buildInputs = [ assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm mrpt-libbase mrpt-libposes opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-libbase mrpt-libposes ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (opengl/img C++ libraries).

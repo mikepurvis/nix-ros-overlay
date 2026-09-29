@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ];
+  buildInputs = [ ament-cmake ament-cmake-auto geometry-msgs rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs wiimote-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ bluez cwiid geometry-msgs rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs wiimote-msgs ];
+  propagatedBuildInputs = [ bluez cwiid ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs wiimote-msgs ];
 
   meta = {
     description = "The wiimote package allows ROS nodes to communicate with a Nintendo Wiimote

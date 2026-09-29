@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake easynav-common easynav-core easynav-costmap-common nav-msgs pluginlib ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ easynav-common easynav-core easynav-costmap-common nav-msgs pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ easynav-common easynav-core easynav-costmap-common nav-msgs pluginlib ];
 
   meta = {
     description = "Easy Navigation: Costmap planner package.";

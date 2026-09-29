@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ];
-  propagatedBuildInputs = [ camera-info-manager diagnostic-msgs diagnostic-updater image-transport message-filters rclcpp rclcpp-components sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake-auto camera-info-manager diagnostic-msgs diagnostic-updater image-transport message-filters rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ camera-info-manager diagnostic-msgs diagnostic-updater image-transport message-filters rclcpp rclcpp-components sensor-msgs std-msgs ];
   rosExecDepends = [ image-proc stereo-image-proc ];
 
   meta = {

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros apriltag-detector apriltag-mit apriltag-msgs pluginlib rclcpp rclcpp-components ros-environment sensor-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ apriltag-detector apriltag-mit apriltag-msgs pluginlib rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ros-environment ];
+  rosBuildExportDepends = [ apriltag-detector apriltag-mit apriltag-msgs pluginlib rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "ROS package for apriltag detection with MIT detector";

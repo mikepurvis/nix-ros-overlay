@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake hardware-interface pluginlib rclcpp rclcpp-lifecycle robstride-driver ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle robstride-driver ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle robstride-driver ];
   rosExecDepends = [ xacro ];
 
   meta = {

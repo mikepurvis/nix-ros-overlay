@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ iceoryx-hoofs iceoryx-posh ncurses ];
+  buildInputs = [ cmake iceoryx-hoofs iceoryx-posh ];
+  propagatedBuildInputs = [ ncurses ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ iceoryx-hoofs iceoryx-posh ];
 
   meta = {
     description = "Eclipse iceoryx inter-process-communication (IPC) middleware introspection client";

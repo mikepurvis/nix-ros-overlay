@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mrpt-libgui mrpt-libmaps mrpt-libnav mrpt-libtclap mvsim ];
+  buildInputs = [ cmake mrpt-libgui mrpt-libmaps mrpt-libnav mrpt-libtclap mvsim ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-libgui mrpt-libmaps mrpt-libnav mrpt-libtclap mvsim ];
 
   meta = {
     description = "Path planning and navigation algorithms for robots/vehicles moving on planar environments. This library builds upon mrpt-nav and the theory behind PTGs to generate libraries of \"motion primitives\" for vehicles with arbitrary shape and realistic kinematics and dynamics.";

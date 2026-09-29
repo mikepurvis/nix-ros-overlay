@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-common mola-kernel mrpt-libmaps mrpt-libposes ];
+  buildInputs = [ cmake mola-common mola-kernel mrpt-libmaps mrpt-libposes ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mola-kernel mrpt-libmaps mrpt-libposes ];
 
   meta = {
     description = "Offline RawDataSource from MulRan datasets";

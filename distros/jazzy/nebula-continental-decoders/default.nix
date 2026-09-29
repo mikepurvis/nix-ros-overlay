@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
-  propagatedBuildInputs = [ boost continental-msgs diagnostic-msgs nebula-continental-common nebula-core-common nebula-msgs rclcpp ];
+  buildInputs = [ autoware-cmake continental-msgs diagnostic-msgs nebula-continental-common nebula-core-common nebula-msgs rclcpp ros-environment ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ continental-msgs diagnostic-msgs nebula-continental-common nebula-core-common nebula-msgs rclcpp ];
 
   meta = {
     description = "Nebula Continental Decoders Library";

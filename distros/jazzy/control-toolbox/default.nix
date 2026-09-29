@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
+  buildInputs = [ ament-cmake backward-ros control-msgs filters generate-parameter-library geometry-msgs pluginlib rclcpp rcutils realtime-tools ros2-control-cmake rsl tf2 tf2-geometry-msgs tf2-ros ];
   checkInputs = [ ament-cmake-gmock rclcpp-lifecycle ];
-  propagatedBuildInputs = [ backward-ros control-msgs eigen filters fmt generate-parameter-library geometry-msgs pluginlib rclcpp rcutils realtime-tools rsl tf2 tf2-geometry-msgs tf2-ros tl-expected-nixpkgs ];
+  propagatedBuildInputs = [ eigen fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros control-msgs filters generate-parameter-library geometry-msgs pluginlib rclcpp rcutils realtime-tools rsl tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "The control toolbox contains modules that are useful across all controllers.";

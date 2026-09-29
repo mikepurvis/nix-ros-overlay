@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ ament-index-python nodl-conformance nodl-observe nodl-schema rclpy ros2cli rosgraph-msgs rosidl-runtime-py ];
   checkInputs = [ builtin-interfaces python3Packages.pytest rcl-interfaces std-msgs ];
-  propagatedBuildInputs = [ ament-index-python nodl-conformance nodl-observe nodl-schema rclpy ros2cli rosgraph-msgs rosidl-runtime-py ];
+  rosBuildExportDepends = [ ament-index-python nodl-conformance nodl-observe nodl-schema rclpy ros2cli rosgraph-msgs rosidl-runtime-py ];
 
   meta = {
     description = "ros2cli command entrypoint for NoDL.";

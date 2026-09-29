@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ chomp-motion-planner moveit-common moveit-core pluginlib rclcpp ];
+  buildInputs = [ ament-cmake chomp-motion-planner moveit-common moveit-core pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ chomp-motion-planner moveit-common moveit-core pluginlib rclcpp ];
 
   meta = {
     description = "The interface for using CHOMP within MoveIt";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h cxxopts ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h cras-cpp-common cxxopts rclcpp rclcpp-components std-msgs topic-tools ];
   checkInputs = [ cras-lint ];
-  propagatedBuildInputs = [ cras-cpp-common rclcpp rclcpp-components std-msgs topic-tools ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ cras-cpp-common rclcpp rclcpp-components std-msgs topic-tools ];
 
   meta = {
     description = "Nodes and components for safe and efficient manipulation with topics";

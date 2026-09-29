@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
+  buildInputs = [ ament-cmake backward-ros control-msgs controller-interface generate-parameter-library pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface ros2-control-test-assets ];
-  propagatedBuildInputs = [ backward-ros control-msgs controller-interface generate-parameter-library pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros control-msgs controller-interface generate-parameter-library pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
 
   meta = {
     description = "Broadcaster to publish the requested hardware interface states";

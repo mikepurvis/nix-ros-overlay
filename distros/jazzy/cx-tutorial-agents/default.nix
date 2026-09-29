@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cx-bringup ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cx-bringup ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cx-bringup ];
 
   meta = {
     description = "Files used in the agent tutorials";

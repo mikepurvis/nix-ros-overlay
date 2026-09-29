@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rclcpp-lifecycle rcutils sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rclcpp-lifecycle rcutils sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rclcpp-lifecycle rcutils sensor-msgs ];
   rosExecDepends = [ laser-filters ];
 
   meta = {

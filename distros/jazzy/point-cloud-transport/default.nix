@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros message-filters pluginlib rclcpp rclcpp-components rcpputils rmw sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ message-filters pluginlib rclcpp rclcpp-components rcpputils rmw sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  rosBuildExportDepends = [ message-filters pluginlib rclcpp rclcpp-components rcpputils rmw sensor-msgs ];
 
   meta = {
     description = "Support for transporting PointCloud2 messages in compressed format and plugin interface for implementing additional PointCloud2 transports.";

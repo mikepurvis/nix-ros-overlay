@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros pkg-config ];
+  buildInputs = [ ament-cmake-ros async-web-server-cpp cv-bridge image-transport pkg-config pluginlib rclcpp rclcpp-components rmw sensor-msgs ];
   checkInputs = [ ament-cmake-clang-tidy ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ros-environment ];
-  propagatedBuildInputs = [ async-web-server-cpp boost cv-bridge ffmpeg image-transport opencv opencv.cxxdev pluginlib rclcpp rclcpp-components rmw sensor-msgs ];
+  propagatedBuildInputs = [ boost ffmpeg opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-ros pkg-config ];
+  rosBuildExportDepends = [ async-web-server-cpp cv-bridge image-transport pluginlib rclcpp rclcpp-components rmw sensor-msgs ];
 
   meta = {
     description = "HTTP Streaming of ROS Image Topics in Multiple Formats";

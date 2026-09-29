@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake pcl-conversions pcl-ros rclcpp sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ pcl pcl-conversions pcl-ros rclcpp sensor-msgs ];
+  propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ pcl-conversions pcl-ros rclcpp sensor-msgs ];
 
   meta = {
     description = "Subscribe to a PointCloud2 topic, reconstruct a mesh, and save to OBJ/PLY using PCL.";

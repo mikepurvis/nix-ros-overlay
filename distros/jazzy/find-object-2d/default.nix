@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces cv-bridge geometry-msgs image-transport message-filters qt5.qtbase rclcpp sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros zlib ];
+  buildInputs = [ ament-cmake builtin-interfaces cv-bridge geometry-msgs image-transport message-filters rclcpp ros-environment rosidl-default-generators sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
+  propagatedBuildInputs = [ qt5.qtbase zlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces cv-bridge geometry-msgs image-transport message-filters rclcpp sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

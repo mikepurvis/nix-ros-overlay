@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-common mrpt-libposes ];
+  buildInputs = [ cmake mola-common mrpt-libposes ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mrpt-libposes ];
 
   meta = {
     description = "CLI tools to manipulate trajectory files as a complement to the evo package";

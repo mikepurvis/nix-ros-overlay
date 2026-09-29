@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen eigen3-cmake-module ];
+  buildInputs = [ ament-cmake eigen eigen3-cmake-module geometry-msgs rclcpp std-msgs tf2 vrpn ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs rclcpp std-msgs tf2 vrpn ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp std-msgs tf2 vrpn ];
 
   meta = {
     description = "ROS2 <a href=\"https://github.com/vrpn/vrpn\">VRPN</a>

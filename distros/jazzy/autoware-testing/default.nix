@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ament-cmake-lint-cmake autoware-cmake ];
   checkInputs = [ ament-cmake-core ament-copyright ament-flake8 ament-pep257 ros-testing ];
-  propagatedBuildInputs = [ ros-testing ];
-  nativeBuildInputs = [ ament-cmake-auto ament-cmake-lint-cmake autoware-cmake ros-testing ];
+  nativeBuildInputs = [ ament-cmake-auto ament-cmake-lint-cmake autoware-cmake ];
+  rosBuildExportDepends = [ ros-testing ];
 
   meta = {
     description = "Tools for handling standard tests based on ros_testing";

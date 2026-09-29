@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros cv-bridge event-camera-codecs event-camera-msgs fibar-lib image-transport rclcpp rclcpp-components rosbag2-cpp rosbag2-transport sensor-msgs ];
   checkInputs = [ ament-cmake-black ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge event-camera-codecs event-camera-msgs fibar-lib image-transport opencv opencv.cxxdev rclcpp rclcpp-components rosbag2-cpp rosbag2-transport sensor-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  rosBuildExportDepends = [ cv-bridge event-camera-codecs event-camera-msgs fibar-lib image-transport rclcpp rclcpp-components rosbag2-cpp rosbag2-transport sensor-msgs ];
 
   meta = {
     description = "ROS package for synchronized image reconstruction from event frames";

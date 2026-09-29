@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake git ];
-  propagatedBuildInputs = [ ament-index-cpp glfw3 rclcpp ];
+  buildInputs = [ ament-cmake ament-index-cpp git rclcpp ];
+  propagatedBuildInputs = [ glfw3 ];
   nativeBuildInputs = [ ament-cmake git ];
+  rosBuildExportDepends = [ ament-index-cpp rclcpp ];
 
   meta = {
     description = "Standalone GUI tool for editing node parameters at runtime.";

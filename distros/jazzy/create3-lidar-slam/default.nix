@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ irobot-create-msgs launch-ros ];
+  buildInputs = [ ament-cmake irobot-create-msgs launch-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ irobot-create-msgs launch-ros ];
   rosExecDepends = [ rplidar-ros slam-toolbox ];
 
   meta = {

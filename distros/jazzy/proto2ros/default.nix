@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python clang ];
+  buildInputs = [ ament-cmake ament-cmake-python builtin-interfaces clang rclcpp rosidl-default-generators std-msgs ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ ament-cmake-mypy builtin-interfaces protobuf python3Packages.inflection python3Packages.jinja2 python3Packages.multipledispatch python3Packages.networkx python3Packages.numpy python3Packages.protobuf python3Packages.pyyaml rclcpp rosidl-default-generators std-msgs ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-mypy ament-cmake-python rosidl-default-generators ];
+  propagatedBuildInputs = [ protobuf python3Packages.inflection python3Packages.jinja2 python3Packages.multipledispatch python3Packages.networkx python3Packages.numpy python3Packages.protobuf python3Packages.pyyaml ];
+  nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  rosBuildExportDepends = [ ament-cmake-mypy builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
   rosExecDepends = [ rclpy rosidl-adapter rosidl-default-runtime ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ros-testing ];
+  buildInputs = [ autoware-cmake diagnostic-msgs diagnostic-updater nebula-core-common rclcpp ros-environment ros-testing rosbag2-storage ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ];
-  propagatedBuildInputs = [ boost diagnostic-msgs diagnostic-updater nebula-core-common rclcpp rosbag2-storage ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ros-testing ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common rclcpp rosbag2-storage ];
 
   meta = {
     description = "Nebula ROS Base Libraries";

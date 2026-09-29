@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ];
+  buildInputs = [ ament-cmake pkg-config rclcpp rclcpp-components rtcm-msgs ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-uncrustify ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ curl rclcpp rclcpp-components rtcm-msgs ];
+  propagatedBuildInputs = [ curl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components rtcm-msgs ];
   rosExecDepends = [ std-msgs ];
 
   meta = {

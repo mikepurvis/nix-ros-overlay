@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-ros can-msgs diagnostic-msgs diagnostic-updater rclcpp rclcpp-components ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ can-msgs diagnostic-msgs diagnostic-updater fmt linuxHeaders rclcpp rclcpp-components ];
+  propagatedBuildInputs = [ fmt linuxHeaders ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs diagnostic-msgs diagnostic-updater rclcpp rclcpp-components ];
 
   meta = {
     description = "Simple wrapper around SocketCAN";

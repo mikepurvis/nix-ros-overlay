@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ros-environment ];
-  propagatedBuildInputs = [ nav2-costmap-2d pluginlib rclcpp visualization-msgs ];
+  buildInputs = [ ament-cmake-ros nav2-costmap-2d pluginlib rclcpp ros-environment visualization-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ nav2-costmap-2d pluginlib rclcpp visualization-msgs ];
 
   meta = {
     description = "RTAB-Map's costmap plugins.";

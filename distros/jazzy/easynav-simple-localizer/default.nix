@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake easynav-common easynav-core easynav-localizer easynav-sensors easynav-simple-common geometry-msgs nav-msgs pluginlib tf2 tf2-geometry-msgs tf2-ros ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp rclcpp-lifecycle std-srvs ];
-  propagatedBuildInputs = [ easynav-common easynav-core easynav-localizer easynav-sensors easynav-simple-common eigen geometry-msgs nav-msgs pluginlib tf2 tf2-geometry-msgs tf2-ros ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ easynav-common easynav-core easynav-localizer easynav-sensors easynav-simple-common geometry-msgs nav-msgs pluginlib tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: Simple Localizer package.";

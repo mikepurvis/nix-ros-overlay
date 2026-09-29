@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cie-config-msgs rclcpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cie-config-msgs rclcpp yaml-cpp ];
+  propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cie-config-msgs rclcpp ];
 
   meta = {
     description = "A dedicated node that configures the scheduling attributes of each thread in callback_isolated_executor.";

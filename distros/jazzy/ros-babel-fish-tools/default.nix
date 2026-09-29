@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp ros-babel-fish yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gtest geometry-msgs ros-babel-fish-test-msgs std-msgs ];
-  propagatedBuildInputs = [ rclcpp ros-babel-fish yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp ros-babel-fish yaml-cpp-vendor ];
 
   meta = {
     description = "Tooling for ROS 2 built on ros_babel_fish.

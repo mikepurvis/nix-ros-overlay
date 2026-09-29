@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-errors ecl-exceptions ecl-license ecl-time-lite ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ecl-build ecl-config ecl-errors ecl-exceptions ecl-license ecl-time-lite ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ ecl-build ecl-config ecl-errors ecl-exceptions ecl-license ecl-time-lite ];
 
   meta = {
     description = "Timing utilities are very dependent on the system api provided for their use.

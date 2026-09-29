@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake doxygen git python3Packages.lxml ];
-  propagatedBuildInputs = [ assimp boost eigen eigenpy octomap python3 python3Packages.numpy ];
+  buildInputs = [ cmake doxygen eigenpy git python3Packages.lxml ];
+  propagatedBuildInputs = [ assimp boost eigen octomap python3 python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ eigenpy ];
 
   meta = {
     description = "An extension of the Flexible Collision Library.";

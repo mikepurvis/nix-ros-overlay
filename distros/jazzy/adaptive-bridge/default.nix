@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ rclpy sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.pyyaml rclpy sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosBuildExportDepends = [ rclpy sensor-msgs std-msgs ];
 
   meta = {
     description = "Adaptive Bridge is a ROS 2 middleware-level proxy that mitigates the

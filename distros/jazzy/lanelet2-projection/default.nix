@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core lanelet2-io mrt-cmake-modules ];
   checkInputs = [ gtest ];
-  propagatedBuildInputs = [ geographiclib lanelet2-io mrt-cmake-modules ];
+  propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosBuildExportDepends = [ lanelet2-io mrt-cmake-modules ];
 
   meta = {
     description = "Lanelet2 projection library for lat/lon to local x/y conversion";

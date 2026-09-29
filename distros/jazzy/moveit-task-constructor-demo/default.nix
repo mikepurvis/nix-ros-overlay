@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ generate-parameter-library moveit-core moveit-ros-planning-interface moveit-task-constructor-core ];
+  buildInputs = [ ament-cmake generate-parameter-library moveit-core moveit-ros-planning-interface moveit-task-constructor-core ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ generate-parameter-library moveit-core moveit-ros-planning-interface moveit-task-constructor-core ];
   rosExecDepends = [ controller-manager moveit-configs-utils moveit-resources-panda-moveit-config moveit-task-constructor-capabilities moveit-task-constructor-visualization py-binding-tools ];
 
   meta = {

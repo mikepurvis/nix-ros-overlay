@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake dataspeed-can-msg-filters ];
+  buildInputs = [ ament-cmake can-msgs dataspeed-can-msg-filters ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ can-msgs ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   rosExecDepends = [ dataspeed-can-usb ];
 
   meta = {

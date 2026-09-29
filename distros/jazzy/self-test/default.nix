@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment ];
+  buildInputs = [ ament-cmake diagnostic-msgs diagnostic-updater rclcpp ros-environment ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
 
   meta = {
     description = "Self-test tools for diagnostics.";

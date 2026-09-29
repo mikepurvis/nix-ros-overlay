@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ forward-command-controller generate-parameter-library kuka-drivers-core pluginlib ];
+  buildInputs = [ ament-cmake forward-command-controller generate-parameter-library kuka-drivers-core pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ forward-command-controller generate-parameter-library kuka-drivers-core pluginlib ];
 
   meta = {
     description = "Controller for modifying impedance (stiffness and damping) interfaces of a joint group";

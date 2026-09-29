@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cheese-interfaces cv-bridge rclcpp sensor-msgs std-msgs std-srvs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cheese-interfaces cv-bridge nlohmann_json opencv opencv.cxxdev rclcpp sensor-msgs std-msgs std-srvs ];
+  propagatedBuildInputs = [ nlohmann_json opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cheese-interfaces cv-bridge rclcpp sensor-msgs std-msgs std-srvs ];
   rosExecDepends = [ launch launch-ros ];
 
   meta = {

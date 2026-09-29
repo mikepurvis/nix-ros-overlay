@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake-auto builtin-interfaces camera-info-manager cv-bridge image-transport image-transport-plugins rclcpp rclcpp-components ros-environment rosidl-default-generators sensor-msgs std-msgs std-srvs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces camera-info-manager cv-bridge ffmpeg image-transport image-transport-plugins rclcpp rclcpp-components sensor-msgs std-msgs std-srvs v4l-utils ];
+  propagatedBuildInputs = [ ffmpeg v4l-utils ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces camera-info-manager cv-bridge image-transport image-transport-plugins rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

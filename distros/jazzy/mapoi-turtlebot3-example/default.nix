@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action std-msgs std-srvs tf2 tf2-geometry-msgs yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common python3Packages.pyyaml ];
-  propagatedBuildInputs = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action std-msgs std-srvs tf2 tf2-geometry-msgs yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action std-msgs std-srvs tf2 tf2-geometry-msgs yaml-cpp-vendor ];
   rosExecDepends = [ mapoi-rviz-plugins mapoi-server mapoi-webui ros-gz-sim turtlebot3 turtlebot3-gazebo turtlebot3-navigation2 ];
 
   meta = {

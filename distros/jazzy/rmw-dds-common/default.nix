@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake rcpputils rcutils rmw rosidl-default-generators rosidl-runtime-c rosidl-runtime-cpp ];
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common osrf-testing-tools-cpp performance-test-fixture ];
-  propagatedBuildInputs = [ rcpputils rcutils rmw rosidl-runtime-c rosidl-runtime-cpp ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ rcpputils rcutils rmw rosidl-runtime-c rosidl-runtime-cpp ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

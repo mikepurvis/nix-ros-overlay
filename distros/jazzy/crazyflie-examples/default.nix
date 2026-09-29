@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python crazyflie-py geometry-msgs nav-msgs rclpy sensor-msgs tf2-ros ];
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ crazyflie-py geometry-msgs nav-msgs rclpy sensor-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ crazyflie-py geometry-msgs nav-msgs rclpy sensor-msgs tf2-ros ];
   rosExecDepends = [ tf-transformations ];
 
   meta = {

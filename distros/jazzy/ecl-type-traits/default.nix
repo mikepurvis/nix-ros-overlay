@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-license ecl-mpl ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ecl-config ecl-license ecl-mpl ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ ecl-config ecl-license ecl-mpl ];
 
   meta = {
     description = "Extends c++ type traits and implements a few more to boot.";

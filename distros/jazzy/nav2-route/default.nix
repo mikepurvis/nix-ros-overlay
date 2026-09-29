@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake nav2-common ];
+  buildInputs = [ ament-cmake angles backward-ros geometry-msgs nav-msgs nav2-common nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp rclcpp-lifecycle std-msgs tf2 tf2-ros visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing ];
-  propagatedBuildInputs = [ angles backward-ros geometry-msgs nanoflann nav-msgs nav2-core nav2-costmap-2d nav2-msgs nav2-util nlohmann_json pluginlib rclcpp rclcpp-lifecycle std-msgs tf2 tf2-ros visualization-msgs ];
+  propagatedBuildInputs = [ nanoflann nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ angles backward-ros geometry-msgs nav-msgs nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp rclcpp-lifecycle std-msgs tf2 tf2-ros visualization-msgs ];
 
   meta = {
     description = "A Route Graph planner to compliment the Planner Server";

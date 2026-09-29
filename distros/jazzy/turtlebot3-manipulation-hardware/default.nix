@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ dynamixel-sdk hardware-interface pluginlib rclcpp ];
+  buildInputs = [ ament-cmake dynamixel-sdk hardware-interface pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ dynamixel-sdk hardware-interface pluginlib rclcpp ];
 
   meta = {
     description = "ROS 2 package for turtlebot3_manipulation_hardware";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake diagnostic-updater geometry-msgs rclcpp std-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ diagnostic-updater geometry-msgs rclcpp std-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ diagnostic-updater geometry-msgs rclcpp std-msgs visualization-msgs ];
   rosExecDepends = [ twist-mux-msgs ];
 
   meta = {

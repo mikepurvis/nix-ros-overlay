@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake eigen-stl-containers eigen3-cmake-module geometry-msgs interactive-markers pluginlib rclcpp rclcpp-components rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs shape-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs trajectory-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen eigen-stl-containers eigen3-cmake-module geometry-msgs interactive-markers pluginlib qt5or6.qtbase rclcpp rclcpp-components rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs shape-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs trajectory-msgs visualization-msgs ];
+  propagatedBuildInputs = [ eigen qt5or6.qtbase ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen-stl-containers eigen3-cmake-module geometry-msgs interactive-markers pluginlib rclcpp rclcpp-components rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs shape-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs trajectory-msgs visualization-msgs ];
   rosExecDepends = [ ament-index-python launch launch-ros rviz2 ];
 
   meta = {

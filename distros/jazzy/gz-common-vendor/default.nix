@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake pkg-config ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake gz-cmake-vendor gz-math-vendor gz-utils-vendor pkg-config ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ assimp ffmpeg freeimage gdal gts gz-cmake-vendor gz-math-vendor gz-utils-vendor tinyxml-2 util-linux ];
+  propagatedBuildInputs = [ assimp ffmpeg freeimage gdal gts tinyxml-2 util-linux ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake pkg-config ];
+  rosBuildExportDepends = [ gz-cmake-vendor gz-math-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-common5 5.9.0

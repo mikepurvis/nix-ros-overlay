@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ kuka-external-control-sdk ];
+  buildInputs = [ cmake kuka-external-control-sdk ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ kuka-external-control-sdk ];
   rosExecDepends = [ ament-cmake ];
 
   meta = {

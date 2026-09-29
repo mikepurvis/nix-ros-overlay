@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros curl dpkg python3Packages.distro ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-ros camera-info-manager curl diagnostic-updater dpkg flir-camera-msgs image-transport python3Packages.distro rclcpp rclcpp-components ros-environment sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ camera-info-manager diagnostic-updater ffmpeg flir-camera-msgs image-transport libusb1 llvmPackages.openmp rclcpp rclcpp-components sensor-msgs std-msgs yaml-cpp ];
+  propagatedBuildInputs = [ ffmpeg libusb1 llvmPackages.openmp yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
+  rosBuildExportDepends = [ camera-info-manager diagnostic-updater flir-camera-msgs image-transport rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS2 driver for flir spinnaker sdk";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h fmt pal-statistics ros2-control-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h fmt hardware-interface pal-statistics rclcpp-lifecycle realtime-tools ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock geometry-msgs sensor-msgs std-msgs ];
-  propagatedBuildInputs = [ hardware-interface rclcpp-lifecycle realtime-tools ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ hardware-interface rclcpp-lifecycle realtime-tools ];
 
   meta = {
     description = "Base classes for controllers and syntax cookies for supporting common sensor types in controllers and broadcasters";

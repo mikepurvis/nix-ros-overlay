@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs libspnav libx11 rclcpp rclcpp-components sensor-msgs spacenavd ];
+  propagatedBuildInputs = [ libspnav libx11 spacenavd ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "ROS interface to the 3Dconnexion SpaceNavigator 6DOF joystick.";

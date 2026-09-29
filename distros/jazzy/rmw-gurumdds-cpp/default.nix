@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros rosidl-cmake rosidl-generator-dds-idl ];
+  buildInputs = [ ament-cmake-ros gurumdds-cmake-module rcutils rmw rmw-dds-common rosidl-cmake rosidl-generator-dds-idl rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ _unresolved_gurumdds-3.2 gurumdds-cmake-module rcutils rmw rmw-dds-common rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
+  propagatedBuildInputs = [ _unresolved_gurumdds-3.2 ];
   nativeBuildInputs = [ ament-cmake-ros rosidl-cmake ];
+  rosBuildExportDepends = [ gurumdds-cmake-module rcutils rmw rmw-dds-common rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
 
   meta = {
     description = "Implement the ROS middleware interface using GurumNetworks GurumDDS static code generation in C++.";

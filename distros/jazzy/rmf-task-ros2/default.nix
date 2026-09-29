@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen ];
+  buildInputs = [ ament-cmake backward-ros eigen nlohmann-json-schema-validator-vendor rclcpp rmf-api-msgs rmf-task-msgs rmf-traffic rmf-traffic-ros2 rmf-utils rmf-websocket ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ backward-ros nlohmann-json-schema-validator-vendor nlohmann_json rclcpp rmf-api-msgs rmf-task-msgs rmf-traffic rmf-traffic-ros2 rmf-utils rmf-websocket ];
+  propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros nlohmann-json-schema-validator-vendor rclcpp rmf-api-msgs rmf-task-msgs rmf-traffic rmf-traffic-ros2 rmf-utils rmf-websocket ];
 
   meta = {
     description = "A package managing the dispatching of tasks in RMF system.";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp sensor-msgs std-msgs std-srvs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp sensor-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Bridge node that translates the firmware's MAVLink wire protocol into the

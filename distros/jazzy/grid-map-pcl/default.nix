@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake grid-map-cmake-helpers ];
+  buildInputs = [ ament-cmake grid-map-cmake-helpers grid-map-core grid-map-msgs grid-map-ros rclcpp rcutils ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ grid-map-core grid-map-msgs grid-map-ros pcl rclcpp rcutils yaml-cpp ];
+  propagatedBuildInputs = [ pcl yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ grid-map-core grid-map-msgs grid-map-ros rclcpp rcutils ];
 
   meta = {
     description = "Conversions between grid maps and Point Cloud Library (PCL) types.";

@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  checkInputs = [ ament-copyright ament-flake8 ament-pep257 demo-nodes-py launch-ros python3Packages.pytest ros2launch sros2 ];
-  propagatedBuildInputs = [ ament-index-python nodl ros2launch sros2 ];
+  buildInputs = [ ament-index-python nodl ros2launch sros2 ];
+  checkInputs = [ ament-copyright ament-flake8 ament-pep257 demo-nodes-py launch-ros python3Packages.pytest ];
+  rosBuildExportDepends = [ ament-index-python nodl ros2launch sros2 ];
 
   meta = {
     description = "Security extensions for ros2 launch";

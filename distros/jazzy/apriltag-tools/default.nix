@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment ];
+  buildInputs = [ ament-cmake apriltag-detector apriltag-draw apriltag-msgs rclcpp ros-environment rosbag2-transport ];
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ apriltag-detector apriltag-draw apriltag-msgs rclcpp rosbag2-transport ];
   nativeBuildInputs = [ ament-cmake ros-environment ];
+  rosBuildExportDepends = [ apriltag-detector apriltag-draw apriltag-msgs rclcpp rosbag2-transport ];
 
   meta = {
     description = "misc tools for working with apriltags under ROS2";

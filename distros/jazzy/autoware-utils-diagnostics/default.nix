@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake diagnostic-msgs diagnostic-updater rclcpp ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
 
   meta = {
     description = "The autoware_utils_diagnostics package";

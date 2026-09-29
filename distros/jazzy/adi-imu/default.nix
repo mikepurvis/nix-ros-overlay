@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rclcpp rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-xmllint ament-copyright ament-lint-auto ament-pep257 ];
-  propagatedBuildInputs = [ ament-cmake builtin-interfaces geometry-msgs libiio rclcpp sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ libiio ];
+  rosBuildExportDepends = [ ament-cmake builtin-interfaces geometry-msgs rclcpp sensor-msgs std-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

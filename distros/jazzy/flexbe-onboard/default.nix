@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ flexbe-core flexbe-msgs flexbe-states launch-ros rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 launch-testing python3Packages.pytest ];
-  propagatedBuildInputs = [ flexbe-core flexbe-msgs flexbe-states launch-ros rclpy ];
+  rosBuildExportDepends = [ flexbe-core flexbe-msgs flexbe-states launch-ros rclpy ];
 
   meta = {
     description = "flexbe_onboard implements the robot-side of the behavior engine from where all behaviors are started.";

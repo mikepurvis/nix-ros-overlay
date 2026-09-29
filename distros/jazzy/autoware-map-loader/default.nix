@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-component-interface-specs autoware-geography-utils autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs geometry-msgs pcl-conversions rclcpp rclcpp-components visualization-msgs ];
   checkInputs = [ ament-cmake-gmock ament-index-cpp ament-lint-auto autoware-lint-common launch-testing-ament-cmake ros-testing ];
-  propagatedBuildInputs = [ autoware-component-interface-specs autoware-geography-utils autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs fmt geometry-msgs pcl pcl-conversions rclcpp rclcpp-components visualization-msgs yaml-cpp ];
+  propagatedBuildInputs = [ fmt pcl yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-component-interface-specs autoware-geography-utils autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs geometry-msgs pcl-conversions rclcpp rclcpp-components visualization-msgs ];
 
   meta = {
     description = "The autoware_map_loader package";

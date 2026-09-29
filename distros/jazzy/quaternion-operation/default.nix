@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-auto geometry-msgs rclcpp tf2-ros ];
   checkInputs = [ ament-cmake-gtest ouxt-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-auto eigen geometry-msgs rclcpp tf2-ros ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-auto geometry-msgs rclcpp tf2-ros ];
 
   meta = {
     description = "The quaternion_operation package";

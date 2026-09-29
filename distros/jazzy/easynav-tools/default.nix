@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ geometry-msgs rclpy rosidl-runtime-py ];
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs python3Packages.platformdirs python3Packages.rich python3Packages.typing-extensions rclpy rosidl-runtime-py ];
+  propagatedBuildInputs = [ python3Packages.platformdirs python3Packages.rich python3Packages.typing-extensions ];
+  rosBuildExportDepends = [ geometry-msgs rclpy rosidl-runtime-py ];
   rosExecDepends = [ easynav-interfaces easynav-support-py ros2cli ];
 
   meta = {

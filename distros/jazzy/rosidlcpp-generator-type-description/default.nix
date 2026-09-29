@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-cmake-core fmt nlohmann_json rcutils rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-core ];
+  buildInputs = [ ament-cmake rcutils rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
+  propagatedBuildInputs = [ fmt nlohmann_json ];
+  nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-core rcutils rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate hashes and descriptions of ROS 2 interface types, per REP-2011.";

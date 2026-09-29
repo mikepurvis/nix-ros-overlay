@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
-  checkInputs = [ ament-cmake-gtest ament-cmake-ros ament-index-cpp ament-lint-auto autoware-lint-common autoware-test-utils autoware-testing ];
-  propagatedBuildInputs = [ autoware-control-msgs autoware-motion-utils autoware-planning-msgs autoware-test-utils autoware-utils-rclcpp autoware-vehicle-info-utils rclcpp rclcpp-components ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-control-msgs autoware-motion-utils autoware-planning-msgs autoware-test-utils autoware-utils-rclcpp autoware-vehicle-info-utils rclcpp rclcpp-components ];
+  checkInputs = [ ament-cmake-gtest ament-cmake-ros ament-index-cpp ament-lint-auto autoware-lint-common autoware-testing ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-control-msgs autoware-motion-utils autoware-planning-msgs autoware-test-utils autoware-utils-rclcpp autoware-vehicle-info-utils rclcpp rclcpp-components ];
 
   meta = {
     description = "The autoware_simple_pure_pursuit package";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros fuse-constraints fuse-core fuse-models fuse-variables nav-msgs rclcpp sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ fuse-constraints fuse-core fuse-models fuse-variables nav-msgs rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ fuse-constraints fuse-core fuse-models fuse-variables nav-msgs rclcpp sensor-msgs ];
   rosExecDepends = [ fuse-optimizers fuse-publishers rviz2 ];
 
   meta = {

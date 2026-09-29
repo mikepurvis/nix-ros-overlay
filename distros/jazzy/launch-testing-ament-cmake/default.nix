@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-copyright launch-testing python-cmake-module ];
-  propagatedBuildInputs = [ ament-cmake-test launch-testing python-cmake-module ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-test launch-testing python-cmake-module ];
+  nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-test launch-testing python-cmake-module ];
 
   meta = {
     description = "A package providing cmake functions for running launch tests from the build.";

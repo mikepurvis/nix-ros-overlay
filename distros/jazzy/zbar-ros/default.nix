@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cv-bridge rclcpp sensor-msgs std-msgs zbar-ros-interfaces ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge rclcpp sensor-msgs std-msgs zbar zbar-ros-interfaces ];
+  propagatedBuildInputs = [ zbar ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cv-bridge rclcpp sensor-msgs std-msgs zbar-ros-interfaces ];
 
   meta = {
     description = "Lightweight ROS wrapper for Zbar barcode/qrcode reader library (http://zbar.sourceforge

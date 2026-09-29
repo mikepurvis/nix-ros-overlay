@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake rclcpp ];
   checkInputs = [ ament-cmake-ros autoware-lint-common ];
-  propagatedBuildInputs = [ rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ rclcpp ];
 
   meta = {
     description = "Autoware Node is an Autoware Core package designed to provide a base class for all nodes in the system.";

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake class-loader eigen pkg-config qt5.qtbase ];
-  propagatedBuildInputs = [ geometric-shapes interactive-markers moveit-common moveit-ros-planning-interface moveit-ros-robot-interaction moveit-ros-warehouse object-recognition-msgs pluginlib rclcpp rclpy rviz2 tf2-eigen ];
+  buildInputs = [ ament-cmake class-loader eigen geometric-shapes interactive-markers moveit-common moveit-ros-planning-interface moveit-ros-robot-interaction moveit-ros-warehouse object-recognition-msgs pkg-config pluginlib qt5.qtbase rclcpp rclpy rviz2 tf2-eigen ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
+  rosBuildExportDepends = [ geometric-shapes interactive-markers moveit-common moveit-ros-planning-interface moveit-ros-robot-interaction moveit-ros-warehouse object-recognition-msgs pluginlib rclcpp rclpy rviz2 tf2-eigen ];
 
   meta = {
     description = "Components of MoveIt that offer visualization";

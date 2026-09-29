@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rcl-interfaces rclcpp rosgraph-msgs yaml-cpp-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ncurses rcl-interfaces rclcpp rosgraph-msgs xclip yaml-cpp-vendor ];
+  propagatedBuildInputs = [ ncurses xclip ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rcl-interfaces rclcpp rosgraph-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "The log_view package provides a ncurses based terminal GUI for

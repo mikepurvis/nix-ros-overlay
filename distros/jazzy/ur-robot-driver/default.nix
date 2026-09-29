@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
   checkInputs = [ launch-testing-ament-cmake ros2run ];
-  propagatedBuildInputs = [ backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy socat std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
+  propagatedBuildInputs = [ socat ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
   rosExecDepends = [ effort-controllers force-torque-sensor-broadcaster joint-state-broadcaster joint-state-publisher joint-trajectory-controller launch launch-ros pose-broadcaster position-controllers robot-state-publisher ros2-controllers-test-nodes rviz2 urdf velocity-controllers xacro ];
 
   meta = {

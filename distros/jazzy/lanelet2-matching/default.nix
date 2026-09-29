@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core lanelet2-core lanelet2-traffic-rules mrt-cmake-modules ];
   checkInputs = [ gtest lanelet2-io lanelet2-maps lanelet2-projection ];
-  propagatedBuildInputs = [ lanelet2-core lanelet2-traffic-rules mrt-cmake-modules ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosBuildExportDepends = [ lanelet2-core lanelet2-traffic-rules mrt-cmake-modules ];
 
   meta = {
     description = "Library to match objects to lanelets";

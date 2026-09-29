@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp rclcpp rosbag2-cpp ];
   checkInputs = [ ament-cmake-gtest geometry-msgs sensor-msgs ];
-  propagatedBuildInputs = [ ament-index-cpp rapidjson rclcpp rosbag2-cpp ];
+  propagatedBuildInputs = [ rapidjson ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp rclcpp rosbag2-cpp ];
 
   meta = {
     description = "Parse any ROS/ROS2 message without compile-time information";

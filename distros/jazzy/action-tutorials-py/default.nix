@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ action-tutorials-interfaces ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ action-tutorials-interfaces ];
+  rosBuildExportDepends = [ action-tutorials-interfaces ];
   rosExecDepends = [ rclpy ];
 
   meta = {

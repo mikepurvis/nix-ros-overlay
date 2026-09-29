@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ geometry-msgs nav-msgs python3Packages.scipy rclpy std-msgs tf2-ros ];
+  buildInputs = [ geometry-msgs nav-msgs rclpy std-msgs tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.scipy ];
+  rosBuildExportDepends = [ geometry-msgs nav-msgs rclpy std-msgs tf2-ros ];
 
   meta = {
     description = "Automatic Parking Vision for TurtleBot3 Examples.";

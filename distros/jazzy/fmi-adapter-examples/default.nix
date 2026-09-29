@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ fmi-adapter ];
+  buildInputs = [ ament-cmake fmi-adapter ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ fmi-adapter ];
   rosExecDepends = [ launch launch-ros ];
 
   meta = {

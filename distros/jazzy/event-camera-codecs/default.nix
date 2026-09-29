@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros class-loader event-camera-msgs ros-environment ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp rosbag2-cpp ];
-  propagatedBuildInputs = [ class-loader event-camera-msgs ros-environment ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  rosBuildExportDepends = [ class-loader event-camera-msgs ros-environment ];
 
   meta = {
     description = "package to encode and decode event_camera_msgs";

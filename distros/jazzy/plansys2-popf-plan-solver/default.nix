@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp plansys2-core pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ros2run ];
-  propagatedBuildInputs = [ ament-index-cpp plansys2-core pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp plansys2-core pluginlib rclcpp ];
   rosExecDepends = [ popf ];
 
   meta = {

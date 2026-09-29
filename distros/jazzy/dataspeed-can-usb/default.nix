@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake can-msgs lusb rclcpp rclcpp-components std-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ can-msgs lusb rclcpp rclcpp-components std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs lusb rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Driver to interface with the Dataspeed Inc. USB CAN Tool";

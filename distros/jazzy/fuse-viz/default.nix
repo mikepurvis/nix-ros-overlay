@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros qt5.qtbase ];
+  buildInputs = [ ament-cmake-ros fuse-constraints fuse-core fuse-msgs fuse-variables geometry-msgs qt5.qtbase rviz-common rviz-rendering tf2-geometry-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen fuse-constraints fuse-core fuse-msgs fuse-variables geometry-msgs rviz-common rviz-rendering tf2-geometry-msgs ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ fuse-constraints fuse-core fuse-msgs fuse-variables geometry-msgs rviz-common rviz-rendering tf2-geometry-msgs ];
 
   meta = {
     description = "The fuse_viz package provides visualization tools for fuse.";

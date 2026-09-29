@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake control-msgs generate-parameter-library geometry-msgs moveit-common moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface pluginlib realtime-tools sensor-msgs std-msgs std-srvs tf2-eigen trajectory-msgs ];
   checkInputs = [ ament-cmake-gtest moveit-resources-panda-moveit-config ros-testing ];
-  propagatedBuildInputs = [ control-msgs generate-parameter-library geometry-msgs moveit-common moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface pluginlib realtime-tools sensor-msgs std-msgs std-srvs tf2-eigen trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ control-msgs generate-parameter-library geometry-msgs moveit-common moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface pluginlib realtime-tools sensor-msgs std-msgs std-srvs tf2-eigen trajectory-msgs ];
   rosExecDepends = [ controller-manager gripper-controllers joint-state-broadcaster joint-trajectory-controller joy launch-param-builder moveit-configs-utils moveit-ros-visualization robot-state-publisher tf2-ros ];
 
   meta = {

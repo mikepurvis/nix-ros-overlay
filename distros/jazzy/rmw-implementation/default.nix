@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rmw rmw-connextdds rmw-cyclonedds-cpp rmw-fastrtps-cpp rmw-fastrtps-dynamic-cpp ];
+  buildInputs = [ ament-cmake ament-index-cpp rcpputils rcutils rmw rmw-connextdds rmw-cyclonedds-cpp rmw-fastrtps-cpp rmw-fastrtps-dynamic-cpp rmw-implementation-cmake ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common performance-test-fixture ];
-  propagatedBuildInputs = [ ament-index-cpp rcpputils rcutils rmw-implementation-cmake ];
   nativeBuildInputs = [ ament-cmake rmw-implementation-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp rcpputils rcutils rmw-implementation-cmake ];
 
   meta = {
     description = "Proxy implementation of the ROS 2 Middleware Interface.";

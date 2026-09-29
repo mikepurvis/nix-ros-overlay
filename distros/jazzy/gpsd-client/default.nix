@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake gps-msgs rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ gps-msgs gpsd pkg-config rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ gpsd pkg-config ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
+  rosBuildExportDepends = [ gps-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "connects to a GPSd server and broadcasts GPS fixes 

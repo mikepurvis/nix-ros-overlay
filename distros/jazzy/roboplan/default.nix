@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.nanobind python3Packages.typing-extensions ];
+  buildInputs = [ ament-cmake ament-cmake-python pinocchio python3 python3Packages.nanobind python3Packages.typing-extensions tinyxml2-vendor yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gmock ament-cmake-pytest gtest roboplan-example-models ];
-  propagatedBuildInputs = [ eigen pinocchio tinyxml2-vendor tl-expected-nixpkgs yaml-cpp-vendor ];
+  propagatedBuildInputs = [ eigen tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ pinocchio tinyxml2-vendor yaml-cpp-vendor ];
 
   meta = {
     description = "Core types, scene representation, and utilities for RoboPlan.";

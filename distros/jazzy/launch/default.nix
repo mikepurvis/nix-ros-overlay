@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ osrf-pycommon ];
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ osrf-pycommon python3Packages.importlib-metadata python3Packages.lark python3Packages.pyyaml ];
+  propagatedBuildInputs = [ python3Packages.importlib-metadata python3Packages.lark python3Packages.pyyaml ];
+  rosBuildExportDepends = [ osrf-pycommon ];
   rosExecDepends = [ ament-index-python ];
 
   meta = {

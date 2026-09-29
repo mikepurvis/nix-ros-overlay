@@ -14,9 +14,12 @@
 , postFixup ? ""
 , passthru ? { }
 , separateDebugInfo ? true
-# ROS packages named by <exec_depend>. These are needed at runtime but not to
-# build downstream packages, so rather than being propagated, buildEnv follows
-# them to assemble the runtime closure of an environment.
+# ROS dependencies are not propagated. Instead, each package records which ROS
+# packages it exports to dependents (<build_export_depend> and friends) and
+# which it needs at runtime (<exec_depend>). Following colcon, a package is
+# built against its direct dependencies plus their recursive runtime closure,
+# and buildEnv follows the same lists to assemble environments.
+, rosBuildExportDepends ? [ ]
 , rosExecDepends ? [ ]
 , propagatedBuildInputs ? [ ]
 , buildInputs ? [ ]
@@ -24,32 +27,23 @@
 }@args:
 
 let
-  # Build tools (the nativeBuildInputs, from <buildtool_depend>) run during
-  # this build, so their runtime ROS dependencies must be present even though
-  # they are not propagated. Rosidl generators are the main case: every message
-  # package runs them. These are added only to this package's own buildInputs,
-  # so they do not leak into the environments of packages built on top of it.
-  # Keyed by name rather than outPath, since exec_depends may form cycles.
   isRos = d: d != null && (d.rosPackage or false);
-  toolClosure = map (i: i.drv) (builtins.genericClosure {
-    startSet = map (d: { key = d.name; drv = d; }) (lib.filter isRos nativeBuildInputs);
-    operator = { drv, ... }: map (d: { key = d.name; drv = d; }) (lib.filter isRos
-      ((drv.propagatedBuildInputs or [ ]) ++ (drv.rosExecDepends or [ ])));
-  });
-  toolRuntimeInputs = lib.filter (d: (d.pname or null) != (args.pname or null)) toolClosure;
-
-  # Some packages are conventionally named as <exec_depend> but are required by
-  # the CMake config that dependents export (rosidl_default_runtime in every
-  # message package), so they opt back into being propagated.
-  execDepends = lib.partition (d: d.rosPropagateAsExecDepend or false) rosExecDepends;
+  runDepends = d: lib.filter isRos ((d.rosBuildExportDepends or [ ])
+    ++ (d.rosExecDepends or [ ]) ++ (d.propagatedBuildInputs or [ ]));
+  # Keyed by name rather than outPath, since exec_depends may form cycles.
+  rosBuildClosure = lib.filter (d: (d.pname or null) != (args.pname or null))
+    (map (i: i.drv) (builtins.genericClosure {
+      startSet = map (d: { key = d.name; drv = d; })
+        (lib.filter isRos (buildInputs ++ nativeBuildInputs ++ propagatedBuildInputs));
+      operator = { drv, ... }: map (d: { key = d.name; drv = d; }) (runDepends drv);
+    }));
 in
 
 (if buildType == "ament_python" then python3Packages.buildPythonPackage
-else stdenv.mkDerivation) ((removeAttrs args [ "rosExecDepends" ]) // {
+else stdenv.mkDerivation) ((removeAttrs args [ "rosBuildExportDepends" "rosExecDepends" ]) // {
   inherit doCheck dontWrapQtApps separateDebugInfo;
 
-  buildInputs = buildInputs ++ toolRuntimeInputs;
-  propagatedBuildInputs = propagatedBuildInputs ++ execDepends.right;
+  buildInputs = buildInputs ++ rosBuildClosure;
 
   # Disable warnings that cause "Log limit exceeded" errors on Hydra in lots of
   # packages that use Eigen
@@ -57,15 +51,14 @@ else stdenv.mkDerivation) ((removeAttrs args [ "rosExecDepends" ]) // {
 
   passthru = passthru // {
     rosPackage = true;
-    inherit rosDistro rosVersion;
-    rosExecDepends = execDepends.wrong;
+    inherit rosDistro rosVersion rosBuildExportDepends rosExecDepends;
   };
 } // lib.optionalAttrs (buildType == "ament_python") {
   dontUseCmakeConfigure = true;
 
   # Python programs are wrapped with a PYTHONPATH built from propagated inputs,
   # so Python packages still need their runtime ROS dependencies propagated.
-  propagatedBuildInputs = propagatedBuildInputs ++ rosExecDepends;
+  propagatedBuildInputs = propagatedBuildInputs ++ rosBuildExportDepends ++ rosExecDepends;
 
   # Modeled after colcon.
   # As of 0.12.1, colcon uses the legacy distutils install.py script, so we do

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "catkin";
-  buildInputs = [ ament-cmake-core ];
-  propagatedBuildInputs = [ gtest-vendor lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.rospkg python3Packages.setuptools ros-environment ];
-  nativeBuildInputs = [ ament-cmake-core gtest-vendor lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.rospkg python3Packages.setuptools ros-environment ];
+  buildInputs = [ ament-cmake-core ros-environment ];
+  propagatedBuildInputs = [ lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.rospkg python3Packages.setuptools ];
+  nativeBuildInputs = [ ament-cmake-core lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.rospkg python3Packages.setuptools ros-environment ];
+  rosBuildExportDepends = [ gtest-vendor ros-environment ];
 
   meta = {
     description = "CMake Functions and Modules for automating CMake";

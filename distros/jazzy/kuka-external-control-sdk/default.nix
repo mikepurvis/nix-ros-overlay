@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake tinyxml2-vendor ];
   checkInputs = [ gtest ];
-  propagatedBuildInputs = [ grpc openssl pkg-config tinyxml2-vendor ];
+  propagatedBuildInputs = [ grpc openssl pkg-config ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ tinyxml2-vendor ];
   rosExecDepends = [ ament-cmake ];
 
   meta = {

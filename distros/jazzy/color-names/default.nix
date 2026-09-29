@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp rviz2 std-msgs visualization-msgs ];
   checkInputs = [ ament-lint-auto ouxt-lint-common ];
-  propagatedBuildInputs = [ rclcpp rviz2 std-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rviz2 std-msgs visualization-msgs ];
 
   meta = {
     description = "The color_names package";

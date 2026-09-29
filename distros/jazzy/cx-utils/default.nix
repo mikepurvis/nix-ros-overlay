@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake clips-vendor rclcpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ clips-vendor fmt rclcpp spdlog ];
+  propagatedBuildInputs = [ fmt spdlog ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ clips-vendor rclcpp ];
 
   meta = {
     description = "Utilities for the ROS2 CLIPS-Executive";

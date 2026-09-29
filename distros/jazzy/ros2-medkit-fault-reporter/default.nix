@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-medkit-cmake ];
+  buildInputs = [ ament-cmake rclcpp ros2-medkit-cmake ros2-medkit-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing-ament-cmake launch-testing-ros ros2-medkit-fault-manager ];
-  propagatedBuildInputs = [ rclcpp ros2-medkit-msgs ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosBuildExportDepends = [ rclcpp ros2-medkit-msgs ];
 
   meta = {
     description = "Client library for easy fault reporting with local filtering";

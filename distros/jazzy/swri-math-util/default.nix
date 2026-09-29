@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp ];
 
   meta = {
     description = "A package with commonly used math utility code.";

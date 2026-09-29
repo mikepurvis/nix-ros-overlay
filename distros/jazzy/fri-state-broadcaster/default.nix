@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib ];
+  buildInputs = [ ament-cmake controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib ];
 
   meta = {
     description = "Broadcaster for FRI state";

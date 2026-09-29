@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ros2-medkit-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-python diagnostic-msgs example-interfaces rcl-interfaces rclcpp rclcpp-action rclcpp-lifecycle ros2-medkit-cmake ros2-medkit-msgs sensor-msgs std-msgs std-srvs ];
   checkInputs = [ ament-index-python launch-ros launch-testing launch-testing-ament-cmake python3Packages.jsonschema python3Packages.requests ros2-medkit-fault-manager ros2-medkit-gateway ros2-medkit-graph-provider ros2-medkit-linux-introspection ros2-medkit-param-beacon ros2-medkit-topic-beacon ];
-  propagatedBuildInputs = [ diagnostic-msgs example-interfaces rcl-interfaces rclcpp rclcpp-action rclcpp-lifecycle ros2-medkit-msgs sensor-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ros2-medkit-cmake ];
+  rosBuildExportDepends = [ diagnostic-msgs example-interfaces rcl-interfaces rclcpp rclcpp-action rclcpp-lifecycle ros2-medkit-msgs sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Integration tests and demo nodes for ros2_medkit";

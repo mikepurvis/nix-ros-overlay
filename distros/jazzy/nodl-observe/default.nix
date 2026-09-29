@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-auto builtin-interfaces rcl-action rcl-interfaces rclcpp rmw ros-environment rosgraph-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest example-interfaces python3Packages.pytest rclpy rmw-cyclonedds-cpp rmw-fastrtps-cpp rmw-implementation-cmake rmw-zenoh-cpp rosidl-runtime-py std-msgs ];
-  propagatedBuildInputs = [ builtin-interfaces cli11 rcl-action rcl-interfaces rclcpp rmw rosgraph-msgs ];
+  propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ros-environment ];
+  rosBuildExportDepends = [ builtin-interfaces rcl-action rcl-interfaces rclcpp rmw rosgraph-msgs ];
 
   meta = {
     description = "Observe a running ROS node and produce its runtime description as a rosgraph_msgs/Node message.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-lanelet2-extension autoware-map-msgs geographic-msgs geometry-msgs lanelet2-io ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-lanelet2-extension autoware-map-msgs geographic-msgs geographiclib geometry-msgs lanelet2-io ];
+  propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-lanelet2-extension autoware-map-msgs geographic-msgs geometry-msgs lanelet2-io ];
 
   meta = {
     description = "The autoware_geography_utils package";

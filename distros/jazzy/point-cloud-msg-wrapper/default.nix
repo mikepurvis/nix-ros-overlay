@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ];
+  buildInputs = [ ament-cmake ament-cmake-auto sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs ];
-  propagatedBuildInputs = [ sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ sensor-msgs ];
 
   meta = {
     description = "A point cloud message wrapper that allows for simple and safe PointCloud2 msg usage";

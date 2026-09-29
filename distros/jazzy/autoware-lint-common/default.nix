@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-export-dependencies ];
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  buildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-test ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-test ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-test ];
   rosExecDepends = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-xmllint ];
 
   meta = {

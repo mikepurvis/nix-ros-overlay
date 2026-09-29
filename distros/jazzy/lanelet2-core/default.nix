@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core mrt-cmake-modules ];
   checkInputs = [ gtest ];
-  propagatedBuildInputs = [ boost eigen mrt-cmake-modules ];
+  propagatedBuildInputs = [ boost eigen ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosBuildExportDepends = [ mrt-cmake-modules ];
 
   meta = {
     description = "Lanelet2 core module";

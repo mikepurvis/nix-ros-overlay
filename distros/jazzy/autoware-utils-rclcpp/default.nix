@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake rclcpp ];
   checkInputs = [ ament-lint-auto autoware-lint-common std-msgs ];
-  propagatedBuildInputs = [ rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ rclcpp ];
 
   meta = {
     description = "The autoware_utils_rclcpp package";

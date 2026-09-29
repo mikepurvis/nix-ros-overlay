@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ launch ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ launch ];
+  rosBuildExportDepends = [ launch ];
 
   meta = {
     description = "YAML frontend for the launch package.";

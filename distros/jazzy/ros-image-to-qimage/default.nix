@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-pytest ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-pytest ament-cmake-python cv-bridge python-qt-binding sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge python-qt-binding qt5.qtbase sensor-msgs ];
+  propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ament-cmake-pytest ament-cmake-python ];
+  rosBuildExportDepends = [ cv-bridge python-qt-binding sensor-msgs ];
 
   meta = {
     description = "A package that converts a ros image msg to a qimage object";

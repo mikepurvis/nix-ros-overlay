@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
   checkInputs = [ ament-lint-auto ];
-  propagatedBuildInputs = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
+  rosBuildExportDepends = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
 
   meta = {
     description = "Utils for working with ros2_canopen.";

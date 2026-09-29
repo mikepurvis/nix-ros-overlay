@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ tracetools-read ];
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.notebook python3Packages.pandas tracetools-read ];
+  propagatedBuildInputs = [ python3Packages.notebook python3Packages.pandas ];
+  rosBuildExportDepends = [ tracetools-read ];
 
   meta = {
     description = "Tools for analysing trace data.";

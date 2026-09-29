@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ action-tutorials-interfaces ament-cmake rclcpp rclcpp-action rclcpp-components ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-tutorials-interfaces rclcpp rclcpp-action rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-tutorials-interfaces rclcpp rclcpp-action rclcpp-components ];
 
   meta = {
     description = "C++ action tutorial cpp code";

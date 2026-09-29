@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ ament-index-python composition-interfaces launch lifecycle-msgs osrf-pycommon rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python composition-interfaces launch lifecycle-msgs osrf-pycommon python3Packages.importlib-metadata python3Packages.pyyaml rclpy ];
+  propagatedBuildInputs = [ python3Packages.importlib-metadata python3Packages.pyyaml ];
+  rosBuildExportDepends = [ ament-index-python composition-interfaces launch lifecycle-msgs osrf-pycommon rclpy ];
 
   meta = {
     description = "ROS specific extensions to the launch tool.";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
-  propagatedBuildInputs = [ eigen mrpt-libbase nanoflann-vendor suitesparse ];
+  buildInputs = [ assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm mrpt-libbase nanoflann-vendor opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
+  propagatedBuildInputs = [ eigen suitesparse ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-libbase nanoflann-vendor ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (math C++ libraries).

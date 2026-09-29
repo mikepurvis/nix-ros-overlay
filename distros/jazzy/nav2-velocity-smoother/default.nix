@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake nav2-common ];
+  buildInputs = [ ament-cmake geometry-msgs nav2-common nav2-util rclcpp rclcpp-components ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs nav2-util rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs nav2-util rclcpp rclcpp-components ];
 
   meta = {
     description = "Nav2's Output velocity smoother";

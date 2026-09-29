@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ etsi-its-ivim-ts-coding etsi-its-ivim-ts-msgs etsi-its-primitives-conversion ];
+  buildInputs = [ ament-cmake etsi-its-ivim-ts-coding etsi-its-ivim-ts-msgs etsi-its-primitives-conversion ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ etsi-its-ivim-ts-coding etsi-its-ivim-ts-msgs etsi-its-primitives-conversion ];
 
   meta = {
     description = "Conversion functions for converting ROS messages to and from ASN.1-encoded ETSI ITS IVIMs (TS)";

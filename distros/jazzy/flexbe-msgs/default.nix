@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ action-msgs ament-cmake builtin-interfaces rosidl-default-generators rosidl-default-runtime std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs builtin-interfaces rosidl-default-generators rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ action-msgs builtin-interfaces rosidl-default-generators rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "flexbe_msgs provides the messages used by FlexBE.";

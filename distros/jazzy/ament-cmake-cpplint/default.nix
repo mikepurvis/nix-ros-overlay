@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ];
-  propagatedBuildInputs = [ ament-cmake-test ament-cpplint ];
-  nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cpplint ];
+  nativeBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  rosBuildExportDepends = [ ament-cmake-test ament-cpplint ];
 
   meta = {
     description = "The CMake API for ament_cpplint to lint C / C++ code using cpplint.";

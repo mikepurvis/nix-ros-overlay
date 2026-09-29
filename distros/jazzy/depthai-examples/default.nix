@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment ];
-  propagatedBuildInputs = [ camera-info-manager cv-bridge depthai depthai-bridge depthai-descriptions depthai-ros-msgs foxglove-msgs image-transport opencv opencv.cxxdev rclcpp rviz-imu-plugin sensor-msgs std-msgs stereo-msgs vision-msgs ];
+  buildInputs = [ ament-cmake camera-info-manager cv-bridge depthai depthai-bridge depthai-descriptions depthai-ros-msgs foxglove-msgs image-transport rclcpp ros-environment rviz-imu-plugin sensor-msgs std-msgs stereo-msgs vision-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ camera-info-manager cv-bridge depthai depthai-bridge depthai-descriptions depthai-ros-msgs foxglove-msgs image-transport rclcpp rviz-imu-plugin sensor-msgs std-msgs stereo-msgs vision-msgs ];
   rosExecDepends = [ depth-image-proc robot-state-publisher xacro ];
 
   meta = {

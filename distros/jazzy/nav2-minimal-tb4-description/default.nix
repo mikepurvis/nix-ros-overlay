@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake joint-state-publisher robot-state-publisher urdf xacro ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ joint-state-publisher robot-state-publisher urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ joint-state-publisher robot-state-publisher urdf xacro ];
 
   meta = {
     description = "Nav2's minimum Turtlebot4 Description package";

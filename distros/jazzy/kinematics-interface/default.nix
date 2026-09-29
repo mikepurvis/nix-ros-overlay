@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
+  buildInputs = [ ament-cmake backward-ros rclcpp rclcpp-lifecycle ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock pluginlib ros2-control-test-assets ];
-  propagatedBuildInputs = [ backward-ros eigen rclcpp rclcpp-lifecycle ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Kinematics interface for ROS 2 control";

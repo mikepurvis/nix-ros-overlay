@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-medkit-cmake ];
+  buildInputs = [ action-msgs ament-cmake rclcpp ros2-medkit-cmake ros2-medkit-fault-reporter ros2-medkit-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing-ament-cmake launch-testing-ros ros2-medkit-fault-manager ];
-  propagatedBuildInputs = [ action-msgs rclcpp ros2-medkit-fault-reporter ros2-medkit-msgs ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosBuildExportDepends = [ action-msgs rclcpp ros2-medkit-fault-reporter ros2-medkit-msgs ];
 
   meta = {
     description = "Bridge node turning terminal ROS2 action goal states (aborted) into FaultManager faults";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ];
+  buildInputs = [ ament-cmake diagnostic-updater fadecandy-msgs pkg-config rclcpp ];
   checkInputs = [ rclpy ];
-  propagatedBuildInputs = [ diagnostic-updater fadecandy-msgs libusb1 rclcpp ];
+  propagatedBuildInputs = [ libusb1 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ diagnostic-updater fadecandy-msgs rclcpp ];
 
   meta = {
     description = "ROS driver for fadecandy LED controllers";

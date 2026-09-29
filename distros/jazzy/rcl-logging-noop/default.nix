@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros python3Packages.empy ];
+  buildInputs = [ ament-cmake-ros python3Packages.empy rcl-logging-interface rcutils ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing ];
-  propagatedBuildInputs = [ rcl-logging-interface rcutils ];
   nativeBuildInputs = [ ament-cmake-ros python3Packages.empy ];
+  rosBuildExportDepends = [ rcl-logging-interface rcutils ];
 
   meta = {
     description = "An rcl logger implementation that doesn't do anything with log messages.";

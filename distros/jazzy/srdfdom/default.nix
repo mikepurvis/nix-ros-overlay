@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python boost urdfdom-headers ];
+  buildInputs = [ ament-cmake ament-cmake-python boost console-bridge-vendor tinyxml2-vendor urdf urdfdom-headers ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-cmake ];
-  propagatedBuildInputs = [ console-bridge console-bridge-vendor tinyxml2-vendor urdf ];
+  propagatedBuildInputs = [ console-bridge ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ console-bridge-vendor tinyxml2-vendor urdf ];
   rosExecDepends = [ urdfdom-py ];
 
   meta = {

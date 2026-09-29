@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake boost ];
+  buildInputs = [ ament-cmake boost class-loader rclcpp warehouse-ros ];
   checkInputs = [ ament-cmake-copyright ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs ];
-  propagatedBuildInputs = [ class-loader rclcpp sqlite warehouse-ros ];
+  propagatedBuildInputs = [ sqlite ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ class-loader rclcpp warehouse-ros ];
 
   meta = {
     description = "Implementation of warehouse_ros for sqlite";

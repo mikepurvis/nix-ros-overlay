@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake can-msgs diagnostic-msgs rclcpp ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ can-msgs diagnostic-msgs rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs diagnostic-msgs rclcpp ];
 
   meta = {
     description = "RobStride private-CAN protocol, topic transport, motor lifecycle, and feedback library.";

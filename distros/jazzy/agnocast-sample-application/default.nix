@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ agnocast-components agnocast-sample-interfaces agnocastlib ament-cmake rclcpp rclcpp-components ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ agnocast-components agnocast-sample-interfaces agnocastlib rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ agnocast-components agnocast-sample-interfaces agnocastlib rclcpp rclcpp-components ];
 
   meta = {
     description = "A sample application for Agnocast.";

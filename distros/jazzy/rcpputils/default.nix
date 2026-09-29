@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-ros rcutils ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ];
-  propagatedBuildInputs = [ rcutils ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-ros ];
+  rosBuildExportDepends = [ rcutils ];
 
   meta = {
     description = "Package containing utility code for C++.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros moveit-core pluginlib tf2-eigen ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ eigen moveit-core pluginlib tf2-eigen ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ moveit-core pluginlib tf2-eigen ];
 
   meta = {
     description = "C++ implementation of FK/IK for Fanuc CRX series cobots";

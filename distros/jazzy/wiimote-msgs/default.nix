@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-auto builtin-interfaces geometry-msgs rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs std-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

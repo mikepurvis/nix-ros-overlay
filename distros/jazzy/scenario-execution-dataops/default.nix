@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ scenario-execution ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ libyaml scenario-execution ];
+  propagatedBuildInputs = [ libyaml ];
+  rosBuildExportDepends = [ scenario-execution ];
 
   meta = {
     description = "Scenario Execution library for data operations";

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-kernel mrpt-libhwdrivers mrpt-libobs ];
+  buildInputs = [ cmake mola-kernel mrpt-libhwdrivers mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-kernel mrpt-libhwdrivers mrpt-libobs ];
 
   meta = {
     description = "RawDataSource from live or offline video sources";

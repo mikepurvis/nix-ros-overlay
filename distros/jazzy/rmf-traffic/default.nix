@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake eigen3-cmake-module rmf-utils ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module libccd rmf-utils ];
+  propagatedBuildInputs = [ eigen libccd ];
   nativeBuildInputs = [ cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module rmf-utils ];
 
   meta = {
     description = "Package for managing traffic in the Robotics Middleware Framework";

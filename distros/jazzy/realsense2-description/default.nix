@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rclcpp rclcpp-components realsense2-camera-msgs ];
+  buildInputs = [ ament-cmake rclcpp rclcpp-components realsense2-camera-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components realsense2-camera-msgs ];
   rosExecDepends = [ launch-ros xacro ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp rsl tcb-span tl-expected ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ fmt rclcpp rsl tcb-span tl-expected ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rsl tcb-span tl-expected ];
 
   meta = {
     description = "Functions and types for rclcpp::Parameter";

@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ flexbe-core flexbe-msgs rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ flexbe-core flexbe-msgs rclpy ];
+  rosBuildExportDepends = [ flexbe-core flexbe-msgs rclpy ];
 
   meta = {
     description = "flexbe_mirror implements functionality to remotely mirror an executed behavior.";

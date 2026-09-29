@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ action-msgs ament-cmake ament-cmake-python rclcpp rclcpp-action rclpy ];
   checkInputs = [ ament-cmake-gtest example-interfaces ];
-  propagatedBuildInputs = [ action-msgs rclcpp rclcpp-action rclpy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ action-msgs rclcpp rclcpp-action rclpy ];
 
   meta = {
     description = "Simple library for using the `rclpy/rclcpp` action libraries";

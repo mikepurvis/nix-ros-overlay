@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces camera-info-manager image-transport openni2 rclcpp rclcpp-components sensor-msgs ];
+  buildInputs = [ ament-cmake builtin-interfaces camera-info-manager image-transport pkg-config rclcpp rclcpp-components rosidl-default-generators sensor-msgs ];
+  propagatedBuildInputs = [ openni2 ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces camera-info-manager image-transport rclcpp rclcpp-components sensor-msgs ];
   rosExecDepends = [ depth-image-proc rosidl-default-runtime ];
 
   meta = {

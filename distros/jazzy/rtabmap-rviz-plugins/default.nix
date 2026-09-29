@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros qt5.qtbase ros-environment ];
-  propagatedBuildInputs = [ pcl-conversions pluginlib rclcpp rtabmap-conversions rtabmap-msgs rviz-common rviz-default-plugins rviz-rendering sensor-msgs std-msgs tf2 ];
+  buildInputs = [ ament-cmake-ros pcl-conversions pluginlib qt5.qtbase rclcpp ros-environment rtabmap-conversions rtabmap-msgs rviz-common rviz-default-plugins rviz-rendering sensor-msgs std-msgs tf2 ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ pcl-conversions pluginlib rclcpp rtabmap-conversions rtabmap-msgs rviz-common rviz-default-plugins rviz-rendering sensor-msgs std-msgs tf2 ];
 
   meta = {
     description = "RTAB-Map's rviz plugins.";

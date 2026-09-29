@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake auto-apms-behavior-tree auto-apms-util rclcpp-components ];
   checkInputs = [ ament-cmake-copyright ];
-  propagatedBuildInputs = [ auto-apms-behavior-tree auto-apms-util rclcpp-components ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ auto-apms-behavior-tree auto-apms-util rclcpp-components ];
 
   meta = {
     description = "Implementation of AutoAPMS's automated mission management system";

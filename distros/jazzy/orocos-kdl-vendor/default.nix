@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-vendor-package ];
+  buildInputs = [ ament-cmake ament-cmake-vendor-package eigen3-cmake-module ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module orocos-kdl ];
+  propagatedBuildInputs = [ eigen orocos-kdl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-vendor-package ];
+  rosBuildExportDepends = [ eigen3-cmake-module ];
 
   meta = {
     description = "Wrapper around orocos_kdl, providing nothing but a dependency on orocos_kdl on some systems.

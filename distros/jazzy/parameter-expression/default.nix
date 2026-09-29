@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto pkg-config ];
+  buildInputs = [ ament-cmake ament-cmake-auto pkg-config rclcpp std-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ muparser rclcpp std-msgs ];
+  propagatedBuildInputs = [ muparser ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
+  rosBuildExportDepends = [ rclcpp std-msgs ];
 
   meta = {
     description = "Using mathematical expression in ROS 2 parameter";

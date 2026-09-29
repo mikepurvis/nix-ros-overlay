@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ cv-bridge rclpy sensor-msgs std-msgs ];
+  buildInputs = [ cv-bridge rclpy sensor-msgs std-msgs ];
+  rosBuildExportDepends = [ cv-bridge rclpy sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS 2 packages for camera calibration and image processing in TurtleBot AutoRace";

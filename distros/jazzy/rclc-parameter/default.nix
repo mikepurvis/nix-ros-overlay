@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros builtin-interfaces rcl rcl-interfaces rclc rcutils rosidl-runtime-c ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common example-interfaces osrf-testing-tools-cpp rclcpp std-msgs ];
-  propagatedBuildInputs = [ builtin-interfaces rcl rcl-interfaces rclc rcutils rosidl-runtime-c ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ builtin-interfaces rcl rcl-interfaces rclc rcutils rosidl-runtime-c ];
 
   meta = {
     description = "Parameter server implementation for micro-ROS nodes";

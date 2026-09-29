@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rosgraph-monitor-msgs rosidl-runtime-cpp rosidl-typesupport-cpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosgraph-monitor-msgs rosidl-runtime-cpp rosidl-typesupport-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rosgraph-monitor-msgs rosidl-runtime-cpp rosidl-typesupport-cpp ];
 
   meta = {
     description = "Partial RMW shim library to instrument RMW API calls";

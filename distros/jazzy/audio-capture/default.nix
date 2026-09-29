@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake boost ];
-  propagatedBuildInputs = [ audio-common-msgs diagnostic-updater gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer rclcpp rclcpp-components ];
+  buildInputs = [ ament-cmake audio-common-msgs boost diagnostic-updater rclcpp rclcpp-components ];
+  propagatedBuildInputs = [ gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ audio-common-msgs diagnostic-updater rclcpp rclcpp-components ];
   rosExecDepends = [ launch-xml ];
 
   meta = {

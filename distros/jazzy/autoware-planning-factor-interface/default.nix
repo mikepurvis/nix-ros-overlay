@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-internal-planning-msgs autoware-motion-utils autoware-planning-msgs rclcpp ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common autoware-utils-geometry ];
-  propagatedBuildInputs = [ autoware-internal-planning-msgs autoware-motion-utils autoware-planning-msgs rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-internal-planning-msgs autoware-motion-utils autoware-planning-msgs rclcpp ];
 
   meta = {
     description = "The autoware_planning_factor_interface package";

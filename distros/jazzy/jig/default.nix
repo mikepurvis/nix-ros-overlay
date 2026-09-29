@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library lifecycle-msgs message-filters rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle rosidl-default-generators tf2-ros ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest ];
-  propagatedBuildInputs = [ lifecycle-msgs message-filters python3Packages.jinja2 python3Packages.jsonschema python3Packages.pyyaml rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.jinja2 python3Packages.jsonschema python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library ];
+  rosBuildExportDepends = [ lifecycle-msgs message-filters rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle tf2-ros ];
   rosExecDepends = [ ament-index-python rosidl-default-runtime ];
 
   meta = {

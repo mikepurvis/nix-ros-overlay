@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake libGL libGLU libxrandr libxxf86vm python3 python3Packages.pybind11 qt5.qtbase wxGTK32 ];
-  propagatedBuildInputs = [ eigen glfw3 mrpt-opengl ];
+  buildInputs = [ cmake libGL libGLU libxrandr libxxf86vm mrpt-opengl python3 python3Packages.pybind11 qt5.qtbase wxGTK32 ];
+  propagatedBuildInputs = [ eigen glfw3 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-opengl ];
 
   meta = {
     description = "The MRPT C++ library mrpt_gui";

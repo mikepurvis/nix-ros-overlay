@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ros2-control-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h hardware-interface pluginlib ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock ros2-control-test-assets ];
-  propagatedBuildInputs = [ fmt hardware-interface pluginlib ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ hardware-interface pluginlib ];
 
   meta = {
     description = "data structures for representing mechanical transmissions, methods for propagating values between actuator and joint spaces and tooling to support this.";

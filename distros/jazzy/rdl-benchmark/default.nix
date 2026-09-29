@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rdl-dynamics rdl-urdfreader ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-xmllint ament-lint ];
-  propagatedBuildInputs = [ boost rdl-dynamics rdl-urdfreader ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rdl-dynamics rdl-urdfreader ];
 
   meta = {
     description = "The rdl_benchmark package";

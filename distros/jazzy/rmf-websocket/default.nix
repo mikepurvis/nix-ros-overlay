@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen ];
+  buildInputs = [ ament-cmake eigen nlohmann-json-schema-validator-vendor rclcpp rmf-utils ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ boost nlohmann-json-schema-validator-vendor nlohmann_json rclcpp rmf-utils websocketpp ];
+  propagatedBuildInputs = [ boost nlohmann_json websocketpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ nlohmann-json-schema-validator-vendor rclcpp rmf-utils ];
 
   meta = {
     description = "A package managing the websocket api endpoints in RMF system.";

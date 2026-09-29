@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cie-config-msgs cie-thread-configurator rclcpp rclcpp-components std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cie-config-msgs cie-thread-configurator rclcpp rclcpp-components std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cie-config-msgs cie-thread-configurator rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Component container and executor assigning a dedicated thread to each callback group.";

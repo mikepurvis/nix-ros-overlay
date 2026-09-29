@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen python3 python3Packages.pybind11 ];
+  buildInputs = [ cmake eigen mrpt-bayes mrpt-common python3 python3Packages.pybind11 ];
   checkInputs = [ mrpt-io ];
-  propagatedBuildInputs = [ mrpt-bayes mrpt-common ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-bayes mrpt-common ];
 
   meta = {
     description = "The MRPT C++ library mrpt_poses";

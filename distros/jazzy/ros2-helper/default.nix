@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
-  propagatedBuildInputs = [ chafa python3 rclcpp sensor-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-python rclcpp sensor-msgs ];
+  propagatedBuildInputs = [ chafa python3 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ rclcpp sensor-msgs ];
   rosExecDepends = [ ros2cli ros2node ros2service ros2topic ];
 
   meta = {

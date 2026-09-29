@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ python3Packages.lxml yasmin yasmin-factory ];
+  buildInputs = [ yasmin yasmin-factory ];
+  propagatedBuildInputs = [ python3Packages.lxml ];
+  rosBuildExportDepends = [ yasmin yasmin-factory ];
   rosExecDepends = [ ament-index-python rclpy ];
 
   meta = {

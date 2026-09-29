@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake can-msgs dataspeed-can-msgs rclcpp rosbag2-cpp std-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ can-msgs dataspeed-can-msgs rclcpp rosbag2-cpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs dataspeed-can-msgs rclcpp rosbag2-cpp std-msgs ];
 
   meta = {
     description = "CAN bus introspection";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-medkit-cmake ];
+  buildInputs = [ action-msgs ament-cmake ament-index-cpp lifecycle-msgs rcl-interfaces rclcpp ros2-medkit-cmake ros2-medkit-msgs ros2-medkit-serialization rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs std-msgs std-srvs yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common example-interfaces rclcpp-action ];
-  propagatedBuildInputs = [ action-msgs ament-index-cpp httplib lifecycle-msgs nlohmann_json openssl rcl-interfaces rclcpp ros2-medkit-msgs ros2-medkit-serialization rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs sqlite std-msgs std-srvs yaml-cpp-vendor ];
+  propagatedBuildInputs = [ httplib nlohmann_json openssl sqlite ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosBuildExportDepends = [ action-msgs ament-index-cpp lifecycle-msgs rcl-interfaces rclcpp ros2-medkit-msgs ros2-medkit-serialization rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs std-msgs std-srvs yaml-cpp-vendor ];
   rosExecDepends = [ ament-index-python launch launch-ros ros2-medkit-action-status-bridge ros2-medkit-diagnostic-bridge ros2-medkit-fault-manager ros2-medkit-log-bridge rosidl-parser rosidl-runtime-py ];
 
   meta = {

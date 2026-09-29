@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake python-cmake-module ];
+  buildInputs = [ ament-cmake lifecycle-msgs plansys2-msgs python-cmake-module rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ lifecycle-msgs plansys2-msgs rclpy ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
+  rosBuildExportDepends = [ lifecycle-msgs plansys2-msgs rclpy ];
 
   meta = {
     description = "This package contains modules for developing PlanSys components in Python";

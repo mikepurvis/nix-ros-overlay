@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ament-cmake-python ];
+  buildInputs = [ ament-cmake-auto ament-cmake-python pal-statistics-msgs rclcpp rclcpp-lifecycle rclpy ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ boost pal-statistics-msgs rclcpp rclcpp-lifecycle rclpy ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
+  rosBuildExportDepends = [ pal-statistics-msgs rclcpp rclcpp-lifecycle rclpy ];
 
   meta = {
     description = "The pal_statistics package";

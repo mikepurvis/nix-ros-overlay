@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-utils-geometry autoware-utils-rclcpp rclcpp ];
   checkInputs = [ ament-cmake-ros ament-index-cpp ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-utils-geometry autoware-utils-rclcpp rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-utils-geometry autoware-utils-rclcpp rclcpp ];
 
   meta = {
     description = "The autoware_vehicle_info_utils package";

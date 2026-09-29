@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake-core ament-cmake-export-dependencies ];
   checkInputs = [ ament-cmake-test ];
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies git vcstool ];
+  propagatedBuildInputs = [ git vcstool ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies git vcstool ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-export-dependencies ];
 
   meta = {
     description = "Macros for maintaining a 'vendor' package.";

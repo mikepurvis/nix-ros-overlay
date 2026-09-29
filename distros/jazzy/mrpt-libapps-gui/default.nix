@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen wxGTK32 ];
-  propagatedBuildInputs = [ mrpt-gui mrpt-libapps-cli ];
+  buildInputs = [ cmake eigen mrpt-gui mrpt-libapps-cli wxGTK32 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-gui mrpt-libapps-cli ];
 
   meta = {
     description = "The MRPT C++ library mrpt_libapps_gui";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
+  buildInputs = [ ament-cmake-auto autoware-adapi-v1-msgs autoware-cmake autoware-internal-debug-msgs autoware-internal-planning-msgs autoware-interpolation autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-motion-utils autoware-objects-of-interest-marker-interface autoware-perception-msgs autoware-planning-factor-interface autoware-planning-msgs autoware-route-handler autoware-trajectory autoware-utils-debug autoware-utils-geometry autoware-utils-rclcpp autoware-utils-system autoware-utils-visualization autoware-vehicle-info-utils autoware-velocity-smoother diagnostic-msgs eigen3-cmake-module geometry-msgs nav-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common autoware-test-utils ];
-  propagatedBuildInputs = [ autoware-adapi-v1-msgs autoware-internal-debug-msgs autoware-internal-planning-msgs autoware-interpolation autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-motion-utils autoware-objects-of-interest-marker-interface autoware-perception-msgs autoware-planning-factor-interface autoware-planning-msgs autoware-route-handler autoware-trajectory autoware-utils-debug autoware-utils-geometry autoware-utils-rclcpp autoware-utils-system autoware-utils-visualization autoware-vehicle-info-utils autoware-velocity-smoother diagnostic-msgs eigen geometry-msgs nav-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ autoware-adapi-v1-msgs autoware-internal-debug-msgs autoware-internal-planning-msgs autoware-interpolation autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-motion-utils autoware-objects-of-interest-marker-interface autoware-perception-msgs autoware-planning-factor-interface autoware-planning-msgs autoware-route-handler autoware-trajectory autoware-utils-debug autoware-utils-geometry autoware-utils-rclcpp autoware-utils-system autoware-utils-visualization autoware-vehicle-info-utils autoware-velocity-smoother diagnostic-msgs geometry-msgs nav-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "The autoware_behavior_velocity_planner_common package";

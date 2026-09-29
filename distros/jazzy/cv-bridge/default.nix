@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros python-cmake-module ];
+  buildInputs = [ ament-cmake-ros python-cmake-module rclcpp rcpputils sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ boost opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 rclcpp rcpputils sensor-msgs ];
+  propagatedBuildInputs = [ boost opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake-ros python-cmake-module ];
+  rosBuildExportDepends = [ rclcpp rcpputils sensor-msgs ];
   rosExecDepends = [ ament-index-python ];
 
   meta = {

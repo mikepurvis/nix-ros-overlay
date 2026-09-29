@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ads-vendor hardware-interface pluginlib rclcpp rclcpp-lifecycle yaml-cpp-vendor ];
+  buildInputs = [ ads-vendor ament-cmake hardware-interface pluginlib rclcpp rclcpp-lifecycle yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ads-vendor hardware-interface pluginlib rclcpp rclcpp-lifecycle yaml-cpp-vendor ];
 
   meta = {
     description = "Ros2Control hardware interface for integrating with Beckhoff PLC";

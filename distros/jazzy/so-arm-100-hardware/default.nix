@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake hardware-interface pluginlib rclcpp rclcpp-lifecycle std-msgs std-srvs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle std-msgs std-srvs yaml-cpp ];
+  propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle std-msgs std-srvs ];
 
   meta = {
     description = "ROS2 Control Hardware Interface for SOARM-100 low-cost 5DoF robotic manipulator.";

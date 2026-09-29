@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ];
   nativeBuildInputs = [ ament-cmake-core ];
+  rosBuildExportDepends = [ ament-cmake-core ];
 
   meta = {
     description = "The ability to override the exported package version in the ament buildsystem.";

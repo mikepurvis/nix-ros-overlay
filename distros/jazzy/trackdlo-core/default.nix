@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-index-cpp cv-bridge image-transport message-filters pcl-conversions pcl-ros rclcpp rclpy rosbag2-cpp sensor-msgs sensor-msgs-py std-msgs tf2-ros visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-cpp cv-bridge image-transport message-filters pcl-conversions pcl-ros rclcpp rclpy rosbag2-cpp sensor-msgs sensor-msgs-py std-msgs tf2-ros visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ ament-index-cpp cv-bridge image-transport message-filters pcl-conversions pcl-ros rclcpp rclpy rosbag2-cpp sensor-msgs sensor-msgs-py std-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "TrackDLO2: Tracking Deformable Linear Objects - Core perception package (ROS2 Humble)";

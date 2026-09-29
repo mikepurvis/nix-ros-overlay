@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake urdfdom-headers ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module geometry-msgs moveit-common rclcpp std-msgs tf2-eigen visualization-msgs ];
+  buildInputs = [ ament-cmake eigen3-cmake-module geometry-msgs moveit-common rclcpp std-msgs tf2-eigen urdfdom-headers visualization-msgs ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module geometry-msgs moveit-common rclcpp std-msgs tf2-eigen visualization-msgs ];
 
   meta = {
     description = "Tools for marker creation / handling";

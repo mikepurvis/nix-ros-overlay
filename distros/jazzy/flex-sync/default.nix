@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  checkInputs = [ ament-clang-format ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs std-msgs ];
-  propagatedBuildInputs = [ ament-cmake-clang-format rclcpp rclcpp-components ];
+  buildInputs = [ ament-cmake ament-cmake-clang-format rclcpp rclcpp-components ];
+  checkInputs = [ ament-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-clang-format rclcpp rclcpp-components ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

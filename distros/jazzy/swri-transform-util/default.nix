@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python pkg-config ];
+  buildInputs = [ ament-cmake ament-cmake-python cv-bridge diagnostic-msgs diagnostic-updater geographic-msgs geometry-msgs gps-msgs marti-nav-msgs pkg-config rcl-interfaces rclcpp rclcpp-components rclpy sensor-msgs swri-math-util tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-index-cpp launch-ros launch-testing launch-testing-ament-cmake ];
-  propagatedBuildInputs = [ cv-bridge diagnostic-msgs diagnostic-updater geographic-msgs geographiclib geometry-msgs geos gps-msgs marti-nav-msgs opencv opencv.cxxdev proj python3Packages.numpy python3Packages.pyyaml rcl-interfaces rclcpp rclcpp-components rclpy sensor-msgs swri-math-util tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
+  propagatedBuildInputs = [ geographiclib geos opencv opencv.cxxdev proj python3Packages.numpy python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python pkg-config ];
+  rosBuildExportDepends = [ cv-bridge diagnostic-msgs diagnostic-updater geographic-msgs geometry-msgs gps-msgs marti-nav-msgs rcl-interfaces rclcpp rclcpp-components rclpy sensor-msgs swri-math-util tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
 
   meta = {
     description = "The swri_transform_util package contains utility functions and classes for

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ament-cmake-python pybind11-vendor ];
-  checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common cv-bridge geometry-msgs hri-msgs python3Packages.numpy python3Packages.opencv4 sensor-msgs std-msgs tf2-ros-py ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs hri opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 rclcpp rclpy ];
+  buildInputs = [ ament-cmake-auto ament-cmake-python builtin-interfaces geometry-msgs hri pybind11-vendor rclcpp rclpy ];
+  checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common cv-bridge hri-msgs python3Packages.numpy python3Packages.opencv4 sensor-msgs std-msgs tf2-ros-py ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs hri rclcpp rclpy ];
 
   meta = {
     description = "A python wrapper around hri package";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-agnocast-wrapper autoware-cmake autoware-signal-processing autoware-utils-geometry geometry-msgs nav-msgs rclcpp rclcpp-components ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-agnocast-wrapper autoware-signal-processing autoware-utils-geometry geometry-msgs nav-msgs rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-agnocast-wrapper autoware-signal-processing autoware-utils-geometry geometry-msgs nav-msgs rclcpp rclcpp-components ];
 
   meta = {
     description = "The acceleration estimation package";

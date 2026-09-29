@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-index-python ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.pyyaml ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ ament-index-python ];
 
   meta = {
     description = "Xacro (XML Macros)

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ eigen geometry-msgs kdl-parser nlopt pkg-config rclcpp urdf ];
+  buildInputs = [ ament-cmake geometry-msgs kdl-parser rclcpp urdf ];
+  propagatedBuildInputs = [ eigen nlopt pkg-config ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs kdl-parser rclcpp urdf ];
 
   meta = {
     description = "TRAC-IK is a faster, significantly more reliable drop-in replacement for

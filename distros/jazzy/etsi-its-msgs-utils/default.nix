@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake etsi-its-msgs geometry-msgs tf2-geometry-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ etsi-its-msgs geographiclib geometry-msgs tf2-geometry-msgs ];
+  propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ etsi-its-msgs geometry-msgs tf2-geometry-msgs ];
 
   meta = {
     description = "ROS messages and utility functions for ETSI ITS messages";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ros2-control-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h backward-ros pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2-control-cmake trajectory-msgs urdf ];
   checkInputs = [ ament-cmake-gmock generate-parameter-library launch-ros launch-testing-ament-cmake ];
-  propagatedBuildInputs = [ backward-ros fmt pluginlib rclcpp rclcpp-lifecycle realtime-tools trajectory-msgs urdf ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ backward-ros pluginlib rclcpp rclcpp-lifecycle realtime-tools trajectory-msgs urdf ];
 
   meta = {
     description = "Package with interfaces for handling of joint limits in controllers or in hardware. The package also implements Saturation Joint Limiter for position-velocity-acceleration set and other individual interfaces.";

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake tf2-eigen ];
-  propagatedBuildInputs = [ eigen3-cmake-module moveit-common moveit-core moveit-msgs rclcpp ];
+  buildInputs = [ ament-cmake eigen3-cmake-module moveit-common moveit-core moveit-msgs rclcpp tf2-eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module moveit-common moveit-core moveit-msgs rclcpp ];
 
   meta = {
     description = "Helper scripts and functionality to test industrial motion generation";

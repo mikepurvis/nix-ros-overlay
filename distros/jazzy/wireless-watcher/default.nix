@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ diagnostic-updater rclcpp wireless-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-updater rclcpp wireless-msgs wirelesstools ];
+  propagatedBuildInputs = [ wirelesstools ];
+  rosBuildExportDepends = [ diagnostic-updater rclcpp wireless-msgs ];
 
   meta = {
     description = "A node which publishes connection information about a linux wireless interface.";

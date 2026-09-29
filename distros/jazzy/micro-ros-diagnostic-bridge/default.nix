@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
-  checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common diagnostic-msgs micro-ros-diagnostic-msgs osrf-testing-tools-cpp ros-environment ];
-  propagatedBuildInputs = [ diagnostic-msgs micro-ros-diagnostic-msgs rclcpp ];
+  buildInputs = [ ament-cmake-ros diagnostic-msgs micro-ros-diagnostic-msgs rclcpp ];
+  checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp ros-environment ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ diagnostic-msgs micro-ros-diagnostic-msgs rclcpp ];
 
   meta = {
     description = "Translates micro-ROS diagnostic messages to vanilla ROS 2 diagnostic messages.";

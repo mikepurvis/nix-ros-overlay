@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ ackermann-msgs ackermann-nlmpc-msgs geometry-msgs nav-msgs std-msgs ];
   checkInputs = [ ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ ackermann-msgs ackermann-nlmpc-msgs geometry-msgs nav-msgs std-msgs ];
+  rosBuildExportDepends = [ ackermann-msgs ackermann-nlmpc-msgs geometry-msgs nav-msgs std-msgs ];
 
   meta = {
     description = "Lightweight non-linear MPC controller for autonomous driving in 2D environments";

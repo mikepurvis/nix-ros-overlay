@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake qt5.qtbase ];
+  buildInputs = [ ament-cmake plansys2-msgs plansys2-problem-expert qt-gui-cpp qt5.qtbase rclcpp rclcpp-lifecycle rqt-gui rqt-gui-cpp ];
   checkInputs = [ ament-cmake-gtest ament-index-cpp ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ plansys2-msgs plansys2-problem-expert qt-gui-cpp rclcpp rclcpp-lifecycle rqt-gui rqt-gui-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ plansys2-msgs plansys2-problem-expert qt-gui-cpp rclcpp rclcpp-lifecycle rqt-gui rqt-gui-cpp ];
 
   meta = {
     description = "A set of tools for monitoring ROS2 Planning System";

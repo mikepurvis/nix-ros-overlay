@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto magic-enum ];
+  buildInputs = [ ament-cmake-auto cv-bridge geometry-msgs hri-msgs magic-enum rclcpp rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge geometry-msgs hri-msgs opencv opencv.cxxdev rclcpp rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-ros ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ cv-bridge geometry-msgs hri-msgs rclcpp rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-ros ];
 
   meta = {
     description = "A wrapper library around the ROS4HRI ROS topics";

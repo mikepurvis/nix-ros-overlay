@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros diagnostic-msgs geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros trimble-gsof-msgs trimble-interfaces ];
   checkInputs = [ ament-cmake-gtest launch-testing ];
-  propagatedBuildInputs = [ boost diagnostic-msgs geographiclib geometry-msgs libpcap nav-msgs rclcpp rclcpp-components sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros trimble-gsof-msgs trimble-interfaces ];
+  propagatedBuildInputs = [ boost geographiclib libpcap ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ diagnostic-msgs geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros trimble-gsof-msgs trimble-interfaces ];
 
   meta = {
     description = "Connect Trimble products publishing GSOF data to ROS.";

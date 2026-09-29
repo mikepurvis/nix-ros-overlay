@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  buildInputs = [ builtin-interfaces rosidl-default-generators ];
+  buildInputs = [ builtin-interfaces rclpy rosidl-default-generators ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 geometry-msgs python3Packages.pytest rclpy-message-converter-msgs std-msgs std-srvs tf2-msgs ];
-  propagatedBuildInputs = [ python3Packages.numpy rclpy ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
+  rosBuildExportDepends = [ rclpy ];
   rosExecDepends = [ rosidl-parser rosidl-runtime-py ];
 
   meta = {

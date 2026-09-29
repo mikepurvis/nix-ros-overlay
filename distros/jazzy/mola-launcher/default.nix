@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gtest cmake ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-gtest cmake mola-kernel mrpt-libbase ros-environment ];
   checkInputs = [ ament-cmake-pep257 ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ cli11 mola-kernel mrpt-libbase ];
+  propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
+  rosBuildExportDepends = [ mola-kernel mrpt-libbase ];
 
   meta = {
     description = "Launcher app for MOLA systems";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto asio-cmake-module ];
+  buildInputs = [ ament-cmake-auto asio-cmake-module rclcpp std-msgs udp-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ asio rclcpp std-msgs udp-msgs ];
+  propagatedBuildInputs = [ asio ];
   nativeBuildInputs = [ ament-cmake-auto asio-cmake-module ];
+  rosBuildExportDepends = [ rclcpp std-msgs udp-msgs ];
 
   meta = {
     description = "A library to write Synchronous and Asynchronous networking applications";

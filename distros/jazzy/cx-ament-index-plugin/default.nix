@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib ];
+  buildInputs = [ ament-cmake ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib ];
 
   meta = {
     description = "CLIPS plugin for accessing ament_index via ament_index_cpp";

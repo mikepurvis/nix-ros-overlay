@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake nlopt ];
+  buildInputs = [ ament-cmake easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs nlopt pcl-conversions pluginlib sensor-msgs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common easynav-simple-common rclcpp-lifecycle std-srvs ];
-  propagatedBuildInputs = [ easynav-common easynav-core easynav-sensors easynav-system eigen geometry-msgs nav-msgs pcl-conversions pluginlib sensor-msgs tf2 tf2-ros ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pcl-conversions pluginlib sensor-msgs tf2 tf2-ros ];
 
   meta = {
     description = "Easy Navigation: MPC Controller package.";

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mrpt-common ];
+  buildInputs = [ cmake mrpt-common ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common ];
 
   meta = {
     description = "The MRPT C++ library mrpt_typemeta";

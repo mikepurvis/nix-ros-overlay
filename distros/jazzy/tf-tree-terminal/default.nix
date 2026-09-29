@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ geometry-msgs rclpy tf2-ros ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs python3Packages.pyyaml rclpy tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosBuildExportDepends = [ geometry-msgs rclpy tf2-ros ];
 
   meta = {
     description = "A lightweight ROS 2 utility to visualize the Coordinate Transform (TF) tree directly in the terminal with a folder-style structure.";

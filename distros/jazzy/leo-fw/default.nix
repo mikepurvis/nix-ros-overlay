@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python leo-msgs nav-msgs rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-black ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-mypy ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ leo-msgs nav-msgs python3Packages.dbus-python python3Packages.pyyaml python3Packages.whichcraft rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.dbus-python python3Packages.pyyaml python3Packages.whichcraft ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ leo-msgs nav-msgs rclcpp rclcpp-components sensor-msgs ];
   rosExecDepends = [ ament-index-python geometry-msgs rcl-interfaces rclpy ros2cli std-msgs std-srvs ];
 
   meta = {

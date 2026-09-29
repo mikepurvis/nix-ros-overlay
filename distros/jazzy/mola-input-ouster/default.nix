@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen flatbuffers libpng libtins libzip openssl zstd ];
-  propagatedBuildInputs = [ curl mola-kernel mola-yaml mrpt-libmaps mrpt-libobs ];
+  buildInputs = [ cmake eigen flatbuffers libpng libtins libzip mola-kernel mola-yaml mrpt-libmaps mrpt-libobs openssl zstd ];
+  propagatedBuildInputs = [ curl ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-kernel mola-yaml mrpt-libmaps mrpt-libobs ];
 
   meta = {
     description = "MOLA input module for Ouster LiDAR sensors using the native Ouster C++ SDK.

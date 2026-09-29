@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp std-msgs ];
   checkInputs = [ launch-testing launch-testing-ament-cmake ros2run ];
-  propagatedBuildInputs = [ rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp std-msgs ];
   rosExecDepends = [ controller-manager gz-ros2-control joint-state-broadcaster joint-trajectory-controller robot-state-publisher ros-gz-bridge ros-gz-sim urdf xacro ];
 
   meta = {

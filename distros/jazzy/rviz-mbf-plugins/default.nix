@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ geometry-msgs mbf-msgs pluginlib qt5or6.qtbase rclcpp rclcpp-action rviz-common ];
+  buildInputs = [ ament-cmake geometry-msgs mbf-msgs pluginlib rclcpp rclcpp-action rviz-common ];
+  propagatedBuildInputs = [ qt5or6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs mbf-msgs pluginlib rclcpp rclcpp-action rviz-common ];
 
   meta = {
     description = "Contains rviz plugins for interacting with move base flex.";

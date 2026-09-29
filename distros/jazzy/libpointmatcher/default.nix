@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ boost eigen libnabo yaml-cpp ];
+  buildInputs = [ cmake libnabo ];
+  propagatedBuildInputs = [ boost eigen yaml-cpp ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ libnabo ];
 
   meta = {
     description = "libpointmatcher is a modular ICP library, useful for robotics and computer vision.";

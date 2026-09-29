@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components ros-environment sensor-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components ros-environment sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
+  rosBuildExportDepends = [ event-camera-codecs event-camera-msgs image-transport rclcpp rclcpp-components ros-environment sensor-msgs ];
 
   meta = {
     description = "package for rendering event_camera_msgs";

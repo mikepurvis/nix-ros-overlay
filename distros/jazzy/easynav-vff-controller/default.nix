@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake easynav-common easynav-core easynav-sensors geometry-msgs nav-msgs pcl-ros pluginlib rclcpp rclcpp-lifecycle visualization-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ easynav-common easynav-core easynav-sensors geometry-msgs nav-msgs pcl-ros pluginlib rclcpp rclcpp-lifecycle visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ easynav-common easynav-core easynav-sensors geometry-msgs nav-msgs pcl-ros pluginlib rclcpp rclcpp-lifecycle visualization-msgs ];
 
   meta = {
     description = "Easy Navigation: VFF Controller package.";

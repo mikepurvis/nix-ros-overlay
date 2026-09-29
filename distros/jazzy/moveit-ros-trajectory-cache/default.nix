@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs moveit-common moveit-ros-planning-interface rclcpp rclcpp-action tf2-ros trajectory-msgs ];
   checkInputs = [ ament-cmake-pytest ament-cmake-uncrustify launch-pytest launch-testing-ament-cmake moveit-configs-utils moveit-planners-ompl moveit-resources python3Packages.pytest rmf-utils robot-state-publisher ros2-control warehouse-ros-sqlite ];
-  propagatedBuildInputs = [ geometry-msgs moveit-common moveit-ros-planning-interface python3Packages.pyyaml rclcpp rclcpp-action tf2-ros trajectory-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs moveit-common moveit-ros-planning-interface rclcpp rclcpp-action tf2-ros trajectory-msgs ];
   rosExecDepends = [ moveit-ros xacro ];
 
   meta = {

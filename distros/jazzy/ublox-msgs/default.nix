@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros rosidl-default-generators ];
-  propagatedBuildInputs = [ sensor-msgs std-msgs ublox-serialization ];
+  buildInputs = [ ament-cmake-ros rosidl-default-generators sensor-msgs std-msgs ublox-serialization ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ sensor-msgs std-msgs ublox-serialization ];
 
   meta = {
     description = "ublox_msgs contains raw messages for u-blox GNSS devices.";

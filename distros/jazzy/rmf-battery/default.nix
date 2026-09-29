@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen eigen3-cmake-module ];
+  buildInputs = [ cmake eigen eigen3-cmake-module rmf-traffic rmf-utils ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ rmf-traffic rmf-utils ];
   nativeBuildInputs = [ cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ rmf-traffic rmf-utils ];
 
   meta = {
     description = "Package for modelling battery life of robots";

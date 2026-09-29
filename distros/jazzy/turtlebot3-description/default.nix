@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ urdf xacro ];
+  buildInputs = [ ament-cmake urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ urdf xacro ];
 
   meta = {
     description = "3D models of the TurtleBot3 for simulation and visualization";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake nlohmann-json-schema-validator-vendor rmf-api-msgs rmf-task ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ nlohmann-json-schema-validator-vendor nlohmann_json rmf-api-msgs rmf-task ];
+  propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ nlohmann-json-schema-validator-vendor rmf-api-msgs rmf-task ];
 
   meta = {
     description = "Implementation of phase-sequence tasks for the Robotics Middleware Framework";

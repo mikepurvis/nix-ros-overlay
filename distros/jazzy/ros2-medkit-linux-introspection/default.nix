@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ros2-medkit-cmake ];
+  buildInputs = [ ament-cmake pkg-config ros2-medkit-cmake ros2-medkit-gateway ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ];
-  propagatedBuildInputs = [ nlohmann_json ros2-medkit-gateway systemd ];
+  propagatedBuildInputs = [ nlohmann_json systemd ];
   nativeBuildInputs = [ ament-cmake pkg-config ros2-medkit-cmake ];
+  rosBuildExportDepends = [ ros2-medkit-gateway ];
 
   meta = {
     description = "Linux introspection plugins for ros2_medkit gateway - procfs, systemd, and container";

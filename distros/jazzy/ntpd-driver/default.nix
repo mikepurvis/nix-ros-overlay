@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ poco rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ poco ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "ntpd_driver sends TimeReference message time to ntpd server";

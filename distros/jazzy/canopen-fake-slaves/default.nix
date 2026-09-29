@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake lely-core-libraries lifecycle-msgs rclcpp rclcpp-lifecycle ];
   checkInputs = [ ament-lint-auto ];
-  propagatedBuildInputs = [ lely-core-libraries lifecycle-msgs rclcpp rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ lely-core-libraries lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Package with mock canopen slave";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ];
+  buildInputs = [ ament-cmake ament-cmake-auto geometry-msgs rclcpp ];
   checkInputs = [ ament-lint-auto ouxt-common ];
-  propagatedBuildInputs = [ boost geometry-msgs rclcpp ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp ];
 
   meta = {
     description = "Utility library for boost geometry";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ];
+  buildInputs = [ autoware-cmake nebula-core-common ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ];
-  propagatedBuildInputs = [ nebula-core-common ];
   nativeBuildInputs = [ autoware-cmake ];
+  rosBuildExportDepends = [ nebula-core-common ];
 
   meta = {
     description = "Nebula HW Interfaces Base";

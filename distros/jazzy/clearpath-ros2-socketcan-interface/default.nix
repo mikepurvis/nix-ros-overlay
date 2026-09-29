@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros can-msgs rclcpp ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ can-msgs iproute2 rclcpp ];
+  propagatedBuildInputs = [ iproute2 ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ can-msgs rclcpp ];
 
   meta = {
     description = "A ROS 2 socketcan interface.";

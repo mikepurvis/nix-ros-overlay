@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python geometry-msgs rclcpp ];
   checkInputs = [ ament-cmake-pytest rclpy std-msgs ];
-  propagatedBuildInputs = [ geometry-msgs python3Packages.pybind11 rclcpp ];
+  propagatedBuildInputs = [ python3Packages.pybind11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp ];
 
   meta = {
     description = "Python binding tools for C++";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
+  buildInputs = [ ament-cmake backward-ros forward-command-controller pluginlib rclcpp ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface hardware-interface-testing ros2-control-test-assets ];
-  propagatedBuildInputs = [ backward-ros forward-command-controller pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros forward-command-controller pluginlib rclcpp ];
 
   meta = {
     description = "Generic controller for forwarding commands.";

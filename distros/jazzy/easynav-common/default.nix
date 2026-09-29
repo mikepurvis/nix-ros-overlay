@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs rclcpp rclcpp-lifecycle tf2-ros yaets ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs rclcpp rclcpp-lifecycle tf2-ros yaets ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-lifecycle tf2-ros yaets ];
 
   meta = {
     description = "Easy Navigation: Utils and types package.";

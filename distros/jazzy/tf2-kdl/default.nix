@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs orocos-kdl-vendor tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gtest rclcpp ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs orocos-kdl-vendor tf2 tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs orocos-kdl-vendor tf2 tf2-ros ];
   rosExecDepends = [ python-orocos-kdl-vendor tf2-ros-py ];
 
   meta = {

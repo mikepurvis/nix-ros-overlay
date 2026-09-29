@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros libyaml-vendor rcutils rmw ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common mimick-vendor osrf-testing-tools-cpp performance-test-fixture ];
-  propagatedBuildInputs = [ libyaml libyaml-vendor rcutils rmw ];
+  propagatedBuildInputs = [ libyaml ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  rosBuildExportDepends = [ libyaml-vendor rcutils rmw ];
 
   meta = {
     description = "Parse a YAML parameter file and populate the C data structure.";

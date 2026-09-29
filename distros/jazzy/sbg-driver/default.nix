@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ geometry-msgs nav-msgs nmea-msgs rclcpp rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf ];
+  buildInputs = [ ament-cmake geometry-msgs nav-msgs nmea-msgs rclcpp rosidl-default-generators rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ geometry-msgs nav-msgs nmea-msgs rclcpp rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf ];
   rosExecDepends = [ rosidl-default-runtime xacro ];
 
   meta = {

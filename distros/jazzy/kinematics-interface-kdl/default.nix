@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen3-cmake-module ros2-control-cmake ];
+  buildInputs = [ ament-cmake backward-ros eigen3-cmake-module kdl-parser kinematics-interface pluginlib ros2-control-cmake tf2-eigen-kdl ];
   checkInputs = [ ament-cmake-gmock ];
-  propagatedBuildInputs = [ backward-ros eigen kdl-parser kinematics-interface pluginlib tf2-eigen-kdl ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ backward-ros kdl-parser kinematics-interface pluginlib tf2-eigen-kdl ];
 
   meta = {
     description = "KDL implementation of ros2_control kinematics interface";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake asio-cmake-module ];
+  buildInputs = [ ament-cmake asio-cmake-module diagnostic-updater io-context off-highway-premium-radar-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-ros ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ asio diagnostic-updater io-context off-highway-premium-radar-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ asio ];
   nativeBuildInputs = [ ament-cmake asio-cmake-module ];
+  rosBuildExportDepends = [ diagnostic-updater io-context off-highway-premium-radar-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "The off_highway_premium_radar package";

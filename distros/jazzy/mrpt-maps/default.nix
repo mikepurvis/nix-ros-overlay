@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen octomap python3 python3Packages.pybind11 ];
-  propagatedBuildInputs = [ mrpt-graphs mrpt-obs ];
+  buildInputs = [ cmake eigen mrpt-graphs mrpt-obs octomap python3 python3Packages.pybind11 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-graphs mrpt-obs ];
 
   meta = {
     description = "The MRPT C++ library mrpt_maps";

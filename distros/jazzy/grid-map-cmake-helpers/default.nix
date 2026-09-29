@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ];
   nativeBuildInputs = [ ament-cmake-core ];
+  rosBuildExportDepends = [ ament-cmake-core ];
 
   meta = {
     description = "CMake support functionality used throughout grid_map";

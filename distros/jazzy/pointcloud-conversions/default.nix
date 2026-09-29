@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake pcl-conversions pcl-ros rclcpp sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ pcl pcl-conversions pcl-ros rclcpp sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
+  propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ pcl-conversions pcl-ros rclcpp sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
 
   meta = {
     description = "ROS 2 utilities for PLY/XYZ/PointCloud2 conversion and TF2-based frame transforms: ply_to_xyz and xyz_to_ply transframers and a pointcloud_to_ply mesh reconstructor (PCL).";

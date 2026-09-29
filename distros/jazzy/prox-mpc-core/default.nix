@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs nav-msgs pluginlib proxsuite rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen geometry-msgs nav-msgs pluginlib proxsuite rclcpp ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs nav-msgs pluginlib proxsuite rclcpp ];
 
   meta = {
     description = "ProxMPC core: a nonlinear Model Predictive Control solved by a

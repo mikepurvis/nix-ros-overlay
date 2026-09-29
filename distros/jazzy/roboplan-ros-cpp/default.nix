@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces python3 python3Packages.nanobind python3Packages.typing-extensions ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs pinocchio python3 python3Packages.nanobind python3Packages.typing-extensions roboplan rosidl-generator-cpp sensor-msgs tf2-eigen trajectory-msgs ];
   checkInputs = [ ament-index-cpp roboplan-example-models ];
-  propagatedBuildInputs = [ eigen geometry-msgs pinocchio roboplan rosidl-generator-cpp sensor-msgs tf2-eigen trajectory-msgs ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs pinocchio roboplan rosidl-generator-cpp sensor-msgs tf2-eigen trajectory-msgs ];
 
   meta = {
     description = "ROS 2 C++ bindings for the RoboPlan motion planning library.";

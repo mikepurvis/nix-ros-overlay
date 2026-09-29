@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ example-interfaces rclpy rosbag2-py std-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ example-interfaces rclpy rosbag2-py std-msgs ];
+  rosBuildExportDepends = [ example-interfaces rclpy rosbag2-py std-msgs ];
   rosExecDepends = [ rosidl-runtime-py ];
 
   meta = {

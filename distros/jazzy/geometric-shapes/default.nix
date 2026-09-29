@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
+  buildInputs = [ ament-cmake console-bridge-vendor eigen-stl-containers eigen3-cmake-module geometry-msgs pkg-config random-numbers rclcpp resource-retriever rosidl-default-generators shape-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-copyright ament-cmake-gtest ament-lint-auto ament-lint-cmake ];
-  propagatedBuildInputs = [ assimp boost console-bridge-vendor eigen eigen-stl-containers eigen3-cmake-module fcl geometry-msgs qhull random-numbers rclcpp resource-retriever shape-msgs visualization-msgs ];
+  propagatedBuildInputs = [ assimp boost eigen fcl qhull ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module rosidl-default-generators ];
+  rosBuildExportDepends = [ console-bridge-vendor eigen-stl-containers eigen3-cmake-module geometry-msgs random-numbers rclcpp resource-retriever shape-msgs visualization-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

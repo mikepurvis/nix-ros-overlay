@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake tf2 ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ eigen geos opencv opencv.cxxdev tf2 ];
+  propagatedBuildInputs = [ eigen geos opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ tf2 ];
 
   meta = {
     description = "Commonly used geometry routines, implemented in a ROS friendly package.";

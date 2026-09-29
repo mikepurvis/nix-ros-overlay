@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-ros cv-bridge ffmpeg-encoder-decoder ffmpeg-image-transport-msgs rclcpp rcutils ros-environment rosbag2-cpp rosbag2-storage sensor-msgs ];
   checkInputs = [ ament-cmake-black ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge ffmpeg-encoder-decoder ffmpeg-image-transport-msgs opencv opencv.cxxdev rclcpp rcutils rosbag2-cpp rosbag2-storage sensor-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
+  rosBuildExportDepends = [ cv-bridge ffmpeg-encoder-decoder ffmpeg-image-transport-msgs rclcpp rcutils rosbag2-cpp rosbag2-storage sensor-msgs ];
 
   meta = {
     description = "tools for processing ffmpeg_image_transport_msgs";

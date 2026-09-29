@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
+  buildInputs = [ ament-cmake-auto autoware-cmake pybind11-vendor python-cmake-module ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ pybind11-vendor python3 python3Packages.matplotlib ];
+  propagatedBuildInputs = [ python3 python3Packages.matplotlib ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
+  rosBuildExportDepends = [ pybind11-vendor ];
 
   meta = {
     description = "C++ interface for matplotlib based on pybind11";

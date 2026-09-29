@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp ros-testing ];
-  propagatedBuildInputs = [ inverse-dynamics-solver kdl-parser orocos-kdl pluginlib rclcpp ];
+  buildInputs = [ ament-cmake inverse-dynamics-solver kdl-parser pluginlib rclcpp ];
+  checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ros-testing ];
+  propagatedBuildInputs = [ orocos-kdl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ inverse-dynamics-solver kdl-parser pluginlib rclcpp ];
   rosExecDepends = [ ur-description ];
 
   meta = {

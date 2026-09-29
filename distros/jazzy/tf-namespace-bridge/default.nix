@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake generate-parameter-library rclcpp tf2-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ generate-parameter-library rclcpp tf2-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ generate-parameter-library rclcpp tf2-msgs ];
 
   meta = {
     description = "Bridge namespaced TF topics into the global TF tree for multi-robot setups";

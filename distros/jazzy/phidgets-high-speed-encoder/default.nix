@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
-  propagatedBuildInputs = [ phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
+  buildInputs = [ ament-cmake-ros phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
   rosExecDepends = [ launch ];
 
   meta = {

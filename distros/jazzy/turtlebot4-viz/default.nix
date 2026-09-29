@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rqt-robot-monitor rviz2 turtlebot4-description ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rqt-robot-monitor rviz2 turtlebot4-description ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rqt-robot-monitor rviz2 turtlebot4-description ];
 
   meta = {
     description = "Visualization launchers and helpers for Turtlebot4";

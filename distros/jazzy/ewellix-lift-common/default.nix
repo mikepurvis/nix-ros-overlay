@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ewellix-description ewellix-interfaces ewellix-moveit-config ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ewellix-description ewellix-interfaces ewellix-moveit-config ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ewellix-description ewellix-interfaces ewellix-moveit-config ];
 
   meta = {
     description = "Metapackage for common Ewellix lift packages";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake urdf xacro ];
   checkInputs = [ launch-testing-ament-cmake rviz2 ];
-  propagatedBuildInputs = [ urdf xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ urdf xacro ];
   rosExecDepends = [ joint-state-publisher-gui kuka-resources launch-ros robot-state-publisher ];
 
   meta = {

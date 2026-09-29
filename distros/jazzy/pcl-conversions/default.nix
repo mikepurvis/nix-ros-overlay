@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake message-filters pcl-msgs rclcpp sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ eigen message-filters pcl pcl-msgs rclcpp sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ eigen pcl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ message-filters pcl-msgs rclcpp sensor-msgs std-msgs ];
 
   meta = {
     description = "Provides conversions from PCL data types and ROS message types";

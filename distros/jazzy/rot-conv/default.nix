@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module ];
+  buildInputs = [ ament-cmake eigen3-cmake-module ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module ];
 
   meta = {
     description = "A collection of functions that address common computations and numerical handling of rotations in 3D Euclidean space";

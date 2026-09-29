@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
-  propagatedBuildInputs = [ nebula-core-common nebula-core-decoders ];
+  buildInputs = [ autoware-cmake nebula-core-common nebula-core-decoders ros-environment ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ nebula-core-common nebula-core-decoders ];
 
   meta = {
     description = "Nebula Sample Common Libraries and Headers";

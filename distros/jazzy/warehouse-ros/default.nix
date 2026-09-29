@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs pluginlib rclcpp std-msgs tf2 tf2-geometry-msgs tf2-ros ];
   checkInputs = [ ament-cmake-copyright ament-lint-auto ];
-  propagatedBuildInputs = [ boost geometry-msgs openssl pluginlib rclcpp std-msgs tf2 tf2-geometry-msgs tf2-ros ];
+  propagatedBuildInputs = [ boost openssl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs pluginlib rclcpp std-msgs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Persistent storage of ROS messages";

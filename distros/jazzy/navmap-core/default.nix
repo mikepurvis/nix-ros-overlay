@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake eigen3-cmake-module ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common gtest ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ eigen3-cmake-module ];
 
   meta = {
     description = "Core C++ library for NavMap.";

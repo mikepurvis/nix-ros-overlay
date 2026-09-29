@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake control-msgs geometry-msgs moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface moveit-servo rclcpp rclcpp-action sensor-msgs trajectory-msgs ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ control-msgs geometry-msgs moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface moveit-servo rclcpp rclcpp-action sensor-msgs trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ control-msgs geometry-msgs moveit-core moveit-msgs moveit-ros-planning moveit-ros-planning-interface moveit-servo rclcpp rclcpp-action sensor-msgs trajectory-msgs ];
   rosExecDepends = [ moveit-configs-utils moveit-kinematics moveit-planners moveit-ros-move-group moveit-ros-visualization moveit-setup-assistant moveit-simple-controller-manager rosbot-description rosbot-joy rviz-common rviz-default-plugins rviz2 ];
 
   meta = {

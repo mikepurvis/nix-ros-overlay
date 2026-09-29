@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake hardware-interface pluginlib rclcpp rclcpp-lifecycle ];
   checkInputs = [ ament-cmake-gtest ros-testing ];
-  propagatedBuildInputs = [ hardware-interface libcap pluginlib rclcpp rclcpp-lifecycle ];
+  propagatedBuildInputs = [ libcap ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle ];
   rosExecDepends = [ controller-manager forward-command-controller joint-state-broadcaster joint-trajectory-controller robot-state-publisher ros2controlcli ros2launch rviz2 xacro ];
 
   meta = {

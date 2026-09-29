@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros fastrtps-cmake-module ];
-  propagatedBuildInputs = [ fastcdr fastrtps rcutils rosidl-dynamic-typesupport ];
+  buildInputs = [ ament-cmake-ros fastcdr fastrtps fastrtps-cmake-module rcutils rosidl-dynamic-typesupport ];
   nativeBuildInputs = [ ament-cmake-ros fastrtps-cmake-module ];
+  rosBuildExportDepends = [ fastcdr fastrtps rcutils rosidl-dynamic-typesupport ];
 
   meta = {
     description = "FastDDS serialization support implementation for use with C/C++.";

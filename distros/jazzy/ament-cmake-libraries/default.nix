@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ];
   nativeBuildInputs = [ ament-cmake-core ];
+  rosBuildExportDepends = [ ament-cmake-core ];
 
   meta = {
     description = "The functionality to deduplicate libraries in the ament buildsystem in CMake.";

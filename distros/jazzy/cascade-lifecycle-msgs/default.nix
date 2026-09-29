@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
 
   meta = {
     description = "Messages for rclcpp_cascade_lifecycle package";

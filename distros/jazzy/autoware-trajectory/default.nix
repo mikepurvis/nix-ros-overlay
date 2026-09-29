@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
-  checkInputs = [ ament-index-cpp autoware-lint-common autoware-motion-utils autoware-pyplot autoware-test-utils autoware-utils-geometry pybind11-vendor python3 python3Packages.matplotlib range-v3 yaml-cpp ];
-  propagatedBuildInputs = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-planning-msgs autoware-utils-geometry fmt geometry-msgs lanelet2-core rclcpp tf2 tf2-geometry-msgs tl-expected ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-internal-planning-msgs autoware-lanelet2-utils autoware-planning-msgs autoware-utils-geometry geometry-msgs lanelet2-core python-cmake-module rclcpp tf2 tf2-geometry-msgs tl-expected ];
+  checkInputs = [ ament-index-cpp autoware-lint-common autoware-motion-utils autoware-pyplot autoware-test-utils pybind11-vendor python3 python3Packages.matplotlib range-v3 yaml-cpp ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
+  rosBuildExportDepends = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-planning-msgs autoware-utils-geometry geometry-msgs lanelet2-core rclcpp tf2 tf2-geometry-msgs tl-expected ];
 
   meta = {
     description = "The autoware_trajectory package";

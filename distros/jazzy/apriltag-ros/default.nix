@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen ];
+  buildInputs = [ ament-cmake apriltag apriltag-msgs cv-bridge eigen image-transport rclcpp rclcpp-components sensor-msgs tf2-ros ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-lint-auto clang ];
-  propagatedBuildInputs = [ apriltag apriltag-msgs cv-bridge image-transport rclcpp rclcpp-components sensor-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ apriltag apriltag-msgs cv-bridge image-transport rclcpp rclcpp-components sensor-msgs tf2-ros ];
   rosExecDepends = [ camera-ros image-proc image-transport-plugins ];
 
   meta = {

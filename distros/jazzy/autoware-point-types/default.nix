@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-export-dependencies autoware-cmake ];
-  checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common point-cloud-msg-wrapper ];
-  propagatedBuildInputs = [ ament-cmake-copyright ament-cmake-core ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-test ament-cmake-xmllint pcl-ros point-cloud-msg-wrapper sensor-msgs ];
+  buildInputs = [ ament-cmake-copyright ament-cmake-core ament-cmake-cppcheck ament-cmake-export-dependencies ament-cmake-lint-cmake ament-cmake-test ament-cmake-xmllint autoware-cmake pcl-ros point-cloud-msg-wrapper sensor-msgs ];
+  checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-test autoware-cmake ];
+  rosBuildExportDepends = [ ament-cmake-copyright ament-cmake-core ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-test ament-cmake-xmllint pcl-ros point-cloud-msg-wrapper sensor-msgs ];
 
   meta = {
     description = "The point types definition to use point_cloud_msg_wrapper";

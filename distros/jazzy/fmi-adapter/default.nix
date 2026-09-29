@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake fmilibrary-vendor ];
+  buildInputs = [ ament-cmake fmilibrary-vendor rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing rcutils ];
-  propagatedBuildInputs = [ rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
   rosExecDepends = [ launch launch-ros ];
 
   meta = {

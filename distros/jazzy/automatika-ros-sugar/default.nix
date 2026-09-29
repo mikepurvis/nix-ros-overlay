@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-python builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs rclcpp rclpy rosidl-default-generators sensor-msgs std-msgs tf2-ros ];
   checkInputs = [ ament-cmake-pytest ament-index-python ament-lint-auto launch launch-testing python3Packages.pytest ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs python3Packages.attrs python3Packages.jinja2 python3Packages.msgpack python3Packages.msgpack-numpy python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml python3Packages.setproctitle python3Packages.toml rclcpp rclpy sensor-msgs std-msgs tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.attrs python3Packages.jinja2 python3Packages.msgpack python3Packages.msgpack-numpy python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml python3Packages.setproctitle python3Packages.toml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs rclcpp rclpy sensor-msgs std-msgs tf2-ros ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

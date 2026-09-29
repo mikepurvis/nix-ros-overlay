@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp rclcpp-components rmf-fleet-msgs rmf-visualization-msgs visualization-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common rmf-utils ];
-  propagatedBuildInputs = [ rclcpp rclcpp-components rmf-fleet-msgs rmf-visualization-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components rmf-fleet-msgs rmf-visualization-msgs visualization-msgs ];
 
   meta = {
     description = "A package to visualize positions of robots from different fleets in the a building";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake gtest python3Packages.sphinx ros-environment ];
-  propagatedBuildInputs = [ abseil-cpp builtin-interfaces cartographer cartographer-ros-msgs eigen geometry-msgs gflags glog nav-msgs pcl pcl-conversions rclcpp rosbag2-cpp rosbag2-storage sensor-msgs std-msgs tf2 tf2-eigen tf2-msgs tf2-ros urdf visualization-msgs ];
+  buildInputs = [ ament-cmake builtin-interfaces cartographer cartographer-ros-msgs geometry-msgs gtest nav-msgs pcl-conversions python3Packages.sphinx rclcpp ros-environment rosbag2-cpp rosbag2-storage sensor-msgs std-msgs tf2 tf2-eigen tf2-msgs tf2-ros urdf visualization-msgs ];
+  propagatedBuildInputs = [ abseil-cpp eigen gflags glog pcl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces cartographer cartographer-ros-msgs geometry-msgs nav-msgs pcl-conversions rclcpp rosbag2-cpp rosbag2-storage sensor-msgs std-msgs tf2 tf2-eigen tf2-msgs tf2-ros urdf visualization-msgs ];
   rosExecDepends = [ launch robot-state-publisher ];
 
   meta = {

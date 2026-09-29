@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros rclcpp ];
   checkInputs = [ ament-cmake-gmock ament-cmake-google-benchmark ament-cmake-gtest ament-lint-auto ament-lint-common mimick-vendor performance-test-fixture rmw rmw-implementation-cmake rosidl-default-generators test-msgs ];
-  propagatedBuildInputs = [ rclcpp ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  rosBuildExportDepends = [ rclcpp ];
 
   meta = {
     description = "Cellumation executor package .";

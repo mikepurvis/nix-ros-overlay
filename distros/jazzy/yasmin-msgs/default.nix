@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ action-msgs rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs rosidl-default-generators ];
 
   meta = {
     description = "Msgs of (Yet Another State MachINe)";

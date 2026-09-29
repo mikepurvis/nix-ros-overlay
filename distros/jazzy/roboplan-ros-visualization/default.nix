@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.nanobind python3Packages.typing-extensions ];
-  propagatedBuildInputs = [ ament-index-cpp geometry-msgs interactive-markers rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik sensor-msgs visualization-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-index-cpp geometry-msgs interactive-markers python3 python3Packages.nanobind python3Packages.typing-extensions rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik sensor-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ ament-index-cpp geometry-msgs interactive-markers rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik sensor-msgs visualization-msgs ];
   rosExecDepends = [ rviz2 ];
 
   meta = {

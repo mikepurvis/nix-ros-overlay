@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-python automatika-ros-sugar builtin-interfaces rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ automatika-ros-sugar builtin-interfaces python3Packages.httpx python3Packages.platformdirs python3Packages.tqdm python3Packages.websockets sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.httpx python3Packages.platformdirs python3Packages.tqdm python3Packages.websockets ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  rosBuildExportDepends = [ automatika-ros-sugar builtin-interfaces sensor-msgs std-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

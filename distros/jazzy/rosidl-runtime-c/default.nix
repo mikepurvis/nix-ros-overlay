@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rcutils rosidl-typesupport-interface ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common performance-test-fixture ];
-  propagatedBuildInputs = [ ament-cmake rcutils rosidl-typesupport-interface ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
+  nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ ament-cmake rcutils rosidl-typesupport-interface ];
 
   meta = {
     description = "Provides definitions, initialization and finalization functions, and macros for getting and working with rosidl typesupport types in C.";

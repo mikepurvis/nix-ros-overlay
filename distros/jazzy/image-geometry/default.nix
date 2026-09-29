@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ament-cmake-ros ];
+  buildInputs = [ ament-cmake-python ament-cmake-ros sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ];
-  propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.deprecated sensor-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.deprecated ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros ];
+  rosBuildExportDepends = [ sensor-msgs ];
 
   meta = {
     description = "`image_geometry` contains C++ and Python libraries for interpreting images

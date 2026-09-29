@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ];
+  buildInputs = [ ament-cmake-auto rclpy ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch xacro ];
-  propagatedBuildInputs = [ rclpy ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ rclpy ];
   rosExecDepends = [ urdfdom ];
 
   meta = {

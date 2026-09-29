@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python angles ];
+  buildInputs = [ ament-cmake ament-cmake-python angles diagnostic-msgs diagnostic-updater eigen-stl-containers eigen3-cmake-module geographic-msgs geometry-msgs libmavconn mavlink mavros-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-components rcpputils sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
   checkInputs = [ ament-cmake-gmock ament-cmake-google-benchmark ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common gtest ];
-  propagatedBuildInputs = [ console-bridge diagnostic-msgs diagnostic-updater eigen eigen-stl-containers eigen3-cmake-module geographic-msgs geographiclib geometry-msgs libmavconn mavlink mavros-msgs message-filters nav-msgs pluginlib python3Packages.click rclcpp rclcpp-components rcpputils sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
+  propagatedBuildInputs = [ console-bridge eigen geographiclib python3Packages.click ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python eigen3-cmake-module ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater eigen-stl-containers eigen3-cmake-module geographic-msgs geometry-msgs libmavconn mavlink mavros-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-components rcpputils sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
   rosExecDepends = [ rclpy rosidl-default-runtime ];
 
   meta = {

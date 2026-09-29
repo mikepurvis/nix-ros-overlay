@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen libtins libzip pcl rosidl-default-generators tf2-eigen ];
+  buildInputs = [ ament-cmake class-loader cv-bridge eigen geometry-msgs libtins libzip ouster-sensor-msgs pcl pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle rosidl-default-generators sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros ];
   checkInputs = [ ament-cmake-gtest gtest ];
-  propagatedBuildInputs = [ class-loader curl cv-bridge geometry-msgs jsoncpp ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs spdlog std-msgs std-srvs tf2-ros ];
+  propagatedBuildInputs = [ curl jsoncpp spdlog ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ class-loader cv-bridge geometry-msgs ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs tf2-ros ];
   rosExecDepends = [ launch launch-ros rosidl-default-runtime ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-medkit-cmake ];
+  buildInputs = [ ament-cmake rclcpp ros2-medkit-beacon-common ros2-medkit-cmake ros2-medkit-gateway ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-gmock ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ nlohmann_json rclcpp ros2-medkit-beacon-common ros2-medkit-gateway ];
+  propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
+  rosBuildExportDepends = [ rclcpp ros2-medkit-beacon-common ros2-medkit-gateway ];
 
   meta = {
     description = "Parameter-based beacon discovery plugin for ros2_medkit gateway";

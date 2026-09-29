@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
+  buildInputs = [ autoware-cmake nebula-core-common ros-environment sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ];
-  propagatedBuildInputs = [ boost eigen libpng nebula-core-common pngpp sensor-msgs ];
+  propagatedBuildInputs = [ boost eigen libpng pngpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ nebula-core-common sensor-msgs ];
 
   meta = {
     description = "Nebula Decoders Base Library";

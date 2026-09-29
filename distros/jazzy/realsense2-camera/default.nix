@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment ];
+  buildInputs = [ ament-cmake builtin-interfaces cv-bridge diagnostic-updater geometry-msgs image-transport librealsense2 lifecycle-msgs nav-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle realsense2-camera-msgs ros-environment sensor-msgs std-msgs std-srvs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest launch-pytest launch-testing python3Packages.numpy python3Packages.requests python3Packages.tqdm ros2bag ros2topic rosbag2-storage-default-plugins sensor-msgs-py tf2-ros-py ];
-  propagatedBuildInputs = [ builtin-interfaces cv-bridge diagnostic-updater eigen geometry-msgs image-transport librealsense2 lifecycle-msgs nav-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle realsense2-camera-msgs sensor-msgs std-msgs std-srvs tf2 tf2-ros ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces cv-bridge diagnostic-updater geometry-msgs image-transport librealsense2 lifecycle-msgs nav-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle realsense2-camera-msgs sensor-msgs std-msgs std-srvs tf2 tf2-ros ];
   rosExecDepends = [ launch-ros ];
 
   meta = {

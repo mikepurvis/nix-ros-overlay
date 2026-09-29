@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake python3Packages.catkin-pkg ];
-  propagatedBuildInputs = [ angles geographic-msgs geometry-msgs python3Packages.pyproj sensor-msgs unique-identifier-msgs ];
+  buildInputs = [ ament-cmake angles geographic-msgs geometry-msgs python3Packages.catkin-pkg sensor-msgs unique-identifier-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyproj ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ angles geographic-msgs geometry-msgs sensor-msgs unique-identifier-msgs ];
 
   meta = {
     description = "Python and C++ interfaces for manipulating geodetic coordinates.";

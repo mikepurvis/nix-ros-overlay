@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake generate-parameter-library ros2-control-cmake ];
-  checkInputs = [ ament-cmake-gmock controller-manager hardware-interface ros2-control-test-assets ];
-  propagatedBuildInputs = [ control-msgs controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools std-srvs ];
+  buildInputs = [ ament-cmake control-msgs controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2-control-cmake std-srvs ];
+  checkInputs = [ ament-cmake-gmock controller-manager ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ control-msgs controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools std-srvs ];
 
   meta = {
     description = "Package to control robots using motion primitives like PTP, LIN and CIRC";

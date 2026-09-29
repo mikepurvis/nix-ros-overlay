@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ rosidl-default-generators ];
-  propagatedBuildInputs = [ std-msgs ];
+  buildInputs = [ rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ rosidl-default-generators ];
+  rosBuildExportDepends = [ std-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

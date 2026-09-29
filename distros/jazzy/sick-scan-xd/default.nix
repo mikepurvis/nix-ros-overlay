@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake diagnostic-msgs diagnostic-updater geometry-msgs nav-msgs rcl-interfaces rclcpp ros-environment rosidl-default-generators sensor-msgs std-msgs tf2 tf2-ros visualization-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-msgs diagnostic-updater geometry-msgs nav-msgs rcl-interfaces rclcpp sensor-msgs std-msgs tf2 tf2-ros visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater geometry-msgs nav-msgs rcl-interfaces rclcpp sensor-msgs std-msgs tf2 tf2-ros visualization-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake python3Packages.empy ];
+  propagatedBuildInputs = [ python3Packages.empy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python3Packages.empy ];
+  rosBuildExportDepends = [ ament-cmake ];
   rosExecDepends = [ rosidl-pycommon ];
 
   meta = {

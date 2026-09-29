@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-ros-planning-interface rclcpp std-msgs ];
+  buildInputs = [ ament-cmake moveit-ros-planning-interface rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ moveit-ros-planning-interface rclcpp std-msgs ];
   rosExecDepends = [ turtlebot3-home-service-challenge-tools ];
 
   meta = {

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-cppcheck ament-cmake-flake8 ament-cmake-pep257 rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-cppcheck ament-cmake-flake8 ament-cmake-pep257 builtin-interfaces rosidl-default-generators std-msgs ];
   checkInputs = [ ament-cmake-cpplint ament-cmake-uncrustify ament-lint ];
-  propagatedBuildInputs = [ builtin-interfaces std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-cppcheck ament-cmake-flake8 ament-cmake-pep257 rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces std-msgs ];
   rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {

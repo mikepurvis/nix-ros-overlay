@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-interface kuka-drivers-core pluginlib ];
+  buildInputs = [ ament-cmake controller-interface kuka-drivers-core pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ controller-interface kuka-drivers-core pluginlib ];
 
   meta = {
     description = "Broadcaster of hardware events of KUKA robots";

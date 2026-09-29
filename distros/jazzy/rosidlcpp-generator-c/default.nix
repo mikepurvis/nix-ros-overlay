@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
-  propagatedBuildInputs = [ ament-cmake-core fmt nlohmann_json rcutils rosidl-cmake rosidl-generator-type-description rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-core ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-ros ros-environment rosidlcpp-generator-core rosidlcpp-parser ];
+  propagatedBuildInputs = [ fmt nlohmann_json ];
+  nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
+  rosBuildExportDepends = [ ament-cmake-core rcutils rosidl-cmake rosidl-generator-type-description rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in C.";

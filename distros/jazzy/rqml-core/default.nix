@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake libGL libGLU nlohmann_json ];
+  buildInputs = [ ament-cmake ament-index-cpp libGL libGLU nlohmann_json qml6-ros2-plugin yaml-cpp-vendor ];
   checkInputs = [ ament-lint-auto ros-babel-fish-test-msgs ];
-  propagatedBuildInputs = [ ament-index-cpp qml6-ros2-plugin qt6.qtbase qt6.qtdeclarative yaml-cpp-vendor ];
+  propagatedBuildInputs = [ qt6.qtbase qt6.qtdeclarative ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp qml6-ros2-plugin yaml-cpp-vendor ];
 
   meta = {
     description = "QML-based robotics visualization and control tool for ROS 2.";

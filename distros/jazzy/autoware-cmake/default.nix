@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake-auto ];
   checkInputs = [ ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-auto ament-lint-auto ros-environment ];
-  nativeBuildInputs = [ ament-cmake-auto ament-lint-auto ];
+  nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ ament-cmake-auto ament-lint-auto ros-environment ];
 
   meta = {
     description = "CMake scripts for Autoware";

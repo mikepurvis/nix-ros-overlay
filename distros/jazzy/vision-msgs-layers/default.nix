@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rqt-image-overlay-layer vision-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rqt-image-overlay-layer vision-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rqt-image-overlay-layer vision-msgs ];
 
   meta = {
     description = "Collection of RQt Image Overlay Plugins for Vision Msgs";

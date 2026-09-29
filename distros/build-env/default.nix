@@ -30,6 +30,7 @@ let
     otherPackages = partitionedPackages.wrong;
     rosPropagatedPackages = unique (concatLists (
       catAttrs "propagatedBuildInputs" rosPackages ++
+      catAttrs "rosBuildExportDepends" rosPackages ++
       catAttrs "rosExecDepends" rosPackages));
     recurse = propagatePackages rosPropagatedPackages;
   in if length validPackages == 0 then {

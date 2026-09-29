@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ros-environment ];
-  propagatedBuildInputs = [ cv-bridge depthai-ros-msgs image-transport message-filters opencv opencv.cxxdev rclcpp rclcpp-components sensor-msgs vision-msgs visualization-msgs ];
+  buildInputs = [ ament-cmake-auto cv-bridge depthai-ros-msgs image-transport message-filters rclcpp rclcpp-components ros-environment sensor-msgs vision-msgs visualization-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ cv-bridge depthai-ros-msgs image-transport message-filters rclcpp rclcpp-components sensor-msgs vision-msgs visualization-msgs ];
 
   meta = {
     description = "Depthai filters package";

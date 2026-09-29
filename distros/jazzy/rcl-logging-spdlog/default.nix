@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rcl-logging-interface rcpputils rcutils spdlog-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common performance-test-fixture ];
-  propagatedBuildInputs = [ rcl-logging-interface rcpputils rcutils spdlog spdlog-vendor ];
+  propagatedBuildInputs = [ spdlog ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rcl-logging-interface rcpputils rcutils spdlog-vendor ];
 
   meta = {
     description = "Implementation of rcl_logging API for an spdlog backend.";

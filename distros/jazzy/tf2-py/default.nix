@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake python-cmake-module ];
+  buildInputs = [ ament-cmake geometry-msgs python-cmake-module tf2 ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs tf2 ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
+  rosBuildExportDepends = [ geometry-msgs tf2 ];
   rosExecDepends = [ builtin-interfaces rclpy rpyutils ];
 
   meta = {

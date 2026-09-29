@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake eigen eigen3-cmake-module ];
+  buildInputs = [ ament-cmake-auto autoware-agnocast-wrapper autoware-cmake autoware-internal-debug-msgs autoware-kalman-filter autoware-localization-util autoware-utils-geometry autoware-utils-logging autoware-utils-system diagnostic-msgs eigen eigen3-cmake-module geometry-msgs nav-msgs rclcpp rclcpp-components std-srvs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common launch-testing-ament-cmake ros-testing ];
-  propagatedBuildInputs = [ autoware-agnocast-wrapper autoware-internal-debug-msgs autoware-kalman-filter autoware-localization-util autoware-utils-geometry autoware-utils-logging autoware-utils-system diagnostic-msgs fmt geometry-msgs nav-msgs rclcpp rclcpp-components std-srvs tf2 tf2-ros ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ autoware-agnocast-wrapper autoware-internal-debug-msgs autoware-kalman-filter autoware-localization-util autoware-utils-geometry autoware-utils-logging autoware-utils-system diagnostic-msgs geometry-msgs nav-msgs rclcpp rclcpp-components std-srvs tf2 tf2-ros ];
 
   meta = {
     description = "The autoware_ekf_localizer package";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ];
-  propagatedBuildInputs = [ ament-cmake-core launch launch-ros osrf-pycommon python3Packages.pyyaml rclpy ];
+  buildInputs = [ ament-cmake-core ament-cmake-python launch launch-ros osrf-pycommon rclpy ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake-core ];
+  rosBuildExportDepends = [ ament-cmake-core launch launch-ros osrf-pycommon rclpy ];
 
   meta = {
     description = "Common support functionality used throughout the navigation 2 stack";

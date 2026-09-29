@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ];
-  propagatedBuildInputs = [ nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
+  buildInputs = [ autoware-cmake nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
   nativeBuildInputs = [ autoware-cmake ];
+  rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
 
   meta = {
     description = "Nebula Sample HW Interfaces";

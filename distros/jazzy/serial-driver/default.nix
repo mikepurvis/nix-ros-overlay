@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto asio-cmake-module ];
+  buildInputs = [ ament-cmake-auto asio-cmake-module io-context rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ asio io-context rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
+  propagatedBuildInputs = [ asio ];
   nativeBuildInputs = [ ament-cmake-auto asio-cmake-module ];
+  rosBuildExportDepends = [ io-context rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
 
   meta = {
     description = "A template class and associated utilities which encapsulate basic reading from serial ports";

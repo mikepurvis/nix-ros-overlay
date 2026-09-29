@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake irobot-create-description joint-state-publisher robot-state-publisher urdf ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ irobot-create-description joint-state-publisher robot-state-publisher urdf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ irobot-create-description joint-state-publisher robot-state-publisher urdf ];
 
   meta = {
     description = "Turtlebot4 Description package";

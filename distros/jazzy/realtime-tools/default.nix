@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ros2-control-cmake ];
+  buildInputs = [ ament-cmake rclcpp rclcpp-action ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock lifecycle-msgs rclcpp-lifecycle test-msgs ];
-  propagatedBuildInputs = [ ament-cmake boost fmt libcap rclcpp rclcpp-action ];
+  propagatedBuildInputs = [ boost fmt libcap ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake rclcpp rclcpp-action ];
 
   meta = {
     description = "Contains a set of tools that can be used from a hard

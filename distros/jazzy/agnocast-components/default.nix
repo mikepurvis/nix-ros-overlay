@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ agnocast-cie-config-msgs agnocast-cie-thread-configurator agnocastlib class-loader glog rclcpp rclcpp-components ];
+  buildInputs = [ agnocast-cie-config-msgs agnocast-cie-thread-configurator agnocastlib ament-cmake class-loader rclcpp rclcpp-components ];
+  propagatedBuildInputs = [ glog ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ agnocast-cie-config-msgs agnocast-cie-thread-configurator agnocastlib class-loader rclcpp rclcpp-components ];
 
   meta = {
     description = "CMake tools for registering ROS 2 component nodes with Agnocast executor support.

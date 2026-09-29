@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake glfw3 libGL libGLU ];
-  propagatedBuildInputs = [ rosbag2-cpp rosbag2-storage ];
+  buildInputs = [ ament-cmake glfw3 libGL libGLU rosbag2-cpp rosbag2-storage ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rosbag2-cpp rosbag2-storage ];
 
   meta = {
     description = "GUI tool to visualize and analyze message timing from ROS2 bags (mcap or db3).";

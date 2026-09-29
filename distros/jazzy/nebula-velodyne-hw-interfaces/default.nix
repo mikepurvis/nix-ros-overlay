@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ];
-  propagatedBuildInputs = [ boost nebula-core-common nebula-core-hw-interfaces nebula-velodyne-common ];
+  buildInputs = [ autoware-cmake nebula-core-common nebula-core-hw-interfaces nebula-velodyne-common ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ];
+  rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-velodyne-common ];
 
   meta = {
     description = "Nebula HW Interfaces Velodyne";

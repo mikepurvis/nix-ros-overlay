@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gtest ament-cmake-xmllint cmake ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-gtest ament-cmake-xmllint cmake mola-common mola-imu-preintegration mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset mola-input-rawlog mola-input-rosbag2 mola-kernel mola-pose-list mola-state-estimation-simple mola-state-estimation-smoother mola-yaml mp2p-icp mrpt-libmaps ros-environment ];
   checkInputs = [ ament-lint-auto ament-lint-cmake mola-metric-maps mola-test-datasets rosbag2-storage-mcap ];
-  propagatedBuildInputs = [ cli11 mola-common mola-imu-preintegration mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset mola-input-rawlog mola-input-rosbag2 mola-kernel mola-pose-list mola-state-estimation-simple mola-state-estimation-smoother mola-yaml mp2p-icp mrpt-libmaps ];
+  propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
+  rosBuildExportDepends = [ mola-common mola-imu-preintegration mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset mola-input-rawlog mola-input-rosbag2 mola-kernel mola-pose-list mola-state-estimation-simple mola-state-estimation-smoother mola-yaml mp2p-icp mrpt-libmaps ];
   rosExecDepends = [ mola-bridge-ros2 mola-launcher mola-viz mola-viz-imgui ];
 
   meta = {

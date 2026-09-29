@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake controller-manager gripper-controllers gz-ros2-control rclcpp ros-gz ros-gz-bridge ros-gz-image ros-gz-sim ros2-control ros2-controllers trajectory-msgs xacro ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ controller-manager gripper-controllers gz-ros2-control python3Packages.numpy rclcpp ros-gz ros-gz-bridge ros-gz-image ros-gz-sim ros2-control ros2-controllers trajectory-msgs xacro ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ controller-manager gripper-controllers gz-ros2-control rclcpp ros-gz ros-gz-bridge ros-gz-image ros-gz-sim ros2-control ros2-controllers trajectory-msgs xacro ];
 
   meta = {
     description = "gazebo simulation and control scripts for bcr 7-dof robotic arm";

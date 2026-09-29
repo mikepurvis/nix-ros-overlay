@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-vendor-package ];
-  propagatedBuildInputs = [ nlohmann_json pybind11-vendor ];
+  buildInputs = [ ament-cmake ament-cmake-vendor-package pybind11-vendor ];
+  propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ament-cmake-vendor-package ];
+  rosBuildExportDepends = [ pybind11-vendor ];
 
   meta = {
     description = "A vendor package for pybind11_json for Modern C++";

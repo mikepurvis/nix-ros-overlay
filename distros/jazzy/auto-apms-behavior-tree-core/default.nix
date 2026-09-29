@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ action-msgs ament-cmake ament-cmake-python ament-index-cpp ament-index-python auto-apms-util behaviortree-cpp rclcpp rclcpp-action ];
   checkInputs = [ ament-cmake-copyright ament-cmake-gtest example-interfaces ];
-  propagatedBuildInputs = [ action-msgs ament-index-cpp ament-index-python auto-apms-util behaviortree-cpp eigen rclcpp rclcpp-action tinyxml-2 ];
+  propagatedBuildInputs = [ eigen tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ action-msgs ament-index-cpp ament-index-python auto-apms-util behaviortree-cpp rclcpp rclcpp-action ];
 
   meta = {
     description = "Core functionality and cmake tools for AutoAPMS";

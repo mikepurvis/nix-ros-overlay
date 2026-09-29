@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake qt5.qtbase ];
+  buildInputs = [ ament-cmake qt5.qtbase rviz-common rviz-ogre-vendor ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-pytest ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto geometry-msgs python3Packages.pyyaml rclcpp sensor-msgs ];
-  propagatedBuildInputs = [ python3 rviz-common rviz-ogre-vendor ];
+  propagatedBuildInputs = [ python3 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rviz-common rviz-ogre-vendor ];
   rosExecDepends = [ rviz-default-plugins ];
 
   meta = {

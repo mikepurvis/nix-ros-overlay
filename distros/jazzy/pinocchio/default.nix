@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ clang cmake doxygen git jrl-cmakemodules ];
-  propagatedBuildInputs = [ boost coal eigen eigenpy python3 python3Packages.numpy ros-environment urdfdom ];
+  buildInputs = [ clang cmake coal doxygen eigenpy git jrl-cmakemodules ros-environment urdfdom ];
+  propagatedBuildInputs = [ boost eigen python3 python3Packages.numpy ];
   nativeBuildInputs = [ clang cmake ];
+  rosBuildExportDepends = [ coal eigenpy ros-environment urdfdom ];
 
   meta = {
     description = "A fast and flexible implementation of Rigid Body Dynamics algorithms and their analytical derivatives.";

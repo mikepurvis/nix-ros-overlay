@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ffmpeg scenario-execution ];
+  buildInputs = [ scenario-execution ];
+  propagatedBuildInputs = [ ffmpeg ];
+  rosBuildExportDepends = [ scenario-execution ];
 
   meta = {
     description = "Scenario Execution library for X11";

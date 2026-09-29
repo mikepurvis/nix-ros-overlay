@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros pkg-config ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-ros cv-bridge pkg-config rclcpp ros-environment sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common ffmpeg-image-transport-msgs ];
-  propagatedBuildInputs = [ cv-bridge ffmpeg opencv opencv.cxxdev rclcpp sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ ffmpeg opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros pkg-config ros-environment ];
+  rosBuildExportDepends = [ cv-bridge rclcpp sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS2 convenience wrapper around ffmpeg for encoding/decoding";

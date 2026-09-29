@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake mola-state-estimation-simple mola-state-estimation-smoother ];
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ament-lint-cmake ];
-  propagatedBuildInputs = [ mola-state-estimation-simple mola-state-estimation-smoother ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ mola-state-estimation-simple mola-state-estimation-smoother ];
 
   meta = {
     description = "Metapackage with all MOLA state estimation packages.";

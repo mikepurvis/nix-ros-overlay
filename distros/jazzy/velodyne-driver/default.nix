@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros diagnostic-updater rclcpp rclcpp-components tf2-ros velodyne-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ diagnostic-updater libpcap rclcpp rclcpp-components tf2-ros velodyne-msgs ];
+  propagatedBuildInputs = [ libpcap ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ diagnostic-updater rclcpp rclcpp-components tf2-ros velodyne-msgs ];
 
   meta = {
     description = "ROS device driver for Velodyne 3D LIDARs.";

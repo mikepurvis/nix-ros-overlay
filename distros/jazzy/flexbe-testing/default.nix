@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python flexbe-core flexbe-msgs launch-ros rclpy ];
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 launch-testing python3Packages.pytest std-msgs ];
-  propagatedBuildInputs = [ flexbe-core flexbe-msgs launch-ros rclpy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ flexbe-core flexbe-msgs launch-ros rclpy ];
 
   meta = {
     description = "flexbe_testing provides a framework for unit testing states.";

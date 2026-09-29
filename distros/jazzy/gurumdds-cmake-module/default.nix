@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ _unresolved_gurumdds-3.2 ];
+  buildInputs = [ _unresolved_gurumdds-3.2 ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake ];
 
   meta = {
     description = "Provide CMake module to find GurumNetworks GurumDDS.";

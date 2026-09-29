@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp easynav-common geometry-msgs nav-msgs rclcpp tf2-geometry-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-cpp easynav-common geometry-msgs nav-msgs rclcpp tf2-geometry-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp easynav-common geometry-msgs nav-msgs rclcpp tf2-geometry-msgs ];
 
   meta = {
     description = "Easy Navigation: Simple Common package.";

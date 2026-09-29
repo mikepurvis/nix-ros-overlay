@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
+  buildInputs = [ ament-cmake ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   rosExecDepends = [ ds-dbw-can joy ];
 
   meta = {

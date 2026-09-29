@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python mapoi-interfaces rclpy std-msgs std-srvs tf2-ros ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ mapoi-interfaces python3Packages.flask python3Packages.pillow python3Packages.pyyaml rclpy std-msgs std-srvs tf2-ros ];
+  propagatedBuildInputs = [ python3Packages.flask python3Packages.pillow python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ mapoi-interfaces rclpy std-msgs std-srvs tf2-ros ];
   rosExecDepends = [ mapoi-server ];
 
   meta = {

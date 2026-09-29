@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
+  buildInputs = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
+  rosBuildExportDepends = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
   rosExecDepends = [ gz-ros2-control open-manipulator-description robot-state-publisher ros2-control ros2-controllers rviz2 xacro ];
 
   meta = {

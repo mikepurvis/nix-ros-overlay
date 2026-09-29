@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ffmpeg libdc1394 libpcap libusb1 openni2 ];
-  propagatedBuildInputs = [ mrpt-comms mrpt-maps mrpt-viz ];
+  buildInputs = [ cmake ffmpeg libdc1394 libpcap libusb1 mrpt-comms mrpt-maps mrpt-viz openni2 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-comms mrpt-maps mrpt-viz ];
 
   meta = {
     description = "The MRPT C++ library mrpt_hwdrivers";

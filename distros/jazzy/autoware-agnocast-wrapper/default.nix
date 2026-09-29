@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs message-filters rclcpp rclcpp-components tf2 tf2-ros ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs glog message-filters rclcpp rclcpp-components tf2 tf2-ros ];
+  propagatedBuildInputs = [ glog ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs message-filters rclcpp rclcpp-components tf2 tf2-ros ];
   rosExecDepends = [ launch launch-ros ];
 
   meta = {

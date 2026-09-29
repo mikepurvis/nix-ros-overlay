@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake can-msgs off-highway-can off-highway-uss-msgs rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-ros ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ can-msgs off-highway-can off-highway-uss-msgs rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ can-msgs off-highway-can off-highway-uss-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "The off_highway_uss package";

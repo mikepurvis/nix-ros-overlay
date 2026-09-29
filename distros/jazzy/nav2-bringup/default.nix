@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake launch-ros nav2-common navigation2 ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing ];
-  propagatedBuildInputs = [ launch-ros nav2-common navigation2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ launch-ros nav2-common navigation2 ];
   rosExecDepends = [ diff-drive-controller joint-state-broadcaster nav2-minimal-tb3-sim nav2-minimal-tb4-sim ros-gz-bridge ros-gz-sim slam-toolbox xacro ];
 
   meta = {

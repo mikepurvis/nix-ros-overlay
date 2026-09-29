@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-utils-visualization rclcpp rclcpp-components visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto autoware-lint-common autoware-map-loader launch-testing-ament-cmake ];
-  propagatedBuildInputs = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-utils-visualization rclcpp rclcpp-components visualization-msgs ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-utils-visualization rclcpp rclcpp-components visualization-msgs ];
 
   meta = {
     description = "The autoware_lanelet2_map_visualizer package";

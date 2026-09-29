@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ros-testing ];
+  buildInputs = [ autoware-cmake autoware-internal-debug-msgs autoware-utils-debug diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-hesai-common nebula-hesai-decoders nebula-hesai-hw-interfaces nebula-msgs pandar-msgs rclcpp rclcpp-components ros-environment ros-testing sensor-msgs sync-tooling-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto rosbag2-cpp ];
-  propagatedBuildInputs = [ autoware-internal-debug-msgs autoware-utils-debug boost diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-hesai-common nebula-hesai-decoders nebula-hesai-hw-interfaces nebula-msgs pandar-msgs rclcpp rclcpp-components sensor-msgs sync-tooling-msgs ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ros-testing ];
+  rosBuildExportDepends = [ autoware-internal-debug-msgs autoware-utils-debug diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-hesai-common nebula-hesai-decoders nebula-hesai-hw-interfaces nebula-msgs pandar-msgs rclcpp rclcpp-components sensor-msgs sync-tooling-msgs ];
 
   meta = {
     description = "Nebula Hesai ROS Wrapper";

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.nanobind python3Packages.typing-extensions ];
+  buildInputs = [ ament-cmake ament-cmake-python proxsuite python3 python3Packages.nanobind python3Packages.typing-extensions roboplan ];
   checkInputs = [ ament-cmake-gmock gtest roboplan-example-models ];
-  propagatedBuildInputs = [ proxsuite roboplan ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ proxsuite roboplan ];
 
   meta = {
     description = "OInK - Optimal Inverse Kinematics solver for RoboPlan.";

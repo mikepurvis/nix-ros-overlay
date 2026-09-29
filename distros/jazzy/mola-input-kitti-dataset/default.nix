@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-common mola-kernel mrpt-libmaps ];
+  buildInputs = [ cmake mola-common mola-kernel mrpt-libmaps ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mola-kernel mrpt-libmaps ];
 
   meta = {
     description = "Offline RawDataSource from Kitti odometry/SLAM datasets";

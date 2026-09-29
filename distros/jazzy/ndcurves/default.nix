@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake doxygen git ];
-  propagatedBuildInputs = [ boost eigen eigenpy graphviz jrl-cmakemodules pinocchio ];
+  buildInputs = [ cmake doxygen eigenpy git jrl-cmakemodules pinocchio ];
+  propagatedBuildInputs = [ boost eigen graphviz ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ eigenpy jrl-cmakemodules pinocchio ];
   rosExecDepends = [ ament-cmake ];
 
   meta = {

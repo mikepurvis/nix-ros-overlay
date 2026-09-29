@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake grid-map-cmake-helpers ];
-  propagatedBuildInputs = [ geometry-msgs rclcpp rosidl-default-generators std-msgs ];
+  buildInputs = [ ament-cmake geometry-msgs grid-map-cmake-helpers rclcpp rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Definition of the multi-layered grid map message type.";

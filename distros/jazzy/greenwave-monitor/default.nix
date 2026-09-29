@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python diagnostic-msgs greenwave-monitor-interfaces rclcpp rclpy rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-cmake-pytest ament-flake8 ament-lint-auto ament-lint-common ament-pep257 launch-testing launch-testing-ros python3Packages.pytest ];
-  propagatedBuildInputs = [ diagnostic-msgs greenwave-monitor-interfaces rclcpp rclpy sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python ];
+  rosBuildExportDepends = [ diagnostic-msgs greenwave-monitor-interfaces rclcpp rclpy sensor-msgs std-msgs ];
   rosExecDepends = [ launch launch-ros rosidl-default-runtime ];
 
   meta = {

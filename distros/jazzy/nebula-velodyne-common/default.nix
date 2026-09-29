@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
-  propagatedBuildInputs = [ nebula-core-common yaml-cpp ];
+  buildInputs = [ autoware-cmake nebula-core-common ros-environment ];
+  propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ nebula-core-common ];
 
   meta = {
     description = "Nebula Common Velodyne Libraries and headers";

@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ python3Packages.gitpython rcl-interfaces rclpy ros2action ros2cli ros2node ros2param ros2topic ];
+  buildInputs = [ rcl-interfaces rclpy ros2action ros2cli ros2node ros2param ros2topic ];
+  propagatedBuildInputs = [ python3Packages.gitpython ];
+  rosBuildExportDepends = [ rcl-interfaces rclpy ros2action ros2cli ros2node ros2param ros2topic ];
 
   meta = {
     description = "The system_fingerprint package";

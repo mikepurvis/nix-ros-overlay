@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake-core ament-cmake-test ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-test ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-test ];
   rosExecDepends = [ ament-lint-common ];
 
   meta = {

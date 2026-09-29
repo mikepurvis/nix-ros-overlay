@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp moveit-setup-framework pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest moveit-configs-utils moveit-resources-fanuc-moveit-config moveit-resources-panda-moveit-config ];
-  propagatedBuildInputs = [ ament-index-cpp moveit-setup-framework pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp moveit-setup-framework pluginlib rclcpp ];
 
   meta = {
     description = "MoveIt Setup Steps for ROS 2 Control";

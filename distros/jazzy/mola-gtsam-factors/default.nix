@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ gtsam mola-common mrpt-libposes ];
+  buildInputs = [ cmake gtsam mola-common mrpt-libposes ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ gtsam mola-common mrpt-libposes ];
 
   meta = {
     description = "C++ library with reusable GTSAM Factors useful in georeferencing and state-estimation MOLA modules";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ bison cbc clp flex rclcpp ];
+  buildInputs = [ ament-cmake rclcpp ];
+  propagatedBuildInputs = [ bison cbc clp flex ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp ];
 
   meta = {
     description = "The POPF package";

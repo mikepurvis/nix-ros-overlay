@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
-  propagatedBuildInputs = [ fmt generate-parameter-library-py parameter-traits rclcpp rclcpp-lifecycle rclpy rsl tcb-span tl-expected tl-expected-nixpkgs ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-python generate-parameter-library-py ];
+  buildInputs = [ ament-cmake ament-cmake-python parameter-traits rclcpp rclcpp-lifecycle rclpy rsl tcb-span tl-expected ];
+  propagatedBuildInputs = [ fmt tl-expected-nixpkgs ];
+  nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ generate-parameter-library-py parameter-traits rclcpp rclcpp-lifecycle rclpy rsl tcb-span tl-expected ];
 
   meta = {
     description = "CMake to generate ROS parameter library.";

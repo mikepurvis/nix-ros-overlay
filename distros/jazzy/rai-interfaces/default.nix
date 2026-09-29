@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake geometry-msgs rosidl-default-generators sensor-msgs std-msgs vision-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs geometry-msgs portaudio sensor-msgs std-msgs vision-msgs ];
+  propagatedBuildInputs = [ portaudio ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ action-msgs geometry-msgs sensor-msgs std-msgs vision-msgs ];
   rosExecDepends = [ nav2-msgs nav2-simple-commander rosidl-default-runtime tf-transformations ];
 
   meta = {

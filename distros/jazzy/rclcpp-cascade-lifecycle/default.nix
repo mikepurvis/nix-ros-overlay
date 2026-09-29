@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Provides a mechanism to make trees of lifecycle nodes to propagate state changes";

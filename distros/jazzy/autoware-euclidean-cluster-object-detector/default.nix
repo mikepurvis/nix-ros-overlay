@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-perception-msgs autoware-point-types autoware-utils-debug autoware-utils-diagnostics autoware-utils-system geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-perception-msgs autoware-point-types autoware-utils-debug autoware-utils-diagnostics autoware-utils-system geometry-msgs pcl pcl-conversions rclcpp rclcpp-components sensor-msgs ];
+  propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-perception-msgs autoware-point-types autoware-utils-debug autoware-utils-diagnostics autoware-utils-system geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs ];
   rosExecDepends = [ autoware-crop-box-filter ];
 
   meta = {

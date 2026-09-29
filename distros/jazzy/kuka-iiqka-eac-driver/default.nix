@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake controller-manager-msgs hardware-interface kuka-drivers-core kuka-external-control-sdk pluginlib std-msgs ];
   checkInputs = [ launch-testing-ament-cmake ros2lifecycle ];
-  propagatedBuildInputs = [ controller-manager-msgs hardware-interface kuka-drivers-core kuka-external-control-sdk pluginlib std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ controller-manager-msgs hardware-interface kuka-drivers-core kuka-external-control-sdk pluginlib std-msgs ];
   rosExecDepends = [ controller-manager effort-controllers joint-group-impedance-controller joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-event-broadcaster kuka-lbr-iisy-support ];
 
   meta = {

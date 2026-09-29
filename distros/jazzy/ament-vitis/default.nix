@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-acceleration ament-cmake-core ament-cmake-ros ];
+  buildInputs = [ ament-acceleration ament-cmake-core ament-cmake-ros ];
   nativeBuildInputs = [ ament-cmake-core ];
+  rosBuildExportDepends = [ ament-acceleration ament-cmake-core ament-cmake-ros ];
 
   meta = {
     description = "CMake macros and utilities to include Vitis platform into the ROS 2 build system (ament) and its development flows.";

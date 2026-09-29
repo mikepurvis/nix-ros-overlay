@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake osqp-vendor proxsuite rclcpp rclcpp-components ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common eigen ];
-  propagatedBuildInputs = [ eigen osqp-vendor proxsuite rclcpp rclcpp-components ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ osqp-vendor proxsuite rclcpp rclcpp-components ];
 
   meta = {
     description = "Interface for the QP solvers";

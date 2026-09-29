@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs marti-common-msgs marti-nav-msgs rclcpp rclcpp-components std-msgs swri-geometry-util swri-math-util swri-transform-util tf2-geometry-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ geometry-msgs marti-common-msgs marti-nav-msgs rclcpp rclcpp-components std-msgs swri-geometry-util swri-math-util swri-transform-util tf2-geometry-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs marti-common-msgs marti-nav-msgs rclcpp rclcpp-components std-msgs swri-geometry-util swri-math-util swri-transform-util tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "This library provides functionality to simplify working with the

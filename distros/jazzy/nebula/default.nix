@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-testing ];
-  propagatedBuildInputs = [ nebula-continental nebula-hesai nebula-robosense nebula-velodyne ];
+  buildInputs = [ ament-cmake nebula-continental nebula-hesai nebula-robosense nebula-velodyne ros-testing ];
   nativeBuildInputs = [ ament-cmake ros-testing ];
+  rosBuildExportDepends = [ nebula-continental nebula-hesai nebula-robosense nebula-velodyne ];
 
   meta = {
     description = "Nebula: multi-vendor LiDAR and radar driver";

@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mp2p-icp-core mp2p-icp-viz ];
+  buildInputs = [ cmake mp2p-icp-core mp2p-icp-viz ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mp2p-icp-core mp2p-icp-viz ];
 
   meta = {
     description = "Metapackage for mp2p_icp: depends on mp2p_icp_core (headless libraries and CLI applications) and mp2p_icp_viz (GUI applications).";

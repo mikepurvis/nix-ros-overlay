@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ];
-  checkInputs = [ ament-cmake-gtest ament-cmake-ros cras-lint std-msgs tf2 ];
-  propagatedBuildInputs = [ backward-ros boost builtin-interfaces eigen filters fmt geometry-msgs rcl rclcpp rclcpp-components rcutils rmw sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tl-expected-nixpkgs urdf ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h backward-ros builtin-interfaces filters geometry-msgs rcl rclcpp rclcpp-components rcutils rmw sensor-msgs tf2 tf2-eigen tf2-geometry-msgs urdf ];
+  checkInputs = [ ament-cmake-gtest ament-cmake-ros cras-lint std-msgs ];
+  propagatedBuildInputs = [ boost eigen fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ backward-ros builtin-interfaces filters geometry-msgs rcl rclcpp rclcpp-components rcutils rmw sensor-msgs tf2 tf2-eigen tf2-geometry-msgs urdf ];
 
   meta = {
     description = "A Czech-army knife for ROS code written in C++.";

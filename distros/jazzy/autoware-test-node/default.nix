@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
-  propagatedBuildInputs = [ autoware-node rclcpp rclcpp-components ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-node rclcpp rclcpp-components ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-node rclcpp rclcpp-components ];
 
   meta = {
     description = "Test package for Autoware Node.";

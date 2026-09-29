@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake rclcpp rosidl-default-generators rosidl-typesupport-introspection-cpp std-msgs ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-ros ament-cmake-xmllint ament-copyright ament-lint-auto ament-lint-common ament-pep257 launch launch-pytest launch-ros launch-testing launch-testing-ament-cmake python3Packages.scipy rclpy ];
-  propagatedBuildInputs = [ libiio rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
+  propagatedBuildInputs = [ libiio ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
   rosExecDepends = [ ros2launch rosidl-default-runtime ];
 
   meta = {

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
+  buildInputs = [ ament-cmake ament-cmake-python python-cmake-module rclcpp rcpputils rcutils test-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp rcpputils rcutils test-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
+  rosBuildExportDepends = [ rclcpp rcpputils rcutils test-msgs ];
 
   meta = {
     description = "Commonly used test helper classes and fixtures for rosbag2";

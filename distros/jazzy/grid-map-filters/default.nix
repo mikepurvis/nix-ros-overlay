@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake grid-map-cmake-helpers ];
+  buildInputs = [ ament-cmake filters grid-map-cmake-helpers grid-map-core grid-map-msgs grid-map-ros pluginlib ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ filters grid-map-core grid-map-msgs grid-map-ros onetbb pluginlib ];
+  propagatedBuildInputs = [ onetbb ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ filters grid-map-core grid-map-msgs grid-map-ros pluginlib ];
 
   meta = {
     description = "Processing grid maps as a sequence of ROS filters.";

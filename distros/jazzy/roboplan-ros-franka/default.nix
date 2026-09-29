@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ roboplan roboplan-example-models roboplan-ros-examples xacro ];
+  buildInputs = [ ament-cmake roboplan roboplan-example-models roboplan-ros-examples xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ roboplan roboplan-example-models roboplan-ros-examples xacro ];
   rosExecDepends = [ controller-manager joint-state-broadcaster joint-trajectory-controller mujoco-ros2-control parallel-gripper-controller robot-state-publisher topic-tools ];
 
   meta = {

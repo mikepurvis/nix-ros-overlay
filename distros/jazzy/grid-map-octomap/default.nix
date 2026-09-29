@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake grid-map-cmake-helpers ];
+  buildInputs = [ ament-cmake grid-map-cmake-helpers grid-map-core octomap ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ grid-map-core octomap ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ grid-map-core octomap ];
 
   meta = {
     description = "Conversions between grid maps and OctoMap types.";

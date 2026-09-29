@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen ];
-  propagatedBuildInputs = [ libGL libGLU mrpt-img mrpt-poses mrpt-viz ];
+  buildInputs = [ cmake eigen mrpt-img mrpt-poses mrpt-viz ];
+  propagatedBuildInputs = [ libGL libGLU ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-img mrpt-poses mrpt-viz ];
 
   meta = {
     description = "The MRPT C++ library mrpt_opengl";

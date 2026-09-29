@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python git ros2-control-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-index-cpp backward-ros control-toolbox controller-manager geometry-msgs git hardware-interface mujoco-ros2-control-msgs mujoco-ros2-control-plugins mujoco-vendor nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2-control-cmake ros2pkg rosgraph-msgs sensor-msgs std-msgs tinyxml2-vendor transmission-interface ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ];
-  propagatedBuildInputs = [ ament-index-cpp backward-ros control-toolbox controller-manager eigen fmt geometry-msgs glfw3 hardware-interface mujoco-ros2-control-msgs mujoco-ros2-control-plugins mujoco-vendor nav-msgs pluginlib python3 python3Packages.importlib-resources python3Packages.numpy python3Packages.pip python3Packages.pykdl rclcpp rclcpp-lifecycle realtime-tools ros2pkg rosgraph-msgs sensor-msgs std-msgs tinyxml2-vendor transmission-interface ];
+  propagatedBuildInputs = [ eigen fmt glfw3 python3 python3Packages.importlib-resources python3Packages.numpy python3Packages.pip python3Packages.pykdl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python git ];
+  rosBuildExportDepends = [ ament-index-cpp backward-ros control-toolbox controller-manager geometry-msgs hardware-interface mujoco-ros2-control-msgs mujoco-ros2-control-plugins mujoco-vendor nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2pkg rosgraph-msgs sensor-msgs std-msgs tinyxml2-vendor transmission-interface ];
   rosExecDepends = [ ament-index-python urdfdom-py ];
 
   meta = {

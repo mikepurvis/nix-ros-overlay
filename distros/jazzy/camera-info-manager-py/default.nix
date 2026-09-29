@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ rclpy sensor-msgs ];
   checkInputs = [ ament-copyright ament-flake8 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.pyyaml python3Packages.rospkg rclpy sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyyaml python3Packages.rospkg ];
+  rosBuildExportDepends = [ rclpy sensor-msgs ];
   rosExecDepends = [ ament-index-python ];
 
   meta = {

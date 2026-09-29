@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  buildInputs = [ python3Packages.pyserial ];
+  buildInputs = [ grbl-msgs python3Packages.pyserial rclpy std-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ grbl-msgs rclpy std-msgs ];
+  rosBuildExportDepends = [ grbl-msgs rclpy std-msgs ];
 
   meta = {
     description = "ROS2 package to interface with a GRBL serial device";

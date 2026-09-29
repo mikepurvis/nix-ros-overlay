@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen python3 python3Packages.pybind11 ];
-  propagatedBuildInputs = [ mrpt-common mrpt-config mrpt-math ];
+  buildInputs = [ cmake eigen mrpt-common mrpt-config mrpt-math python3 python3Packages.pybind11 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-config mrpt-math ];
 
   meta = {
     description = "The MRPT C++ library mrpt_bayes";

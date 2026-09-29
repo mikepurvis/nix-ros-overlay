@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ turtlebot4-base turtlebot4-bringup turtlebot4-diagnostics turtlebot4-tests ];
+  buildInputs = [ ament-cmake turtlebot4-base turtlebot4-bringup turtlebot4-diagnostics turtlebot4-tests ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ turtlebot4-base turtlebot4-bringup turtlebot4-diagnostics turtlebot4-tests ];
 
   meta = {
     description = "Turtlebot4 Robot Metapackage";

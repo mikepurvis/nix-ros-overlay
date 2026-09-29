@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-xmllint cmake ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-xmllint cmake cv-bridge geometry-msgs mrpt-libposes mrpt-libros-bridge nav-msgs rclcpp ros-environment sensor-msgs std-msgs stereo-msgs tf2 ];
   checkInputs = [ ament-lint-auto ament-lint-common gtest ];
-  propagatedBuildInputs = [ cv-bridge geometry-msgs mrpt-libposes mrpt-libros-bridge nav-msgs rclcpp sensor-msgs std-msgs stereo-msgs tf2 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest cmake ];
+  rosBuildExportDepends = [ cv-bridge geometry-msgs mrpt-libposes mrpt-libros-bridge nav-msgs rclcpp sensor-msgs std-msgs stereo-msgs tf2 ];
 
   meta = {
     description = "C++ library for SE(2)/SE(3) pose composition operations with uncertainty";

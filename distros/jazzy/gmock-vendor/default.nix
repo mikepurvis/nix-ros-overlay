@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "cmake";
   buildInputs = [ cmake ];
-  propagatedBuildInputs = [ gtest-vendor ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ gtest-vendor ];
 
   meta = {
     description = "The package provides GoogleMock.";

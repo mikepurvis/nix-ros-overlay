@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
+  buildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module rclcpp rcutils std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto rclcpp-lifecycle sensor-msgs ];
-  propagatedBuildInputs = [ rclcpp rcutils std-msgs ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
+  rosBuildExportDepends = [ rclcpp rcutils std-msgs ];
   rosExecDepends = [ builtin-interfaces rclpy ];
 
   meta = {

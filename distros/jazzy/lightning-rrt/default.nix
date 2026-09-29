@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake geometry-msgs lightning-rrt-interfaces nav-msgs rclcpp std-msgs visualization-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs lightning-rrt-interfaces nav-msgs rclcpp std-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs lightning-rrt-interfaces nav-msgs rclcpp std-msgs visualization-msgs ];
   rosExecDepends = [ ros2launch ];
 
   meta = {

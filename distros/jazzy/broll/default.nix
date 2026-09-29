@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros pkg-config ];
+  buildInputs = [ ament-cmake ament-cmake-ros pkg-config rclcpp rclcpp-components rcutils sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ffmpeg rclcpp rclcpp-components rcutils sensor-msgs ];
+  propagatedBuildInputs = [ ffmpeg ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components rcutils sensor-msgs ];
 
   meta = {
     description = "B-Roll utility library for interacting with video stream data in the context of rosbag2";

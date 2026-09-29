@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-kernel mrpt-libgui mrpt-libmaps mrpt-libopengl ];
+  buildInputs = [ cmake mola-kernel mrpt-libgui mrpt-libmaps mrpt-libopengl ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-kernel mrpt-libgui mrpt-libmaps mrpt-libopengl ];
 
   meta = {
     description = "GUI for MOLA";

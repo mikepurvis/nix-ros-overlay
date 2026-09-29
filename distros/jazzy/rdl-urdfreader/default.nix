@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp rdl-dynamics tinyxml-vendor urdf ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-xmllint ament-index-cpp ament-lint ];
-  propagatedBuildInputs = [ rclcpp rdl-dynamics tinyxml tinyxml-vendor urdf ];
+  propagatedBuildInputs = [ tinyxml ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rdl-dynamics tinyxml-vendor urdf ];
 
   meta = {
     description = "The rdl_urdfreader package";

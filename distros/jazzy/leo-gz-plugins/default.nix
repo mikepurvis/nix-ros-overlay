@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake gz-plugin-vendor gz-sim-vendor ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ gz-plugin-vendor gz-sim-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ gz-plugin-vendor gz-sim-vendor ];
 
   meta = {
     description = "Plugins for Leo Rover Gazebo simulation in ROS 2";

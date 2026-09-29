@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
-  propagatedBuildInputs = [ boost nebula-core-common nebula-core-decoders nebula-robosense-common rclcpp ];
+  buildInputs = [ autoware-cmake nebula-core-common nebula-core-decoders nebula-robosense-common rclcpp ros-environment ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ nebula-core-common nebula-core-decoders nebula-robosense-common rclcpp ];
 
   meta = {
     description = "Nebula Robosense Decoders Library";

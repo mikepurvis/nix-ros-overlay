@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake depthai-descriptions realsense2-description robotiq-description ur-description urdf xacro zed-description ];
   checkInputs = [ ament-cmake-pytest ament-index-python python3Packages.pyyaml ];
-  propagatedBuildInputs = [ depthai-descriptions realsense2-description robotiq-description ur-description urdf xacro zed-description ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ depthai-descriptions realsense2-description robotiq-description ur-description urdf xacro zed-description ];
 
   meta = {
     description = "URDF descriptions of components offered with Husarion robots";

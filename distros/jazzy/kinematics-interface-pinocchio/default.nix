@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
+  buildInputs = [ ament-cmake eigen3-cmake-module kinematics-interface pinocchio pluginlib ros2-control-cmake ];
   checkInputs = [ ament-cmake-gmock ros2-control-test-assets ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module kinematics-interface pinocchio pluginlib ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module kinematics-interface pinocchio pluginlib ];
 
   meta = {
     description = "Pinocchio-based implementation of ros2_control kinematics interface";

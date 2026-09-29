@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake python3Packages.empy ];
+  buildInputs = [ ament-cmake mavlink python3Packages.empy ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ asio console-bridge mavlink ];
+  propagatedBuildInputs = [ asio console-bridge ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ mavlink ];
 
   meta = {
     description = "MAVLink communication library.

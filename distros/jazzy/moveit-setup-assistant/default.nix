@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest moveit-resources-panda-moveit-config ];
-  propagatedBuildInputs = [ ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib qt5.qtbase rclcpp ];
+  propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
   rosExecDepends = [ moveit-configs-utils moveit-setup-app-plugins moveit-setup-controllers moveit-setup-core-plugins ];
 
   meta = {

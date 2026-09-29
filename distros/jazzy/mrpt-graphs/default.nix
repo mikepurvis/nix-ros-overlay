@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen python3 python3Packages.pybind11 ];
+  buildInputs = [ cmake eigen mrpt-common mrpt-io mrpt-poses mrpt-viz python3 python3Packages.pybind11 ];
   checkInputs = [ python3Packages.numpy ];
-  propagatedBuildInputs = [ mrpt-common mrpt-io mrpt-poses mrpt-viz ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-io mrpt-poses mrpt-viz ];
 
   meta = {
     description = "The MRPT C++ library mrpt_graphs";

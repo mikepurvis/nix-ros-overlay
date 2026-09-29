@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake libftdi1 python3 python3Packages.pybind11 ];
+  buildInputs = [ cmake libftdi1 mrpt-common mrpt-io python3 python3Packages.pybind11 ];
   checkInputs = [ mrpt-poses ];
-  propagatedBuildInputs = [ mrpt-common mrpt-io ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-io ];
 
   meta = {
     description = "The MRPT C++ library mrpt_comms";

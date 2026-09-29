@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ rclpy sensor-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ python3Packages.tkinter rclpy sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.tkinter ];
+  rosBuildExportDepends = [ rclpy sensor-msgs ];
 
   meta = {
     description = "Simple GUI tool for testing joysticks/gamepads";

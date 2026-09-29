@@ -341,20 +341,6 @@ with rosSelf.lib; {
     setupHook = ./rosidl-generator-py-setup-hook.sh;
   });
 
-  # Message packages export these from CMake while declaring them only as
-  # <exec_depend>, so they must still be propagated.
-  rosidl-core-runtime = rosSuper.rosidl-core-runtime.overrideAttrs ({
-    passthru ? {}, ...
-  }: {
-    passthru = passthru // { rosPropagateAsExecDepend = true; };
-  });
-
-  rosidl-default-runtime = rosSuper.rosidl-default-runtime.overrideAttrs ({
-    passthru ? {}, ...
-  }: {
-    passthru = passthru // { rosPropagateAsExecDepend = true; };
-  });
-
   # The typesupport CMake extras fail in downstream builds unless at least one
   # member of their <group_depend> is on AMENT_PREFIX_PATH. Bloom drops group
   # dependencies, so the introspection implementation is propagated by hand.

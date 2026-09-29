@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros boost gtest ros-environment ];
+  buildInputs = [ action-msgs ament-cmake ament-cmake-ros boost gtest rcl rcl-action rclcpp rclcpp-action ros-environment ];
   checkInputs = [ ament-clang-tidy ament-cmake-copyright ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs rcl rcl-action rclcpp rclcpp-action ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
+  rosBuildExportDepends = [ action-msgs rcl rcl-action rclcpp rclcpp-action ];
 
   meta = {
     description = "This framework enables writing reliable, fully repeatable tests for C++ ROS 2 implementations.";

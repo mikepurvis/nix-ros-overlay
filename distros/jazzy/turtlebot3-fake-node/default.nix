@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-cmake geometry-msgs nav-msgs rclcpp sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
+  buildInputs = [ ament-cmake geometry-msgs nav-msgs rclcpp sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
+  rosBuildExportDepends = [ ament-cmake geometry-msgs nav-msgs rclcpp sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
   rosExecDepends = [ robot-state-publisher ];
 
   meta = {

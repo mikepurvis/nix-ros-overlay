@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake eigen3-cmake-module rclcpp ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-xmllint ament-lint ];
-  propagatedBuildInputs = [ boost doxygen eigen eigen3-cmake-module graphviz rclcpp ];
+  propagatedBuildInputs = [ boost doxygen eigen graphviz ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ eigen3-cmake-module rclcpp ];
 
   meta = {
     description = "The rdl_dynamics package";

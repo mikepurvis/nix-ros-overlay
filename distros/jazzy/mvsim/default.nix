@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-xmllint cmake ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-xmllint cmake mrpt-libgui mrpt-libmaps mrpt-libposes mrpt-libros-bridge mrpt-libtclap nav-msgs ros-environment sensor-msgs stereo-msgs tf2 tf2-geometry-msgs visualization-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ boost cppzmq mrpt-libgui mrpt-libmaps mrpt-libposes mrpt-libros-bridge mrpt-libtclap nav-msgs protobuf python3 python3Packages.pip python3Packages.protobuf python3Packages.pybind11 sensor-msgs stereo-msgs tf2 tf2-geometry-msgs unzip visualization-msgs wget ];
+  propagatedBuildInputs = [ boost cppzmq protobuf python3 python3Packages.pip python3Packages.protobuf python3Packages.pybind11 unzip wget ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest cmake ];
+  rosBuildExportDepends = [ mrpt-libgui mrpt-libmaps mrpt-libposes mrpt-libros-bridge mrpt-libtclap nav-msgs sensor-msgs stereo-msgs tf2 tf2-geometry-msgs visualization-msgs ];
   rosExecDepends = [ ros2launch ];
 
   meta = {

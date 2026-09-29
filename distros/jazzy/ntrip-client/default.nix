@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ nmea-msgs python3Packages.pyserial rclpy rtcm-msgs sensor-msgs std-msgs ];
+  buildInputs = [ nmea-msgs rclpy rtcm-msgs sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyserial ];
+  rosBuildExportDepends = [ nmea-msgs rclpy rtcm-msgs sensor-msgs std-msgs ];
 
   meta = {
     description = "NTRIP client that will publish RTCM corrections to a ROS topic, and optionally subscribe to NMEA messages to send to an NTRIP server";

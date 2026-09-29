@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ action-msgs builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
+  buildInputs = [ action-msgs ament-cmake builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Messages and service files for the ROS2 Planning System";

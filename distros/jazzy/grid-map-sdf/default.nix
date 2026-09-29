@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake grid-map-cmake-helpers ];
+  buildInputs = [ ament-cmake grid-map-cmake-helpers grid-map-core ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ grid-map-core pcl ];
+  propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ grid-map-core ];
 
   meta = {
     description = "Generates signed distance fields from grid maps.";

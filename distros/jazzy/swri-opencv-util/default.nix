@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ cv-bridge opencv opencv.cxxdev swri-math-util ];
+  buildInputs = [ ament-cmake cv-bridge swri-math-util ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cv-bridge swri-math-util ];
 
   meta = {
     description = "A package with commonly used OpenCV functionality.";

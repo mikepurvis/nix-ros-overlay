@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config ];
+  buildInputs = [ ament-cmake pkg-config pluginlib rclcpp std-msgs tf2-msgs tf2-ros ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ boost pluginlib rclcpp std-msgs tf2-msgs tf2-ros zstd ];
+  propagatedBuildInputs = [ boost zstd ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
+  rosBuildExportDepends = [ pluginlib rclcpp std-msgs tf2-msgs tf2-ros ];
 
   meta = {
     description = "Allows for arbitrary network links (UDP, TCP, etc) to bridge ROS2 messages";

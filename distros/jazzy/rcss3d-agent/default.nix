@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rclcpp rcss3d-agent-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp rcss3d-agent-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rclcpp rcss3d-agent-msgs ];
 
   meta = {
     description = "Launches a RoboCup 3D Simulation Agent, and converts data to and from ROS2 msgs";

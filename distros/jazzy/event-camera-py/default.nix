@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python ament-cmake-ros python-cmake-module ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python ament-cmake-ros event-camera-codecs event-camera-msgs pybind11-vendor python-cmake-module ros-environment ];
   checkInputs = [ ament-cmake-clang-format ament-cmake-pytest ament-lint-auto ament-lint-common python3Packages.numpy rclpy rosbag2-py rosbag2-storage-default-plugins rosbag2-storage-mcap rosidl-runtime-py ];
-  propagatedBuildInputs = [ event-camera-codecs event-camera-msgs pybind11-vendor ros-environment ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python ament-cmake-ros python-cmake-module ];
+  rosBuildExportDepends = [ event-camera-codecs event-camera-msgs pybind11-vendor ros-environment ];
   rosExecDepends = [ rpyutils ];
 
   meta = {

@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-perception-msgs autoware-utils-uuid geometry-msgs rclcpp rclcpp-components unique-identifier-msgs ];
   checkInputs = [ ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-perception-msgs autoware-utils-uuid geometry-msgs rclcpp rclcpp-components unique-identifier-msgs ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-perception-msgs autoware-utils-uuid geometry-msgs rclcpp rclcpp-components unique-identifier-msgs ];
 
   meta = {
     description = "ROS 2 node for converting between different perception object message types";

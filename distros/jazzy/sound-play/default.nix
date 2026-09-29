@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python boost python3Packages.setuptools ];
-  propagatedBuildInputs = [ festival-stub gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer python3Packages.pygobject3 sound-play-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-python boost python3Packages.setuptools sound-play-msgs ];
+  propagatedBuildInputs = [ festival-stub gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer python3Packages.pygobject3 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python3Packages.setuptools ];
+  rosBuildExportDepends = [ sound-play-msgs ];
   rosExecDepends = [ action-msgs ament-index-python launch-xml rclpy ];
 
   meta = {

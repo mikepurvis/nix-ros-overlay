@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rcpputils rcutils rosbag2-cpp rosbag2-storage ];
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common rclcpp rosbag2-test-common test-msgs ];
-  propagatedBuildInputs = [ rcpputils rcutils rosbag2-cpp rosbag2-storage ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rcpputils rcutils rosbag2-cpp rosbag2-storage ];
 
   meta = {
     description = "Compression implementations for rosbag2 bags and messages.";

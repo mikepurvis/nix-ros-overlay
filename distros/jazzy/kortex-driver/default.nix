@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ hardware-interface kortex-api pluginlib rclcpp ];
+  buildInputs = [ ament-cmake hardware-interface kortex-api pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ hardware-interface kortex-api pluginlib rclcpp ];
 
   meta = {
     description = "ROS2 driver package for the Kinova Robot Hardware.";

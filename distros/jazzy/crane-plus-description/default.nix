@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python gz-ros2-control joint-state-publisher-gui launch robot-state-publisher rviz2 xacro ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ gz-ros2-control joint-state-publisher-gui launch robot-state-publisher rviz2 xacro ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ gz-ros2-control joint-state-publisher-gui launch robot-state-publisher rviz2 xacro ];
 
   meta = {
     description = "CRANE+ V2 description package";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ jsoncpp mapviz pluginlib qt-gui-cpp qt5or6.qtbase rclcpp swri-math-util swri-transform-util tf2 yaml-cpp ];
+  buildInputs = [ ament-cmake mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
+  propagatedBuildInputs = [ jsoncpp qt5or6.qtbase yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
 
   meta = {
     description = "Tile map provides a slippy map style interface for visualizing 

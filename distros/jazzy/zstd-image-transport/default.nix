@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake image-transport ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ image-transport zlib ];
+  propagatedBuildInputs = [ zlib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ image-transport ];
 
   meta = {
     description = "zstd_image_transport provides a plugin to image_transport for transparently sending images

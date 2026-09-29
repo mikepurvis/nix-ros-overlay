@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ rclpy ];
+  buildInputs = [ rclpy ];
+  rosBuildExportDepends = [ rclpy ];
   rosExecDepends = [ scenario-execution scenario-execution-interfaces std-srvs ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pybind11-vendor python-cmake-module rcpputils rcutils rmw-implementation-cmake ];
+  buildInputs = [ ament-cmake lifecycle-msgs pybind11-vendor python-cmake-module rcl rcl-action rcl-interfaces rcl-lifecycle rcl-logging-interface rcl-yaml-param-parser rcpputils rcutils rmw rmw-implementation rmw-implementation-cmake rosidl-runtime-c unique-identifier-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common python3Packages.pytest rosidl-generator-py test-msgs ];
-  propagatedBuildInputs = [ lifecycle-msgs python3Packages.pyyaml rcl rcl-action rcl-interfaces rcl-lifecycle rcl-logging-interface rcl-yaml-param-parser rmw rmw-implementation rosidl-runtime-c unique-identifier-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
+  rosBuildExportDepends = [ lifecycle-msgs rcl rcl-action rcl-interfaces rcl-lifecycle rcl-logging-interface rcl-yaml-param-parser rmw rmw-implementation rosidl-runtime-c unique-identifier-msgs ];
   rosExecDepends = [ action-msgs ament-index-python builtin-interfaces rosgraph-msgs rpyutils ];
 
   meta = {

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python eigen ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python cras-cpp-common eigen message-filters pluginlib rclcpp rclcpp-components sensor-msgs tf2-eigen ];
   checkInputs = [ ament-cmake-gtest ament-cmake-ros cras-lint ];
-  propagatedBuildInputs = [ cras-cpp-common message-filters pluginlib python3Packages.numpy rclcpp rclcpp-components sensor-msgs tf2-eigen ];
+  propagatedBuildInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python ];
+  rosBuildExportDepends = [ cras-cpp-common message-filters pluginlib rclcpp rclcpp-components sensor-msgs tf2-eigen ];
   rosExecDepends = [ rclpy std-msgs std-srvs ];
 
   meta = {

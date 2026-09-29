@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake ortools-vendor ];
   checkInputs = [ gtest lcov ];
-  propagatedBuildInputs = [ boost eigen gdal geos git gtest onetbb ortools-vendor python3 python3Packages.matplotlib python3Packages.tkinter swig tinyxml-2 ];
+  propagatedBuildInputs = [ boost eigen gdal geos git gtest onetbb python3 python3Packages.matplotlib python3Packages.tkinter swig tinyxml-2 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ ortools-vendor ];
 
   meta = {
     description = "Robust and efficient coverage paths for autonomous agricultural vehicles.

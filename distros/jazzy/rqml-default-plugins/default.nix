@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rqml-core ];
   checkInputs = [ ament-lint-auto qml6-ros2-plugin rcl-interfaces ros-babel-fish-test-msgs ];
-  propagatedBuildInputs = [ qt6.qtdeclarative qt6.qtmultimedia rqml-core ];
+  propagatedBuildInputs = [ qt6.qtdeclarative qt6.qtmultimedia ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rqml-core ];
   rosExecDepends = [ control-msgs controller-manager-msgs geometry-msgs moveit-msgs pal-statistics-msgs qml6-ros2-plugin sensor-msgs tf2-msgs ];
 
   meta = {

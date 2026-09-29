@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gtest cmake flann lz4 ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-gtest cmake flann gtsam lz4 mola-common mola-georeferencing mola-gtsam-factors mola-pose-list mola-relocalization mola-yaml mp2p-icp mrpt-libgui mrpt-libmaps mrpt-libtclap ros-environment ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto mola-metric-maps mola-test-datasets ];
-  propagatedBuildInputs = [ gtsam mola-common mola-georeferencing mola-gtsam-factors mola-pose-list mola-relocalization mola-yaml mp2p-icp mrpt-libgui mrpt-libmaps mrpt-libtclap onetbb ];
+  propagatedBuildInputs = [ onetbb ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
+  rosBuildExportDepends = [ gtsam mola-common mola-georeferencing mola-gtsam-factors mola-pose-list mola-relocalization mola-yaml mp2p-icp mrpt-libgui mrpt-libmaps mrpt-libtclap ];
 
   meta = {
     description = "Simplemap loop-closure postprocessing library and CLI tool";

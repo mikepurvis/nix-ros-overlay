@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib std-msgs ];
   checkInputs = [ controller-manager ros2-control-test-assets ];
-  propagatedBuildInputs = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib std-msgs ];
 
   meta = {
     description = "Non-real time message handler for KSS KUKA robots";

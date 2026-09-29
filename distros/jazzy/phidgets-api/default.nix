@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
-  propagatedBuildInputs = [ libphidget22 ];
+  buildInputs = [ ament-cmake-ros libphidget22 ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ libphidget22 ];
 
   meta = {
     description = "A C++ Wrapper for the Phidgets C API";

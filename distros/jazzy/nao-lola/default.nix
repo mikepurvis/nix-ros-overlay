@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake nao-command-msgs nao-sensor-msgs rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ boost nao-command-msgs nao-sensor-msgs rclcpp ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ nao-command-msgs nao-sensor-msgs rclcpp ];
 
   meta = {
     description = "Packages that allow communicating with the NAO's Lola middle-ware.";

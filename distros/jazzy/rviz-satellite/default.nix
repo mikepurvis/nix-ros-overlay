@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake qt5.qtbase ];
+  buildInputs = [ ament-cmake angles qt5.qtbase rclcpp rcpputils rviz-common rviz-default-plugins sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ angles proj rclcpp rcpputils rviz-common rviz-default-plugins sensor-msgs ];
+  propagatedBuildInputs = [ proj ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ angles rclcpp rcpputils rviz-common rviz-default-plugins sensor-msgs ];
 
   meta = {
     description = "Display satellite map tiles in RViz";

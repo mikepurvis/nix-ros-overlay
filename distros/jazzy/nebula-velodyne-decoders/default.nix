@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ autoware-cmake ros-environment ];
-  propagatedBuildInputs = [ angles boost nebula-core-common nebula-core-decoders nebula-velodyne-common rclcpp velodyne-msgs ];
+  buildInputs = [ angles autoware-cmake nebula-core-common nebula-core-decoders nebula-velodyne-common rclcpp ros-environment velodyne-msgs ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
+  rosBuildExportDepends = [ angles nebula-core-common nebula-core-decoders nebula-velodyne-common rclcpp velodyne-msgs ];
 
   meta = {
     description = "Nebula Velodyne Decoders Library";

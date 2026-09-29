@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cx-protobuf-plugin cx-ros-comm-gen example-interfaces launch-ros std-msgs std-srvs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cx-protobuf-plugin cx-ros-comm-gen example-interfaces launch-ros std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cx-protobuf-plugin cx-ros-comm-gen example-interfaces launch-ros std-msgs std-srvs ];
   rosExecDepends = [ cx-ament-index-plugin cx-clips-env-manager cx-config-plugin cx-example-plugin cx-executive-plugin cx-file-load-plugin cx-ros-msgs-plugin ];
 
   meta = {
