@@ -1,4 +1,4 @@
-{ stdenv, lib, python3Packages, rosDistro, rosVersion }:
+{ stdenv, lib, python3Packages, rosDistro, rosVersion, buildEnv }:
 { buildType ? "catkin"
   # Too difficult to fix all the problems with the tests in each package
 , doCheck ? false
@@ -40,7 +40,7 @@ let
 in
 
 (if buildType == "ament_python" then python3Packages.buildPythonPackage
-else stdenv.mkDerivation) ((removeAttrs args [ "rosBuildExportDepends" "rosExecDepends" ]) // {
+else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepends" "rosExecDepends" ]) // {
   inherit doCheck dontWrapQtApps separateDebugInfo;
 
   buildInputs = buildInputs ++ rosBuildClosure;
@@ -52,6 +52,9 @@ else stdenv.mkDerivation) ((removeAttrs args [ "rosBuildExportDepends" "rosExecD
   passthru = passthru // {
     rosPackage = true;
     inherit rosDistro rosVersion rosBuildExportDepends rosExecDepends;
+    # A workspace of this package and its runtime closure. Its setup-sh
+    # attribute renders a script to source, for use without nix develop.
+    ws = buildEnv { paths = [ finalAttrs.finalPackage ]; };
   };
 } // lib.optionalAttrs (buildType == "ament_python") {
   dontUseCmakeConfigure = true;
