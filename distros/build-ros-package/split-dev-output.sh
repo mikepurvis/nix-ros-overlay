@@ -56,6 +56,7 @@ splitDevOutput() {
     _mergeToDev include
     _mergeToDev lib/cmake
     _mergeToDev lib/pkgconfig
+    _mergeToDev lib64/pkgconfig
     _mergeToDev share/pkgconfig
 
     # Configs that bypassed ament_package(): a hand-written install to
@@ -102,8 +103,8 @@ splitDevOutput() {
         # ${pkg_DIR}/../../../lib: rosidl's generator and typesupport extras.
         while IFS= read -r -d '' f; do
             _splitDevSed relative-lib-walk "$f" \
-                -e "s#\\\$\{$pkg""_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g" \
-                -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|bin)([/\"; )]|\$)#$out/\1\2#g"
+                -e "s#\\\$\{$pkg""_DIR\}/\.\./\.\./\.\./(lib|lib64|bin)([/\"; )]|\$)#$out/\1\2#g" \
+                -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|lib64|bin)([/\"; )]|\$)#$out/\1\2#g"
         done < <(find "$cmakedir" -type f -name '*.cmake' -print0)
     done
 
@@ -121,13 +122,13 @@ splitDevOutput() {
                 -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
             if [ -n "$libs" ]; then
                 _splitDevSed import-prefix-lib "$f" \
-                    -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g"
+                    -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|lib64|bin)([/\"; )]|\$)#$out/\2\3#g"
             fi
         done < <(grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' "$exportdir"/*.cmake || true)
     done < <(find "$dev" -type f -name '*.cmake' -exec grep -lE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + 2>/dev/null | xargs -r -n1 dirname | sort -u)
 
     # pkg-config files moved to dev still say prefix=$out.
-    for d in "$dev/lib/pkgconfig" "$dev/share/pkgconfig"; do
+    for d in "$dev/lib/pkgconfig" "$dev/lib64/pkgconfig" "$dev/share/pkgconfig"; do
         [ -d "$d" ] || continue
         while IFS= read -r -d '' f; do
             _splitDevSed pc-includedir "$f" -e "s#^includedir=\\\$\{prefix\}/include#includedir=$dev/include#"
