@@ -60,7 +60,7 @@ splitDevOutput() {
 
     # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX,
     # which is computed from the file's own location.
-    find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + \
+    { find "$dev" -type f -name '*.cmake' -exec grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + || true; } \
         | xargs -0r sed -i -E \
             -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|bin)([/\"; )]|\$)#$out/\2\3#g"
 
