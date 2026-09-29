@@ -99,30 +99,49 @@ splitDevOutput() {
             done
         fi
 
-        # Templates that find libraries, executables and Python modules as
-        # ${pkg_DIR}/../../../lib: rosidl's generator and typesupport extras.
-        while IFS= read -r -d '' f; do
-            _splitDevSed relative-lib-walk "$f" \
-                -e "s#\\\$\{$pkg""_DIR\}/\.\./\.\./\.\./(lib|lib64|bin)([/\"; )]|\$)#$out/\1\2#g" \
-                -e "s#\\\$\{CMAKE_CURRENT_LIST_DIR\}/\.\./\.\./\.\./(lib|lib64|bin)([/\"; )]|\$)#$out/\1\2#g"
-        done < <(find "$cmakedir" -type f -name '*.cmake' -print0)
     done
 
-    # CMake's own install(EXPORT) files locate everything from _IMPORT_PREFIX.
-    # With #641 the export dir is absolute and CMake sets it to $out, so only a
-    # literal include/ destination (headers since moved to dev) needs fixing.
-    # An export a package installs itself to a relative share/<pkg>/cmake
-    # computes it from the file's location, which is now dev, so lib/ does too.
-    local exportdir
+    # Configs and extras that find libraries, executables and data by walking
+    # from their own directory back up to the prefix, which is now dev: the
+    # ${pkg_DIR}/../../../lib in rosidl's generator and typesupport extras, or
+    # urdfdom's "${urdfdom_DIR}/../../..//lib". The walk has to go exactly as
+    # many levels up as the directory sits below dev.
+    local cfgdir rel depth names name n
+    while IFS= read -r cfgdir; do
+        rel=${cfgdir#"$dev"/}
+        depth=$(( $(tr -cd / <<< "$rel" | wc -c) + 1 ))
+        names=$(find "$cfgdir" -maxdepth 1 \( -name '*Config.cmake' -o -name '*-config.cmake' \) -printf '%f\n' \
+            | sed -E 's/(-config|Config)\.cmake$//' | sort -u | paste -sd'|')
+        [ -n "$names" ] || continue
+        local up=""
+        for ((n = 0; n < depth; n++)); do up="$up/\\.\\."; done
+        while IFS= read -r -d '' f; do
+            _splitDevSed relative-prefix-walk "$f" \
+                -e "s#\\\$\{(($names)_DIR|CMAKE_CURRENT_LIST_DIR)\}$up/+(lib|lib64|bin|share)([/\"; )]|\$)#$out/\3\4#g"
+        done < <(find "$cfgdir" -maxdepth 1 -type f -name '*.cmake' -print0)
+    done < <(find "$dev" -type f \( -name '*Config.cmake' -o -name '*-config.cmake' \) -printf '%h\n' | sort -u)
+
+    # CMake's own install(EXPORT) files and configure_package_config_file()
+    # configs locate everything from _IMPORT_PREFIX or PACKAGE_PREFIX_DIR,
+    # sometimes through an alias (OGRE's set(OGRE_PREFIX_DIR
+    # "${PACKAGE_PREFIX_DIR}")). With #641 the export dir is absolute and CMake
+    # sets _IMPORT_PREFIX to $out, so only a literal include/ destination
+    # (headers since moved to dev) needs fixing. A config or export a package
+    # installs itself computes its prefix from the file's location, now dev,
+    # so lib/, bin/ and share/ are pointed back at out as well.
+    local exportdir vars
     while IFS= read -r exportdir; do
         local libs=1
         grep -qsF "set(_IMPORT_PREFIX \"$out\")" "$exportdir"/*.cmake && libs=
         while IFS= read -r -d '' f; do
+            vars=$(grep -oE 'set\(\s*[A-Za-z0-9_]+\s+"?\$\{PACKAGE_PREFIX_DIR\}/?"?\s*\)' "$f" \
+                | sed -E 's/set\(\s*([A-Za-z0-9_]+).*/\1/' | paste -sd'|' || true)
+            vars="_IMPORT_PREFIX|PACKAGE_PREFIX_DIR${vars:+|$vars}"
             _splitDevSed import-prefix-include "$f" \
-                -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/include([/\"; )]|\$)#$dev/include\2#g"
+                -e "s#\\\$\{($vars)\}/include([/\"; )]|\$)#$dev/include\2#g"
             if [ -n "$libs" ]; then
                 _splitDevSed import-prefix-lib "$f" \
-                    -e "s#\\\$\{(_IMPORT_PREFIX|PACKAGE_PREFIX_DIR)\}/(lib|lib64|bin)([/\"; )]|\$)#$out/\2\3#g"
+                    -e "s#\\\$\{($vars)\}/(lib|lib64|bin|share)([/\"; )]|\$)#$out/\2\3#g"
             fi
         done < <(grep -lZE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' "$exportdir"/*.cmake || true)
     done < <(find "$dev" -type f -name '*.cmake' -exec grep -lE '_IMPORT_PREFIX|PACKAGE_PREFIX_DIR' {} + 2>/dev/null | xargs -r -n1 dirname | sort -u)
