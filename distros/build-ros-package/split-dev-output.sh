@@ -109,7 +109,7 @@ splitDevOutput() {
     # ${pkg_DIR}/../../../lib in rosidl's generator and typesupport extras, or
     # urdfdom's "${urdfdom_DIR}/../../..//lib". The walk has to go exactly as
     # many levels up as the directory sits below dev.
-    local cfgdir rel depth names name n
+    local cfgdir rel depth names name n aliases
     while IFS= read -r cfgdir; do
         rel=${cfgdir#"$dev"/}
         depth=$(( $(tr -cd / <<< "$rel" | wc -c) + 1 ))
@@ -121,6 +121,14 @@ splitDevOutput() {
         while IFS= read -r -d '' f; do
             _splitDevSed relative-prefix-walk "$f" \
                 -e "s#\\\$\{(($names)_DIR|CMAKE_CURRENT_LIST_DIR)\}$up/+(lib|lib64|bin|share)([/\"; )]|\$)#$out/\3\4#g"
+            # The same walk kept in a variable and used later, as gz-msgs does
+            # with set(gz-msgs10_INSTALL_PATH "${gz-msgs10_DIR}/../../../").
+            aliases=$(grep -oE "set\\(\\s*[A-Za-z0-9_-]+\\s+\"?\\\$\\{(($names)_DIR|CMAKE_CURRENT_LIST_DIR)\\}$up/?\"?\\s*\\)" "$f" \
+                | sed -E 's/set\(\s*([A-Za-z0-9_-]+).*/\1/' | paste -sd'|' || true)
+            [ -n "$aliases" ] || continue
+            _splitDevSed relative-prefix-alias "$f" \
+                -e "s#\\\$\{($aliases)\}/+(lib|lib64|bin|share)([/\"; )]|\$)#$out/\2\3#g" \
+                -e "s#\\\$\{($aliases)\}/+include([/\"; )]|\$)#$dev/include\2#g"
         done < <(find "$cfgdir" -maxdepth 1 -type f -name '*.cmake' -print0)
     done < <(find "$dev" -type f \( -name '*Config.cmake' -o -name '*-config.cmake' \) -printf '%h\n' | sort -u)
 
