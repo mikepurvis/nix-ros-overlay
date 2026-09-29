@@ -32,7 +32,6 @@ _mergeToDev() {
     else
         moveToOutput "$1" "$dev"
     fi
-    _movedToDev+=("$1")
     _splitDevFixup "moved:${2:-$1}" "$1"
 }
 
@@ -47,7 +46,6 @@ _splitDevSed() {
 
 splitDevOutput() {
     if [ -z "${dev:-}" ] || [ "$dev" = "$out" ]; then return 0; fi
-    _movedToDev=()
     local f d
 
     # Headers installed to a literal include/ rather than
@@ -78,12 +76,17 @@ splitDevOutput() {
         _mergeToDev "${d#"$out"/}" cmake-helpers
     done
 
-    # A config that baked the absolute $out path of something that then moved.
-    for d in "${_movedToDev[@]}"; do
+    # A config that baked an absolute $out path which now only exists in dev:
+    # something that moved, or a parent of it, such as sdformat_vendor adding
+    # $out/share/extra_cmake to CMAKE_PREFIX_PATH for a config beneath it.
+    local p
+    while IFS= read -r p; do
+        [ ! -e "$out/$p" ] && [ -e "$dev/$p" ] || continue
         while IFS= read -r -d '' f; do
-            _splitDevSed repoint "$f" -e "s#$out/$d([/\"; )]|\$)#$dev/$d\1#g"
-        done < <(grep -rlZF "$out/$d" "$dev" --include='*.cmake' --include='*.pc' || true)
-    done
+            _splitDevSed repoint "$f" -e "s#$out/$p([/\"; )]|\$)#$dev/$p\1#g"
+        done < <(grep -rlZF "$out/$p" "$dev" --include='*.cmake' --include='*.pc' || true)
+    done < <(grep -rhoE "$out/[^\"; )\$]+" "$dev" --include='*.cmake' --include='*.pc' 2>/dev/null \
+        | sed "s#^$out/##; s#/*\$##" | sort -u | awk '{ print length, $0 }' | sort -rn | cut -d' ' -f2-)
 
     local cmakedir pkg entry
     for cmakedir in "$dev"/share/*/cmake; do
