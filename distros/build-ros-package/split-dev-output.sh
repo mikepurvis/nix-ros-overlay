@@ -87,6 +87,10 @@ splitDevOutput() {
             | xargs -0r sed -i -E -e "s#^includedir=\\\$\{prefix\}/include#includedir=$dev/include#"
     done
 
+    # moveToOutput prunes emptied parents, which takes out itself with it for
+    # a header-only package.
+    mkdir -p "$out"
+
     # Anything left in out that names dev is a reference cycle; Nix would
     # only say which outputs are involved, so name the files.
     local leaks
