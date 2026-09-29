@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-action ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-action ];
 
   meta = {
     description = "Minimal action client examples";

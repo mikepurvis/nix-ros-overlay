@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs shape-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime shape-msgs std-msgs ];
 
   meta = {
     description = "Contains message and service definitions used by the ZED ROS2 nodes.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles costmap-queue dwb-core geometry-msgs nav-2d-msgs nav-2d-utils nav2-costmap-2d nav2-util pluginlib rclcpp sensor-msgs ];
+  rosExecDepends = [ angles costmap-queue dwb-core geometry-msgs nav-2d-msgs nav-2d-utils nav2-costmap-2d nav2-util pluginlib rclcpp sensor-msgs ];
 
   meta = {
     description = "The dwb_critics package";

@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "This package includes ROS messages and services for dynamixel_workbench packages";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ros-testing ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ lifecycle-msgs rclcpp rclcpp-lifecycle std-msgs ];
+  rosExecDepends = [ lifecycle-msgs rclcpp rclcpp-lifecycle std-msgs ];
 
   meta = {
     description = "Package containing demos for lifecycle implementation";

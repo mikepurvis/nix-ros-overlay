@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json sqlite ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
   rosBuildExportDepends = [ rclcpp ros2-medkit-msgs ros2-medkit-serialization rosbag2-cpp rosbag2-storage ];
-  rosExecDepends = [ ament-index-python launch launch-ros ];
+  rosExecDepends = [ ament-index-python launch launch-ros rclcpp ros2-medkit-msgs ros2-medkit-serialization rosbag2-cpp rosbag2-storage ];
 
   meta = {
     description = "Central fault manager node for ros2_medkit fault management system";

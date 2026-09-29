@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ binutils boost cppzmq fmt lua lz4 nlohmann_json protobuf qt5.qtbase qt5.qtsvg qt5.qtwebsockets qt5.qtx11extras zstd ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp data-tamer-cpp ];
+  rosExecDepends = [ ament-index-cpp data-tamer-cpp ];
 
   meta = {
     description = "PlotJuggler: juggle with data";

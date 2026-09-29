@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ geometry-msgs moveit-core moveit-py moveit-ros-planning moveit-ros-planning-interface moveit-task-constructor-msgs py-binding-tools rclcpp rviz-marker-tools tf2-eigen visualization-msgs ];
+  rosExecDepends = [ geometry-msgs moveit-core moveit-py moveit-ros-planning moveit-ros-planning-interface moveit-task-constructor-msgs py-binding-tools rclcpp rviz-marker-tools tf2-eigen visualization-msgs ];
 
   meta = {
     description = "MoveIt Task Pipeline";

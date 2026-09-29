@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ abseil-cpp eigen gflags glog pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces cartographer cartographer-ros-msgs geometry-msgs nav-msgs pcl-conversions rclcpp rosbag2-cpp rosbag2-storage sensor-msgs std-msgs tf2 tf2-eigen tf2-msgs tf2-ros urdf visualization-msgs ];
-  rosExecDepends = [ launch robot-state-publisher ];
+  rosExecDepends = [ builtin-interfaces cartographer cartographer-ros-msgs geometry-msgs launch nav-msgs pcl-conversions rclcpp robot-state-publisher rosbag2-cpp rosbag2-storage sensor-msgs std-msgs tf2 tf2-eigen tf2-msgs tf2-ros urdf visualization-msgs ];
 
   meta = {
     description = "Cartographer is a system that provides real-time simultaneous localization

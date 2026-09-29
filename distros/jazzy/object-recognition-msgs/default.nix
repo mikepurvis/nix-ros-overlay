@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake geometry-msgs rosidl-default-generators sensor-msgs shape-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs geometry-msgs sensor-msgs shape-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs geometry-msgs rosidl-default-runtime sensor-msgs shape-msgs std-msgs ];
 
   meta = {
     description = "Object_recognition_msgs contains the ROS message and the actionlib definition used in object_recognition_core";

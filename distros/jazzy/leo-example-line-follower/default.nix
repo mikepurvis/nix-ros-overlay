@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ generate-parameter-library ];
-  rosExecDepends = [ cv-bridge geometry-msgs rclpy sensor-msgs ];
+  rosExecDepends = [ cv-bridge generate-parameter-library geometry-msgs rclpy sensor-msgs ];
 
   meta = {
     description = "A line track follower example for Leo Rover.";

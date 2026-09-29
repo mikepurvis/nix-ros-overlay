@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost bzip2 lz4 opencv opencv.cxxdev ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ geometry-msgs mola-common mola-kernel mrpt-libmaps mrpt-libobs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs mola-common mola-kernel mrpt-libmaps mrpt-libobs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "MOLA DataSource from ROS1 bag files that does not need a ROS1 installation";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ protobuf python3Packages.inflection python3Packages.jinja2 python3Packages.multipledispatch python3Packages.networkx python3Packages.numpy python3Packages.protobuf python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
   rosBuildExportDepends = [ ament-cmake-mypy builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
-  rosExecDepends = [ rclpy rosidl-adapter rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rclcpp rclpy rosidl-adapter rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Protobuf to ROS 2 interoperability interfaces";

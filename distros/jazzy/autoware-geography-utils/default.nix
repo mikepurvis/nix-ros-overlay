@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-lanelet2-extension autoware-map-msgs geographic-msgs geometry-msgs lanelet2-io ];
+  rosExecDepends = [ autoware-lanelet2-extension autoware-map-msgs geographic-msgs geometry-msgs lanelet2-io ];
 
   meta = {
     description = "The autoware_geography_utils package";

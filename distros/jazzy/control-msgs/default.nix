@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators sensor-msgs std-msgs trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces geometry-msgs sensor-msgs std-msgs trajectory-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
     description = "control_msgs contains base messages and actions useful for

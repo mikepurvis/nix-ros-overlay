@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ unzip ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-vendor-package ];
+  rosExecDepends = [ ament-cmake-vendor-package ];
 
   meta = {
     description = "Vendor package for the CLIPS rule based production system";

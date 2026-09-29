@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common ];
+  rosExecDepends = [ nebula-core-common ];
 
   meta = {
     description = "Nebula Common Continental Libraries and headers";

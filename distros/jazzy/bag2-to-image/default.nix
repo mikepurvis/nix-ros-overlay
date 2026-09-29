@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rosbag2-cpp rosbag2-storage sensor-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components rosbag2-cpp rosbag2-storage sensor-msgs ];
 
   meta = {
     description = "The bag2_to_image package";

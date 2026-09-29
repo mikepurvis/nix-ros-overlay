@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ message-filters pcl-msgs rclcpp sensor-msgs std-msgs ];
+  rosExecDepends = [ message-filters pcl-msgs rclcpp sensor-msgs std-msgs ];
 
   meta = {
     description = "Provides conversions from PCL data types and ROS message types";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ console-bridge eigen geographiclib python3Packages.click ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python eigen3-cmake-module ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater eigen-stl-containers eigen3-cmake-module geographic-msgs geometry-msgs libmavconn mavlink mavros-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-components rcpputils sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
-  rosExecDepends = [ rclpy rosidl-default-runtime ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater eigen-stl-containers geographic-msgs geometry-msgs libmavconn mavros-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-components rclpy rcpputils rosidl-default-runtime sensor-msgs std-msgs std-srvs tf2-eigen tf2-ros trajectory-msgs ];
 
   meta = {
     description = "MAVROS -- MAVLink extendable communication node for ROS

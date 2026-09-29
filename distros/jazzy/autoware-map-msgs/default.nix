@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
   rosBuildExportDepends = [ geographic-msgs geometry-msgs sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geographic-msgs geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Autoware map messages package.";

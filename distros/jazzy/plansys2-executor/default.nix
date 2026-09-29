@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ ament-index-cpp behaviortree-cpp eigen3-cmake-module lifecycle-msgs plansys2-core plansys2-domain-expert plansys2-msgs plansys2-pddl-parser plansys2-planner plansys2-problem-expert pluginlib rclcpp rclcpp-action rclcpp-cascade-lifecycle rclcpp-lifecycle std-msgs std-srvs ];
-  rosExecDepends = [ popf ];
+  rosExecDepends = [ ament-index-cpp behaviortree-cpp lifecycle-msgs plansys2-core plansys2-domain-expert plansys2-msgs plansys2-pddl-parser plansys2-planner plansys2-problem-expert pluginlib popf rclcpp rclcpp-action rclcpp-cascade-lifecycle rclcpp-lifecycle std-msgs std-srvs ];
 
   meta = {
     description = "This package contains the Executor module for the ROS2 Planning System";

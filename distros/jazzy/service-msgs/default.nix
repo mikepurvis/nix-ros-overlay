@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
   rosBuildExportDepends = [ builtin-interfaces ];
-  rosExecDepends = [ rosidl-core-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-core-runtime ];
 
   meta = {
     description = "Messages definitions common among all ROS services";

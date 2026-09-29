@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp ];
+  rosExecDepends = [ geometry-msgs rclcpp ];
 
   meta = {
     description = "The signal processing package";

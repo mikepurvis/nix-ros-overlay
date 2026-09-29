@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest python3Packages.requests ];
   propagatedBuildInputs = [ python3Packages.opencv4 python3Packages.semver ];
   rosBuildExportDepends = [ cv-bridge image-geometry message-filters rclpy sensor-msgs std-srvs ];
+  rosExecDepends = [ cv-bridge image-geometry message-filters rclpy sensor-msgs std-srvs ];
 
   meta = {
     description = "camera_calibration allows easy calibration of monocular or stereo

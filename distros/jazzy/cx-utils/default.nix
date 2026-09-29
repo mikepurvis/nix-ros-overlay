@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt spdlog ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor rclcpp ];
+  rosExecDepends = [ clips-vendor rclcpp ];
 
   meta = {
     description = "Utilities for the ROS2 CLIPS-Executive";

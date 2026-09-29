@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ gpsd pkg-config ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
   rosBuildExportDepends = [ gps-msgs rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ gps-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "connects to a GPSd server and broadcasts GPS fixes 

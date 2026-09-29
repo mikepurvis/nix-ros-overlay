@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake-ros python-cmake-module ];
   rosBuildExportDepends = [ rclcpp rcpputils sensor-msgs ];
-  rosExecDepends = [ ament-index-python ];
+  rosExecDepends = [ ament-index-python rclcpp rcpputils sensor-msgs ];
 
   meta = {
     description = "This contains CvBridge, which converts between ROS2

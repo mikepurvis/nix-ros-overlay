@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common osrf-testing-tools-cpp performance-test-fixture ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ rcpputils rcutils rmw rosidl-runtime-c rosidl-runtime-cpp ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rcpputils rcutils rmw rosidl-default-runtime rosidl-runtime-c rosidl-runtime-cpp ];
 
   meta = {
     description = "Define a common interface between DDS implementations of ROS middleware.";

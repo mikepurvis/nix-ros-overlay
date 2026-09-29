@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ geometry-msgs rmf-building-map-msgs rmf-door-msgs rmf-lift-msgs rmf-visualization-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ geometry-msgs rmf-building-map-msgs rmf-door-msgs rmf-lift-msgs rmf-visualization-msgs ];
+  rosExecDepends = [ geometry-msgs rmf-building-map-msgs rmf-door-msgs rmf-lift-msgs rmf-visualization-msgs ];
 
   meta = {
     description = "A visualizer for doors and lifts";

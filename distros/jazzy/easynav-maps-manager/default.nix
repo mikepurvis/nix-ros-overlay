@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core lifecycle-msgs pluginlib rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ easynav-common easynav-core lifecycle-msgs pluginlib rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Easy Navigation: MapsManager package.";

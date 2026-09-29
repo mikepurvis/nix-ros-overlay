@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
   rosBuildExportDepends = [ autoware-perception-msgs builtin-interfaces sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ autoware-perception-msgs builtin-interfaces rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Autoware internal perception messages package.";

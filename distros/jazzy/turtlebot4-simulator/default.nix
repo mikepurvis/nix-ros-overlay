@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake turtlebot4-gz-bringup turtlebot4-gz-gui-plugins turtlebot4-gz-toolbox ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ turtlebot4-gz-bringup turtlebot4-gz-gui-plugins turtlebot4-gz-toolbox ];
+  rosExecDepends = [ turtlebot4-gz-bringup turtlebot4-gz-gui-plugins turtlebot4-gz-toolbox ];
 
   meta = {
     description = "Metapackage for Turtlebot4 simulations";

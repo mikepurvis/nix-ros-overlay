@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libcap ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle ];
-  rosExecDepends = [ controller-manager forward-command-controller joint-state-broadcaster joint-trajectory-controller robot-state-publisher ros2controlcli ros2launch rviz2 xacro ];
+  rosExecDepends = [ controller-manager forward-command-controller hardware-interface joint-state-broadcaster joint-trajectory-controller pluginlib rclcpp rclcpp-lifecycle robot-state-publisher ros2controlcli ros2launch rviz2 xacro ];
 
   meta = {
     description = "A ros2_control interface for Synapticon motor drivers";

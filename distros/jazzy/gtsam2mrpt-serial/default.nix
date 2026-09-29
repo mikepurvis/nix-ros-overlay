@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake gtsam mola-common mrpt-libbase mrpt-libmath mrpt-libposes ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ gtsam mola-common mrpt-libbase mrpt-libmath mrpt-libposes ];
+  rosExecDepends = [ gtsam mola-common mrpt-libbase mrpt-libmath mrpt-libposes ];
 
   meta = {
     description = "A C++ library offering a GTSAM ⇆ mrpt-serialization bridge.";

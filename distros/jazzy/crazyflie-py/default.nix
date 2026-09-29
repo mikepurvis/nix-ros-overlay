@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.transforms3d ];
   rosBuildExportDepends = [ crazyflie-interfaces rclpy ];
+  rosExecDepends = [ crazyflie-interfaces rclpy ];
 
   meta = {
     description = "Simple Python Interface for Crayzswarm2";

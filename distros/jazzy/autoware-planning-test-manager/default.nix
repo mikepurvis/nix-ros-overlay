@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-component-interface-specs autoware-motion-utils autoware-planning-msgs autoware-route-handler autoware-test-utils autoware-utils-geometry nav-msgs rclcpp tf2-msgs tf2-ros unique-identifier-msgs yaml-cpp-vendor ];
+  rosExecDepends = [ autoware-component-interface-specs autoware-motion-utils autoware-planning-msgs autoware-route-handler autoware-test-utils autoware-utils-geometry nav-msgs rclcpp tf2-msgs tf2-ros unique-identifier-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "ROS 2 node for testing interface of the nodes in planning module";

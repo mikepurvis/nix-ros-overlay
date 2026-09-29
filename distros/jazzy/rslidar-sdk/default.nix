@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libpcap yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rslidar-msg sensor-msgs std-msgs ];
+  rosExecDepends = [ rclcpp rslidar-msg sensor-msgs std-msgs ];
 
   meta = {
     description = "The rslidar_sdk package";

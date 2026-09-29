@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "A package containing some stereo camera related message definitions.";

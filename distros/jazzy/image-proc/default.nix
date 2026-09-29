@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ camera-calibration-parsers cv-bridge geometry-msgs image-geometry image-transport rclcpp rclcpp-components rcutils sensor-msgs tf2 tf2-geometry-msgs tracetools-image-pipeline ];
+  rosExecDepends = [ camera-calibration-parsers cv-bridge geometry-msgs image-geometry image-transport rclcpp rclcpp-components rcutils sensor-msgs tf2 tf2-geometry-msgs tracetools-image-pipeline ];
 
   meta = {
     description = "Single image rectification and color processing.";

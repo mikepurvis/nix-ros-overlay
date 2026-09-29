@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ can-msgs off-highway-can off-highway-radar-msgs rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ can-msgs off-highway-can off-highway-radar-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "The off_highway_radar package";

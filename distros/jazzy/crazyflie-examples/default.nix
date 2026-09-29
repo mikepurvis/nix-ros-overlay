@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ crazyflie-py geometry-msgs nav-msgs rclpy sensor-msgs tf2-ros ];
-  rosExecDepends = [ tf-transformations ];
+  rosExecDepends = [ crazyflie-py geometry-msgs nav-msgs rclpy sensor-msgs tf-transformations tf2-ros ];
 
   meta = {
     description = "Examples for the Crazyswarm2 ROS stack";

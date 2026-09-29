@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-pytest launch-testing-ament-cmake launch-testing-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ rclpy ];
+  rosExecDepends = [ rclpy ];
 
   meta = {
     description = "Aggregates diagnostic information from multiple sources.";

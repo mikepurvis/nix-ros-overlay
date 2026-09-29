@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ camera-info-manager composition-interfaces cv-bridge depthai depthai-ros-msgs ffmpeg-image-transport-msgs image-transport rclcpp sensor-msgs std-msgs stereo-msgs tf2 tf2-geometry-msgs tf2-ros vision-msgs ];
-  rosExecDepends = [ robot-state-publisher xacro ];
+  rosExecDepends = [ camera-info-manager composition-interfaces cv-bridge depthai depthai-ros-msgs ffmpeg-image-transport-msgs image-transport rclcpp robot-state-publisher sensor-msgs std-msgs stereo-msgs tf2 tf2-geometry-msgs tf2-ros vision-msgs xacro ];
 
   meta = {
     description = "The depthai_bridge package";

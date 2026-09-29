@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-converters ecl-exceptions ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-config ecl-converters ecl-exceptions ecl-license ];
+  rosExecDepends = [ ecl-config ecl-converters ecl-exceptions ecl-license ];
 
   meta = {
     description = "The formatters here simply format various input types to a specified

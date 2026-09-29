@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-tf pcl-conversions pcl-ros sensor-msgs ];
+  rosExecDepends = [ autoware-utils-tf pcl-conversions pcl-ros sensor-msgs ];
 
   meta = {
     description = "The autoware_utils_pcl package";

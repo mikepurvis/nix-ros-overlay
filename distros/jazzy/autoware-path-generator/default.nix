@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common autoware-test-utils ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-motion-utils autoware-planning-msgs autoware-planning-test-manager autoware-trajectory autoware-utils-debug autoware-utils-rclcpp autoware-utils-system autoware-vehicle-info-utils generate-parameter-library rclcpp rclcpp-components ];
+  rosExecDepends = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-motion-utils autoware-planning-msgs autoware-planning-test-manager autoware-trajectory autoware-utils-debug autoware-utils-rclcpp autoware-utils-system autoware-vehicle-info-utils generate-parameter-library rclcpp rclcpp-components ];
 
   meta = {
     description = "The autoware_path_generator package";

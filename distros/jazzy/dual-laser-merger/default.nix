@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
   rosBuildExportDepends = [ geometry-msgs laser-geometry message-filters pcl-conversions pcl-ros rclcpp rclcpp-components tf2 tf2-ros tf2-sensor-msgs ];
+  rosExecDepends = [ geometry-msgs laser-geometry message-filters pcl-conversions pcl-ros rclcpp rclcpp-components tf2 tf2-ros tf2-sensor-msgs ];
 
   meta = {
     description = "merge dual lidar's scans.";

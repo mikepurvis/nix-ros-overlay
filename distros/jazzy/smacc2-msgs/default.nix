@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages and services used in smacc2.";

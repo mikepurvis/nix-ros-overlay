@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ffmpeg libusb1 llvmPackages.openmp yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ camera-info-manager diagnostic-updater flir-camera-msgs image-transport rclcpp rclcpp-components sensor-msgs std-msgs ];
+  rosExecDepends = [ camera-info-manager diagnostic-updater flir-camera-msgs image-transport rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS2 driver for flir spinnaker sdk";

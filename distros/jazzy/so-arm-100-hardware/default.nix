@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle std-msgs std-srvs ];
+  rosExecDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle std-msgs std-srvs ];
 
   meta = {
     description = "ROS2 Control Hardware Interface for SOARM-100 low-cost 5DoF robotic manipulator.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Ccontains messages and service definitions for micro-ROS diagnostics.";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake builtin-interfaces lifecycle-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces lifecycle-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces lifecycle-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages and services for the controller manager.";

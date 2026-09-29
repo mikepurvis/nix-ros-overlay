@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing launch-testing-ament-cmake launch-testing-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action ros-gz-interfaces std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros visualization-msgs yaml-cpp-vendor ];
-  rosExecDepends = [ ros-gz-bridge ];
+  rosExecDepends = [ ament-cmake-auto ament-index-cpp geometry-msgs mapoi-interfaces nav2-msgs rclcpp rclcpp-action ros-gz-bridge ros-gz-interfaces std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros visualization-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "map and poi server";

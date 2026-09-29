@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav-msgs rclcpp ];
+  rosExecDepends = [ nav-msgs rclcpp ];
 
   meta = {
     description = "dummy map server node";

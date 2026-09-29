@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python eigen3-cmake-module ];
   rosBuildExportDepends = [ eigen3-cmake-module geometry-msgs mavros mavros-msgs rclpy sensor-msgs std-msgs std-srvs trajectory-msgs ];
+  rosExecDepends = [ geometry-msgs mavros mavros-msgs rclpy sensor-msgs std-msgs std-srvs trajectory-msgs ];
 
   meta = {
     description = "Example scripts demonstrating MAVROS usage";

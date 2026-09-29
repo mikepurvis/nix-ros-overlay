@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ asio console-bridge ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mavlink ];
+  rosExecDepends = [ mavlink ];
 
   meta = {
     description = "MAVLink communication library.

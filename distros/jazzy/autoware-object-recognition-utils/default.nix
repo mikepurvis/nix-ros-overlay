@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-interpolation autoware-perception-msgs autoware-utils-geometry autoware-utils-math geometry-msgs pcl-conversions pcl-ros rclcpp sensor-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ autoware-interpolation autoware-perception-msgs autoware-utils-geometry autoware-utils-math geometry-msgs pcl-conversions pcl-ros rclcpp sensor-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "The autoware_object_recognition_utils package";

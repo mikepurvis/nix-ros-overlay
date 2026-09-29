@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ asio pcl ];
   nativeBuildInputs = [ ament-cmake asio-cmake-module ];
   rosBuildExportDepends = [ diagnostic-updater io-context off-highway-premium-radar-sample-msgs rclcpp rclcpp-components sensor-msgs std-msgs tf2 tf2-geometry-msgs ];
+  rosExecDepends = [ diagnostic-updater io-context off-highway-premium-radar-sample-msgs rclcpp rclcpp-components sensor-msgs std-msgs tf2 tf2-geometry-msgs ];
 
   meta = {
     description = "The off_highway_premium_radar_sample package";

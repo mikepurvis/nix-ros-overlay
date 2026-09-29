@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libjpeg_turbo ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge image-transport ];
+  rosExecDepends = [ cv-bridge image-transport ];
 
   meta = {
     description = "Compressed_image_transport provides a plugin to image_transport for transparently sending images

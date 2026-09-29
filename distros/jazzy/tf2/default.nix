@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-google-benchmark ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs rcutils rosidl-runtime-cpp ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rcutils ];
 
   meta = {
     description = "tf2 is the second generation of the transform library, which lets

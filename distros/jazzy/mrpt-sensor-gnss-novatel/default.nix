@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mrpt-libhwdrivers mrpt-libros-bridge mrpt-msgs mrpt-sensorlib novatel-oem6-msgs rclcpp-components tf2-ros ];
+  rosExecDepends = [ mrpt-libhwdrivers mrpt-libros-bridge mrpt-msgs mrpt-sensorlib novatel-oem6-msgs rclcpp-components tf2-ros ];
 
   meta = {
     description = "ROS node for GNSS/IMU Novatel receivers with RTK precision using an NTRIP HTTP source (based on mrpt-hwdrivers)";

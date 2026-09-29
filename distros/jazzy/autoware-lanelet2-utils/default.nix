@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ range-v3 ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-lanelet2-extension autoware-map-msgs autoware-planning-msgs autoware-utils-geometry autoware-utils-math rclcpp ];
+  rosExecDepends = [ autoware-lanelet2-extension autoware-map-msgs autoware-planning-msgs autoware-utils-geometry autoware-utils-math rclcpp ];
 
   meta = {
     description = "The autoware_lanelet2_utils package";

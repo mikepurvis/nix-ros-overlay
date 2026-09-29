@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common rclcpp rosbag2-test-common test-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcpputils rcutils rosbag2-cpp rosbag2-storage ];
+  rosExecDepends = [ rcpputils rcutils rosbag2-cpp rosbag2-storage ];
 
   meta = {
     description = "Compression implementations for rosbag2 bags and messages.";

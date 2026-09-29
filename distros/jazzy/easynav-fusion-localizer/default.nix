@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen geographiclib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles diagnostic-msgs diagnostic-updater easynav-common easynav-core easynav-localizer easynav-sensors geographic-msgs geometry-msgs nav-msgs pluginlib rclcpp rclcpp-lifecycle robot-localization sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ angles diagnostic-msgs diagnostic-updater easynav-common easynav-core easynav-localizer easynav-sensors geographic-msgs geometry-msgs nav-msgs pluginlib rclcpp rclcpp-lifecycle robot-localization sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: Fusion Localizer package.";

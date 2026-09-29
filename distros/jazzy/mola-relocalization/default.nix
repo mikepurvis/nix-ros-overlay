@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ mola-test-datasets ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mola-pose-list mp2p-icp mrpt-libmaps mrpt-libobs mrpt-libslam ];
+  rosExecDepends = [ mola-common mola-pose-list mp2p-icp mrpt-libmaps mrpt-libobs mrpt-libslam ];
 
   meta = {
     description = "C++ library with algorithms for relocalization, global localization, or pose estimation given a large initial uncertainty";

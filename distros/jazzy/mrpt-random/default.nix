@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mrpt-common python3 python3Packages.pybind11 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-common ];
+  rosExecDepends = [ mrpt-common ];
 
   meta = {
     description = "The MRPT C++ library mrpt_random";

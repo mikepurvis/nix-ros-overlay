@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ curl glog pcl xmlrpc_c ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ cv-bridge ];
+  rosExecDepends = [ cv-bridge ];
 
   meta = {
     description = "Library and Utilities for working with ifm pmd-based 3D ToF Cameras";

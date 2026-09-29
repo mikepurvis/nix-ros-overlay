@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp sensor-msgs ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater rclcpp sensor-msgs ];
 
   meta = {
     description = "ROS2 driver for a generic Linux joystick.

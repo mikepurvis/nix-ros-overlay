@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake clips-vendor cx-plugin cx-utils geometry-msgs pluginlib tf2-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor cx-plugin cx-utils geometry-msgs pluginlib tf2-ros ];
+  rosExecDepends = [ clips-vendor cx-plugin cx-utils geometry-msgs pluginlib tf2-ros ];
 
   meta = {
     description = "Track poses via periodic tf lookups.";

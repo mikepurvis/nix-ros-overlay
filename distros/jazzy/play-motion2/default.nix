@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-index-cpp ament-lint-auto ament-lint-common controller-interface controller-manager hardware-interface joint-state-broadcaster joint-trajectory-controller launch-testing-ament-cmake pluginlib realtime-tools robot-state-publisher xacro ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
   rosBuildExportDepends = [ backward-ros control-msgs controller-manager-msgs lifecycle-msgs moveit-ros-planning-interface play-motion2-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs trajectory-msgs ];
-  rosExecDepends = [ launch launch-ros ];
+  rosExecDepends = [ backward-ros control-msgs controller-manager-msgs launch launch-ros lifecycle-msgs moveit-ros-planning-interface play-motion2-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
     description = "Play a pre-recorded motion on a robot";

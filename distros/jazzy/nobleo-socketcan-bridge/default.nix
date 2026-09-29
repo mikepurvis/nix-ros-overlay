@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt linuxHeaders ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ can-msgs diagnostic-msgs diagnostic-updater rclcpp rclcpp-components ];
+  rosExecDepends = [ can-msgs diagnostic-msgs diagnostic-updater rclcpp rclcpp-components ];
 
   meta = {
     description = "Simple wrapper around SocketCAN";

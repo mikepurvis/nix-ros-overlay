@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
   rosBuildExportDepends = [ sensor-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "Messages, services and action definitions useful for Human-Robot Interaction";

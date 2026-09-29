@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
   rosBuildExportDepends = [ rclcpp ros2-medkit-gateway ros2-medkit-msgs ];
+  rosExecDepends = [ rclcpp ros2-medkit-gateway ros2-medkit-msgs ];
 
   meta = {
     description = "SOVD Service Interface plugin - exposes medkit entity tree and fault data via ROS 2 services";

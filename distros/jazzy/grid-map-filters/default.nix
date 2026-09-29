@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ onetbb ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ filters grid-map-core grid-map-msgs grid-map-ros pluginlib ];
+  rosExecDepends = [ filters grid-map-core grid-map-msgs grid-map-ros pluginlib ];
 
   meta = {
     description = "Processing grid maps as a sequence of ROS filters.";

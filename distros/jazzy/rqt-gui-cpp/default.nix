@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake pluginlib qt-gui-cpp qt5.qtbase rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib qt-gui-cpp rclcpp ];
+  rosExecDepends = [ pluginlib qt-gui-cpp rclcpp ];
 
   meta = {
     description = "rqt_gui_cpp enables GUI plugins to use the C++ client library for ROS.";

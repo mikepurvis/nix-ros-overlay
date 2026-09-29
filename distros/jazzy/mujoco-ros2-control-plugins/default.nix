@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ glfw3 libGL libGLU ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros geometry-msgs mujoco-ros2-control-msgs mujoco-vendor pluginlib rclcpp realtime-tools ros2-control-cmake sensor-msgs std-msgs std-srvs visualization-msgs ];
+  rosExecDepends = [ backward-ros geometry-msgs mujoco-ros2-control-msgs mujoco-vendor pluginlib rclcpp realtime-tools ros2-control-cmake sensor-msgs std-msgs std-srvs visualization-msgs ];
 
   meta = {
     description = "Plugin package for mujoco_ros2_control";

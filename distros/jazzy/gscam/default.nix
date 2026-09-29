@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ gst_all_1.gst-plugins-base gst_all_1.gstreamer ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ camera-calibration-parsers camera-info-manager class-loader cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ camera-calibration-parsers camera-info-manager class-loader cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "A ROS camera driver that uses gstreamer to connect to

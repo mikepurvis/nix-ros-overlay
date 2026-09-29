@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake gtsam mola-common mola-gtsam-factors mola-yaml mp2p-icp mrpt-libmaps mrpt-libtclap ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ gtsam mola-common mola-gtsam-factors mola-yaml mp2p-icp mrpt-libmaps mrpt-libtclap ];
+  rosExecDepends = [ gtsam mola-common mola-gtsam-factors mola-yaml mp2p-icp mrpt-libmaps mrpt-libtclap ];
 
   meta = {
     description = "C++ library for georeferencing key-frame maps (simplemaps) and related CLI tools";

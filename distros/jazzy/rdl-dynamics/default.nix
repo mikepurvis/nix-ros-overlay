@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost doxygen eigen graphviz ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ eigen3-cmake-module rclcpp ];
+  rosExecDepends = [ eigen3-cmake-module rclcpp ];
 
   meta = {
     description = "The rdl_dynamics package";

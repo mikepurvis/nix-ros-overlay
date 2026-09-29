@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ joint-state-publisher robot-state-publisher urdf xacro ];
+  rosExecDepends = [ joint-state-publisher robot-state-publisher urdf xacro ];
 
   meta = {
     description = "Nav2's minimum Turtlebot4 Description package";

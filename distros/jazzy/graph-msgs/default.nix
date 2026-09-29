@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-cmake ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS messages for publishing graphs of different data types";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater irobot-create-msgs rclpy sensor-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater irobot-create-msgs rclpy sensor-msgs ];
+  rosExecDepends = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater irobot-create-msgs rclpy sensor-msgs ];
 
   meta = {
     description = "Turtlebot4 Diagnostics";

@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geographic-msgs geometry-msgs rcl-interfaces sensor-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geographic-msgs geometry-msgs rcl-interfaces rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "Messages for <a href=\"http://wiki.ros.org/mavros\">MAVROS</a>.";

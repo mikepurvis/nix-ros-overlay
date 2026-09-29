@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge geometry-msgs grid-map-core grid-map-cv grid-map-filters grid-map-loader grid-map-msgs grid-map-octomap grid-map-ros grid-map-rviz-plugin grid-map-visualization octomap-msgs rclcpp sensor-msgs ];
-  rosExecDepends = [ octomap-rviz-plugins octomap-server rclpy rviz2 ];
+  rosExecDepends = [ cv-bridge geometry-msgs grid-map-core grid-map-cv grid-map-filters grid-map-loader grid-map-msgs grid-map-octomap grid-map-ros grid-map-rviz-plugin grid-map-visualization octomap-msgs octomap-rviz-plugins octomap-server rclcpp rclpy rviz2 sensor-msgs ];
 
   meta = {
     description = "Demo nodes to demonstrate the usage of the grid map library.";

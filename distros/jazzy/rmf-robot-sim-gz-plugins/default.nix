@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen qt5.qtbase qt5.qtdeclarative ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ gz-gui-vendor gz-msgs-vendor gz-plugin-vendor gz-rendering-vendor gz-sim-vendor gz-transport-vendor rclcpp rmf-building-map-msgs rmf-building-sim-gz-plugins rmf-fleet-msgs rmf-robot-sim-common ];
+  rosExecDepends = [ gz-gui-vendor gz-msgs-vendor gz-plugin-vendor gz-rendering-vendor gz-sim-vendor gz-transport-vendor rclcpp rmf-building-map-msgs rmf-building-sim-gz-plugins rmf-fleet-msgs rmf-robot-sim-common ];
 
   meta = {
     description = "ROS 2 Gazebo plugins for TeleportIngestors and TeleportDispensers";

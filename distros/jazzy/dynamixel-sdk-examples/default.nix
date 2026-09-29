@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ dynamixel-sdk dynamixel-sdk-custom-interfaces rclcpp rclpy ];
+  rosExecDepends = [ dynamixel-sdk dynamixel-sdk-custom-interfaces rclcpp rclpy ];
 
   meta = {
     description = "ROS 2 examples using ROBOTIS DYNAMIXEL SDK";

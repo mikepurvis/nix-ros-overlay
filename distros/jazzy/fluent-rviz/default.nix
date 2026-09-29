@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ouxt-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ geometry-msgs rclcpp std-msgs visualization-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp std-msgs visualization-msgs ];
 
   meta = {
     description = "A library which makes Rviz fluent. Powered by C++17";

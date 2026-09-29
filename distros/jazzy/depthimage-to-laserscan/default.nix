@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ image-geometry rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ image-geometry rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "depthimage_to_laserscan";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ zlib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ image-transport ];
+  rosExecDepends = [ image-transport ];
 
   meta = {
     description = "zstd_image_transport provides a plugin to image_transport for transparently sending images

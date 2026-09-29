@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp ros-babel-fish rosgraph-msgs std-msgs tf2-ros ];
-  rosExecDepends = [ colcon-rclgd rclgd-cli ros2launch ];
+  rosExecDepends = [ colcon-rclgd geometry-msgs rclcpp rclgd-cli ros-babel-fish ros2launch rosgraph-msgs std-msgs tf2-ros ];
 
   meta = {
     description = "GODOT implementation of rclcpp";

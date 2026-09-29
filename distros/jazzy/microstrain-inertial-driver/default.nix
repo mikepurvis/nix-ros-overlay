@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cpplint ];
   nativeBuildInputs = [ git rosidl-default-generators ];
   rosBuildExportDepends = [ diagnostic-updater geometry-msgs lifecycle-msgs microstrain-inertial-msgs nav-msgs nmea-msgs rclcpp-lifecycle rtcm-msgs sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
-  rosExecDepends = [ diagnostic-aggregator rosidl-default-runtime ];
+  rosExecDepends = [ diagnostic-aggregator diagnostic-updater geometry-msgs lifecycle-msgs microstrain-inertial-msgs nav-msgs nmea-msgs rclcpp-lifecycle rosidl-default-runtime rtcm-msgs sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "The ros_mscl package provides a driver for the LORD/Microstrain inertial products.";

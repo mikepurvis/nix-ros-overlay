@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-decoders nebula-hesai-common rclcpp ];
+  rosExecDepends = [ nebula-core-common nebula-core-decoders nebula-hesai-common rclcpp ];
 
   meta = {
     description = "Nebula Hesai Decoders Library";

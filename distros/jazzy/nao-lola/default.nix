@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nao-command-msgs nao-sensor-msgs rclcpp ];
+  rosExecDepends = [ nao-command-msgs nao-sensor-msgs rclcpp ];
 
   meta = {
     description = "Packages that allow communicating with the NAO's Lola middle-ware.";

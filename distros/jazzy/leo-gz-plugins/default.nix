@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ gz-plugin-vendor gz-sim-vendor ];
+  rosExecDepends = [ gz-plugin-vendor gz-sim-vendor ];
 
   meta = {
     description = "Plugins for Leo Rover Gazebo simulation in ROS 2";

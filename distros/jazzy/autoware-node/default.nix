@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "Autoware Node is an Autoware Core package designed to provide a base class for all nodes in the system.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ eigen3-cmake-module kinematics-interface pinocchio pluginlib ];
+  rosExecDepends = [ eigen3-cmake-module kinematics-interface pinocchio pluginlib ];
 
   meta = {
     description = "Pinocchio-based implementation of ros2_control kinematics interface";

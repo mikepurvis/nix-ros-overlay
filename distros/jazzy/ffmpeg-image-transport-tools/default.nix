@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ cv-bridge ffmpeg-encoder-decoder ffmpeg-image-transport-msgs rclcpp rcutils rosbag2-cpp rosbag2-storage sensor-msgs ];
+  rosExecDepends = [ cv-bridge ffmpeg-encoder-decoder ffmpeg-image-transport-msgs rclcpp rcutils rosbag2-cpp rosbag2-storage sensor-msgs ];
 
   meta = {
     description = "tools for processing ffmpeg_image_transport_msgs";

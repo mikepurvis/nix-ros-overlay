@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ cras-lint ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   rosBuildExportDepends = [ cras-cpp-common rclcpp rclcpp-components std-msgs topic-tools ];
+  rosExecDepends = [ cras-cpp-common rclcpp rclcpp-components std-msgs topic-tools ];
 
   meta = {
     description = "Nodes and components for safe and efficient manipulation with topics";

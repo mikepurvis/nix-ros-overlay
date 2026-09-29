@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ sensor-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "Interfaces for the sick_safetyscanners ros2 driver";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ grpc openssl pkg-config ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ tinyxml2-vendor ];
-  rosExecDepends = [ ament-cmake ];
+  rosExecDepends = [ ament-cmake tinyxml2-vendor ];
 
   meta = {
     description = "Client libraries for external control interfaces of KUKA";

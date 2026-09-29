@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface-testing ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros control-msgs controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools sensor-msgs ];
+  rosExecDepends = [ backward-ros control-msgs controller-interface hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools sensor-msgs ];
 
   meta = {
     description = "ros2_control battery state broadcaster controller";

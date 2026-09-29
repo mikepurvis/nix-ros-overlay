@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ console-bridge ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ console-bridge-vendor rcpputils ];
+  rosExecDepends = [ console-bridge-vendor rcpputils ];
 
   meta = {
     description = "The class_loader package is a ROS-independent package for loading plugins during runtime and the foundation of the higher level ROS \"pluginlib\" library.

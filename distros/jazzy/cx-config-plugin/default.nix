@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib yaml-cpp-vendor ];
+  rosExecDepends = [ ament-index-cpp clips-vendor cx-plugin cx-utils pluginlib yaml-cpp-vendor ];
 
   meta = {
     description = "CX plugin to parse yaml files and provide the values to CLIPS";

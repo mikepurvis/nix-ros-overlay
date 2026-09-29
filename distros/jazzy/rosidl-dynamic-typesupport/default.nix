@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros rcutils rosidl-runtime-c ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rcutils rosidl-runtime-c ];
+  rosExecDepends = [ rcutils rosidl-runtime-c ];
 
   meta = {
     description = "Unified serialization support interface for dynamic typesupport in C.";

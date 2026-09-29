@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ glfw3 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-libopengl ];
+  rosExecDepends = [ mrpt-libopengl ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (GUI C++ libraries).

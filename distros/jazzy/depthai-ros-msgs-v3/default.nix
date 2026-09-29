@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rclcpp rosidl-default-generators sensor-msgs std-msgs vision-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs rclcpp rosidl-default-generators sensor-msgs std-msgs vision-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclcpp rosidl-default-generators sensor-msgs std-msgs vision-msgs ];
 
   meta = {
     description = "Package to keep interface independent of the driver";

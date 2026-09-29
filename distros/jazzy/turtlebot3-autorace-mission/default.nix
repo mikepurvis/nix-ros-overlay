@@ -16,6 +16,7 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ rclpy sensor-msgs std-msgs ];
   rosBuildExportDepends = [ rclpy sensor-msgs std-msgs ];
+  rosExecDepends = [ rclpy sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS 2 packages for turtlebot3_autorace_mission";

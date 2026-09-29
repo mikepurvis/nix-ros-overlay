@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ canopen-interfaces lely-core-libraries lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle yaml-cpp-vendor ];
+  rosExecDepends = [ canopen-interfaces lely-core-libraries lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle yaml-cpp-vendor ];
 
   meta = {
     description = "Core ros2_canopen functionalities such as DeviceContainer and master";

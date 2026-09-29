@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ continental-msgs diagnostic-msgs nebula-continental-common nebula-core-common nebula-msgs rclcpp ];
+  rosExecDepends = [ continental-msgs diagnostic-msgs nebula-continental-common nebula-core-common nebula-msgs rclcpp ];
 
   meta = {
     description = "Nebula Continental Decoders Library";

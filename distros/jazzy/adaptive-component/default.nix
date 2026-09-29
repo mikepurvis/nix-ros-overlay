@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components ];
+  rosExecDepends = [ rclcpp rclcpp-components ];
 
   meta = {
     description = "A composable container for Adaptive ROS 2 Node computations.

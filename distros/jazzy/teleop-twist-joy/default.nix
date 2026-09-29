@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common launch-ros launch-testing-ament-cmake launch-testing-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-components sensor-msgs ];
-  rosExecDepends = [ joy ];
+  rosExecDepends = [ geometry-msgs joy rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "Generic joystick teleop for twist robots.";

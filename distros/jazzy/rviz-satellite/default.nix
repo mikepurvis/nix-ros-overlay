@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ proj ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles rclcpp rcpputils rviz-common rviz-default-plugins sensor-msgs ];
+  rosExecDepends = [ angles rclcpp rcpputils rviz-common rviz-default-plugins sensor-msgs ];
 
   meta = {
     description = "Display satellite map tiles in RViz";

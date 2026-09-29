@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common mimick-vendor performance-test-fixture test-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ action-msgs ament-cmake rcl rcl-action rclcpp rcpputils rosidl-runtime-c ];
+  rosExecDepends = [ action-msgs ament-cmake rcl rcl-action rclcpp rcpputils ];
 
   meta = {
     description = "Adds action APIs for C++.";

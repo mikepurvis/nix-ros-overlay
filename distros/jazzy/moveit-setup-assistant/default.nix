@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
-  rosExecDepends = [ moveit-configs-utils moveit-setup-app-plugins moveit-setup-controllers moveit-setup-core-plugins ];
+  rosExecDepends = [ ament-index-cpp moveit-configs-utils moveit-setup-app-plugins moveit-setup-controllers moveit-setup-core-plugins moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
 
   meta = {
     description = "Generates a configuration package that makes it easy to use MoveIt";

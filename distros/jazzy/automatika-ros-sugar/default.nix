@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.attrs python3Packages.jinja2 python3Packages.msgpack python3Packages.msgpack-numpy python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml python3Packages.setproctitle python3Packages.toml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs rclcpp rclpy sensor-msgs std-msgs tf2-ros ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs rclcpp rclpy rosidl-default-runtime sensor-msgs std-msgs tf2-ros ];
 
   meta = {
     description = "Syntactic sugar for ROS2 nodes creation and management";

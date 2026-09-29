@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common easynav-simple-common rclcpp-lifecycle std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pcl-ros pluginlib tf2 tf2-geometry-msgs tf2-ros visualization-msgs ];
+  rosExecDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pcl-ros pluginlib tf2 tf2-geometry-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "Easy Navigation: MPPI Controller package.";

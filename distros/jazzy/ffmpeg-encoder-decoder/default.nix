@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ffmpeg opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros pkg-config ros-environment ];
   rosBuildExportDepends = [ cv-bridge rclcpp sensor-msgs std-msgs ];
+  rosExecDepends = [ cv-bridge rclcpp sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS2 convenience wrapper around ffmpeg for encoding/decoding";

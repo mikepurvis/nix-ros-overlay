@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ beluga geometry-msgs nav-msgs sensor-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
+  rosExecDepends = [ beluga geometry-msgs nav-msgs sensor-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "Utilities to interface ROS with Beluga.";

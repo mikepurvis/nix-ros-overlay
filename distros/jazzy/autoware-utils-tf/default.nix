@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-geometry geometry-msgs rclcpp tf2-ros ];
+  rosExecDepends = [ autoware-utils-geometry geometry-msgs rclcpp tf2-ros ];
 
   meta = {
     description = "The autoware_utils_tf package";

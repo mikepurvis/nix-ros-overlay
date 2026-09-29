@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mrpt-libobs mrpt-nav-interfaces rclcpp std-msgs visualization-msgs ];
+  rosExecDepends = [ mrpt-libobs mrpt-nav-interfaces rclcpp std-msgs visualization-msgs ];
 
   meta = {
     description = "Takes GNSS (GPS) readings, a MOLA georeferenced map, and publishes markers to visualize the datums as ellipsoids on the map";

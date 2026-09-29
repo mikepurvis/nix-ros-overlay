@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake autoware-cmake ];
   rosBuildExportDepends = [ autoware-internal-localization-msgs autoware-lanelet2-utils autoware-map-msgs autoware-qos-utils geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ autoware-internal-localization-msgs autoware-lanelet2-utils autoware-map-msgs autoware-qos-utils geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "The autoware_map_height_fitter package";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ nav2-bringup nav2-simple-commander slam-toolbox ];
+  rosExecDepends = [ nav2-bringup nav2-simple-commander slam-toolbox ];
 
   meta = {
     description = "Turtlebot4 Navigation";

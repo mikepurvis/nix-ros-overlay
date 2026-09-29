@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs diagnostic-msgs geometry-msgs unique-identifier-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs diagnostic-msgs geometry-msgs rosidl-default-runtime unique-identifier-msgs ];
 
   meta = {
     description = "Interfaces used by py_trees_ros and py_trees_ros_tutorials.";

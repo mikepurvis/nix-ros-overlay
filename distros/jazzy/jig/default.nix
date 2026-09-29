@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.jinja2 python3Packages.jsonschema python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-python generate-parameter-library ];
   rosBuildExportDepends = [ lifecycle-msgs message-filters rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle tf2-ros ];
-  rosExecDepends = [ ament-index-python rosidl-default-runtime ];
+  rosExecDepends = [ ament-index-python lifecycle-msgs message-filters rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle rosidl-default-runtime tf2-ros ];
 
   meta = {
     description = "Declarative ROS 2 node scaffolding with built-in best practice.";

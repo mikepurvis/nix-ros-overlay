@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest geometry-msgs ros-babel-fish-test-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ros-babel-fish yaml-cpp-vendor ];
+  rosExecDepends = [ rclcpp ros-babel-fish yaml-cpp-vendor ];
 
   meta = {
     description = "Tooling for ROS 2 built on ros_babel_fish.

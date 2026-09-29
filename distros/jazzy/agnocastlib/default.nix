@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ glog lttng-ust ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ agnocast-cie-config-msgs agnocast-cie-thread-configurator ament-index-cpp diagnostic-msgs diagnostic-updater geometry-msgs message-filters rcl-yaml-param-parser rclcpp rclcpp-components rosgraph-msgs tf2 tf2-msgs tf2-ros tracetools ];
+  rosExecDepends = [ agnocast-cie-config-msgs agnocast-cie-thread-configurator ament-index-cpp diagnostic-msgs diagnostic-updater geometry-msgs message-filters rcl-yaml-param-parser rclcpp rclcpp-components rosgraph-msgs tf2 tf2-msgs tf2-ros tracetools ];
 
   meta = {
     description = "True Zero Copy Communication Middleware for Unsized ROS 2 Message Types.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mrpt-generic-sensor mrpt-sensor-bumblebee-stereo mrpt-sensor-gnss-nmea mrpt-sensor-gnss-novatel mrpt-sensor-imu-taobotics mrpt-sensorlib ];
+  rosExecDepends = [ mrpt-generic-sensor mrpt-sensor-bumblebee-stereo mrpt-sensor-gnss-nmea mrpt-sensor-gnss-novatel mrpt-sensor-imu-taobotics mrpt-sensorlib ];
 
   meta = {
     description = "ROS nodes for various robotics sensors via mrpt-hwdrivers. Metapackage for all mrpt_sensor packages.";

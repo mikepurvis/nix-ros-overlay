@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ eigen3-cmake-module geometry-msgs moveit-common rclcpp std-msgs tf2-eigen visualization-msgs ];
+  rosExecDepends = [ geometry-msgs moveit-common rclcpp std-msgs tf2-eigen visualization-msgs ];
 
   meta = {
     description = "Tools for marker creation / handling";

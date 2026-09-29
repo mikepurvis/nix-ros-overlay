@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs moveit-common moveit-ros-planning-interface rclcpp rclcpp-action tf2-ros trajectory-msgs ];
-  rosExecDepends = [ moveit-ros xacro ];
+  rosExecDepends = [ geometry-msgs moveit-common moveit-ros moveit-ros-planning-interface rclcpp rclcpp-action tf2-ros trajectory-msgs xacro ];
 
   meta = {
     description = "A trajectory cache for MoveIt 2 motion plans and cartesian plans.";

@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen graphviz ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ eigenpy jrl-cmakemodules pinocchio ];
-  rosExecDepends = [ ament-cmake ];
+  rosExecDepends = [ ament-cmake eigenpy jrl-cmakemodules pinocchio ];
 
   meta = {
     description = "A template-based Library for creating curves of arbitrary order and dimension";

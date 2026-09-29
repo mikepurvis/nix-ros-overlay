@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ ament-index-python ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "Xacro (XML Macros)

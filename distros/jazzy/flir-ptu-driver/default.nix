@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-updater rclcpp sensor-msgs std-msgs ];
-  rosExecDepends = [ robot-state-publisher ];
+  rosExecDepends = [ diagnostic-updater rclcpp robot-state-publisher sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS 2 driver for FLIR pan-tilt units with serial and TCP/Ethernet support.";

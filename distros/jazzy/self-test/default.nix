@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
 
   meta = {
     description = "Self-test tools for diagnostics.";

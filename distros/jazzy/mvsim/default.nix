@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost cppzmq protobuf python3 python3Packages.pip python3Packages.protobuf python3Packages.pybind11 unzip wget ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ mrpt-libgui mrpt-libmaps mrpt-libposes mrpt-libros-bridge mrpt-libtclap nav-msgs sensor-msgs stereo-msgs tf2 tf2-geometry-msgs visualization-msgs ];
-  rosExecDepends = [ ros2launch ];
+  rosExecDepends = [ mrpt-libgui mrpt-libmaps mrpt-libposes mrpt-libros-bridge mrpt-libtclap nav-msgs ros2launch sensor-msgs stereo-msgs tf2 tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "A lightweight multivehicle simulation framework.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ros-environment ];
   rosBuildExportDepends = [ builtin-interfaces rcl-action rcl-interfaces rclcpp rmw rosgraph-msgs ];
+  rosExecDepends = [ builtin-interfaces rcl-action rcl-interfaces rclcpp rmw rosgraph-msgs ];
 
   meta = {
     description = "Observe a running ROS node and produce its runtime description as a rosgraph_msgs/Node message.";

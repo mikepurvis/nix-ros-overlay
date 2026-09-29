@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp sensor-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp sensor-msgs ];
 
   meta = {
     description = "Follow node for Dolly, the robot sheep.";

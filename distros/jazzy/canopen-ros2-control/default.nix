@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ canopen-402-driver canopen-core canopen-proxy-driver hardware-interface pluginlib rclcpp rclcpp-components rclcpp-lifecycle ];
+  rosExecDepends = [ canopen-402-driver canopen-core canopen-proxy-driver hardware-interface pluginlib rclcpp rclcpp-components rclcpp-lifecycle ];
 
   meta = {
     description = "ros2_control wrapper for ros2_canopen functionalities";

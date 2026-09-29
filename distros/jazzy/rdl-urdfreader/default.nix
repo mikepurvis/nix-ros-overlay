@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ tinyxml ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rdl-dynamics tinyxml-vendor urdf ];
+  rosExecDepends = [ rclcpp rdl-dynamics tinyxml-vendor urdf ];
 
   meta = {
     description = "The rdl_urdfreader package";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-config ecl-license ];
+  rosExecDepends = [ ecl-config ecl-license ];
 
   meta = {
     description = "These are a very simple version of some of the functions in ecl_converters

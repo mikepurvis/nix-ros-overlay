@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Message and service types: custom messages and services for TurtleBot3 packages for ROS 2";

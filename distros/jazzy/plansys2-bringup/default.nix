@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common launch launch-testing ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ plansys2-domain-expert plansys2-executor plansys2-lifecycle-manager plansys2-planner plansys2-problem-expert rclcpp ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ launch-ros plansys2-domain-expert plansys2-executor plansys2-lifecycle-manager plansys2-planner plansys2-problem-expert rclcpp ];
 
   meta = {
     description = "Bringup scripts and configurations for the ROS2 Planning System";

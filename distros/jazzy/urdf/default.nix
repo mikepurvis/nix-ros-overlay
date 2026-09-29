@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-google-benchmark ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ pluginlib tinyxml2-vendor urdf-parser-plugin urdfdom urdfdom-headers ];
+  rosExecDepends = [ pluginlib tinyxml2-vendor urdf-parser-plugin urdfdom urdfdom-headers ];
 
   meta = {
     description = "This package contains a C++ parser for the Unified Robot Description

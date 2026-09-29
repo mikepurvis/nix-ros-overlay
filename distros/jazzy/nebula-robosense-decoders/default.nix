@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-decoders nebula-robosense-common rclcpp ];
+  rosExecDepends = [ nebula-core-common nebula-core-decoders nebula-robosense-common rclcpp ];
 
   meta = {
     description = "Nebula Robosense Decoders Library";

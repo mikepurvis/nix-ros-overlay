@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ canopen-core canopen-interfaces diagnostic-updater lely-core-libraries rclcpp rclcpp-components rclcpp-lifecycle std-msgs std-srvs ];
+  rosExecDepends = [ canopen-core canopen-interfaces diagnostic-updater lely-core-libraries rclcpp rclcpp-components rclcpp-lifecycle std-msgs std-srvs ];
 
   meta = {
     description = "Library containing abstract CANopen driver class for ros2_canopen";

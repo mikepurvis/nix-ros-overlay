@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime ];
 
   meta = {
     description = "A package containing msgs that extend geometry_msgs for use in soccer-related packages";

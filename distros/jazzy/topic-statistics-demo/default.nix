@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rcutils sensor-msgs statistics-msgs ];
+  rosExecDepends = [ rclcpp rcutils sensor-msgs statistics-msgs ];
 
   meta = {
     description = "C++ demo application for topic statistics feature.";

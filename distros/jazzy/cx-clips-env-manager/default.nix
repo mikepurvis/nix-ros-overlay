@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake bond bondcpp clips-vendor cx-msgs cx-plugin lifecycle-msgs pluginlib rclcpp rclcpp-components rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ bond bondcpp clips-vendor cx-msgs cx-plugin lifecycle-msgs pluginlib rclcpp rclcpp-components rclcpp-lifecycle ];
+  rosExecDepends = [ bond bondcpp clips-vendor cx-msgs cx-plugin lifecycle-msgs pluginlib rclcpp rclcpp-components rclcpp-lifecycle ];
 
   meta = {
     description = "Lifecycle node for managing CLIPS environments";

@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs rcl-interfaces std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rcl-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Message and service data structures for interacting with Gazebo from ROS2.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mrpt-libobs ];
+  rosExecDepends = [ mola-common mrpt-libobs ];
 
   meta = {
     description = "Integrator of IMU angular velocity readings";

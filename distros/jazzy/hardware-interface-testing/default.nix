@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ control-msgs hardware-interface lifecycle-msgs pluginlib rclcpp-lifecycle ros2-control-test-assets ];
+  rosExecDepends = [ control-msgs hardware-interface lifecycle-msgs pluginlib rclcpp-lifecycle ros2-control-test-assets ];
 
   meta = {
     description = "Commonly used test fixtures for the ros2_control framework";

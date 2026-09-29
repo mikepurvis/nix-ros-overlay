@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp moveit-configs-utils moveit-ros-visualization moveit-setup-framework pluginlib rclcpp ];
+  rosExecDepends = [ ament-index-cpp moveit-configs-utils moveit-ros-visualization moveit-setup-framework pluginlib rclcpp ];
 
   meta = {
     description = "Various specialty plugins for MoveIt Setup Assistant";

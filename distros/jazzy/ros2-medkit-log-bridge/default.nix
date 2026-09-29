@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-cmake-clang-tidy ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing-ament-cmake launch-testing-ros ros2-medkit-fault-manager ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
   rosBuildExportDepends = [ rcl-interfaces rclcpp ros2-medkit-fault-reporter ros2-medkit-msgs ];
+  rosExecDepends = [ rcl-interfaces rclcpp ros2-medkit-fault-reporter ros2-medkit-msgs ];
 
   meta = {
     description = "Bridge node promoting ROS2 /rosout log entries to FaultManager faults";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ controller-manager controller-manager-msgs rcl-interfaces rclpy ros2cli ros2node ros2param ];
   propagatedBuildInputs = [ python3Packages.graphviz ];
   rosBuildExportDepends = [ controller-manager controller-manager-msgs rcl-interfaces rclpy ros2cli ros2node ros2param ];
-  rosExecDepends = [ rosidl-runtime-py ];
+  rosExecDepends = [ controller-manager controller-manager-msgs rcl-interfaces rclpy ros2cli ros2node ros2param rosidl-runtime-py ];
 
   meta = {
     description = "The ROS 2 command line tools for ros2_control.";

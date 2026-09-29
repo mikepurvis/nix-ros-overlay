@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ example-interfaces rclpy rosbag2-py std-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ example-interfaces rclpy rosbag2-py std-msgs ];
-  rosExecDepends = [ rosidl-runtime-py ];
+  rosExecDepends = [ example-interfaces rclpy rosbag2-py rosidl-runtime-py std-msgs ];
 
   meta = {
     description = "Python bag writing tutorial";

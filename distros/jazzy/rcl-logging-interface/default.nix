@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common rcpputils ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rcutils ];
+  rosExecDepends = [ rcutils ];
 
   meta = {
     description = "Interface that rcl_logging backends needs to implement.";

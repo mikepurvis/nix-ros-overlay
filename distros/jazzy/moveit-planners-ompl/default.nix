@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ llvmPackages.openmp ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ moveit-common moveit-core moveit-msgs moveit-ros-planning ompl pluginlib rclcpp tf2-eigen tf2-ros ];
+  rosExecDepends = [ moveit-common moveit-core moveit-msgs moveit-ros-planning ompl pluginlib rclcpp tf2-eigen tf2-ros ];
 
   meta = {
     description = "MoveIt interface to OMPL";

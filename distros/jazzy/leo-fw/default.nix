@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.dbus-python python3Packages.pyyaml python3Packages.whichcraft ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ leo-msgs nav-msgs rclcpp rclcpp-components sensor-msgs ];
-  rosExecDepends = [ ament-index-python geometry-msgs rcl-interfaces rclpy ros2cli std-msgs std-srvs ];
+  rosExecDepends = [ ament-index-python geometry-msgs leo-msgs nav-msgs rcl-interfaces rclcpp rclcpp-components rclpy ros2cli sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Binary releases of Leo Rover firmware and related utilities";

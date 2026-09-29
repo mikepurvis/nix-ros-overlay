@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-gmock ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake autoware-cmake ];
   rosBuildExportDepends = [ autoware-adapi-v1-msgs autoware-component-interface-specs autoware-map-height-fitter autoware-motion-utils autoware-qos-utils autoware-utils-diagnostics autoware-utils-geometry autoware-utils-logging geometry-msgs rclcpp rclcpp-components std-srvs ];
+  rosExecDepends = [ autoware-adapi-v1-msgs autoware-component-interface-specs autoware-map-height-fitter autoware-motion-utils autoware-qos-utils autoware-utils-diagnostics autoware-utils-geometry autoware-utils-logging geometry-msgs rclcpp rclcpp-components std-srvs ];
 
   meta = {
     description = "The autoware_pose_initializer package";

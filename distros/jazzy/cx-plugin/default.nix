@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor cx-utils pluginlib rclcpp-lifecycle ];
+  rosExecDepends = [ clips-vendor cx-utils pluginlib rclcpp-lifecycle ];
 
   meta = {
     description = "Base class for CLIPS plugins";

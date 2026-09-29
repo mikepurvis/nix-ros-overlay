@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ bison cbc clp flex ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "The POPF package";

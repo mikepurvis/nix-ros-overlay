@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost cppzmq ncurses ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp ];
+  rosExecDepends = [ ament-index-cpp rclcpp ];
 
   meta = {
     description = "This package provides the Behavior Trees core library.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common performance-test-fixture ];
   nativeBuildInputs = [ ament-cmake rmw-implementation-cmake ];
   rosBuildExportDepends = [ ament-index-cpp rcpputils rcutils rmw-implementation-cmake ];
+  rosExecDepends = [ ament-index-cpp rcpputils rcutils rmw-implementation-cmake ];
 
   meta = {
     description = "Proxy implementation of the ROS 2 Middleware Interface.";

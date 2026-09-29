@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ gtest ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
   rosBuildExportDepends = [ lanelet2-core mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core ];
 
   meta = {
     description = "Package for interpreting traffic rules in a lanelet map";

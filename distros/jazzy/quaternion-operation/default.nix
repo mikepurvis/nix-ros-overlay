@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-auto geometry-msgs rclcpp tf2-ros ];
+  rosExecDepends = [ ament-cmake-auto geometry-msgs rclcpp tf2-ros ];
 
   meta = {
     description = "The quaternion_operation package";

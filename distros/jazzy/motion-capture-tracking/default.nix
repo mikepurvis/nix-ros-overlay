@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ eigen3-cmake-module motion-capture-tracking-interfaces rclcpp sensor-msgs tf2-ros ];
+  rosExecDepends = [ eigen3-cmake-module motion-capture-tracking-interfaces rclcpp sensor-msgs tf2-ros ];
 
   meta = {
     description = "ROS Package for different motion capture systems, including custom rigid body tracking support";

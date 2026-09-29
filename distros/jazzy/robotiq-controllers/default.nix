@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-interface std-srvs ];
+  rosExecDepends = [ controller-interface std-srvs ];
 
   meta = {
     description = "Controllers for the Robotiq gripper.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-ros geometry-msgs pluginlib rviz-common rviz-rendering ];
+  rosExecDepends = [ ament-cmake-ros geometry-msgs pluginlib rviz-common rviz-rendering ];
 
   meta = {
     description = "The weather outside is frightful";

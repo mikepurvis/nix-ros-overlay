@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt6.qtdeclarative qt6.qtmultimedia ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rqml-core ];
-  rosExecDepends = [ control-msgs controller-manager-msgs geometry-msgs moveit-msgs pal-statistics-msgs qml6-ros2-plugin sensor-msgs tf2-msgs ];
+  rosExecDepends = [ control-msgs controller-manager-msgs geometry-msgs moveit-msgs pal-statistics-msgs qml6-ros2-plugin rqml-core sensor-msgs tf2-msgs ];
 
   meta = {
     description = "Default plugins for the QML-based robotics visualization and control tool RQml for ROS 2.";

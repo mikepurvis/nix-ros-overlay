@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rosgraph-monitor-msgs rosidl-runtime-cpp rosidl-typesupport-cpp ];
+  rosExecDepends = [ rosgraph-monitor-msgs rosidl-runtime-cpp rosidl-typesupport-cpp ];
 
   meta = {
     description = "Partial RMW shim library to instrument RMW API calls";

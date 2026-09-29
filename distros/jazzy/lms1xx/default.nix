@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs laser-geometry rclcpp sensor-msgs tf2 tf2-ros ];
+  rosExecDepends = [ geometry-msgs laser-geometry rclcpp sensor-msgs tf2 tf2-ros ];
 
   meta = {
     description = "The lms1xx package contains a basic ROS 2 driver for the SICK LMS1xx line of LIDARs.";

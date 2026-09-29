@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ffmpeg ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge image-transport live555-vendor pluginlib rclcpp ];
+  rosExecDepends = [ cv-bridge image-transport live555-vendor pluginlib rclcpp ];
 
   meta = {
     description = "Transmit video streams with the Real-Time Streaming Protocol";

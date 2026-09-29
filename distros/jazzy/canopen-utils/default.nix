@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
   checkInputs = [ ament-lint-auto ];
   rosBuildExportDepends = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
+  rosExecDepends = [ canopen-interfaces lifecycle-msgs rclpy std-msgs ];
 
   meta = {
     description = "Utils for working with ros2_canopen.";

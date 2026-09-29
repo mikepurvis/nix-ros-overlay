@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
   rosBuildExportDepends = [ geometry-msgs pluginlib rclcpp rclpy sensor-msgs std-msgs tf2-geometry-msgs tf2-ros tinyxml2-vendor vision-msgs webots-ros2-importer webots-ros2-msgs ];
+  rosExecDepends = [ geometry-msgs pluginlib rclcpp rclpy sensor-msgs std-msgs tf2-geometry-msgs tf2-ros tinyxml2-vendor vision-msgs webots-ros2-importer webots-ros2-msgs ];
 
   meta = {
     description = "Implementation of the Webots - ROS 2 interface";

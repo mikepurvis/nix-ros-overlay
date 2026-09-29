@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ ament-cmake-ros fastcdr rmw rosidl-generator-c rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-fastrtps-cpp rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
+  rosExecDepends = [ fastcdr rmw rosidl-runtime-c rosidl-typesupport-fastrtps-cpp rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the C interfaces for eProsima FastRTPS.";

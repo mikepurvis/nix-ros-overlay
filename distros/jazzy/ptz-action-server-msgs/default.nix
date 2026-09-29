@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs rosidl-default-generators ];
   nativeBuildInputs = [ rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Messages for controlling Pan-Tilt and Pan-Tilt-Zoom devices";

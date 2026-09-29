@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros example-interfaces lifecycle-msgs rcl rclc rclc-lifecycle rclc-parameter std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ example-interfaces lifecycle-msgs rcl rclc rclc-lifecycle rclc-parameter std-msgs ];
+  rosExecDepends = [ example-interfaces lifecycle-msgs rcl rclc rclc-lifecycle rclc-parameter std-msgs ];
 
   meta = {
     description = "Example of using rclc_executor";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs pluginlib prox-mpc-core proxsuite rclcpp ];
+  rosExecDepends = [ geometry-msgs pluginlib prox-mpc-core proxsuite rclcpp ];
 
   meta = {
     description = "Test-fixture prox_mpc::Model plugins for the ProxMPC stack. These

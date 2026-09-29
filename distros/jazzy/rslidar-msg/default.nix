@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces rclcpp std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rclcpp rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ros msgs for the rslidar_sdk project";

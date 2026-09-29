@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost yaml-cpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ros-testing ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-msgs nebula-robosense-common nebula-robosense-decoders nebula-robosense-hw-interfaces rclcpp rclcpp-components robosense-msgs sensor-msgs ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-msgs nebula-robosense-common nebula-robosense-decoders nebula-robosense-hw-interfaces rclcpp rclcpp-components robosense-msgs sensor-msgs ];
 
   meta = {
     description = "Nebula Robosense ROS Wrapper";

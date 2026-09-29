@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen pcl yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles diagnostic-updater geometry-msgs message-filters rclcpp rclcpp-components sensor-msgs tf2 tf2-ros velodyne-msgs ];
+  rosExecDepends = [ angles diagnostic-updater geometry-msgs message-filters rclcpp rclcpp-components sensor-msgs tf2 tf2-ros velodyne-msgs ];
 
   meta = {
     description = "Point cloud conversions for Velodyne 3D LIDARs.";

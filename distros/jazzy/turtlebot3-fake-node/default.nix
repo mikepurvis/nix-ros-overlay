@@ -16,7 +16,7 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake geometry-msgs nav-msgs rclcpp sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
   rosBuildExportDepends = [ ament-cmake geometry-msgs nav-msgs rclcpp sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
-  rosExecDepends = [ robot-state-publisher ];
+  rosExecDepends = [ ament-cmake geometry-msgs nav-msgs rclcpp robot-state-publisher sensor-msgs tf2 tf2-msgs turtlebot3-msgs ];
 
   meta = {
     description = "Package for TurtleBot3 fake node. With this package, simple tests can be done without a robot.

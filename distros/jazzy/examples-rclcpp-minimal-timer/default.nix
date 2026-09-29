@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "Examples of minimal nodes which have timers";

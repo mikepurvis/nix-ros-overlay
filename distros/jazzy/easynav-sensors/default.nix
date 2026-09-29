@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge easynav-common geometry-msgs nav-msgs pcl-conversions pcl-ros pluginlib rclcpp rclcpp-lifecycle sensor-msgs tf2-geometry-msgs tf2-ros vision-msgs ];
+  rosExecDepends = [ cv-bridge easynav-common geometry-msgs nav-msgs pcl-conversions pcl-ros pluginlib rclcpp rclcpp-lifecycle sensor-msgs tf2-geometry-msgs tf2-ros vision-msgs ];
 
   meta = {
     description = "Easy Navigation: Sensors package.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ rapidjson ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp rosbag2-cpp ];
+  rosExecDepends = [ ament-index-cpp rclcpp rosbag2-cpp ];
 
   meta = {
     description = "Parse any ROS/ROS2 message without compile-time information";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ launch launch-ros launch-testing launch-testing-ros ros2cli ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ launch launch-ros launch-testing launch-testing-ros ros2cli ];
-  rosExecDepends = [ domain-coordinator ];
+  rosExecDepends = [ domain-coordinator launch launch-ros launch-testing launch-testing-ros ros2cli ];
 
   meta = {
     description = "The test command for ROS 2 launch tests.";

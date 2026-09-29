@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ rmf-battery rmf-utils ];
+  rosExecDepends = [ rmf-battery rmf-utils ];
 
   meta = {
     description = "Package for managing tasks in the Robotics Middleware Framework";

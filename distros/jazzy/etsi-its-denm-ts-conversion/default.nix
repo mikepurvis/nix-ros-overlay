@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake etsi-its-denm-ts-coding etsi-its-denm-ts-msgs etsi-its-primitives-conversion ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ etsi-its-denm-ts-coding etsi-its-denm-ts-msgs etsi-its-primitives-conversion ];
+  rosExecDepends = [ etsi-its-denm-ts-coding etsi-its-denm-ts-msgs etsi-its-primitives-conversion ];
 
   meta = {
     description = "Conversion functions for converting ROS messages to and from ASN.1-encoded ETSI ITS DENMs (TS)";

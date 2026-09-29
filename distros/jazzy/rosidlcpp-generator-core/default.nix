@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rosidlcpp-parser ];
+  rosExecDepends = [ rosidlcpp-parser ];
 
   meta = {
     description = "This package provides the basis for all rosidlcpp generators";

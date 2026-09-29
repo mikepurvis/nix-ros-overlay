@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest geometry-msgs launch-testing launch-testing-ament-cmake launch-testing-ros mola-bridge-ros2 mola-launcher nav-msgs rclpy sensor-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ gtsam mola-common mola-gtsam-factors mola-imu-preintegration mola-kernel mrpt-libobs ];
-  rosExecDepends = [ mola-launcher ];
+  rosExecDepends = [ gtsam mola-common mola-gtsam-factors mola-imu-preintegration mola-kernel mola-launcher mrpt-libobs ];
 
   meta = {
     description = "SE(3) pose and twist path data fusion estimator";

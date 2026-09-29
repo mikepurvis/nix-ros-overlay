@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost pugixml ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
   rosBuildExportDepends = [ lanelet2-core mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core ];
 
   meta = {
     description = "Parser/Writer module for lanelet2";

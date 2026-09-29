@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-updater geometry-msgs rclcpp std-msgs visualization-msgs ];
-  rosExecDepends = [ twist-mux-msgs ];
+  rosExecDepends = [ diagnostic-updater geometry-msgs rclcpp std-msgs twist-mux-msgs visualization-msgs ];
 
   meta = {
     description = "Twist multiplexer, which multiplex several velocity commands (topics) and

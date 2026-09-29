@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ crane-plus-control crane-plus-description crane-plus-moveit-config cv-bridge geometry-msgs image-geometry moveit-ros-planning-interface rclcpp tf2-geometry-msgs usb-cam ];
+  rosExecDepends = [ crane-plus-control crane-plus-description crane-plus-moveit-config cv-bridge geometry-msgs image-geometry moveit-ros-planning-interface rclcpp tf2-geometry-msgs usb-cam ];
 
   meta = {
     description = "CRANE+ V2 examples package";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "Extract a single ring of a Velodyne PointCloud2 and publish it as a LaserScan message";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.requests ];
   rosBuildExportDepends = [ geometry-msgs rc-reason-msgs rclpy ros2pkg tf2-msgs visualization-msgs ];
+  rosExecDepends = [ geometry-msgs rc-reason-msgs rclpy ros2pkg tf2-msgs visualization-msgs ];
 
   meta = {
     description = "Clients for interfacing with Roboception reason modules on rc_visard and rc_cube.";

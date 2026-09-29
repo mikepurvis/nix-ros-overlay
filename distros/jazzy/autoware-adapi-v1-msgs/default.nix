@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ builtin-interfaces geographic-msgs geometry-msgs shape-msgs std-msgs unique-identifier-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime shape-msgs std-msgs unique-identifier-msgs ];
 
   meta = {
     description = "The Autoware AD API interfaces";

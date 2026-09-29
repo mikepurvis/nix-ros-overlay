@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcss3d-agent-msgs soccer-vision-3d-msgs ];
+  rosExecDepends = [ rcss3d-agent-msgs soccer-vision-3d-msgs ];
 
   meta = {
     description = "Library with methods that convert rcss3d_agent_msgs to soccer_interfaces";

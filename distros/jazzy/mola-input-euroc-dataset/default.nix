@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mola-kernel mrpt-libmath mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mola-kernel mrpt-libmath mrpt-libobs ];
+  rosExecDepends = [ mola-common mola-kernel mrpt-libmath mrpt-libobs ];
 
   meta = {
     description = "Offline RawDataSource from EUROC SLAM datasets";

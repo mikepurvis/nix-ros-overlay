@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ interactive-markers moveit-common moveit-core moveit-ros-planning rclcpp tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ interactive-markers moveit-common moveit-core moveit-ros-planning rclcpp tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Components of MoveIt that offer interaction via interactive markers";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ipopt python3 python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ eigenpy pinocchio ];
-  rosExecDepends = [ ament-cmake ];
+  rosExecDepends = [ ament-cmake eigenpy pinocchio ];
 
   meta = {
     description = "Crocoddyl optimal control library";

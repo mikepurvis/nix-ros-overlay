@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ _unresolved_libserial-dev fmt pkg-config range-v3 spdlog ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pluginlib rclcpp tl-expected ];
+  rosExecDepends = [ hardware-interface pluginlib rclcpp tl-expected ];
 
   meta = {
     description = "ros2_control hardware interface for Feetech Servos";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-sensors pcl-ros rclcpp-lifecycle tf2-geometry-msgs tf2-ros visualization-msgs ];
+  rosExecDepends = [ easynav-common easynav-sensors pcl-ros rclcpp-lifecycle tf2-geometry-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "Easy Navigation: Abstract interfaces for easynav plugins.";

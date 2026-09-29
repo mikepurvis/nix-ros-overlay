@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pybind11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ geometry-msgs rclcpp ];
+  rosExecDepends = [ geometry-msgs rclcpp ];
 
   meta = {
     description = "Python binding tools for C++";

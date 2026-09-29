@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch xacro ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ rclpy ];
-  rosExecDepends = [ urdfdom ];
+  rosExecDepends = [ rclpy urdfdom ];
 
   meta = {
     description = "The urdf_test package";

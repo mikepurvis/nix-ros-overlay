@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-gtest ament-cmake-pytest ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ ament-index-python auto-apms-behavior-tree-core auto-apms-interfaces auto-apms-util generate-parameter-library geometry-msgs rcl-interfaces rclcpp rclcpp-action rclcpp-components std-srvs tf2-geometry-msgs ];
-  rosExecDepends = [ rclpy ros2cli ros2param ];
+  rosExecDepends = [ ament-index-python auto-apms-behavior-tree-core auto-apms-interfaces auto-apms-util generate-parameter-library geometry-msgs rcl-interfaces rclcpp rclcpp-action rclcpp-components rclpy ros2cli ros2param std-srvs tf2-geometry-msgs ];
 
   meta = {
     description = "Standard AutoAPMS behavior tree nodes and deployment tools";

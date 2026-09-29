@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cie-config-msgs cie-thread-configurator rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ cie-config-msgs cie-thread-configurator rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Component container and executor assigning a dedicated thread to each callback group.";

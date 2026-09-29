@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-index-cpp ament-lint-auto rcl-yaml-param-parser ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-geometry autoware-utils-math diagnostic-msgs geometry-msgs rclcpp std-msgs tf2 tf2-eigen tf2-geometry-msgs visualization-msgs ];
+  rosExecDepends = [ autoware-utils-geometry autoware-utils-math diagnostic-msgs geometry-msgs rclcpp std-msgs tf2 tf2-eigen tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "The autoware_localization_util package";

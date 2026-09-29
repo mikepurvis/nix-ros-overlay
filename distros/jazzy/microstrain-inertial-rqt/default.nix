@@ -16,6 +16,7 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ geometry-msgs microstrain-inertial-msgs nav-msgs rclpy rqt-gui rqt-gui-py std-msgs ];
   rosBuildExportDepends = [ geometry-msgs microstrain-inertial-msgs nav-msgs rclpy rqt-gui rqt-gui-py std-msgs ];
+  rosExecDepends = [ geometry-msgs microstrain-inertial-msgs nav-msgs rclpy rqt-gui rqt-gui-py std-msgs ];
 
   meta = {
     description = "The microstrain_inertial_rqt package provides several RQT widgets to view the status of Microstrain devices";

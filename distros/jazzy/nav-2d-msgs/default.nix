@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rosidl-default-generators rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ geometry-msgs rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Basic message types for two dimensional navigation, extending from geometry_msgs::Pose2D.";

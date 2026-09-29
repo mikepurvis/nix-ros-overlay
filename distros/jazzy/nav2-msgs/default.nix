@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake builtin-interfaces geographic-msgs geometry-msgs nav-msgs nav2-common rclcpp rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces geographic-msgs geometry-msgs nav-msgs rclcpp rosidl-default-generators std-msgs ];
+  rosExecDepends = [ action-msgs builtin-interfaces geographic-msgs geometry-msgs nav-msgs rclcpp rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Messages and service files for the Nav2 stack";

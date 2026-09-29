@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime ];
 
   meta = {
     description = "marti_sensor_msgs";

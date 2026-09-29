@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock geometry-msgs sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   rosBuildExportDepends = [ hardware-interface rclcpp-lifecycle realtime-tools ];
+  rosExecDepends = [ realtime-tools ];
 
   meta = {
     description = "Base classes for controllers and syntax cookies for supporting common sensor types in controllers and broadcasters";

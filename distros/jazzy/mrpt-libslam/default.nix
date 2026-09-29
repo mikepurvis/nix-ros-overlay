@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ onetbb ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-libmaps ];
+  rosExecDepends = [ mrpt-libmaps ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (slam/vision C++ libraries).

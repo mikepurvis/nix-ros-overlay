@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-config ecl-license ];
+  rosExecDepends = [ ecl-config ecl-license ];
 
   meta = {
     description = "This library provides lean and mean error mechanisms.

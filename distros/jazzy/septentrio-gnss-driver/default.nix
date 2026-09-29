@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost geographiclib libpcap ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-ros diagnostic-msgs geometry-msgs gps-msgs gtest-vendor nav-msgs nmea-msgs rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ ament-cmake-ros diagnostic-msgs geometry-msgs gps-msgs gtest-vendor nav-msgs nmea-msgs rclcpp rclcpp-components rosidl-default-runtime sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "ROSaic: C++ driver for Septentrio's GNSS and INS receivers";

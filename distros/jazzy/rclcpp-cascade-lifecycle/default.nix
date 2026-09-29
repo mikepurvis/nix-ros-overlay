@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Provides a mechanism to make trees of lifecycle nodes to propagate state changes";

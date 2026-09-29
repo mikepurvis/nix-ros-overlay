@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces diagnostic-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces diagnostic-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages for representing state information, such as battery information and emergency stop status.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ ffmpeg-encoder-decoder foxglove-msgs image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
+  rosExecDepends = [ ffmpeg-encoder-decoder foxglove-msgs image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
 
   meta = {
     description = "foxglove_compressed_video_transport provides a plugin to image_transport for

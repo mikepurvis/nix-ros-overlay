@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ rclcpp tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "A set of 2D geometry classes modeled after the 3D geometry classes in tf2.";

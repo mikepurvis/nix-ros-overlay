@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Package containing fixture nodes for ros2lifecycle tests";

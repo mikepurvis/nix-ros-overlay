@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-license ecl-type-traits ];
+  rosExecDepends = [ ecl-license ecl-type-traits ];
 
   meta = {
     description = "This package provides simple support to cmath, filling in holes

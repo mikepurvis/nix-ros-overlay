@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ kuka-rsi-simulator launch-testing-ament-cmake ros2lifecycle ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ controller-manager-msgs hardware-interface kuka-drivers-core kuka-external-control-sdk pluginlib std-msgs tinyxml-vendor ];
-  rosExecDepends = [ controller-manager joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-event-broadcaster kuka-kss-message-handler ];
+  rosExecDepends = [ controller-manager controller-manager-msgs hardware-interface joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-drivers-core kuka-event-broadcaster kuka-external-control-sdk kuka-kss-message-handler pluginlib std-msgs tinyxml-vendor ];
 
   meta = {
     description = "A ROS2 hardware interface for use with KUKA RSI";

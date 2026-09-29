@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.defusedxml python3Packages.transforms3d ];
   rosBuildExportDepends = [ scenario-execution-ros ];
-  rosExecDepends = [ py-trees rclpy ];
+  rosExecDepends = [ py-trees rclpy scenario-execution-ros ];
 
   meta = {
     description = "Scenario Execution library for Gazebo";

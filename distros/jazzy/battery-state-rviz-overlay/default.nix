@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rviz-2d-overlay-msgs sensor-msgs ];
+  rosExecDepends = [ rclcpp rviz-2d-overlay-msgs sensor-msgs ];
 
   meta = {
     description = "Converts BatteryState messages to RViz OverlayText messages.";

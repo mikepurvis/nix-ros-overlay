@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Example of how to use the rclcpp::WaitSet directly.";

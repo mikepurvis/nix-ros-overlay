@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ cv-bridge depthai-ros-msgs-v3 image-transport message-filters rclcpp rclcpp-components sensor-msgs vision-msgs visualization-msgs ];
+  rosExecDepends = [ cv-bridge depthai-ros-msgs-v3 image-transport message-filters rclcpp rclcpp-components sensor-msgs vision-msgs visualization-msgs ];
 
   meta = {
     description = "Depthai filters package";

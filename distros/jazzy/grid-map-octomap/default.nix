@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ grid-map-core octomap ];
+  rosExecDepends = [ grid-map-core octomap ];
 
   meta = {
     description = "Conversions between grid maps and OctoMap types.";

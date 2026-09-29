@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen python3Packages.lxml ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ class-loader generate-parameter-library moveit-common moveit-core moveit-msgs moveit-ros-planning orocos-kdl-vendor pluginlib rsl tf2 tf2-kdl ];
-  rosExecDepends = [ urdfdom ];
+  rosExecDepends = [ class-loader generate-parameter-library moveit-common moveit-core moveit-msgs moveit-ros-planning orocos-kdl-vendor pluginlib rsl tf2 tf2-kdl urdfdom ];
 
   meta = {
     description = "Package for all inverse kinematics solvers in MoveIt";

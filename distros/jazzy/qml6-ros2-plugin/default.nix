@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt6.qtbase qt6.qtdeclarative qt6.qtmultimedia yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp image-transport rclcpp ros-babel-fish tf2-ros ];
+  rosExecDepends = [ ament-index-cpp image-transport rclcpp ros-babel-fish tf2-ros ];
 
   meta = {
     description = "A QML plugin for ROS.

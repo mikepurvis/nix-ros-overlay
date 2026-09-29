@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ncurses xclip ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcl-interfaces rclcpp rosgraph-msgs yaml-cpp-vendor ];
+  rosExecDepends = [ rcl-interfaces rclcpp rosgraph-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "The log_view package provides a ncurses based terminal GUI for

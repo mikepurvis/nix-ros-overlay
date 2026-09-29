@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ httplib pkg-config ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp rosbridge-server ];
+  rosExecDepends = [ ament-index-cpp rclcpp rosbridge-server ];
 
   meta = {
     description = "Real-time web-based system webview for ROS 2 — CPU, memory, swap, load average, and /rosout log viewer";

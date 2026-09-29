@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ nlohmann_json rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
   rosBuildExportDepends = [ rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
+  rosExecDepends = [ rcpputils rcutils rmw-dds-common tinyxml2-vendor zenoh-cpp-vendor ];
 
   meta = {
     description = "This package generates config files to enforce security with Zenoh";

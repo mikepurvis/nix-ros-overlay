@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen onetbb robin-map spdlog ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components rosbag2-cpp rosbag2-storage sensor-msgs sophus std-msgs tf2 tf2-ros ];
-  rosExecDepends = [ rclpy rosbag2-py rosidl-runtime-py tf2-ros-py ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components rclpy rosbag2-cpp rosbag2-py rosbag2-storage rosidl-runtime-py sensor-msgs sophus std-msgs tf2 tf2-ros tf2-ros-py ];
 
   meta = {
     description = "A Robust Approach for LiDAR-Inertial Odometry Without Sensor-Specific Modelling";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs nav2-lifecycle-manager nav2-msgs nav2-route nav2-util pluginlib rclcpp rclcpp-lifecycle resource-retriever rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering std-msgs tf2-geometry-msgs urdf visualization-msgs yaml-cpp-vendor ];
+  rosExecDepends = [ geometry-msgs nav-msgs nav2-lifecycle-manager nav2-msgs nav2-route nav2-util pluginlib rclcpp rclcpp-lifecycle resource-retriever rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering std-msgs tf2-geometry-msgs urdf visualization-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "Navigation 2 plugins for rviz";

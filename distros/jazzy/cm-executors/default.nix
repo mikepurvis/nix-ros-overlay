@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-cmake-google-benchmark ament-cmake-gtest ament-lint-auto ament-lint-common mimick-vendor performance-test-fixture rmw rmw-implementation-cmake rosidl-default-generators test-msgs ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "Cellumation executor package .";

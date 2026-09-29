@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ glog ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs message-filters rclcpp rclcpp-components tf2 tf2-ros ];
-  rosExecDepends = [ launch launch-ros ];
+  rosExecDepends = [ autoware-utils-rclcpp class-loader diagnostic-updater geometry-msgs launch launch-ros message-filters rclcpp rclcpp-components tf2 tf2-ros ];
 
   meta = {
     description = "Wrapper macros for Agnocast (true zero-copy communication library)";

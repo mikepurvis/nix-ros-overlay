@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclpy ];
-  rosExecDepends = [ python-qt-binding qt-gui ];
+  rosExecDepends = [ python-qt-binding qt-gui rclpy ];
 
   meta = {
     description = "rqt_py_common provides common functionality for rqt plugins written in Python.

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen geographiclib ];
   nativeBuildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
   rosBuildExportDepends = [ angles diagnostic-msgs diagnostic-updater geographic-msgs geometry-msgs message-filters nav-msgs rclcpp rmw-implementation sensor-msgs std-msgs std-srvs tf2 tf2-eigen tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ angles diagnostic-msgs diagnostic-updater geographic-msgs geometry-msgs message-filters nav-msgs rclcpp rmw-implementation rosidl-default-runtime sensor-msgs std-msgs std-srvs tf2 tf2-eigen tf2-geometry-msgs tf2-ros yaml-cpp-vendor ];
 
   meta = {
     description = "Provides nonlinear state estimation through sensor fusion of an abritrary number of sensors.";

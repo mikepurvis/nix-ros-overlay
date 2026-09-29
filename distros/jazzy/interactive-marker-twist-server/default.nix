@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs interactive-markers rclcpp tf2 visualization-msgs ];
+  rosExecDepends = [ geometry-msgs interactive-markers rclcpp tf2 visualization-msgs ];
 
   meta = {
     description = "Interactive control for generic Twist-based robots using interactive markers";

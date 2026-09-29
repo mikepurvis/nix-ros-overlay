@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge filters grid-map-core pluginlib rclcpp sensor-msgs ];
+  rosExecDepends = [ cv-bridge filters grid-map-core pluginlib rclcpp sensor-msgs ];
 
   meta = {
     description = "Conversions between grid maps and OpenCV images.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ flexbe-core flexbe-msgs rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ flexbe-core flexbe-msgs rclpy ];
+  rosExecDepends = [ flexbe-core flexbe-msgs rclpy ];
 
   meta = {
     description = "flexbe_input enables to send data to onboard behavior when required.";

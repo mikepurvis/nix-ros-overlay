@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ grid-map-msgs grid-map-ros ];
+  rosExecDepends = [ grid-map-msgs grid-map-ros ];
 
   meta = {
     description = "Loading and publishing grid maps from bag files.";

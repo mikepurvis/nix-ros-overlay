@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ scenario-execution-ros ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ scenario-execution-ros ];
-  rosExecDepends = [ geometry-msgs lifecycle-msgs nav2-msgs nav2-simple-commander rclpy tf2-ros ];
+  rosExecDepends = [ geometry-msgs lifecycle-msgs nav2-msgs nav2-simple-commander rclpy scenario-execution-ros tf2-ros ];
 
   meta = {
     description = "Scenario Execution library for Nav2";

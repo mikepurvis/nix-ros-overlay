@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-planning-msgs autoware-trajectory autoware-utils-geometry autoware-utils-math geometry-msgs rclcpp rclcpp-components tf2-ros ];
+  rosExecDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-planning-msgs autoware-trajectory autoware-utils-geometry autoware-utils-math geometry-msgs rclcpp rclcpp-components tf2-ros ];
 
   meta = {
     description = "The route_handling package";

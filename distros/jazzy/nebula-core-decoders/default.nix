@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen libpng pngpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common sensor-msgs ];
+  rosExecDepends = [ nebula-core-common sensor-msgs ];
 
   meta = {
     description = "Nebula Decoders Base Library";

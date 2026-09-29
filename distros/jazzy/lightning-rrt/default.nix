@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs lightning-rrt-interfaces nav-msgs rclcpp std-msgs visualization-msgs ];
-  rosExecDepends = [ ros2launch ];
+  rosExecDepends = [ geometry-msgs lightning-rrt-interfaces nav-msgs rclcpp ros2launch std-msgs visualization-msgs ];
 
   meta = {
     description = "Lightning fast RRT path planner";

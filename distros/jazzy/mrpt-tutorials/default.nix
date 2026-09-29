@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto cmake ];
   nativeBuildInputs = [ ament-cmake cmake ];
   rosBuildExportDepends = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  rosExecDepends = [ mvsim teleop-twist-keyboard ];
+  rosExecDepends = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto mvsim teleop-twist-keyboard ];
 
   meta = {
     description = "Example files used as tutorials for MRPT ROS packages";

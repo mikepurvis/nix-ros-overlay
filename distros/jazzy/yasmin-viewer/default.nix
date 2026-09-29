@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp rclpy yasmin yasmin-msgs yasmin-ros ];
+  rosExecDepends = [ ament-index-cpp rclcpp rclpy yasmin yasmin-msgs yasmin-ros ];
 
   meta = {
     description = "YASMIN viewer for FSM";

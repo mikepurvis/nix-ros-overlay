@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ceres-solver eigen suitesparse ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ fuse-core fuse-graphs fuse-variables geometry-msgs pluginlib rclcpp ];
+  rosExecDepends = [ fuse-core fuse-graphs fuse-variables geometry-msgs pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_constraints package provides a set of commonly used constraint types, such as direct measurements on \\

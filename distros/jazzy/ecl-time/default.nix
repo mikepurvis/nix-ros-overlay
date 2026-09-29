@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-build ecl-config ecl-errors ecl-exceptions ecl-license ecl-time-lite ];
+  rosExecDepends = [ ecl-build ecl-config ecl-errors ecl-exceptions ecl-license ecl-time-lite ];
 
   meta = {
     description = "Timing utilities are very dependent on the system api provided for their use.

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-kernel mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-kernel mrpt-libobs ];
+  rosExecDepends = [ mola-kernel mrpt-libobs ];
 
   meta = {
     description = "Offline RawDataSource from MRPT rawlog datasets";

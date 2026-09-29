@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ardrone-sdk cv-bridge rclcpp sensor-msgs ];
+  rosExecDepends = [ ardrone-sdk cv-bridge rclcpp sensor-msgs ];
 
   meta = {
     description = "Control the Parrot JumpingSumo drone via ROS2 topics";

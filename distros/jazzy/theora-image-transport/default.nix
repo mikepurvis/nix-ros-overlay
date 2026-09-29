@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libogg libtheora opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
   rosBuildExportDepends = [ cv-bridge image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ cv-bridge image-transport pluginlib rclcpp rcutils rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Theora_image_transport provides a plugin to image_transport for

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ asio ];
   nativeBuildInputs = [ ament-cmake-auto asio-cmake-module ];
   rosBuildExportDepends = [ io-context lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle std-msgs udp-msgs ];
+  rosExecDepends = [ io-context lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle std-msgs udp-msgs ];
 
   meta = {
     description = "A library to write Synchronous and Asynchronous networking applications, ROS and ROS2 nodes";

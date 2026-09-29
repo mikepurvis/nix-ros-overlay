@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common launch-testing launch-testing-ament-cmake launch-testing-ros nodl nodl-to-policy sros2 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-nodl example-interfaces rclcpp rclcpp-components rclpy ros2launch-security sensor-msgs ];
+  rosExecDepends = [ ament-nodl example-interfaces rclcpp rclcpp-components rclpy ros2launch-security sensor-msgs ];
 
   meta = {
     description = "Examples of how to use the ros2launch_security extension.";

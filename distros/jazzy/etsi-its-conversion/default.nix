@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake etsi-its-cam-conversion etsi-its-cam-ts-conversion etsi-its-conversion-srvs etsi-its-cpm-ts-conversion etsi-its-denm-conversion etsi-its-denm-ts-conversion etsi-its-ivim-ts-conversion etsi-its-mapem-ts-conversion etsi-its-mcm-uulm-conversion etsi-its-spatem-ts-conversion etsi-its-vam-ts-conversion rclcpp rclcpp-components ros-environment udp-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ etsi-its-cam-conversion etsi-its-cam-ts-conversion etsi-its-conversion-srvs etsi-its-cpm-ts-conversion etsi-its-denm-conversion etsi-its-denm-ts-conversion etsi-its-ivim-ts-conversion etsi-its-mapem-ts-conversion etsi-its-mcm-uulm-conversion etsi-its-spatem-ts-conversion etsi-its-vam-ts-conversion rclcpp rclcpp-components ros-environment udp-msgs ];
+  rosExecDepends = [ etsi-its-cam-conversion etsi-its-cam-ts-conversion etsi-its-conversion-srvs etsi-its-cpm-ts-conversion etsi-its-denm-conversion etsi-its-denm-ts-conversion etsi-its-ivim-ts-conversion etsi-its-mapem-ts-conversion etsi-its-mcm-uulm-conversion etsi-its-spatem-ts-conversion etsi-its-vam-ts-conversion rclcpp rclcpp-components ros-environment udp-msgs ];
 
   meta = {
     description = "Converts ROS messages to and from ASN.1-encoded ETSI ITS messages";

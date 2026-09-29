@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ros2launch std-srvs ];
+  rosExecDepends = [ rclcpp ros2launch std-srvs ];
 
   meta = {
     description = "Catch2 testing framework for ROS 2 unit and integration tests.";

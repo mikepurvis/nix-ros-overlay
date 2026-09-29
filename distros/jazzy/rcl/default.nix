@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libyaml ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ libyaml-vendor rcl-interfaces rcl-logging-interface rcl-logging-spdlog rcl-yaml-param-parser rcutils rmw rmw-implementation rosidl-runtime-c service-msgs tracetools type-description-interfaces ];
+  rosExecDepends = [ libyaml-vendor rcl-interfaces rcl-logging-interface rcl-logging-spdlog rcl-yaml-param-parser rcutils rmw-implementation rosidl-runtime-c service-msgs tracetools type-description-interfaces ];
 
   meta = {
     description = "The ROS client library common implementation.

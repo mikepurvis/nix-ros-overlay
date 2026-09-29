@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs ];
+  rosExecDepends = [ rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "The rt_usb_9axisimu_driver package";

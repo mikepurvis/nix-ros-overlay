@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libiio ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
-  rosExecDepends = [ ros2launch rosidl-default-runtime ];
+  rosExecDepends = [ rclcpp ros2launch rosidl-default-runtime rosidl-typesupport-introspection-cpp std-msgs ];
 
   meta = {
     description = "ROS package to interface with IIO devices";

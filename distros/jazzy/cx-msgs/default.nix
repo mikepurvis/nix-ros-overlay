@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-generators ];
 
   meta = {
     description = "ROS interfaces for ROS2 CLIPS-Executive";

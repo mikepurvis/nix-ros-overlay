@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-hesai-common ];
+  rosExecDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-hesai-common ];
 
   meta = {
     description = "Nebula HW Interfaces Hesai";

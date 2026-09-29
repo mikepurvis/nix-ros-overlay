@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ generate-parameter-library geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs std-srvs tf2 tf2-ros ];
+  rosExecDepends = [ generate-parameter-library geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs std-srvs tf2 tf2-ros ];
 
   meta = {
     description = "Nodes for filtering and processing imu and wheel odom messages.";

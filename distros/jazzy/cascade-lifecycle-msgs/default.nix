@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
+  rosExecDepends = [ builtin-interfaces lifecycle-msgs rclcpp rosidl-default-generators ];
 
   meta = {
     description = "Messages for rclcpp_cascade_lifecycle package";

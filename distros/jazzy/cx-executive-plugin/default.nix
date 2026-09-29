@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake clips-vendor cx-plugin cx-utils pluginlib rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp std-msgs ];
+  rosExecDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp std-msgs ];
 
   meta = {
     description = "CLIPS plugin to continuously refresh agendas and run CLIPS environments";

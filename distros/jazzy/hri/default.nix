@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ cv-bridge geometry-msgs hri-msgs rclcpp rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-ros ];
+  rosExecDepends = [ cv-bridge geometry-msgs hri-msgs rclcpp rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-ros ];
 
   meta = {
     description = "A wrapper library around the ROS4HRI ROS topics";

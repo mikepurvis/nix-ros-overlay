@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ point-cloud-transport rclcpp rcpputils rosbag2-cpp sensor-msgs ];
-  rosExecDepends = [ point-cloud-transport-plugins ];
+  rosExecDepends = [ point-cloud-transport point-cloud-transport-plugins rclcpp rcpputils rosbag2-cpp sensor-msgs ];
 
   meta = {
     description = "Tutorial for point_cloud_transport.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cppzmq pkg-config protobuf python3 python3Packages.psutil python3Packages.pybind11 python3Packages.pytest sqlite util-linux ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-math-vendor gz-msgs-vendor gz-tools-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-math-vendor gz-msgs-vendor gz-tools-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-transport13 13.6.0

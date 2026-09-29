@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros rmw-implementation-cmake ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-components rcutils std-msgs ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ example-interfaces launch-ros rclcpp rclcpp-components rcutils std-msgs ];
 
   meta = {
     description = "Examples for composing multiple nodes in a single process.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common python-cmake-module python3Packages.pytest ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ament-index-cpp ament-index-python libcurl-vendor ];
+  rosExecDepends = [ ament-index-cpp ament-index-python libcurl-vendor ];
 
   meta = {
     description = "This package retrieves data from url-format files such as http://,

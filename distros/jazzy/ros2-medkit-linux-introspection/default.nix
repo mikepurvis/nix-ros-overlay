@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json systemd ];
   nativeBuildInputs = [ ament-cmake pkg-config ros2-medkit-cmake ];
   rosBuildExportDepends = [ ros2-medkit-gateway ];
+  rosExecDepends = [ ros2-medkit-gateway ];
 
   meta = {
     description = "Linux introspection plugins for ros2_medkit gateway - procfs, systemd, and container";

@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 onetbb ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mola-imu-preintegration mrpt-libbase mrpt-libmaps mrpt-libobs mrpt-libposes ];
+  rosExecDepends = [ mola-common mola-imu-preintegration mrpt-libbase mrpt-libmaps mrpt-libobs mrpt-libposes ];
 
   meta = {
     description = "C++ libraries for multi primitive-to-primitive (MP2P) ICP algorithms and point cloud processing pipelines, plus headless CLI applications. No GUI/display dependencies; see mp2p_icp_viz for the GUI apps.";

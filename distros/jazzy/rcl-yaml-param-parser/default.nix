@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libyaml ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ libyaml-vendor rcutils rmw ];
+  rosExecDepends = [ libyaml-vendor rcutils rmw ];
 
   meta = {
     description = "Parse a YAML parameter file and populate the C data structure.";

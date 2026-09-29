@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake costmap-queue dwb-core dwb-critics dwb-msgs dwb-plugins nav-2d-msgs nav-2d-utils ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ costmap-queue dwb-core dwb-critics dwb-msgs dwb-plugins nav-2d-msgs nav-2d-utils ];
+  rosExecDepends = [ costmap-queue dwb-core dwb-critics dwb-msgs dwb-plugins nav-2d-msgs nav-2d-utils ];
 
   meta = {
     description = "ROS2 controller (DWB) metapackage";

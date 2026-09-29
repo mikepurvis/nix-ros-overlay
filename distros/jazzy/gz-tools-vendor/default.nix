@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ruby ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor ];
+  rosExecDepends = [ gz-cmake-vendor ];
 
   meta = {
     description = "Vendor package for: gz-tools2 2.0.4

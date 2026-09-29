@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake cmake ];
   rosBuildExportDepends = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto cv-bridge mrpt-libmaps mrpt-libros-bridge mrpt-msgs nav-msgs rosbag2-cpp sensor-msgs tf2-geometry-msgs tf2-msgs tf2-ros ];
+  rosExecDepends = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto cv-bridge mrpt-libmaps mrpt-libros-bridge mrpt-msgs nav-msgs rosbag2-cpp sensor-msgs tf2-geometry-msgs tf2-msgs tf2-ros ];
 
   meta = {
     description = "CLI tool to transform between rosbags and rawlogs.";

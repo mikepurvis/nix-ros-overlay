@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3 python3Packages.black python3Packages.pybind11 qt5.qtbase qt5.qtsvg ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ tinyxml2-vendor ];
+  rosExecDepends = [ tinyxml2-vendor ];
 
   meta = {
     description = "ROS 2 Package Creator";

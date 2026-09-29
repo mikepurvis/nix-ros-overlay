@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime ];
 
   meta = {
     description = "Custom messages for real-time pendulum control.";

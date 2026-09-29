@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
   rosBuildExportDepends = [ rclcpp ros2-medkit-gateway ros2-medkit-msgs ];
+  rosExecDepends = [ rclcpp ros2-medkit-gateway ros2-medkit-msgs ];
 
   meta = {
     description = "Shared library for ros2_medkit beacon discovery plugins";

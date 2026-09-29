@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ orocos-kdl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ inverse-dynamics-solver kdl-parser pluginlib rclcpp ];
-  rosExecDepends = [ ur-description ];
+  rosExecDepends = [ inverse-dynamics-solver kdl-parser pluginlib rclcpp ur-description ];
 
   meta = {
     description = "A KDL-based library implementing an inverse dynamics solver for simulated robots.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.deprecated ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros ];
   rosBuildExportDepends = [ sensor-msgs ];
+  rosExecDepends = [ sensor-msgs ];
 
   meta = {
     description = "`image_geometry` contains C++ and Python libraries for interpreting images

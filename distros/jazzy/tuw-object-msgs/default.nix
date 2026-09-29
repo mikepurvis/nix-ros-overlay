@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces tuw-geo-msgs tuw-geometry-msgs tuw-std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime tuw-geo-msgs tuw-geometry-msgs tuw-std-msgs ];
 
   meta = {
     description = "The tuw_object_msgs package. This pkg provides a set of messages used to detect, map and track objects of different types.";

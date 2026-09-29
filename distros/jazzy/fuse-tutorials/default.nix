@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ fuse-constraints fuse-core fuse-models fuse-variables nav-msgs rclcpp sensor-msgs ];
-  rosExecDepends = [ fuse-optimizers fuse-publishers rviz2 ];
+  rosExecDepends = [ fuse-constraints fuse-core fuse-models fuse-optimizers fuse-publishers fuse-variables nav-msgs rclcpp rviz2 sensor-msgs ];
 
   meta = {
     description = "Package containing source code for the fuse tutorials.";

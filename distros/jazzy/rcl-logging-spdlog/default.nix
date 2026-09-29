@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ spdlog ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rcl-logging-interface rcpputils rcutils spdlog-vendor ];
+  rosExecDepends = [ rcl-logging-interface rcpputils rcutils spdlog-vendor ];
 
   meta = {
     description = "Implementation of rcl_logging API for an spdlog backend.";

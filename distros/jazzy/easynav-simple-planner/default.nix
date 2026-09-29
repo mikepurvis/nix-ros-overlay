@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core easynav-simple-common nav-msgs pluginlib ];
+  rosExecDepends = [ easynav-common easynav-core easynav-simple-common nav-msgs pluginlib ];
 
   meta = {
     description = "Easy Navigation: Simple planner package.";

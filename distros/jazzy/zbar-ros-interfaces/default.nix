@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ vision-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime vision-msgs ];
 
   meta = {
     description = "Package containing interfaces for zbar_ros to use to publish results";

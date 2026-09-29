@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles builtin-interfaces eigen3-cmake-module geometry-msgs nav-msgs nav2-common nav2-core nav2-costmap-2d nav2-msgs nav2-util ompl pluginlib rclcpp rclcpp-action rclcpp-lifecycle tf2-ros visualization-msgs ];
+  rosExecDepends = [ angles builtin-interfaces eigen3-cmake-module geometry-msgs nav-msgs nav2-common nav2-core nav2-costmap-2d nav2-msgs nav2-util ompl pluginlib rclcpp rclcpp-action rclcpp-lifecycle tf2-ros visualization-msgs ];
 
   meta = {
     description = "Smac global planning plugin: A*, Hybrid-A*, State Lattice";

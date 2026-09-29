@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ osqp-vendor proxsuite rclcpp rclcpp-components ];
+  rosExecDepends = [ osqp-vendor proxsuite rclcpp rclcpp-components ];
 
   meta = {
     description = "Interface for the QP solvers";

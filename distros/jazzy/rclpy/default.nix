@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
   rosBuildExportDepends = [ lifecycle-msgs rcl rcl-action rcl-interfaces rcl-lifecycle rcl-logging-interface rcl-yaml-param-parser rmw rmw-implementation rosidl-runtime-c unique-identifier-msgs ];
-  rosExecDepends = [ action-msgs ament-index-python builtin-interfaces rosgraph-msgs rpyutils ];
+  rosExecDepends = [ action-msgs ament-index-python builtin-interfaces lifecycle-msgs rcl rcl-action rcl-interfaces rcl-lifecycle rcl-logging-interface rcl-yaml-param-parser rmw rmw-implementation rosgraph-msgs rosidl-runtime-c rpyutils unique-identifier-msgs ];
 
   meta = {
     description = "Package containing the Python client.";

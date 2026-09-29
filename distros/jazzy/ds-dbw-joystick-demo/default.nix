@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
-  rosExecDepends = [ ds-dbw-can joy ];
+  rosExecDepends = [ ds-dbw-can ds-dbw-msgs joy rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "Demonstration of drive-by-wire with joystick";

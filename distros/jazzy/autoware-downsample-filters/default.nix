@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common geometry-msgs tf2-ros ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-point-types autoware-utils-debug autoware-utils-system autoware-utils-tf pcl-conversions rclcpp sensor-msgs tl-expected ];
+  rosExecDepends = [ autoware-point-types autoware-utils-debug autoware-utils-system autoware-utils-tf pcl-conversions rclcpp sensor-msgs tl-expected ];
 
   meta = {
     description = "The ROS 2 autoware_downsample_filters package";

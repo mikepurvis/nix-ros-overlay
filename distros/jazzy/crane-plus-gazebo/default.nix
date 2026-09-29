@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-manager crane-plus-description crane-plus-moveit-config gripper-controllers robot-state-publisher ros-gz ros2-controllers ];
+  rosExecDepends = [ controller-manager crane-plus-description crane-plus-moveit-config gripper-controllers robot-state-publisher ros-gz ros2-controllers ];
 
   meta = {
     description = "CRANE+ V2 gazebo simulation package";

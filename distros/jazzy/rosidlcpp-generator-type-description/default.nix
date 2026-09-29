@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-core rcutils rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
+  rosExecDepends = [ rcutils rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate hashes and descriptions of ROS 2 interface types, per REP-2011.";

@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs py-trees-ros-interfaces rclcpp rviz-common scenario-execution-interfaces ];
+  rosExecDepends = [ geometry-msgs nav-msgs py-trees-ros-interfaces rclcpp rviz-common scenario-execution-interfaces ];
 
   meta = {
     description = "The scenario_execution_rviz package";

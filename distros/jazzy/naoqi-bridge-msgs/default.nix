@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs geometry-msgs nav-msgs sensor-msgs std-msgs trajectory-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs geometry-msgs nav-msgs rosidl-default-runtime sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
     description = "The naoqi_bridge_msgs package provides custom messages for running Aldebaran's robots in ROS2.";

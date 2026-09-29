@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-maps mrpt-topography ];
+  rosExecDepends = [ mrpt-maps mrpt-topography ];
 
   meta = {
     description = "The MRPT C++ library mrpt_slam";

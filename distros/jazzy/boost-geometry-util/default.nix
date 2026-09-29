@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
   rosBuildExportDepends = [ geometry-msgs rclcpp ];
+  rosExecDepends = [ geometry-msgs rclcpp ];
 
   meta = {
     description = "Utility library for boost geometry";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-ros class-loader ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-adapi-specs autoware-adapi-v1-msgs autoware-common-msgs autoware-component-interface-specs autoware-system-msgs autoware-vehicle-msgs builtin-interfaces rclcpp rclcpp-components ];
+  rosExecDepends = [ autoware-adapi-specs autoware-adapi-v1-msgs autoware-common-msgs autoware-component-interface-specs autoware-system-msgs autoware-vehicle-msgs builtin-interfaces rclcpp rclcpp-components ];
 
   meta = {
     description = "Simple gateway that maps operation mode service calls to mode state and gear commands.";

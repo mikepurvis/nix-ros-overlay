@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces geographic-msgs geometry-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The tuw_object_map_msgs package";

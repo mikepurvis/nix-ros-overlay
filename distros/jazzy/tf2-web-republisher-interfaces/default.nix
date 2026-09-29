@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces geometry-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs builtin-interfaces geometry-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Interface definitions for tf2_web_republisher";

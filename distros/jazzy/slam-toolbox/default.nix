@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ceres-solver eigen liblapack onetbb qt5.qtbase suitesparse ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ bond bondcpp builtin-interfaces interactive-markers lifecycle-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-lifecycle rosidl-default-generators rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs visualization-msgs ];
+  rosExecDepends = [ bond bondcpp builtin-interfaces interactive-markers lifecycle-msgs message-filters nav-msgs pluginlib rclcpp rclcpp-lifecycle rosidl-default-generators rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs visualization-msgs ];
 
   meta = {
     description = "This package provides a sped up improved slam karto with updated SDK and visualization and modification toolsets";

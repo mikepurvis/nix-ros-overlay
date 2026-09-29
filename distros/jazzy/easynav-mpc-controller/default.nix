@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pcl-conversions pluginlib sensor-msgs tf2 tf2-ros ];
+  rosExecDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pcl-conversions pluginlib sensor-msgs tf2 tf2-ros ];
 
   meta = {
     description = "Easy Navigation: MPC Controller package.";

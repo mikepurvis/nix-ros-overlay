@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ moveit-core moveit-ros-move-group moveit-ros-planning moveit-task-constructor-core moveit-task-constructor-msgs pluginlib rclcpp-action std-msgs ];
+  rosExecDepends = [ moveit-core moveit-ros-move-group moveit-ros-planning moveit-task-constructor-core moveit-task-constructor-msgs pluginlib rclcpp-action std-msgs ];
 
   meta = {
     description = "MoveGroupCapabilites to interact with MoveIt";

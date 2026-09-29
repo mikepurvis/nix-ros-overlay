@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost openssl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs pluginlib rclcpp std-msgs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs pluginlib rclcpp std-msgs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Persistent storage of ROS messages";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ std-msgs ];
 
   meta = {
     description = "An almost dependency-less library for converting between color spaces";

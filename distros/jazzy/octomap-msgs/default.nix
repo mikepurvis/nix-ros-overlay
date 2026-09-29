@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "This package provides messages and serializations / conversion for the <a href=\"http://octomap.github.com\">OctoMap library</a>.

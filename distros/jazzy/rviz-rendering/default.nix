@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake-ros eigen3-cmake-module ];
   rosBuildExportDepends = [ ament-index-cpp eigen3-cmake-module resource-retriever rviz-assimp-vendor rviz-ogre-vendor ];
+  rosExecDepends = [ ament-index-cpp resource-retriever rviz-assimp-vendor rviz-ogre-vendor ];
 
   meta = {
     description = "Library which provides the 3D rendering functionality in rviz.";

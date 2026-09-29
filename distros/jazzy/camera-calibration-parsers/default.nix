@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp sensor-msgs yaml-cpp-vendor ];
+  rosExecDepends = [ rclcpp sensor-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "camera_calibration_parsers contains routines for reading and writing camera calibration parameters.";

@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-hwdrivers mrpt-slam mrpt-topography ];
+  rosExecDepends = [ mrpt-hwdrivers mrpt-slam mrpt-topography ];
 
   meta = {
     description = "The MRPT C++ library mrpt_libapps_cli";

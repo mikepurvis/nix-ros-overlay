@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Minimalist examples of composing nodes in the same

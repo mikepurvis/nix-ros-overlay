@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-gmock ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ament-index-cpp ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ resource-retriever rviz-rendering ];
+  rosExecDepends = [ resource-retriever rviz-rendering ];
 
   meta = {
     description = "Example plugin for RViz - documents and tests RViz plugin development";

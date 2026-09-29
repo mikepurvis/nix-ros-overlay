@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ mola-common mola-imu-preintegration mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset mola-input-rawlog mola-input-rosbag2 mola-kernel mola-pose-list mola-state-estimation-simple mola-state-estimation-smoother mola-yaml mp2p-icp mrpt-libmaps ];
-  rosExecDepends = [ mola-bridge-ros2 mola-launcher mola-viz mola-viz-imgui ];
+  rosExecDepends = [ mola-bridge-ros2 mola-common mola-imu-preintegration mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset mola-input-rawlog mola-input-rosbag2 mola-kernel mola-launcher mola-pose-list mola-state-estimation-simple mola-state-estimation-smoother mola-viz mola-viz-imgui mola-yaml mp2p-icp mrpt-libmaps ];
 
   meta = {
     description = "LIDAR odometry system based on MOLA and MRPT components";

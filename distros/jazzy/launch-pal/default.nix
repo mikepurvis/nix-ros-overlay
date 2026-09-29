@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.jinja2 python3Packages.pyyaml ];
   rosBuildExportDepends = [ ament-index-python launch launch-ros ];
+  rosExecDepends = [ ament-index-python launch launch-ros ];
 
   meta = {
     description = "Utilities for launch files";

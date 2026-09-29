@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
   rosBuildExportDepends = [ autoware-perception-msgs geometry-msgs std-msgs unique-identifier-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ autoware-perception-msgs geometry-msgs rosidl-default-runtime std-msgs unique-identifier-msgs ];
 
   meta = {
     description = "Autoware simulation messages package.";

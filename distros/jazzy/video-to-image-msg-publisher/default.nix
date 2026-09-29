@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
   rosBuildExportDepends = [ cv-bridge rclcpp sensor-msgs ];
+  rosExecDepends = [ cv-bridge rclcpp sensor-msgs ];
 
   meta = {
     description = "A simple node that publishes sensor_msgs/Image messages from a specified video file";

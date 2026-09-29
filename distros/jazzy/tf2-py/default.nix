@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
   rosBuildExportDepends = [ geometry-msgs tf2 ];
-  rosExecDepends = [ builtin-interfaces rclpy rpyutils ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclpy rpyutils tf2 ];
 
   meta = {
     description = "The tf2_py package";

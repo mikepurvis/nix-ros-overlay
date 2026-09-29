@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-geometry geometry-msgs tf2 tf2-geometry-msgs ];
+  rosExecDepends = [ autoware-utils-geometry geometry-msgs tf2 tf2-geometry-msgs ];
 
   meta = {
     description = "The spline interpolation package";

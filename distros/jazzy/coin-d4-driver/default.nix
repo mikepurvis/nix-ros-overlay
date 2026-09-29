@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs rclcpp rclcpp-lifecycle sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-lifecycle sensor-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp rclcpp-lifecycle sensor-msgs ];
 
   meta = {
     description = "ROS package for LDS-03 (COIN-D4) Lidar";

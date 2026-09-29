@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ logging-demo rclcpp rcutils ];
+  rosExecDepends = [ logging-demo rclcpp rcutils ];
 
   meta = {
     description = "The autoware_utils_logging package";

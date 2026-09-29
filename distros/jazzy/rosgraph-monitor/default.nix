@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common launch-ros launch-testing-ament-cmake rmw-implementation rmw-stats-shim ];
   nativeBuildInputs = [ ament-cmake generate-parameter-library ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rosgraph-monitor-msgs ];
-  rosExecDepends = [ diagnostic-aggregator ];
+  rosExecDepends = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rosgraph-monitor-msgs ];
 
   meta = {
     description = "Monitors the ROS graph to detect error conditions";

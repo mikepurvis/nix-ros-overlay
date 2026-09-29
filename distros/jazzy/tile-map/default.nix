@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ jsoncpp qt5or6.qtbase yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
+  rosExecDepends = [ mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
 
   meta = {
     description = "Tile map provides a slippy map style interface for visualizing 

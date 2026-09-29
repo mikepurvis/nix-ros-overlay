@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ grid-map-msgs grid-map-ros rclcpp rviz-common rviz-ogre-vendor rviz-rendering ];
+  rosExecDepends = [ grid-map-msgs grid-map-ros rclcpp rviz-common rviz-ogre-vendor rviz-rendering ];
 
   meta = {
     description = "RViz plugin for displaying grid map messages.";

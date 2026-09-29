@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ freeglut freeimage glew libxi libxmu ogre1_9 util-linux vulkan-loader ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-rendering8 8.2.3

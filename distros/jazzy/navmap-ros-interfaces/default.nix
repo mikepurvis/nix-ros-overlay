@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces rosidl-default-generators std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-generators std-msgs ];
 
   meta = {
     description = "ROS 2 interfaces for NavMap (messages for visualization and layers)";

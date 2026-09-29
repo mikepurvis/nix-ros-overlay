@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake nebula-core-common nebula-core-hw-interfaces nebula-msgs nebula-robosense-common robosense-msgs ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-msgs nebula-robosense-common robosense-msgs ];
+  rosExecDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-msgs nebula-robosense-common robosense-msgs ];
 
   meta = {
     description = "Nebula HW Interfaces Robosense";

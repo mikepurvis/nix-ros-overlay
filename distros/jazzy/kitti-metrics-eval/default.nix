@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mrpt-libmath mrpt-libposes mrpt-libtclap ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mrpt-libmath mrpt-libposes mrpt-libtclap ];
+  rosExecDepends = [ mola-common mrpt-libmath mrpt-libposes mrpt-libtclap ];
 
   meta = {
     description = "CLI tool to evaluate the KITTI odometry bechmark metrics to trajectory files";

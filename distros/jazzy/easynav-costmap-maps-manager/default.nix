@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen graphicsmagick ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp easynav-common easynav-core easynav-costmap-common easynav-sensors nav-msgs pluginlib rclcpp rclcpp-lifecycle std-srvs tf2 tf2-ros yaets yaml-cpp-vendor ];
+  rosExecDepends = [ ament-index-cpp easynav-common easynav-core easynav-costmap-common easynav-sensors nav-msgs pluginlib rclcpp rclcpp-lifecycle std-srvs tf2 tf2-ros yaets yaml-cpp-vendor ];
 
   meta = {
     description = "Easy Navigation: Simple MapsManager package.";

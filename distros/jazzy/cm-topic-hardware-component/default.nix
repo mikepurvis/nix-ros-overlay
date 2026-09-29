@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pal-statistics-msgs rclcpp ];
+  rosExecDepends = [ hardware-interface pal-statistics-msgs rclcpp ];
 
   meta = {
     description = "ros2_control hardware component using pal_statistics messages from controller_manager introspection";

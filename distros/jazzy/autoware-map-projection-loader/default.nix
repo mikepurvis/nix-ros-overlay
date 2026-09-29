@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-component-interface-specs autoware-lanelet2-extension autoware-map-msgs rclcpp rclcpp-components ];
+  rosExecDepends = [ autoware-component-interface-specs autoware-lanelet2-extension autoware-map-msgs rclcpp rclcpp-components ];
 
   meta = {
     description = "autoware_map_projection_loader package as a ROS 2 node";

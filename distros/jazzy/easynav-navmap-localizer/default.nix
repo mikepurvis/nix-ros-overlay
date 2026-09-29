@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-bonxai-maps-manager easynav-common easynav-core easynav-localizer easynav-sensors geometry-msgs nav-msgs navmap-core navmap-ros navmap-ros-interfaces pcl-ros pluginlib tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ easynav-bonxai-maps-manager easynav-common easynav-core easynav-localizer easynav-sensors geometry-msgs nav-msgs navmap-core navmap-ros navmap-ros-interfaces pcl-ros pluginlib tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: nAVmAP Localizer package.";

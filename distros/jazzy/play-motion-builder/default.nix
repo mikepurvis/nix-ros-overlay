@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ play-motion-builder-msgs play-motion2 play-motion2-msgs rclcpp rclcpp-action sensor-msgs ];
+  rosExecDepends = [ play-motion-builder-msgs play-motion2 play-motion2-msgs rclcpp rclcpp-action sensor-msgs ];
 
   meta = {
     description = "The play_motion_builder package, a node to handle the creation of new motions for play_motion.";

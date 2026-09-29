@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ irobot-create-description joint-state-publisher robot-state-publisher urdf ];
+  rosExecDepends = [ irobot-create-description joint-state-publisher robot-state-publisher urdf ];
 
   meta = {
     description = "Turtlebot4 Description package";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ etsi-its-msgs geometry-msgs tf2-geometry-msgs ];
+  rosExecDepends = [ etsi-its-msgs geometry-msgs tf2-geometry-msgs ];
 
   meta = {
     description = "ROS messages and utility functions for ETSI ITS messages";

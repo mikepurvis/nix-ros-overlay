@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ros-environment std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ ros-environment rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS / ROS2 udp_msgs package";

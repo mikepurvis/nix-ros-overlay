@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   rosBuildExportDepends = [ hardware-interface pluginlib ];
+  rosExecDepends = [ hardware-interface pluginlib ];
 
   meta = {
     description = "data structures for representing mechanical transmissions, methods for propagating values between actuator and joint spaces and tooling to support this.";

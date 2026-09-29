@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake builtin-interfaces rosidl-default-generators sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces rosidl-default-generators sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs builtin-interfaces rosidl-default-generators rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Messages for calibrating a robot";

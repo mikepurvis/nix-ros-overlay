@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "The autoware_utils_rclcpp package";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cx-bringup ];
+  rosExecDepends = [ cx-bringup ];
 
   meta = {
     description = "Files used in the agent tutorials";

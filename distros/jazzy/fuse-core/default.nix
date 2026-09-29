@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ceres-solver eigen glog ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ fuse-msgs pluginlib rcl-interfaces rclcpp rclcpp-components ];
+  rosExecDepends = [ fuse-msgs pluginlib rcl-interfaces rclcpp rclcpp-components ];
 
   meta = {
     description = "The fuse_core package provides the base class interfaces for the various fuse components. Concrete implementations of these

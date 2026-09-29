@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ controller-manager ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib std-msgs ];
+  rosExecDepends = [ controller-interface kuka-driver-interfaces kuka-drivers-core pluginlib std-msgs ];
 
   meta = {
     description = "Non-real time message handler for KSS KUKA robots";

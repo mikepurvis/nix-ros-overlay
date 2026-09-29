@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt6.qtbase qt6.qtdeclarative ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp qml6-ros2-plugin yaml-cpp-vendor ];
+  rosExecDepends = [ ament-index-cpp qml6-ros2-plugin yaml-cpp-vendor ];
 
   meta = {
     description = "QML-based robotics visualization and control tool for ROS 2.";

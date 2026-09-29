@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-tools-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-tools-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-plugin2 2.0.4

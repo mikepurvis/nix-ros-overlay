@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-common mrpt-io mrpt-poses mrpt-viz ];
+  rosExecDepends = [ mrpt-common mrpt-io mrpt-poses mrpt-viz ];
 
   meta = {
     description = "The MRPT C++ library mrpt_graphs";

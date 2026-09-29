@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3 ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros python3 ];
   rosBuildExportDepends = [ ament-cmake-core rcutils rosidl-cmake rosidl-generator-type-description rosidl-pycommon rosidl-typesupport-interface ];
-  rosExecDepends = [ ament-index-python rosidl-cli rosidl-parser ];
+  rosExecDepends = [ ament-index-python rcutils rosidl-cli rosidl-generator-type-description rosidl-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in C.";

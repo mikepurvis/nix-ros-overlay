@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake clips-vendor cx-plugin cx-utils pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp ];
+  rosExecDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp ];
 
   meta = {
     description = "CLIPS plugin example that does not actually do anything and rather serves as boilerplate";

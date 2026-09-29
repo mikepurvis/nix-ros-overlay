@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ callback-isolated-executor cie-thread-configurator rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ callback-isolated-executor cie-thread-configurator rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Sample application to demonstrate the use of cie_thread_configurator and callback_isolated_executor.";

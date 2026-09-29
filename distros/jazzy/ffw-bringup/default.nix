@@ -16,7 +16,7 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
   rosBuildExportDepends = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
-  rosExecDepends = [ ffw-description gz-ros2-control image-transport-plugins robot-state-publisher ros2-control ros2-controllers rviz2 xacro ];
+  rosExecDepends = [ dynamixel-hardware-interface ffw-description gz-ros2-control image-transport-plugins rclpy robot-state-publisher ros-gz-bridge ros-gz-image ros-gz-sim ros2-control ros2-controllers rviz2 xacro ];
 
   meta = {
     description = "ROS 2 launch scripts for starting the FFW";

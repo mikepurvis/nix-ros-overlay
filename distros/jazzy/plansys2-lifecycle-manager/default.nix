@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "A controller/manager for the lifecycle nodes of the ROS2 Planning System";

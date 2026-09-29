@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp rosbag2-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ];
   rosBuildExportDepends = [ class-loader event-camera-msgs ros-environment ];
+  rosExecDepends = [ class-loader event-camera-msgs ros-environment ];
 
   meta = {
     description = "package to encode and decode event_camera_msgs";

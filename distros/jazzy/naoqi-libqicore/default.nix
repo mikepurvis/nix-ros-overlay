@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake naoqi-libqi ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ naoqi-libqi ];
+  rosExecDepends = [ naoqi-libqi ];
 
   meta = {
     description = "Aldebaran's libqicore: a layer on top of libqi";

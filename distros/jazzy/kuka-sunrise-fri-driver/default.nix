@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nanopb ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-manager-msgs hardware-interface kuka-driver-interfaces kuka-drivers-core std-msgs std-srvs ];
-  rosExecDepends = [ controller-manager fri-configuration-controller fri-state-broadcaster joint-group-impedance-controller joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-event-broadcaster kuka-lbr-iiwa-support ];
+  rosExecDepends = [ controller-manager controller-manager-msgs fri-configuration-controller fri-state-broadcaster hardware-interface joint-group-impedance-controller joint-state-broadcaster joint-trajectory-controller kuka-control-mode-handler kuka-driver-interfaces kuka-drivers-core kuka-event-broadcaster kuka-lbr-iiwa-support std-msgs std-srvs ];
 
   meta = {
     description = "ROS2 KUKA sunrise interface";

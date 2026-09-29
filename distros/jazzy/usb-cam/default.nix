@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ffmpeg v4l-utils ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces camera-info-manager cv-bridge image-transport image-transport-plugins rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces camera-info-manager cv-bridge image-transport image-transport-plugins rclcpp rclcpp-components rosidl-default-runtime sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "A ROS Driver for V4L USB Cameras";

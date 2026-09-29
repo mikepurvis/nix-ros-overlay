@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest example-interfaces ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ action-msgs rclcpp rclcpp-action rclpy ];
+  rosExecDepends = [ action-msgs rclcpp rclcpp-action rclpy ];
 
   meta = {
     description = "Simple library for using the `rclpy/rclcpp` action libraries";

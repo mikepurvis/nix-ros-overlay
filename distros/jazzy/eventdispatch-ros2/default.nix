@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ rclcpp rclpy ];
+  rosExecDepends = [ rclcpp rclpy ];
 
   meta = {
     description = "ROS2 wrapper for python-eventdispatch";

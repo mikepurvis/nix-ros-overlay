@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
   rosBuildExportDepends = [ rclcpp rcpputils rcutils test-msgs ];
+  rosExecDepends = [ rclcpp rcpputils rcutils test-msgs ];
 
   meta = {
     description = "Commonly used test helper classes and fixtures for rosbag2";

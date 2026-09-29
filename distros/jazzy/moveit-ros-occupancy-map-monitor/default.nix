@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen octomap ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ eigen3-cmake-module geometric-shapes moveit-common moveit-core moveit-msgs pluginlib rclcpp tf2-ros ];
+  rosExecDepends = [ geometric-shapes moveit-common moveit-core moveit-msgs pluginlib rclcpp tf2-ros ];
 
   meta = {
     description = "Components of MoveIt connecting to occupancy map";

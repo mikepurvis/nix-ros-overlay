@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt paho-mqtt-c paho-mqtt-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mqtt-client-interfaces rclcpp rclcpp-components rcpputils rosx-introspection std-msgs ];
+  rosExecDepends = [ mqtt-client-interfaces rclcpp rclcpp-components rcpputils rosx-introspection std-msgs ];
 
   meta = {
     description = "Node that enables connected ROS-based devices or robots to exchange ROS messages via an MQTT broker using the MQTT protocol.";

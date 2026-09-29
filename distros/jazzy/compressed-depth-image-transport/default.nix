@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge image-transport ];
+  rosExecDepends = [ cv-bridge image-transport ];
 
   meta = {
     description = "Compressed_depth_image_transport provides a plugin to image_transport for transparently sending

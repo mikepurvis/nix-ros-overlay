@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-concepts ecl-license ecl-mpl ];
+  rosExecDepends = [ ecl-concepts ecl-license ecl-mpl ];
 
   meta = {
     description = "Includes various supporting tools and utilities for c++ programming.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs nav-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs nav-msgs std-msgs ];
 
   meta = {
     description = "Easy Navigation: Message, Service, and Action definitions.";

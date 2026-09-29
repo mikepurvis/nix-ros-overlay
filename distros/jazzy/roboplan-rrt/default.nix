@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest roboplan-example-models ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ roboplan ];
+  rosExecDepends = [ roboplan ];
 
   meta = {
     description = "Rapidly-Exploring Random Tree (RRT) implementation for RoboPlan.";

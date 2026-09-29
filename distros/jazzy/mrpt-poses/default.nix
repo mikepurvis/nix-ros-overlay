@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ mrpt-io ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-bayes mrpt-common ];
+  rosExecDepends = [ mrpt-bayes mrpt-common ];
 
   meta = {
     description = "The MRPT C++ library mrpt_poses";

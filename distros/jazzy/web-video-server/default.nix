@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ffmpeg opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake-ros pkg-config ];
   rosBuildExportDepends = [ async-web-server-cpp cv-bridge image-transport pluginlib rclcpp rclcpp-components rmw sensor-msgs ];
+  rosExecDepends = [ async-web-server-cpp cv-bridge image-transport pluginlib rclcpp rclcpp-components rmw sensor-msgs ];
 
   meta = {
     description = "HTTP Streaming of ROS Image Topics in Multiple Formats";

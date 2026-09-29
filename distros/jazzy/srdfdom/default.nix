@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ console-bridge ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ console-bridge-vendor tinyxml2-vendor urdf ];
-  rosExecDepends = [ urdfdom-py ];
+  rosExecDepends = [ console-bridge-vendor tinyxml2-vendor urdf urdfdom-py ];
 
   meta = {
     description = "Parser for Semantic Robot Description Format (SRDF).";

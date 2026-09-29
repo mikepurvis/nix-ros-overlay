@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake controller-manager lifecycle-msgs rclcpp rclcpp-lifecycle rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ controller-manager lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ controller-manager lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Package containing ROS2 core functions for KUKA robots";

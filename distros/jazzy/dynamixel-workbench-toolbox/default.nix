@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake dynamixel-sdk ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ dynamixel-sdk ];
+  rosExecDepends = [ dynamixel-sdk ];
 
   meta = {
     description = "This package is composed of 'dynamixel_item', 'dynamixel_tool', 'dynamixel_driver' and 'dynamixel_workbench' class.

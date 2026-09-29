@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake ament-index-python python-cmake-module rmw rosidl-generator-c rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
+  rosExecDepends = [ rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in Python.";

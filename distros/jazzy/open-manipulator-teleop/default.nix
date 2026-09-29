@@ -16,6 +16,7 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ control-msgs rclpy sensor-msgs std-msgs trajectory-msgs ];
   rosBuildExportDepends = [ control-msgs rclpy sensor-msgs std-msgs trajectory-msgs ];
+  rosExecDepends = [ control-msgs rclpy sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
     description = "OpenManipulator teleoperation package";

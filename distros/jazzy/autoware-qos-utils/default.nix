@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-auto autoware-cmake rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "Autoware QoS Utils provides QoS compatibility utilities for different ROS 2 distributions.";

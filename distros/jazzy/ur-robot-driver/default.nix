@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ socat ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
-  rosExecDepends = [ effort-controllers force-torque-sensor-broadcaster joint-state-broadcaster joint-state-publisher joint-trajectory-controller launch launch-ros pose-broadcaster position-controllers robot-state-publisher ros2-controllers-test-nodes rviz2 urdf velocity-controllers xacro ];
+  rosExecDepends = [ backward-ros control-msgs controller-manager controller-manager-msgs effort-controllers force-torque-sensor-broadcaster geometry-msgs hardware-interface joint-state-broadcaster joint-state-publisher joint-trajectory-controller launch launch-ros pluginlib pose-broadcaster position-controllers rclcpp rclcpp-action rclcpp-lifecycle rclpy robot-state-publisher ros2-controllers-test-nodes rviz2 std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs urdf velocity-controllers xacro ];
 
   meta = {
     description = "The ROS 2 driver for Universal Robots manipulators. This driver supports all robot

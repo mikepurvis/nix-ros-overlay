@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 onetbb ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ mola-common mola-kernel mp2p-icp mrpt-libmaps nanoflann-vendor ];
+  rosExecDepends = [ mola-common mola-kernel mp2p-icp mrpt-libmaps nanoflann-vendor ];
 
   meta = {
     description = "Advanced metric map classes, using the generic `mrpt::maps::CMetricMap` interface, for use in other MOLA odometry and SLAM modules.";

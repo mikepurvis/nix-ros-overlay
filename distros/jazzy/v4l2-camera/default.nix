@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ camera-info-manager cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ camera-info-manager cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "A ROS 2 camera driver using Video4Linux2";

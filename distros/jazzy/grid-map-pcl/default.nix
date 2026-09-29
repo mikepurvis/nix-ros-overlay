@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ pcl yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ grid-map-core grid-map-msgs grid-map-ros rclcpp rcutils ];
+  rosExecDepends = [ grid-map-core grid-map-msgs grid-map-ros rclcpp rcutils ];
 
   meta = {
     description = "Conversions between grid maps and Point Cloud Library (PCL) types.";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python ];
   rosBuildExportDepends = [ cras-cpp-common message-filters pluginlib rclcpp rclcpp-components sensor-msgs tf2-eigen ];
-  rosExecDepends = [ rclpy std-msgs std-srvs ];
+  rosExecDepends = [ cras-cpp-common message-filters pluginlib rclcpp rclcpp-components rclpy sensor-msgs std-msgs std-srvs tf2-eigen ];
 
   meta = {
     description = "Calibration and removing of magnetometer bias.";

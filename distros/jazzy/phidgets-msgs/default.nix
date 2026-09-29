@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Custom ROS messages for Phidgets drivers";

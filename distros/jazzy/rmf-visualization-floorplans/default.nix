@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components rmf-building-map-msgs rmf-visualization-msgs ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components rmf-building-map-msgs rmf-visualization-msgs ];
 
   meta = {
     description = "A package to visualize the floorplans for levels in a building";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-index-cpp ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ plansys2-msgs rclcpp std-msgs ];
+  rosExecDepends = [ plansys2-msgs rclcpp std-msgs ];
 
   meta = {
     description = "This package contains a library for parsing PDDL domains and problems.

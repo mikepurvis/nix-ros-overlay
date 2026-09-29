@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ octomap qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ octomap-msgs rclcpp rviz-common rviz-default-plugins rviz-rendering ];
+  rosExecDepends = [ octomap-msgs rclcpp rviz-common rviz-default-plugins rviz-rendering ];
 
   meta = {
     description = "A set of plugins for displaying occupancy information decoded from binary octomap messages.";

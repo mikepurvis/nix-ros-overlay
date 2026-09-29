@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake nebula-core-common nebula-core-decoders nebula-sample-common ros-environment ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-decoders nebula-sample-common ];
+  rosExecDepends = [ nebula-core-common nebula-core-decoders nebula-sample-common ];
 
   meta = {
     description = "Nebula Sample Decoders Library";

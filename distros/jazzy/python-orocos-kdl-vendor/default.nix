@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pykdl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python-cmake-module ];
   rosBuildExportDepends = [ orocos-kdl-vendor pybind11-vendor ];
+  rosExecDepends = [ orocos-kdl-vendor pybind11-vendor ];
 
   meta = {
     description = "Wrapper around PyKDL, providing nothing but a dependency on PyKDL on some systems.

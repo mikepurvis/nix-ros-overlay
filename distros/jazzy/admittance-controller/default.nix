@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library geometry-msgs hardware-interface kinematics-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools tf2 tf2-eigen tf2-geometry-msgs tf2-kdl tf2-ros trajectory-msgs ];
+  rosExecDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library geometry-msgs hardware-interface kinematics-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools tf2 tf2-eigen tf2-geometry-msgs tf2-kdl tf2-ros trajectory-msgs ];
 
   meta = {
     description = "Implementation of admittance controllers for different input and output interface.";

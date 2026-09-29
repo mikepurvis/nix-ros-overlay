@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.importlib-metadata python3Packages.lark python3Packages.pyyaml ];
   rosBuildExportDepends = [ osrf-pycommon ];
-  rosExecDepends = [ ament-index-python ];
+  rosExecDepends = [ ament-index-python osrf-pycommon ];
 
   meta = {
     description = "The ROS launch tool.";

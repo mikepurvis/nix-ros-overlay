@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pluginlib std-msgs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ easynav-common easynav-core easynav-sensors easynav-system geometry-msgs nav-msgs pluginlib std-msgs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: port of the Nav2 Regulated Pure Pursuit Controller.";

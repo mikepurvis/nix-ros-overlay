@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ nlohmann-json-schema-validator-vendor rmf-api-msgs rmf-task ];
+  rosExecDepends = [ nlohmann-json-schema-validator-vendor rmf-api-msgs rmf-task ];
 
   meta = {
     description = "Implementation of phase-sequence tasks for the Robotics Middleware Framework";

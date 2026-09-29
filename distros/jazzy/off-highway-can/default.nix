@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ can-msgs diagnostic-updater rclcpp ros2-socketcan-msgs ];
+  rosExecDepends = [ can-msgs diagnostic-updater rclcpp ros2-socketcan-msgs ];
 
   meta = {
     description = "The off_highway_can package";

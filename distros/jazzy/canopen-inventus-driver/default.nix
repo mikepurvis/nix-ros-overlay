@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ canopen canopen-base-driver canopen-core canopen-interfaces canopen-inventus-interfaces canopen-proxy-driver lely-core-libraries lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs ];
-  rosExecDepends = [ canopen-master-driver ];
+  rosExecDepends = [ canopen canopen-base-driver canopen-core canopen-interfaces canopen-inventus-interfaces canopen-master-driver canopen-proxy-driver lely-core-libraries lifecycle-msgs rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "ros2_canopen implementation of Inventus BMS driver";

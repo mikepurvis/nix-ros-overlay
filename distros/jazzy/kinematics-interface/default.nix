@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ backward-ros rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Kinematics interface for ROS 2 control";

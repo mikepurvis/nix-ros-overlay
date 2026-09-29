@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geodesy geographic-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geodesy geographic-msgs ];
+  rosExecDepends = [ geodesy geographic-msgs ];
 
   meta = {
     description = "Geographic information metapackage.

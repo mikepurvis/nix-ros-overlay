@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ behaviortree-cpp geometry-msgs nav-msgs rclcpp ];
-  rosExecDepends = [ nav2-bringup nav2-simple-commander navigation2 rviz2 slam-toolbox ];
+  rosExecDepends = [ behaviortree-cpp geometry-msgs nav-msgs nav2-bringup nav2-simple-commander navigation2 rclcpp rviz2 slam-toolbox ];
 
   meta = {
     description = "ffw_navigation";

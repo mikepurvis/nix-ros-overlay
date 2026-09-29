@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ewellix-description ewellix-interfaces ewellix-moveit-config ];
+  rosExecDepends = [ ewellix-description ewellix-interfaces ewellix-moveit-config ];
 
   meta = {
     description = "Metapackage for common Ewellix lift packages";

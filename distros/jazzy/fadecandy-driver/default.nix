@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libusb1 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-updater fadecandy-msgs rclcpp ];
+  rosExecDepends = [ diagnostic-updater fadecandy-msgs rclcpp ];
 
   meta = {
     description = "ROS driver for fadecandy LED controllers";

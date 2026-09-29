@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface hardware-interface-testing ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros forward-command-controller pluginlib rclcpp ];
+  rosExecDepends = [ backward-ros forward-command-controller pluginlib rclcpp ];
 
   meta = {
     description = "Generic position controller for forwarding position commands.";

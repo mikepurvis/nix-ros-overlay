@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ lcov ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs launch-ros launch-testing nav-msgs nav2-amcl nav2-behavior-tree nav2-lifecycle-manager nav2-map-server nav2-minimal-tb3-sim nav2-msgs nav2-navfn-planner nav2-planner nav2-util rclcpp rclpy std-msgs tf2-geometry-msgs visualization-msgs ];
-  rosExecDepends = [ nav2-bringup navigation2 robot-state-publisher ];
+  rosExecDepends = [ geometry-msgs launch-ros launch-testing nav-msgs nav2-amcl nav2-behavior-tree nav2-bringup nav2-lifecycle-manager nav2-map-server nav2-minimal-tb3-sim nav2-msgs nav2-navfn-planner nav2-planner nav2-util navigation2 rclcpp rclpy robot-state-publisher std-msgs tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "A sets of system-level tests for Nav2 usually involving full robot simulation";

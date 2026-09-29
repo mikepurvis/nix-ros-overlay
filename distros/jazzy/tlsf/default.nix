@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake ];
+  rosExecDepends = [ ament-cmake ];
 
   meta = {
     description = "TLSF allocator version 2.4.6";

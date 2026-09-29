@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake turtlebot4-viz ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ turtlebot4-viz ];
+  rosExecDepends = [ turtlebot4-viz ];
 
   meta = {
     description = "Turtlebot4 Desktop Metapackage";

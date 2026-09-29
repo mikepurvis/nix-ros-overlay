@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cppzmq sqlite tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake git ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp tinyxml2-vendor ];
+  rosExecDepends = [ ament-index-cpp rclcpp tinyxml2-vendor ];
 
   meta = {
     description = "This package provides the Behavior Trees core library.";

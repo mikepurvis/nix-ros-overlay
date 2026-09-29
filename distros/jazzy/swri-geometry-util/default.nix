@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen geos opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ tf2 ];
+  rosExecDepends = [ tf2 ];
 
   meta = {
     description = "Commonly used geometry routines, implemented in a ROS friendly package.";

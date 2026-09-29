@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake geometry-msgs nav-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs geometry-msgs nav-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs geometry-msgs nav-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The move_base_flex messages package providing the action definition files for the action GetPath, ExePath, Recovery and MoveBase. The action servers providing these action are implemented in <a href=\"http://wiki.ros.org/mbf_abstract_nav\">mbf_abstract_nav</a>.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
+  rosExecDepends = [ action-msgs builtin-interfaces rclcpp rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Messages and service files for the ROS2 Planning System";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ backward-ros kdl-parser kinematics-interface pluginlib tf2-eigen-kdl ];
+  rosExecDepends = [ backward-ros kdl-parser kinematics-interface pluginlib tf2-eigen-kdl ];
 
   meta = {
     description = "KDL implementation of ros2_control kinematics interface";

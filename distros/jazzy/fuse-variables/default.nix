@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ceres-solver ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ fuse-core pluginlib rclcpp ];
+  rosExecDepends = [ fuse-core pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_variables package provides a set of commonly used variable types, such as 2D and 3D positions, \\

@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ audio-common-msgs rclcpp rclcpp-components ];
-  rosExecDepends = [ launch-xml ];
+  rosExecDepends = [ audio-common-msgs launch-xml rclcpp rclcpp-components ];
 
   meta = {
     description = "Outputs audio to a speaker from a source node.";

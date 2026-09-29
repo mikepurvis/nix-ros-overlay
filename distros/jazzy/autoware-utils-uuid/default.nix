@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ unique-identifier-msgs ];
+  rosExecDepends = [ unique-identifier-msgs ];
 
   meta = {
     description = "The autoware_utils_uuid package";

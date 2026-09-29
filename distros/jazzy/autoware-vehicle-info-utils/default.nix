@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-index-cpp ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-utils-geometry autoware-utils-rclcpp rclcpp ];
+  rosExecDepends = [ autoware-utils-geometry autoware-utils-rclcpp rclcpp ];
 
   meta = {
     description = "The autoware_vehicle_info_utils package";

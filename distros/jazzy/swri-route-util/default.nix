@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs marti-common-msgs marti-nav-msgs rclcpp rclcpp-components std-msgs swri-geometry-util swri-math-util swri-transform-util tf2-geometry-msgs visualization-msgs ];
+  rosExecDepends = [ geometry-msgs marti-common-msgs marti-nav-msgs rclcpp rclcpp-components std-msgs swri-geometry-util swri-math-util swri-transform-util tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "This library provides functionality to simplify working with the

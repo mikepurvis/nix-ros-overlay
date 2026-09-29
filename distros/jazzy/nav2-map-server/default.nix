@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ graphicsmagick ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ launch-ros launch-testing nav-msgs nav2-msgs nav2-util rclcpp rclcpp-lifecycle std-msgs tf2 yaml-cpp-vendor ];
+  rosExecDepends = [ launch-ros launch-testing nav-msgs nav2-msgs nav2-util rclcpp rclcpp-lifecycle std-msgs tf2 yaml-cpp-vendor ];
 
   meta = {
     description = "Refactored map server for ROS2 Navigation";

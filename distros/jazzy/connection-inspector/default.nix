@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ glfw3 libGL libGLU ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-index-cpp rclcpp ];
-  rosExecDepends = [ rclpy ros2launch std-msgs ];
+  rosExecDepends = [ ament-index-cpp rclcpp rclpy ros2launch std-msgs ];
 
   meta = {
     description = "Lightweight C++ GUI to inspect a ROS 2 node's live connections and diagnose

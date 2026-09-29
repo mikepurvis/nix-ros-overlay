@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ceres-solver ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ fuse-core pluginlib rclcpp ];
+  rosExecDepends = [ fuse-core pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_loss package provides a set of commonly used loss functions, such as the basic ones provided by Ceres.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs builtin-interfaces rosidl-default-generators rosidl-default-runtime std-msgs ];
+  rosExecDepends = [ action-msgs builtin-interfaces rosidl-default-generators rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "flexbe_msgs provides the messages used by FlexBE.";

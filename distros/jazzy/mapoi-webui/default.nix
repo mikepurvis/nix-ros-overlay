@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.flask python3Packages.pillow python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ mapoi-interfaces rclpy std-msgs std-srvs tf2-ros ];
-  rosExecDepends = [ mapoi-server ];
+  rosExecDepends = [ mapoi-interfaces mapoi-server rclpy std-msgs std-srvs tf2-ros ];
 
   meta = {
     description = "Web UI for mapoi - POI editing, navigation, and robot monitoring";

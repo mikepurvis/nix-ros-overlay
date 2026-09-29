@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav2-costmap-2d rclcpp ];
+  rosExecDepends = [ nav2-costmap-2d rclcpp ];
 
   meta = {
     description = "The costmap_queue package";

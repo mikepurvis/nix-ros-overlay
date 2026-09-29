@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-auto geometry-msgs mapoi-interfaces rviz-common rviz-default-plugins std-srvs tf2 ];
+  rosExecDepends = [ ament-cmake-auto geometry-msgs mapoi-interfaces rviz-common rviz-default-plugins std-srvs tf2 ];
 
   meta = {
     description = "Rviz2 plugins for mapoi";

@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ assimp boost eigen octomap python3 python3Packages.numpy ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ eigenpy ];
+  rosExecDepends = [ eigenpy ];
 
   meta = {
     description = "An extension of the Flexible Collision Library.";

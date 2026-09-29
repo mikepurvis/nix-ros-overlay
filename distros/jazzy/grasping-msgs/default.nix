@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs moveit-msgs rosidl-default-generators sensor-msgs shape-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs moveit-msgs sensor-msgs shape-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs moveit-msgs rosidl-default-runtime sensor-msgs shape-msgs std-msgs ];
 
   meta = {
     description = "Messages for describing objects and how to grasp them.";

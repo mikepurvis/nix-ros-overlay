@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater geometry-msgs nav-msgs rcl-interfaces rclcpp sensor-msgs std-msgs tf2 tf2-ros visualization-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater geometry-msgs nav-msgs rcl-interfaces rclcpp rosidl-default-runtime sensor-msgs std-msgs tf2 tf2-ros visualization-msgs ];
 
   meta = {
     description = "ROS 1 and 2 driver for SICK scanner";

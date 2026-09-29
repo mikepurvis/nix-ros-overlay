@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros color-util geometry-msgs pluginlib polygon-msgs polygon-utils rviz-common std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ color-util geometry-msgs pluginlib polygon-msgs polygon-utils rviz-common std-msgs ];
+  rosExecDepends = [ color-util geometry-msgs pluginlib polygon-msgs polygon-utils rviz-common std-msgs ];
 
   meta = {
     description = "RViz visualizations for polygons";

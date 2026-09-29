@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ dynamixel-sdk eigen3-cmake-module yaml-cpp-vendor ];
+  rosExecDepends = [ dynamixel-sdk eigen3-cmake-module yaml-cpp-vendor ];
 
   meta = {
     description = "RT Manipulators C++ Library";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ nao-lola-sensor-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ nao-lola-sensor-msgs ];
+  rosExecDepends = [ nao-lola-sensor-msgs ];
 
   meta = {
     description = "Allows simulating button presses through command line interface";

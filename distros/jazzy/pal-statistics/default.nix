@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
   rosBuildExportDepends = [ pal-statistics-msgs rclcpp rclcpp-lifecycle rclpy ];
+  rosExecDepends = [ pal-statistics-msgs rclcpp rclcpp-lifecycle rclpy ];
 
   meta = {
     description = "The pal_statistics package";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   rosBuildExportDepends = [ angles cras-cpp-common geometry-msgs rclcpp sensor-msgs ];
+  rosExecDepends = [ angles cras-cpp-common geometry-msgs rclcpp sensor-msgs ];
 
   meta = {
     description = "World Magnetic Model ROS API.";

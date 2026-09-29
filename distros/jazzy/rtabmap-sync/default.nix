@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros cv-bridge diagnostic-updater image-transport message-filters nav-msgs rclcpp rclcpp-components ros-environment rtabmap-conversions rtabmap-msgs sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ cv-bridge diagnostic-updater image-transport message-filters nav-msgs rclcpp rclcpp-components rtabmap-conversions rtabmap-msgs sensor-msgs ];
+  rosExecDepends = [ cv-bridge diagnostic-updater image-transport message-filters nav-msgs rclcpp rclcpp-components rtabmap-conversions rtabmap-msgs sensor-msgs ];
 
   meta = {
     description = "RTAB-Map's synchronization package.";

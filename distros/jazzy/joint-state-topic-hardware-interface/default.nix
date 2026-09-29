@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-cmake-ros control-msgs controller-manager forward-command-controller joint-state-broadcaster joint-trajectory-controller launch launch-ros launch-testing launch-testing-ament-cmake rclpy robot-state-publisher ros2-control-test-assets topic-tools xacro ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles hardware-interface rclcpp sensor-msgs ];
+  rosExecDepends = [ angles hardware-interface rclcpp sensor-msgs ];
 
   meta = {
     description = "ros2_control hardware interface for JointState topic based control";

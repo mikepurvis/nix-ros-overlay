@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen suitesparse ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-libbase nanoflann-vendor ];
+  rosExecDepends = [ mrpt-libbase nanoflann-vendor ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (math C++ libraries).

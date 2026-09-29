@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle realtime-tools rsl trajectory-msgs urdf ];
+  rosExecDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-action rclcpp-lifecycle realtime-tools rsl trajectory-msgs urdf ];
 
   meta = {
     description = "Controller for executing joint-space trajectories on a group of joints";

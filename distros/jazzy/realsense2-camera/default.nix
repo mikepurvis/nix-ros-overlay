@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces cv-bridge diagnostic-updater geometry-msgs image-transport librealsense2 lifecycle-msgs nav-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle realsense2-camera-msgs sensor-msgs std-msgs std-srvs tf2 tf2-ros ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ builtin-interfaces cv-bridge diagnostic-updater geometry-msgs image-transport launch-ros librealsense2 lifecycle-msgs nav-msgs rclcpp rclcpp-action rclcpp-components rclcpp-lifecycle realsense2-camera-msgs sensor-msgs std-msgs std-srvs tf2 tf2-ros ];
 
   meta = {
     description = "RealSense camera package allowing access to RealSense D400 3D cameras";

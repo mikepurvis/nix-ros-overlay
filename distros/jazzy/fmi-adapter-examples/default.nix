@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake fmi-adapter ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ fmi-adapter ];
-  rosExecDepends = [ launch launch-ros ];
+  rosExecDepends = [ fmi-adapter launch launch-ros ];
 
   meta = {
     description = "Provides small examples for use of the fmi_adapter package";

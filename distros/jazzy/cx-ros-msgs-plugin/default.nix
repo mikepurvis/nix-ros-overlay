@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ icu ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp rcutils rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp ];
+  rosExecDepends = [ clips-vendor cx-plugin cx-utils pluginlib rclcpp rcutils rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp ];
 
   meta = {
     description = "CLIPS plugin for using generic ROS topics via introspection API";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ tlsf ];
+  rosExecDepends = [ tlsf ];
 
   meta = {
     description = "Replace all the dynamic heap allocation functions by LD_PRELOAD";

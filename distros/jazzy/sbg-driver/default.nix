@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs nav-msgs nmea-msgs rclcpp rosidl-default-generators rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs nmea-msgs rclcpp rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf ];
-  rosExecDepends = [ rosidl-default-runtime xacro ];
+  rosExecDepends = [ geometry-msgs nav-msgs nmea-msgs rclcpp rosidl-default-runtime rtcm-msgs sensor-msgs std-msgs std-srvs tf2-geometry-msgs tf2-msgs tf2-ros urdf xacro ];
 
   meta = {
     description = "ROS driver package for communication with the SBG navigation systems.";

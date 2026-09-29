@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtquickcontrols ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ gz-gui-vendor ];
+  rosExecDepends = [ gz-gui-vendor ];
 
   meta = {
     description = "Turtlebot4 Gazebo Simulator GUI Plugins";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake ament-cmake-core ament-cmake-export-dependencies ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ launch-testing launch-testing-ament-cmake launch-testing-ros ros2test ];
+  rosExecDepends = [ launch-testing launch-testing-ros ros2test ];
 
   meta = {
     description = "The entry point package to launch testing in ROS.";

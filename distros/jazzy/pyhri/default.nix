@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev python3Packages.numpy python3Packages.opencv4 ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs hri rclcpp rclpy ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs hri rclcpp rclpy ];
 
   meta = {
     description = "A python wrapper around hri package";

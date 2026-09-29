@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ eigen3-cmake-module ];
+  rosExecDepends = [ eigen3-cmake-module ];
 
   meta = {
     description = "Core C++ library for NavMap.";

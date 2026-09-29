@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cppcheck ament-cpplint ament-lint-auto ament-lint-cmake ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS messages for MRPT classes and objects";

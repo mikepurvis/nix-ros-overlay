@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ diff-drive-controller hardware-interface imu-sensor-broadcaster rclcpp rclcpp-lifecycle realtime-tools ros2-control std-msgs ];
+  rosExecDepends = [ diff-drive-controller hardware-interface imu-sensor-broadcaster rclcpp rclcpp-lifecycle realtime-tools ros2-control std-msgs ];
 
   meta = {
     description = "Hardware controller for ROSbot Series";

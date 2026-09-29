@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake generate-parameter-library moveit-core pluginlib rclcpp tf2-eigen tf2-eigen-kdl tf2-geometry-msgs tf2-kdl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ generate-parameter-library moveit-core pluginlib rclcpp tf2-geometry-msgs tf2-kdl ];
+  rosExecDepends = [ generate-parameter-library moveit-core pluginlib rclcpp tf2-geometry-msgs tf2-kdl ];
 
   meta = {
     description = "The prbt_ikfast_manipulator_plugin package";

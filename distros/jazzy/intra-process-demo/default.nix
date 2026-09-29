@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp sensor-msgs ];
+  rosExecDepends = [ rclcpp sensor-msgs ];
 
   meta = {
     description = "Demonstrations of intra process communication.";

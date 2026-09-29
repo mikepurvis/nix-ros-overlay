@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen fmt glfw3 python3 python3Packages.importlib-resources python3Packages.numpy python3Packages.pip python3Packages.pykdl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python git ];
   rosBuildExportDepends = [ ament-index-cpp backward-ros control-toolbox controller-manager geometry-msgs hardware-interface mujoco-ros2-control-msgs mujoco-ros2-control-plugins mujoco-vendor nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2pkg rosgraph-msgs sensor-msgs std-msgs tinyxml2-vendor transmission-interface ];
-  rosExecDepends = [ ament-index-python urdfdom-py ];
+  rosExecDepends = [ ament-index-cpp ament-index-python backward-ros control-toolbox controller-manager geometry-msgs hardware-interface mujoco-ros2-control-msgs mujoco-ros2-control-plugins mujoco-vendor nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2pkg rosgraph-msgs sensor-msgs std-msgs tinyxml2-vendor transmission-interface urdfdom-py ];
 
   meta = {
     description = "ros2_control wrapper for the MuJoCo Simulate application";

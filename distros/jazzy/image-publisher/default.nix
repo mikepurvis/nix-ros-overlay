@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ camera-info-manager cv-bridge image-transport rcl-interfaces rclcpp rclcpp-components ];
+  rosExecDepends = [ camera-info-manager cv-bridge image-transport rcl-interfaces rclcpp rclcpp-components ];
 
   meta = {
     description = "Contains a node publish an image stream from single image file

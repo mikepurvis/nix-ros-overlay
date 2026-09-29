@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ muparser ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
   rosBuildExportDepends = [ rclcpp std-msgs ];
+  rosExecDepends = [ rclcpp std-msgs ];
 
   meta = {
     description = "Using mathematical expression in ROS 2 parameter";

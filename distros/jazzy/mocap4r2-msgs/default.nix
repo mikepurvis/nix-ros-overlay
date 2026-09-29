@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs rclcpp rosidl-default-generators std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclcpp rosidl-default-generators std-msgs ];
 
   meta = {
     description = "Interfaces for Mocap4ROS2 project";

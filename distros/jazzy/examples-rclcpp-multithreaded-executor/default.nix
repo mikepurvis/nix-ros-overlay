@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp std-msgs ];
+  rosExecDepends = [ rclcpp std-msgs ];
 
   meta = {
     description = "Package containing example of how to implement a multithreaded executor";

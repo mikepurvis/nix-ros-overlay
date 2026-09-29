@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp-components rcss3d-agent ];
+  rosExecDepends = [ rclcpp-components rcss3d-agent ];
 
   meta = {
     description = "Basic rcss3d agent node that uses rcss3d_agent_msgs";

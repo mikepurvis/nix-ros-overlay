@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cpplint ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclcpp rclcpp-components sensor-msgs tf2-ros ];
 
   meta = {
     description = "Processors for sensor_msgs::Imu data";

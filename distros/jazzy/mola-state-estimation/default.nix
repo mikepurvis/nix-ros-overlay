@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-xmllint ament-lint-auto ament-lint-cmake ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mola-state-estimation-simple mola-state-estimation-smoother ];
+  rosExecDepends = [ mola-state-estimation-simple mola-state-estimation-smoother ];
 
   meta = {
     description = "Metapackage with all MOLA state estimation packages.";

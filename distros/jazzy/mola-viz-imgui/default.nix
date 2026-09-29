@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ freeglut glfw3 libGL libGLU ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-kernel mrpt-libgui mrpt-libmaps mrpt-libobs mrpt-libopengl ];
+  rosExecDepends = [ mola-kernel mrpt-libgui mrpt-libmaps mrpt-libobs mrpt-libopengl ];
 
   meta = {
     description = "Dear ImGui (docking branch) GUI backend for MOLA";

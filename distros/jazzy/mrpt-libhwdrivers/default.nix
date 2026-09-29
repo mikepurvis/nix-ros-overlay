@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm mrpt-libgui mrpt-libmaps mrpt-libslam opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-libgui mrpt-libmaps mrpt-libslam ];
+  rosExecDepends = [ mrpt-libgui mrpt-libmaps mrpt-libslam ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) libraries (hwdrivers C++ libraries).

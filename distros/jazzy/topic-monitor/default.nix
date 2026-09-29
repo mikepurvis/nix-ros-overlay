@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ rclpy ];
   checkInputs = [ ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ rclpy ];
-  rosExecDepends = [ launch launch-ros std-msgs ];
+  rosExecDepends = [ launch launch-ros rclpy std-msgs ];
 
   meta = {
     description = "Package containing tools for monitoring ROS 2 topics.";

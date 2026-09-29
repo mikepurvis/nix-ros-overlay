@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-auto ament-cmake-ros rclcpp rclcpp-components sensor-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rclcpp-components sensor-msgs std-srvs ];
+  rosExecDepends = [ rclcpp rclcpp-components sensor-msgs std-srvs ];
 
   meta = {
     description = "The rplidar ros package, support rplidar A2/A1 and A3/S1";

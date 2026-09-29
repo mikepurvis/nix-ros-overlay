@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ rcl-interfaces ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rcl-interfaces rosidl-default-runtime ];
 
   meta = {
     description = "A package containing message and service definitions for managing composable nodes in a container process.";

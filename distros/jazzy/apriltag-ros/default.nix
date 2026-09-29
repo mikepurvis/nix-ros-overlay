@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-lint-auto clang ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ apriltag apriltag-msgs cv-bridge image-transport rclcpp rclcpp-components sensor-msgs tf2-ros ];
-  rosExecDepends = [ camera-ros image-proc image-transport-plugins ];
+  rosExecDepends = [ apriltag apriltag-msgs camera-ros cv-bridge image-proc image-transport image-transport-plugins rclcpp rclcpp-components sensor-msgs tf2-ros ];
 
   meta = {
     description = "AprilTag detection node";

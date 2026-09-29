@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen hdf5 onetbb range-v3 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ sophus ];
+  rosExecDepends = [ sophus ];
 
   meta = {
     description = "A generic MCL library for ROS2.";

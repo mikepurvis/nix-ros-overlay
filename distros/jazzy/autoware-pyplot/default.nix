@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3 python3Packages.matplotlib ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
   rosBuildExportDepends = [ pybind11-vendor ];
+  rosExecDepends = [ pybind11-vendor ];
 
   meta = {
     description = "C++ interface for matplotlib based on pybind11";

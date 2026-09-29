@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ canopen-base-driver canopen-core canopen-interfaces rclcpp rclcpp-components rclcpp-lifecycle ];
+  rosExecDepends = [ canopen-base-driver canopen-core canopen-interfaces rclcpp rclcpp-components rclcpp-lifecycle ];
 
   meta = {
     description = "Simple proxy driver for the ros2_canopen stack";

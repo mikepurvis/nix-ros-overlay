@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ceres-solver eigen ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ diagnostic-updater fuse-constraints fuse-core fuse-graphs fuse-msgs fuse-variables pluginlib rclcpp rclcpp-components std-srvs ];
+  rosExecDepends = [ diagnostic-updater fuse-constraints fuse-core fuse-graphs fuse-msgs fuse-variables pluginlib rclcpp rclcpp-components std-srvs ];
 
   meta = {
     description = "The fuse_optimizers package provides a set of optimizer implementations. An optimizer is the object responsible \\

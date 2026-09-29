@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ protobuf python3 python3Packages.protobuf tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-math-vendor gz-tools-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-math-vendor gz-tools-vendor ];
 
   meta = {
     description = "Vendor package for: gz-msgs10 10.4.0

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto ament-cmake-python ];
   rosBuildExportDepends = [ control-toolbox controller-interface generate-parameter-library hardware-interface linear-feedback-controller-msgs message-filters nav-msgs pal-statistics pinocchio pluginlib rcl rclcpp rclcpp-lifecycle realtime-tools rosidl-dynamic-typesupport sensor-msgs ];
+  rosExecDepends = [ control-toolbox controller-interface generate-parameter-library hardware-interface linear-feedback-controller-msgs message-filters nav-msgs pal-statistics pinocchio pluginlib rcl rclcpp rclcpp-lifecycle realtime-tools rosidl-dynamic-typesupport sensor-msgs ];
 
   meta = {
     description = "roscontrol controller package conputing a linear feedback. The user needs

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav2-msgs nav2-util rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ nav2-msgs nav2-util rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "A set of headers for plugins core to the opennav docking framework";

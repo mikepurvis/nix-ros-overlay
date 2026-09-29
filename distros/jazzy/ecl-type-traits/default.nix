@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-config ecl-license ecl-mpl ];
+  rosExecDepends = [ ecl-config ecl-license ecl-mpl ];
 
   meta = {
     description = "Extends c++ type traits and implements a few more to boot.";

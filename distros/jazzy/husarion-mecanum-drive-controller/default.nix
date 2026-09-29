@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake control-toolbox controller-interface generate-parameter-library geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle rcpputils realtime-tools tf2 tf2-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ control-toolbox controller-interface geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle rcpputils realtime-tools tf2 tf2-msgs ];
+  rosExecDepends = [ control-toolbox controller-interface geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle rcpputils realtime-tools tf2 tf2-msgs ];
 
   meta = {
     description = "Controller for a mecanum drive mobile base.";

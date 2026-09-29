@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost yaml-cpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ros-testing ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-msgs nebula-velodyne-common nebula-velodyne-decoders nebula-velodyne-hw-interfaces rclcpp rclcpp-components velodyne-msgs ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common nebula-core-decoders nebula-core-hw-interfaces nebula-core-ros nebula-msgs nebula-velodyne-common nebula-velodyne-decoders nebula-velodyne-hw-interfaces rclcpp rclcpp-components velodyne-msgs ];
 
   meta = {
     description = "Nebula Velodyne ROS Wrapper";

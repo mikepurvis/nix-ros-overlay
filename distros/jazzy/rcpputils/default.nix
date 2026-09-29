@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-gtest ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ rcutils ];
+  rosExecDepends = [ rcutils ];
 
   meta = {
     description = "Package containing utility code for C++.";

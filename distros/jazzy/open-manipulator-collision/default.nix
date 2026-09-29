@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen fcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ kdl-parser rclcpp sensor-msgs std-msgs urdf visualization-msgs ];
+  rosExecDepends = [ kdl-parser rclcpp sensor-msgs std-msgs urdf visualization-msgs ];
 
   meta = {
     description = "This package implements a self-collision detection system for the follower robot during

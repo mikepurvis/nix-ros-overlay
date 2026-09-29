@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-agnocast-wrapper autoware-utils-geometry autoware-vehicle-msgs geometry-msgs rclcpp rclcpp-components ];
+  rosExecDepends = [ autoware-agnocast-wrapper autoware-utils-geometry autoware-vehicle-msgs geometry-msgs rclcpp rclcpp-components ];
 
   meta = {
     description = "The autoware_vehicle_velocity_converter package";

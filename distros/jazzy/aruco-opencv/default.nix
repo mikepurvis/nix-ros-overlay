@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.img2pdf python3Packages.numpy python3Packages.opencv4 yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ aruco-opencv-msgs cv-bridge image-transport rclcpp rclcpp-components rclcpp-lifecycle tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ aruco-opencv-msgs cv-bridge image-transport rclcpp rclcpp-components rclcpp-lifecycle tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "ArUco marker detection using aruco module from OpenCV libraries.";

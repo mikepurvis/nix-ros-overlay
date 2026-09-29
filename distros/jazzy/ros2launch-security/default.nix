@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-index-python nodl ros2launch sros2 ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 demo-nodes-py launch-ros python3Packages.pytest ];
   rosBuildExportDepends = [ ament-index-python nodl ros2launch sros2 ];
+  rosExecDepends = [ ament-index-python nodl ros2launch sros2 ];
 
   meta = {
     description = "Security extensions for ros2 launch";

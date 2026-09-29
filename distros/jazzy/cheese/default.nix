@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cheese-interfaces cv-bridge rclcpp sensor-msgs std-msgs std-srvs ];
-  rosExecDepends = [ launch launch-ros ];
+  rosExecDepends = [ cheese-interfaces cv-bridge launch launch-ros rclcpp sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Trigger-based image capture node for raw and compressed camera topics.";

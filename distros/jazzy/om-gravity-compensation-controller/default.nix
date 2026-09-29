@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface kdl-parser pluginlib rclcpp rclcpp-lifecycle realtime-tools rsl tl-expected urdf ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface kdl-parser pluginlib rclcpp rclcpp-lifecycle realtime-tools rsl tl-expected urdf ];
+  rosExecDepends = [ angles backward-ros control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface kdl-parser pluginlib rclcpp rclcpp-lifecycle realtime-tools rsl tl-expected urdf ];
 
   meta = {
     description = "Controller for compensating for gravity on a group of joints";

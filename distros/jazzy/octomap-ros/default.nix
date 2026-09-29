@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ octomap ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ octomap-msgs sensor-msgs tf2 ];
+  rosExecDepends = [ octomap-msgs sensor-msgs tf2 ];
 
   meta = {
     description = "octomap_ros provides conversion functions between ROS and OctoMap's native types.

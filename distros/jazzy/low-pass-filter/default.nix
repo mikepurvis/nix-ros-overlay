@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
+  rosExecDepends = [ control-msgs control-toolbox controller-interface generate-parameter-library hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
 
   meta = {
     description = "Wrapper for low pass filter";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ mrpt-io ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-common mrpt-random mrpt-serialization mrpt-system nanoflann-vendor ];
+  rosExecDepends = [ mrpt-common mrpt-random mrpt-serialization mrpt-system nanoflann-vendor ];
 
   meta = {
     description = "The MRPT C++ library mrpt_math";

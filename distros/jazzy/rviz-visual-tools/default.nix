@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen qt5or6.qtbase ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ eigen-stl-containers eigen3-cmake-module geometry-msgs interactive-markers pluginlib rclcpp rclcpp-components rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering sensor-msgs shape-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs trajectory-msgs visualization-msgs ];
-  rosExecDepends = [ ament-index-python launch launch-ros rviz2 ];
+  rosExecDepends = [ ament-index-python eigen-stl-containers geometry-msgs interactive-markers launch launch-ros pluginlib rclcpp rclcpp-components rviz-common rviz-default-plugins rviz-ogre-vendor rviz-rendering rviz2 sensor-msgs shape-msgs std-msgs tf2 tf2-eigen tf2-geometry-msgs trajectory-msgs visualization-msgs ];
 
   meta = {
     description = "Utility functions for displaying and debugging data in Rviz via published markers";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ rosidl-default-generators ];
   rosBuildExportDepends = [ std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS messages for ETSI ITS VAM (TS)";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-lifecycle tf2-ros yaets ];
+  rosExecDepends = [ geometry-msgs rclcpp rclcpp-lifecycle tf2-ros yaets ];
 
   meta = {
     description = "Easy Navigation: Utils and types package.";

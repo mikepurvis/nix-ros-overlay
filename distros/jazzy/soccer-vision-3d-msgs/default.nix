@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ soccer-vision-attribute-msgs vision-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime soccer-vision-attribute-msgs vision-msgs ];
 
   meta = {
     description = "A package containing some 3D vision related message definitions in the soccer domain.";

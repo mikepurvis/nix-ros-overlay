@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen gdal geos git gtest onetbb python3 python3Packages.matplotlib python3Packages.tkinter swig tinyxml-2 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ ortools-vendor ];
+  rosExecDepends = [ ortools-vendor ];
 
   meta = {
     description = "Robust and efficient coverage paths for autonomous agricultural vehicles.

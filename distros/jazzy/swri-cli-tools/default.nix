@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint ];
   propagatedBuildInputs = [ python3Packages.natsort ];
   rosBuildExportDepends = [ marti-introspection-msgs rcl-interfaces rclpy ros2cli ros2node ros2param ros2topic ];
+  rosExecDepends = [ marti-introspection-msgs rcl-interfaces rclpy ros2cli ros2node ros2param ros2topic ];
 
   meta = {
     description = "Command line tools for introspecting ROS systems";

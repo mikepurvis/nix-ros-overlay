@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake geometry-msgs mrpt-msgs nav-msgs rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs geometry-msgs mrpt-msgs nav-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs geometry-msgs mrpt-msgs nav-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Message, services, and actions, for other mrpt navigation packages.";

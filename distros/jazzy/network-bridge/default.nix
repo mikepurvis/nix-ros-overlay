@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost zstd ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
   rosBuildExportDepends = [ pluginlib rclcpp std-msgs tf2-msgs tf2-ros ];
+  rosExecDepends = [ pluginlib rclcpp std-msgs tf2-msgs tf2-ros ];
 
   meta = {
     description = "Allows for arbitrary network links (UDP, TCP, etc) to bridge ROS2 messages";

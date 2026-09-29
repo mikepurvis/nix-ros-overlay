@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ action-msgs ament-index-cpp ament-index-python auto-apms-util behaviortree-cpp rclcpp rclcpp-action ];
+  rosExecDepends = [ action-msgs ament-index-cpp ament-index-python auto-apms-util behaviortree-cpp rclcpp rclcpp-action ];
 
   meta = {
     description = "Core functionality and cmake tools for AutoAPMS";

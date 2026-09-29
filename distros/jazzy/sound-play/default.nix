@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ festival-stub gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly gst_all_1.gstreamer python3Packages.pygobject3 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python python3Packages.setuptools ];
   rosBuildExportDepends = [ sound-play-msgs ];
-  rosExecDepends = [ action-msgs ament-index-python launch-xml rclpy ];
+  rosExecDepends = [ action-msgs ament-index-python launch-xml rclpy sound-play-msgs ];
 
   meta = {
     description = "sound_play provides a ROS node that translates commands on a ROS topic (<tt>robotsound</tt>) into sounds. The node supports built-in sounds, playing OGG/WAV files, and doing speech synthesis via festival. C++ and Python bindings allow this node to be used without understanding the details of the message format, allowing faster development and resilience to message format changes.";

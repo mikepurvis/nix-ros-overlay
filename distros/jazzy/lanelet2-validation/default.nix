@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ gtest lanelet2-maps ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
   rosBuildExportDepends = [ lanelet2-core lanelet2-io lanelet2-projection lanelet2-routing lanelet2-traffic-rules mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core lanelet2-io lanelet2-projection lanelet2-routing lanelet2-traffic-rules ];
 
   meta = {
     description = "Package for sanitizing lanelet maps";

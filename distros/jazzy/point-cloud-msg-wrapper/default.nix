@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ sensor-msgs ];
+  rosExecDepends = [ sensor-msgs ];
 
   meta = {
     description = "A point cloud message wrapper that allows for simple and safe PointCloud2 msg usage";

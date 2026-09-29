@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ curl gflags jsoncpp libyaml libzip tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-msgs-vendor gz-tools-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-msgs-vendor gz-tools-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-fuel_tools9 9.1.1

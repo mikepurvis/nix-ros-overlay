@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ abseil-cpp boost eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cartographer cartographer-ros cartographer-ros-msgs pluginlib rclcpp rviz-common rviz-ogre-vendor rviz-rendering ];
+  rosExecDepends = [ cartographer cartographer-ros cartographer-ros-msgs pluginlib rclcpp rviz-common rviz-ogre-vendor rviz-rendering ];
 
   meta = {
     description = "Cartographer is a system that provides real-time simultaneous localization

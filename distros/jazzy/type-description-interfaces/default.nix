@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-core-generators ];
   rosBuildExportDepends = [ service-msgs ];
-  rosExecDepends = [ rosidl-core-runtime ];
+  rosExecDepends = [ rosidl-core-runtime service-msgs ];
 
   meta = {
     description = "A package containing message and service definitions for describing and communicating descriptions of other types.";

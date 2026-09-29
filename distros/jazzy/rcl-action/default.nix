@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp rmw-implementation-cmake test-msgs ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ action-msgs rcl rcutils rmw rosidl-runtime-c ];
+  rosExecDepends = [ action-msgs rcl rcutils rmw rosidl-runtime-c ];
 
   meta = {
     description = "Package containing a C-based ROS action implementation";

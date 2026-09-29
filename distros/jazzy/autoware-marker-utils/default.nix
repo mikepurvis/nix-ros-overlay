@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost range-v3 ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-lanelet2-extension autoware-perception-msgs autoware-planning-msgs autoware-utils-geometry autoware-utils-visualization autoware-vehicle-info-utils rclcpp ];
+  rosExecDepends = [ autoware-lanelet2-extension autoware-perception-msgs autoware-planning-msgs autoware-utils-geometry autoware-utils-visualization autoware-vehicle-info-utils rclcpp ];
 
   meta = {
     description = "The autoware_marker_utils package";

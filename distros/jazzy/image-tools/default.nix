@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components sensor-msgs std-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "Tools to capture and play back images to and from DDS subscriptions and publications.";

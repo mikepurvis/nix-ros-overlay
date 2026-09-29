@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs rc-common-msgs shape-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rc-common-msgs rosidl-default-runtime shape-msgs std-msgs ];
 
   meta = {
     description = "Msg and srv definitions for rc_reason_clients";

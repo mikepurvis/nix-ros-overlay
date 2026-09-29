@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rmw-fastrtps-cpp std-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components rmw-fastrtps-cpp std-msgs ];
 
   meta = {
     description = "C++ nodes which access the native handles of the rmw implementation.";

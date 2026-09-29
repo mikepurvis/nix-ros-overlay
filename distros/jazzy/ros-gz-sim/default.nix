@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 gflags ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python pkg-config ];
   rosBuildExportDepends = [ ament-index-python builtin-interfaces geometry-msgs gz-math-vendor gz-msgs-vendor gz-sim-vendor gz-transport-vendor launch launch-ros rclcpp rclcpp-action rclcpp-components rcpputils ros-gz-interfaces ros2pkg simulation-interfaces std-msgs tf2 tf2-ros ];
+  rosExecDepends = [ ament-index-python builtin-interfaces geometry-msgs gz-math-vendor gz-msgs-vendor gz-sim-vendor gz-transport-vendor launch launch-ros rclcpp rclcpp-action rclcpp-components rcpputils ros-gz-interfaces ros2pkg simulation-interfaces std-msgs tf2 tf2-ros ];
 
   meta = {
     description = "Tools for using Gazebo Sim simulation with ROS.";

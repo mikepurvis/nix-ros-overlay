@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ autoware-agnocast-wrapper autoware-internal-debug-msgs autoware-kalman-filter autoware-localization-util autoware-utils-geometry autoware-utils-logging autoware-utils-system diagnostic-msgs geometry-msgs nav-msgs rclcpp rclcpp-components std-srvs tf2 tf2-ros ];
+  rosExecDepends = [ autoware-agnocast-wrapper autoware-internal-debug-msgs autoware-kalman-filter autoware-localization-util autoware-utils-geometry autoware-utils-logging autoware-utils-system diagnostic-msgs geometry-msgs nav-msgs rclcpp rclcpp-components std-srvs tf2 tf2-ros ];
 
   meta = {
     description = "The autoware_ekf_localizer package";

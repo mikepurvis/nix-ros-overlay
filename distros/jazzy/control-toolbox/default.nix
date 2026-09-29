@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros control-msgs filters generate-parameter-library geometry-msgs pluginlib rclcpp rcutils realtime-tools rsl tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ backward-ros control-msgs filters generate-parameter-library geometry-msgs pluginlib rclcpp rcutils realtime-tools rsl tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "The control toolbox contains modules that are useful across all controllers.";

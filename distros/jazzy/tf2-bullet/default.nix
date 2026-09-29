@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ bullet ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs tf2 tf2-ros ];
+  rosExecDepends = [ geometry-msgs tf2 tf2-ros ];
 
   meta = {
     description = "tf2_bullet";

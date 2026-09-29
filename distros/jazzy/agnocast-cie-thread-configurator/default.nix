@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ agnocast-cie-config-msgs rclcpp ];
+  rosExecDepends = [ agnocast-cie-config-msgs rclcpp ];
 
   meta = {
     description = "A dedicated node that configures the scheduling attributes of each thread in callback_isolated_executor.";

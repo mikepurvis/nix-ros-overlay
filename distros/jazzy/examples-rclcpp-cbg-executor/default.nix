@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp std-msgs ];
+  rosExecDepends = [ rclcpp std-msgs ];
 
   meta = {
     description = "Example for multiple Executor instances in one process, using the callback-group-level interface of the Executor class.";

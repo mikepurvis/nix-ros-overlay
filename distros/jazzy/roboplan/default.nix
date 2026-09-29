@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ pinocchio tinyxml2-vendor yaml-cpp-vendor ];
+  rosExecDepends = [ pinocchio tinyxml2-vendor yaml-cpp-vendor ];
 
   meta = {
     description = "Core types, scene representation, and utilities for RoboPlan.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-motion-utils autoware-planning-msgs autoware-utils-geometry rclcpp rclcpp-components ];
+  rosExecDepends = [ autoware-motion-utils autoware-planning-msgs autoware-utils-geometry rclcpp rclcpp-components ];
 
   meta = {
     description = "The autoware_planning_topic_converter package";

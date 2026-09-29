@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pybind11 tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-math-vendor gz-tools-vendor gz-utils-vendor urdfdom ];
+  rosExecDepends = [ gz-cmake-vendor gz-math-vendor gz-tools-vendor gz-utils-vendor urdfdom ];
 
   meta = {
     description = "Vendor package for: sdformat14 14.9.0

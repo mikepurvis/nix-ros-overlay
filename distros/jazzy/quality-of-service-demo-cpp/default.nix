@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common launch launch-testing ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-components rcutils rmw sensor-msgs std-msgs ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ example-interfaces launch-ros rclcpp rclcpp-components rcutils rmw sensor-msgs std-msgs ];
 
   meta = {
     description = "C++ Demo applications for Quality of Service features";

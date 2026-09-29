@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ camera-info-manager cv-bridge depthai depthai-bridge depthai-descriptions depthai-ros-msgs foxglove-msgs image-transport rclcpp rviz-imu-plugin sensor-msgs std-msgs stereo-msgs vision-msgs ];
-  rosExecDepends = [ depth-image-proc robot-state-publisher xacro ];
+  rosExecDepends = [ camera-info-manager cv-bridge depth-image-proc depthai depthai-bridge depthai-descriptions depthai-ros-msgs foxglove-msgs image-transport rclcpp robot-state-publisher rviz-imu-plugin sensor-msgs std-msgs stereo-msgs vision-msgs xacro ];
 
   meta = {
     description = "The depthai_examples package";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest lttng-tools rclpy ros2run std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp statistics-msgs ];
+  rosExecDepends = [ rclcpp statistics-msgs ];
 
   meta = {
     description = "Near-zero-overhead ROS 2 probe for per-topic message frequency and active-node liveness,

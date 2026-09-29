@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake moveit-common moveit-core rclcpp rsl trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ moveit-common moveit-core rclcpp rsl trajectory-msgs ];
+  rosExecDepends = [ moveit-common moveit-core rclcpp rsl trajectory-msgs ];
 
   meta = {
     description = "chomp_motion_planner";

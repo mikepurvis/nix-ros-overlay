@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ rclpy sensor-msgs std-msgs trajectory-msgs ];
   checkInputs = [ launch-ros launch-testing-ros python3Packages.pytest ];
   rosBuildExportDepends = [ rclpy sensor-msgs std-msgs trajectory-msgs ];
+  rosExecDepends = [ rclpy sensor-msgs std-msgs trajectory-msgs ];
 
   meta = {
     description = "Demo nodes for showing and testing functionalities of the ros2_control framework.";

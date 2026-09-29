@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rdl-dynamics rdl-urdfreader ];
+  rosExecDepends = [ rdl-dynamics rdl-urdfreader ];
 
   meta = {
     description = "The rdl_benchmark package";

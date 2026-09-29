@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-perception-msgs autoware-utils-uuid geometry-msgs rclcpp rclcpp-components unique-identifier-msgs ];
+  rosExecDepends = [ autoware-perception-msgs autoware-utils-uuid geometry-msgs rclcpp rclcpp-components unique-identifier-msgs ];
 
   meta = {
     description = "ROS 2 node for converting between different perception object message types";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libgpiod_1 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ irobot-create-msgs rclcpp rclcpp-action rcutils sensor-msgs std-msgs turtlebot4-msgs turtlebot4-node ];
+  rosExecDepends = [ irobot-create-msgs rclcpp rclcpp-action rcutils sensor-msgs std-msgs turtlebot4-msgs turtlebot4-node ];
 
   meta = {
     description = "Turtlebot4 Base Node";

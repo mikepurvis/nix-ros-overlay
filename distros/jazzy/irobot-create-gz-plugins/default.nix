@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ gz-gui-vendor ros-gz ];
+  rosExecDepends = [ gz-gui-vendor ros-gz ];
 
   meta = {
     description = "Ignition plugins for simulated iRobot(R) Create(R) 3 Educational Robot.";

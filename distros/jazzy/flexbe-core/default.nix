@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ flexbe-msgs rclpy std-msgs std-srvs tf2-ros-py ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 launch-ros launch-testing python3Packages.pytest ];
   rosBuildExportDepends = [ flexbe-msgs rclpy std-msgs std-srvs tf2-ros-py ];
+  rosExecDepends = [ flexbe-msgs rclpy std-msgs std-srvs tf2-ros-py ];
 
   meta = {
     description = "flexbe_core provides the core components for the FlexBE behavior engine.";

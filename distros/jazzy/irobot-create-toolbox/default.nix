@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ gz-math-vendor rclcpp ];
+  rosExecDepends = [ gz-math-vendor rclcpp ];
 
   meta = {
     description = "Components and helpers for the iRobot(R) Create(R) 3 Educational Robot.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-google-benchmark ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ament-index-cpp class-loader composition-interfaces rclcpp ];
+  rosExecDepends = [ ament-index-cpp class-loader composition-interfaces rclcpp ];
 
   meta = {
     description = "Package containing tools for dynamically loadable components";

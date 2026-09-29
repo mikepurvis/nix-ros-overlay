@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ _unresolved_gurumdds-3.2 ];
   nativeBuildInputs = [ ament-cmake-ros rosidl-cmake ];
   rosBuildExportDepends = [ gurumdds-cmake-module rcutils rmw rmw-dds-common rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
+  rosExecDepends = [ rcutils rmw ];
 
   meta = {
     description = "Implement the ROS middleware interface using GurumNetworks GurumDDS static code generation in C++.";

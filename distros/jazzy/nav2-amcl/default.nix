@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs launch-ros launch-testing message-filters nav-msgs nav2-msgs nav2-util pluginlib rclcpp sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs launch-ros launch-testing message-filters nav-msgs nav2-msgs nav2-util pluginlib rclcpp sensor-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "<p>

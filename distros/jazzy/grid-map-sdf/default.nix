@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ grid-map-core ];
+  rosExecDepends = [ grid-map-core ];
 
   meta = {
     description = "Generates signed distance fields from grid maps.";

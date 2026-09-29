@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.transforms3d ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ crazyflie-interfaces rclpy ];
+  rosExecDepends = [ crazyflie-interfaces rclpy ];
 
   meta = {
     description = "Simulator for the Crazyswarm2 ROS stack";

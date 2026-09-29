@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-mypy ament-cmake-pytest ament-copyright ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ launch ];
+  rosExecDepends = [ launch ];
 
   meta = {
     description = "Python frontend for writing ROS 2 launch files";

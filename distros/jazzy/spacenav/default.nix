@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libspnav libx11 spacenavd ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "ROS interface to the 3Dconnexion SpaceNavigator 6DOF joystick.";

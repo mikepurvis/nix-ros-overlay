@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ scenario-execution ];
   propagatedBuildInputs = [ ffmpeg ];
   rosBuildExportDepends = [ scenario-execution ];
+  rosExecDepends = [ scenario-execution ];
 
   meta = {
     description = "Scenario Execution library for X11";

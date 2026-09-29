@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pyproj ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles geographic-msgs geometry-msgs sensor-msgs unique-identifier-msgs ];
+  rosExecDepends = [ angles geographic-msgs geometry-msgs sensor-msgs unique-identifier-msgs ];
 
   meta = {
     description = "Python and C++ interfaces for manipulating geodetic coordinates.";

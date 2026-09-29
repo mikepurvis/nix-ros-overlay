@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp ros-environment ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ diagnostic-msgs micro-ros-diagnostic-msgs rclcpp ];
+  rosExecDepends = [ diagnostic-msgs micro-ros-diagnostic-msgs rclcpp ];
 
   meta = {
     description = "Translates micro-ROS diagnostic messages to vanilla ROS 2 diagnostic messages.";

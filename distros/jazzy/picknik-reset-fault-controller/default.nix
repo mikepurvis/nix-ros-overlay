@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros controller-interface example-interfaces geometry-msgs rclcpp realtime-tools ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ controller-interface example-interfaces geometry-msgs rclcpp realtime-tools ];
+  rosExecDepends = [ controller-interface example-interfaces geometry-msgs rclcpp realtime-tools ];
 
   meta = {
     description = "ROS 2 controller that offers a service to clear faults in a hardware interface";

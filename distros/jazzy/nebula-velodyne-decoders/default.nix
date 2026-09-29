@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ angles nebula-core-common nebula-core-decoders nebula-velodyne-common rclcpp velodyne-msgs ];
+  rosExecDepends = [ angles nebula-core-common nebula-core-decoders nebula-velodyne-common rclcpp velodyne-msgs ];
 
   meta = {
     description = "Nebula Velodyne Decoders Library";

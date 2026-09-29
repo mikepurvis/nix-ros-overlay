@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pclint ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
   rosBuildExportDepends = [ ament-cmake-gtest osrf-testing-tools-cpp ];
+  rosExecDepends = [ ament-cmake-gtest osrf-testing-tools-cpp ];
 
   meta = {
     description = "The package Apex.OS Test Tools contains test helpers";

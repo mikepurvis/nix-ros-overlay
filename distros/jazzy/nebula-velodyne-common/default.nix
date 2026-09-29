@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ autoware-cmake ros-environment ];
   rosBuildExportDepends = [ nebula-core-common ];
+  rosExecDepends = [ nebula-core-common ];
 
   meta = {
     description = "Nebula Common Velodyne Libraries and headers";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ can-msgs rclcpp ];
+  rosExecDepends = [ can-msgs rclcpp ];
 
   meta = {
     description = "Time synchronize multiple CAN messages to get a single callback";

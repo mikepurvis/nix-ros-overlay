@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen glfw3 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-opengl ];
+  rosExecDepends = [ mrpt-opengl ];
 
   meta = {
     description = "The MRPT C++ library mrpt_gui";

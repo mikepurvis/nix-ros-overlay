@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libpcap ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ diagnostic-updater rclcpp rclcpp-components tf2-ros velodyne-msgs ];
+  rosExecDepends = [ diagnostic-updater rclcpp rclcpp-components tf2-ros velodyne-msgs ];
 
   meta = {
     description = "ROS device driver for Velodyne 3D LIDARs.";

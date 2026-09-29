@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav-msgs navmap-core navmap-ros navmap-ros-interfaces rclcpp ];
+  rosExecDepends = [ nav-msgs navmap-core navmap-ros navmap-ros-interfaces rclcpp ];
 
   meta = {
     description = "Examples related to navmap_core y navmap_ros.";

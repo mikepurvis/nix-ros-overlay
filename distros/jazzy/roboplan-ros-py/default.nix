@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ builtin-interfaces rclpy roboplan roboplan-ros-cpp sensor-msgs trajectory-msgs ];
   checkInputs = [ python3Packages.pytest ];
   rosBuildExportDepends = [ builtin-interfaces rclpy roboplan roboplan-ros-cpp sensor-msgs trajectory-msgs ];
+  rosExecDepends = [ builtin-interfaces rclpy roboplan roboplan-ros-cpp sensor-msgs trajectory-msgs ];
 
   meta = {
     description = "ROS 2 Python bindings for the roboplan motion planning library.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
   rosBuildExportDepends = [ lifecycle-msgs plansys2-msgs rclpy ];
+  rosExecDepends = [ lifecycle-msgs plansys2-msgs rclpy ];
 
   meta = {
     description = "This package contains modules for developing PlanSys components in Python";

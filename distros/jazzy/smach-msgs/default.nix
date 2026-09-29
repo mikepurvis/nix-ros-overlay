@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cpplint ament-cmake-uncrustify ament-lint ];
   nativeBuildInputs = [ ament-cmake ament-cmake-cppcheck ament-cmake-flake8 ament-cmake-pep257 rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "this package contains a set of messages that are used by the introspection

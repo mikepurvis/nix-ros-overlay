@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ beluga beluga-ros bondcpp message-filters rclcpp rclcpp-components rclcpp-lifecycle std-srvs tf2-ros ];
+  rosExecDepends = [ beluga beluga-ros bondcpp message-filters rclcpp rclcpp-components rclcpp-lifecycle std-srvs tf2-ros ];
 
   meta = {
     description = "An AMCL node implementation for ROS2 using Beluga.";

@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
   rosBuildExportDepends = [ cv-bridge image-transport-plugins rclpy sensor-msgs std-msgs ];
-  rosExecDepends = [ ros-gz rosidl-default-runtime xacro ];
+  rosExecDepends = [ cv-bridge image-transport-plugins rclpy ros-gz rosidl-default-runtime sensor-msgs std-msgs xacro ];
 
   meta = {
     description = "Integration of the Arduino Nicla Vision board in the ROS2 world. 

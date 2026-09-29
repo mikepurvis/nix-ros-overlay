@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake kitti-metrics-eval mola-input-euroc-dataset mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ kitti-metrics-eval mola-input-euroc-dataset mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset ];
+  rosExecDepends = [ kitti-metrics-eval mola-input-euroc-dataset mola-input-kitti-dataset mola-input-kitti360-dataset mola-input-mulran-dataset mola-input-paris-luco-dataset ];
 
   meta = {
     description = "Metapackage with all packages supporting reading academic datasets.";

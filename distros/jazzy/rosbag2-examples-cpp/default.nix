@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ example-interfaces rclcpp rosbag2-cpp ];
+  rosExecDepends = [ example-interfaces rclcpp rosbag2-cpp ];
 
   meta = {
     description = "rosbag2 C++ API tutorials and examples";

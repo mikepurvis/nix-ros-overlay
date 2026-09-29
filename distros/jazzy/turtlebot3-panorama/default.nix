@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge geometry-msgs image-transport nav-msgs rclcpp sensor-msgs tf2 tf2-geometry-msgs turtlebot3-applications-msgs ];
+  rosExecDepends = [ cv-bridge geometry-msgs image-transport nav-msgs rclcpp sensor-msgs tf2 tf2-geometry-msgs turtlebot3-applications-msgs ];
 
   meta = {
     description = "Package for turtlebot3 panorama.";

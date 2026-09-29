@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ orocos-kdl-vendor tf2 ];
+  rosExecDepends = [ orocos-kdl-vendor tf2 ];
 
   meta = {
     description = "Conversion functions between:

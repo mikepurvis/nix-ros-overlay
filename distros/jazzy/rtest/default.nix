@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-clang-tidy ament-cmake-copyright ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ action-msgs rcl rcl-action rclcpp rclcpp-action ];
+  rosExecDepends = [ action-msgs rcl rcl-action rclcpp rclcpp-action ];
 
   meta = {
     description = "This framework enables writing reliable, fully repeatable tests for C++ ROS 2 implementations.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ rclcpp visualization-msgs ];
+  rosExecDepends = [ rclcpp visualization-msgs ];
 
   meta = {
     description = "The autoware_utils_visualization package";

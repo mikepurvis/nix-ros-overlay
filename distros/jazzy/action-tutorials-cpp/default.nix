@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-tutorials-interfaces rclcpp rclcpp-action rclcpp-components ];
+  rosExecDepends = [ action-tutorials-interfaces rclcpp rclcpp-action rclcpp-components ];
 
   meta = {
     description = "C++ action tutorial cpp code";

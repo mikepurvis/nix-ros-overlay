@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ launch-ros nav2-common navigation2 ];
-  rosExecDepends = [ diff-drive-controller joint-state-broadcaster nav2-minimal-tb3-sim nav2-minimal-tb4-sim ros-gz-bridge ros-gz-sim slam-toolbox xacro ];
+  rosExecDepends = [ diff-drive-controller joint-state-broadcaster launch-ros nav2-common nav2-minimal-tb3-sim nav2-minimal-tb4-sim navigation2 ros-gz-bridge ros-gz-sim slam-toolbox xacro ];
 
   meta = {
     description = "Bringup scripts and configurations for the Nav2 stack";

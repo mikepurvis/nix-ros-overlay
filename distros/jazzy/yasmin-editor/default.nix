@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.pyqt6 python3Packages.tqdm ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ rclpy yasmin yasmin-factory yasmin-plugins-manager ];
-  rosExecDepends = [ yasmin-ros ];
+  rosExecDepends = [ rclpy yasmin yasmin-factory yasmin-plugins-manager yasmin-ros ];
 
   meta = {
     description = "Editor for YASMIN (Yet Another State MachINe)";

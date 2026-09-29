@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto autoware-lint-common autoware-map-loader launch-testing-ament-cmake ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-utils-visualization rclcpp rclcpp-components visualization-msgs ];
+  rosExecDepends = [ autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs autoware-utils-visualization rclcpp rclcpp-components visualization-msgs ];
 
   meta = {
     description = "The autoware_lanelet2_map_visualizer package";

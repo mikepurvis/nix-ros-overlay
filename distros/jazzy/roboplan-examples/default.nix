@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ roboplan roboplan-cartesian-planning roboplan-example-models roboplan-oink roboplan-rrt roboplan-simple-ik roboplan-toppra ];
-  rosExecDepends = [ xacro ];
+  rosExecDepends = [ roboplan roboplan-cartesian-planning roboplan-example-models roboplan-oink roboplan-rrt roboplan-simple-ik roboplan-toppra xacro ];
 
   meta = {
     description = "Basic examples of RoboPlan.";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros rmw-implementation-cmake ros2run ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pendulum-msgs rclcpp rttest tlsf-cpp ];
+  rosExecDepends = [ pendulum-msgs rclcpp rttest tlsf-cpp ];
 
   meta = {
     description = "Demonstrates ROS 2's realtime capabilities with a simulated inverted pendulum.";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt pcl yaml-cpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-component-interface-specs autoware-geography-utils autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs geometry-msgs pcl-conversions rclcpp rclcpp-components visualization-msgs ];
+  rosExecDepends = [ autoware-component-interface-specs autoware-geography-utils autoware-lanelet2-extension autoware-lanelet2-utils autoware-map-msgs geometry-msgs pcl-conversions rclcpp rclcpp-components visualization-msgs ];
 
   meta = {
     description = "The autoware_map_loader package";

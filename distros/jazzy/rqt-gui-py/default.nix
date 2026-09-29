@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ qt-gui rqt-gui ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
   rosBuildExportDepends = [ qt-gui rqt-gui ];
+  rosExecDepends = [ qt-gui rqt-gui ];
 
   meta = {
     description = "rqt_gui_py enables GUI plugins to use the Python client library for ROS.";

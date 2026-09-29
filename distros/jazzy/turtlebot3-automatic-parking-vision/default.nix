@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ geometry-msgs nav-msgs rclpy std-msgs tf2-ros ];
   propagatedBuildInputs = [ python3Packages.scipy ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rclpy std-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclpy std-msgs tf2-ros ];
 
   meta = {
     description = "Automatic Parking Vision for TurtleBot3 Examples.";

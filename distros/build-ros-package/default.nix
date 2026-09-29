@@ -61,7 +61,7 @@ else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepend
 
   # Python programs are wrapped with a PYTHONPATH built from propagated inputs,
   # so Python packages still need their runtime ROS dependencies propagated.
-  propagatedBuildInputs = propagatedBuildInputs ++ rosBuildExportDepends ++ rosExecDepends;
+  propagatedBuildInputs = propagatedBuildInputs ++ lib.unique (rosBuildExportDepends ++ rosExecDepends);
 
   # Modeled after colcon.
   # As of 0.12.1, colcon uses the legacy distutils install.py script, so we do

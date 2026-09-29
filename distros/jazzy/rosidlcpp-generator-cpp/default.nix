@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-core rcutils rosidl-cmake rosidl-generator-type-description rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
+  rosExecDepends = [ rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in C++.";

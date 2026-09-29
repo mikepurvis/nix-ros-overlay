@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-cmake-google-benchmark ament-cmake-gtest ament-lint-auto ament-lint-common mimick-vendor performance-test-fixture rmw-implementation-cmake rosidl-default-generators test-msgs ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros python3 ];
   rosBuildExportDepends = [ ament-index-cpp builtin-interfaces libstatistics-collector rcl rcl-interfaces rcl-logging-interface rcl-yaml-param-parser rcpputils rcutils rmw rosgraph-msgs rosidl-dynamic-typesupport rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-c rosidl-typesupport-cpp statistics-msgs tracetools ];
+  rosExecDepends = [ libstatistics-collector rcl rcl-logging-interface rcl-yaml-param-parser rcpputils rcutils rmw rosidl-dynamic-typesupport statistics-msgs tracetools ];
 
   meta = {
     description = "The ROS client library in C++.";

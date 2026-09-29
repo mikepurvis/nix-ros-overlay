@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake nebula-continental-common nebula-core-common nebula-core-hw-interfaces nebula-msgs ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-continental-common nebula-core-common nebula-core-hw-interfaces nebula-msgs ];
+  rosExecDepends = [ nebula-continental-common nebula-core-common nebula-core-hw-interfaces nebula-msgs ];
 
   meta = {
     description = "Nebula HW Interfaces Continental";

@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rosidl-runtime-py std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
   rosBuildExportDepends = [ rclcpp rclcpp-components topic-tools-interfaces ];
-  rosExecDepends = [ rclpy ros2cli rosidl-runtime-py ];
+  rosExecDepends = [ rclcpp rclcpp-components rclpy ros2cli rosidl-runtime-py topic-tools-interfaces ];
 
   meta = {
     description = "Tools for directing, throttling, selecting, and otherwise messing with

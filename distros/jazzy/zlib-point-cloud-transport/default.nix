@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ zlib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib point-cloud-interfaces point-cloud-transport rclcpp ];
+  rosExecDepends = [ pluginlib point-cloud-interfaces point-cloud-transport rclcpp ];
 
   meta = {
     description = "zlib_point_cloud_transport provides a plugin to point_cloud_transport for sending point clouds

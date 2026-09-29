@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ can-msgs ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
-  rosExecDepends = [ dataspeed-can-usb ];
+  rosExecDepends = [ can-msgs dataspeed-can-usb ds-dbw-msgs rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "Interface to the Dataspeed Inc. Drive-By-Wire kit";

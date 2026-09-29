@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ flexbe-core flexbe-msgs flexbe-testing rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 geometry-msgs python3Packages.pytest ];
   rosBuildExportDepends = [ flexbe-core flexbe-msgs flexbe-testing rclpy ];
+  rosExecDepends = [ flexbe-core flexbe-msgs flexbe-testing rclpy ];
 
   meta = {
     description = "flexbe_states provides a collection of common generic predefined states.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ geometry-msgs irobot-create-msgs rclpy ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ geometry-msgs irobot-create-msgs rclpy ];
+  rosExecDepends = [ geometry-msgs irobot-create-msgs rclpy ];
 
   meta = {
     description = "Python examples for interacting with the iRobot(R) Create(R) 3 Educational Robot";

@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ libxi libxmu opencv opencv.cxxdev pkg-config qt5or6.qtbase yaml-cpp ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
   rosBuildExportDepends = [ geometry-msgs image-transport mapviz-interfaces pluginlib rclcpp rqt-gui rqt-gui-cpp std-srvs swri-math-util swri-transform-util tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs image-transport mapviz-interfaces pluginlib rclcpp rqt-gui rqt-gui-cpp std-srvs swri-math-util swri-transform-util tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "2D mapping display with extensible data overlays";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common example-interfaces launch-testing osrf-testing-tools-cpp rclcpp rclcpp-action std-msgs test-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rcl rcl-action rcutils rosidl-generator-c ];
+  rosExecDepends = [ rcl rcutils rosidl-generator-c ];
 
   meta = {
     description = "The ROS client library in C.";

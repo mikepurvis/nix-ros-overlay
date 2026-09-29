@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ament-cmake-pytest ament-cmake-python ];
   rosBuildExportDepends = [ cv-bridge python-qt-binding sensor-msgs ];
+  rosExecDepends = [ cv-bridge python-qt-binding sensor-msgs ];
 
   meta = {
     description = "A package that converts a ros image msg to a qimage object";

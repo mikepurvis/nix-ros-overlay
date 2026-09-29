@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ inverse-dynamics-solver pluginlib ];
+  rosExecDepends = [ inverse-dynamics-solver pluginlib ];
 
   meta = {
     description = "A C++ library implementing the inverse dynamics solver for the Franka Emika Panda (FER) real robot.";

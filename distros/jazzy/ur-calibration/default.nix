@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ur-client-library ur-robot-driver yaml-cpp-vendor ];
+  rosExecDepends = [ rclcpp ur-client-library ur-robot-driver yaml-cpp-vendor ];
 
   meta = {
     description = "Package for extracting the factory calibration from a UR robot and change it such that it can be used by ur_description to gain a correct URDF";

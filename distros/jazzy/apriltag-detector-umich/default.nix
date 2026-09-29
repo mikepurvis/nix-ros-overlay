@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ apriltag apriltag-detector apriltag-msgs pluginlib rclcpp sensor-msgs ];
+  rosExecDepends = [ apriltag apriltag-detector apriltag-msgs pluginlib rclcpp sensor-msgs ];
 
   meta = {
     description = "ROS package for apriltag detection with the UMich detector";

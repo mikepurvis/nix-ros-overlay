@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rclcpp tf2-ros ];
+  rosExecDepends = [ geometry-msgs nav-msgs rclcpp tf2-ros ];
 
   meta = {
     description = "Streaming of OptiTrack mocap data to tf

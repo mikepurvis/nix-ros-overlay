@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-black ament-cmake-clang-format ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rclcpp-components spinnaker-camera-driver ];
+  rosExecDepends = [ rclcpp rclcpp-components spinnaker-camera-driver ];
 
   meta = {
     description = "ROS2 driver for synchronized flir cameras using the Spinnaker SDK";

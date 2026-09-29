@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
+  rosExecDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-sample-common ];
 
   meta = {
     description = "Nebula Sample HW Interfaces";

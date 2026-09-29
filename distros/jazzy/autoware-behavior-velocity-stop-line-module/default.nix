@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ autoware-behavior-velocity-planner autoware-behavior-velocity-planner-common autoware-internal-planning-msgs autoware-motion-utils autoware-route-handler autoware-trajectory autoware-utils-debug autoware-utils-geometry autoware-utils-rclcpp geometry-msgs pluginlib rclcpp tf2-geometry-msgs visualization-msgs ];
+  rosExecDepends = [ autoware-behavior-velocity-planner autoware-behavior-velocity-planner-common autoware-internal-planning-msgs autoware-motion-utils autoware-route-handler autoware-trajectory autoware-utils-debug autoware-utils-geometry autoware-utils-rclcpp geometry-msgs pluginlib rclcpp tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "The autoware_behavior_velocity_stop_line_module package";

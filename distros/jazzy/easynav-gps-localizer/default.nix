@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ geographiclib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core geographic-msgs geometry-msgs nav-msgs pluginlib rclcpp rclcpp-lifecycle sensor-msgs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ easynav-common easynav-core geographic-msgs geometry-msgs nav-msgs pluginlib rclcpp rclcpp-lifecycle sensor-msgs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: GPS Localizer package.";

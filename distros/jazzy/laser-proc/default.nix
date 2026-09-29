@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ class-loader rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ class-loader rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "laser_proc";

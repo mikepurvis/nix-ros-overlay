@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost lttng-ust ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcl rclcpp rclcpp-action smacc2-msgs tracetools tracetools-launch tracetools-trace ];
+  rosExecDepends = [ rcl rclcpp rclcpp-action smacc2-msgs tracetools tracetools-launch tracetools-trace ];
 
   meta = {
     description = "An Event-Driven, Asynchronous, Behavioral State Machine Library for ROS2 (Robotic Operating System) applications written in C++.";

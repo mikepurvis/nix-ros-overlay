@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake assimp cmake ffmpeg freeglut freenect glfw3 libGL libGLU libjpeg libpcap libusb1 libxrandr libxxf86vm mrpt-libapps mrpt-libnav opencv opencv.cxxdev openni2 pkg-config python3Packages.pip python3Packages.pybind11 tinyxml-2 udev wxGTK32 zlib ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-libapps mrpt-libnav ];
+  rosExecDepends = [ mrpt-libapps mrpt-libnav ];
 
   meta = {
     description = "Mobile Robot Programming Toolkit (MRPT) applications";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock controller-manager hardware-interface-testing ros2-control-test-assets ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-interface filters hardware-interface pluginlib rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ controller-interface filters hardware-interface pluginlib rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "ros2_controller for configuring filter chains";

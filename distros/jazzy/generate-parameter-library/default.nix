@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ generate-parameter-library-py parameter-traits rclcpp rclcpp-lifecycle rclpy rsl tcb-span tl-expected ];
+  rosExecDepends = [ parameter-traits rclcpp rclcpp-lifecycle rclpy rsl tcb-span tl-expected ];
 
   meta = {
     description = "CMake to generate ROS parameter library.";

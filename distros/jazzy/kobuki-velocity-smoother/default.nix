@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto launch-testing launch-testing-ament-cmake launch-testing-ros python3Packages.matplotlib ros2test ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs rcl-interfaces rclcpp rclcpp-components ];
+  rosExecDepends = [ geometry-msgs nav-msgs rcl-interfaces rclcpp rclcpp-components ];
 
   meta = {
     description = "Bound incoming velocity messages according to robot velocity and acceleration limits.";

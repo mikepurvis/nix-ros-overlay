@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost fmt libcap ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake rclcpp rclcpp-action ];
+  rosExecDepends = [ rclcpp rclcpp-action ];
 
   meta = {
     description = "Contains a set of tools that can be used from a hard

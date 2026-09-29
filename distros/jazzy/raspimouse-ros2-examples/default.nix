@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev v4l-utils ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge geometry-msgs hls-lfcd-lds-driver joy-linux nav2-map-server raspimouse raspimouse-msgs rclcpp rclcpp-components rclcpp-lifecycle rt-usb-9axisimu-driver sensor-msgs slam-toolbox std-msgs std-srvs usb-cam ];
+  rosExecDepends = [ cv-bridge geometry-msgs hls-lfcd-lds-driver joy-linux nav2-map-server raspimouse raspimouse-msgs rclcpp rclcpp-components rclcpp-lifecycle rt-usb-9axisimu-driver sensor-msgs slam-toolbox std-msgs std-srvs usb-cam ];
 
   meta = {
     description = "Raspberry Pi Mouse examples";

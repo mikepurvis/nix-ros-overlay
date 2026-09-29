@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-index-python python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ depthai-descriptions realsense2-description robotiq-description ur-description urdf xacro zed-description ];
+  rosExecDepends = [ depthai-descriptions realsense2-description robotiq-description ur-description urdf xacro zed-description ];
 
   meta = {
     description = "URDF descriptions of components offered with Husarion robots";

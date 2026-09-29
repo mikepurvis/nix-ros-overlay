@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ iproute2 ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ can-msgs rclcpp ];
+  rosExecDepends = [ can-msgs rclcpp ];
 
   meta = {
     description = "A ROS 2 socketcan interface.";

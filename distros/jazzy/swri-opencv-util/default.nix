@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge swri-math-util ];
+  rosExecDepends = [ cv-bridge swri-math-util ];
 
   meta = {
     description = "A package with commonly used OpenCV functionality.";

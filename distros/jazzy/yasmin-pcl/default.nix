@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pcl-conversions pluginlib sensor-msgs yasmin ];
+  rosExecDepends = [ pcl-conversions pluginlib sensor-msgs yasmin ];
 
   meta = {
     description = "PCL-based reusable YASMIN states for PointCloud2 conversion, file I/O, and filtering.";

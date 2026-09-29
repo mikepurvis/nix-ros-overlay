@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake nav-msgs rclcpp std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav-msgs rclcpp std-msgs ];
+  rosExecDepends = [ nav-msgs rclcpp std-msgs ];
 
   meta = {
     description = "Bridge nodes for u-blox GPS receivers: converts raw NavPVT Doppler velocity to nav_msgs/Odometry for FusionCore (gnss.velocity_topic). Optional companion to fusioncore_ros; not required to build or run FusionCore.";

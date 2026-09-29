@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common builtin-interfaces ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
-  rosExecDepends = [ builtin-interfaces rclpy ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclcpp rclpy rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "3D interactive marker communication library for RViz and similar tools.";

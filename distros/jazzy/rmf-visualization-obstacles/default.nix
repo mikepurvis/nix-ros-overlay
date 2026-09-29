@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-uncrustify rmf-utils ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp rclcpp-components rmf-obstacle-msgs rmf-visualization-msgs vision-msgs visualization-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp rclcpp-components rmf-obstacle-msgs rmf-visualization-msgs vision-msgs visualization-msgs ];
 
   meta = {
     description = "A visualizer for obstacles in RMF";

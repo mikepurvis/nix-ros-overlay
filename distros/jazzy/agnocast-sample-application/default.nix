@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ agnocast-components agnocast-sample-interfaces agnocastlib rclcpp rclcpp-components ];
+  rosExecDepends = [ agnocast-components agnocast-sample-interfaces agnocastlib rclcpp rclcpp-components ];
 
   meta = {
     description = "A sample application for Agnocast.";

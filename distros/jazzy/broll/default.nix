@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ ffmpeg ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rcutils sensor-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components rcutils sensor-msgs ];
 
   meta = {
     description = "B-Roll utility library for interacting with video stream data in the context of rosbag2";

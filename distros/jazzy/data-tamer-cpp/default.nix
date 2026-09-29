@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ data-tamer-msgs mcap-vendor rclcpp ];
+  rosExecDepends = [ data-tamer-msgs mcap-vendor rclcpp ];
 
   meta = {
     description = "DataTamer data logging library";

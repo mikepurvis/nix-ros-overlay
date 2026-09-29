@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rt-manipulators-cpp ];
+  rosExecDepends = [ rclcpp rt-manipulators-cpp ];
 
   meta = {
     description = "Examples for RT Manipulators C++ Library";

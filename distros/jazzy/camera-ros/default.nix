@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-cmake-cppcheck ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-mypy ament-cmake-pep257 ament-cmake-pyflakes ament-cmake-xmllint ament-lint-auto clang ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ camera-info-manager cv-bridge diagnostic-msgs libcamera rclcpp rclcpp-components sensor-msgs ];
-  rosExecDepends = [ ament-index-python image-view ros2launch ];
+  rosExecDepends = [ ament-index-python camera-info-manager cv-bridge diagnostic-msgs image-view libcamera rclcpp rclcpp-components ros2launch sensor-msgs ];
 
   meta = {
     description = "node for libcamera supported cameras (V4L2, Raspberry Pi Camera Modules)";

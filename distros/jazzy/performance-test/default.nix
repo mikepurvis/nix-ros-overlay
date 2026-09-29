@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake git rosidl-default-generators ];
   rosBuildExportDepends = [ rclcpp ];
-  rosExecDepends = [ rmw-implementation rosidl-default-runtime ];
+  rosExecDepends = [ rclcpp rmw-implementation rosidl-default-runtime ];
 
   meta = {
     description = "Tool to test performance of ROS2 and DDS data layers and communication.";

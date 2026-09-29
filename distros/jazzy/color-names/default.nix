@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ouxt-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rviz2 std-msgs visualization-msgs ];
+  rosExecDepends = [ rclcpp rviz2 std-msgs visualization-msgs ];
 
   meta = {
     description = "The color_names package";

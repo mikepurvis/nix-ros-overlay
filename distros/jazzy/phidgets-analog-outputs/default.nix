@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros phidgets-api phidgets-msgs rclcpp rclcpp-components std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ phidgets-api phidgets-msgs rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ phidgets-api phidgets-msgs rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "Driver for the Phidgets Analog Output devices";

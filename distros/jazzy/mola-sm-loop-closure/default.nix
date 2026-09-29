@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ onetbb ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ gtsam mola-common mola-georeferencing mola-gtsam-factors mola-pose-list mola-relocalization mola-yaml mp2p-icp mrpt-libgui mrpt-libmaps mrpt-libtclap ];
+  rosExecDepends = [ gtsam mola-common mola-georeferencing mola-gtsam-factors mola-pose-list mola-relocalization mola-yaml mp2p-icp mrpt-libgui mrpt-libmaps mrpt-libtclap ];
 
   meta = {
     description = "Simplemap loop-closure postprocessing library and CLI tool";

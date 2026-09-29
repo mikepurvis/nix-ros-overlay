@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rsl tcb-span tl-expected ];
+  rosExecDepends = [ rclcpp rsl tcb-span tl-expected ];
 
   meta = {
     description = "Functions and types for rclcpp::Parameter";

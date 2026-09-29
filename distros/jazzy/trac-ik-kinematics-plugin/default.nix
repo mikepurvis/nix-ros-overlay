@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake class-loader generate-parameter-library moveit-core pluginlib rclcpp tf2-kdl trac-ik-lib urdf ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ class-loader generate-parameter-library moveit-core pluginlib rclcpp tf2-kdl trac-ik-lib urdf ];
+  rosExecDepends = [ class-loader generate-parameter-library moveit-core pluginlib rclcpp tf2-kdl trac-ik-lib urdf ];
 
   meta = {
     description = "A MoveIt! Kinematics plugin using TRAC-IK";

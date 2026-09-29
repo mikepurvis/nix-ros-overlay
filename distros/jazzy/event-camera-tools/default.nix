@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ event-camera-codecs event-camera-msgs rclcpp rclcpp-components rosbag2-cpp rosbag2-storage sensor-msgs ];
+  rosExecDepends = [ event-camera-codecs event-camera-msgs rclcpp rclcpp-components rosbag2-cpp rosbag2-storage sensor-msgs ];
 
   meta = {
     description = "package with ROS1 and ROS2 tools related to event_camera_msgs";

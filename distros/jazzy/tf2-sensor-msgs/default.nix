@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module python-cmake-module ];
   rosBuildExportDepends = [ eigen3-cmake-module geometry-msgs sensor-msgs tf2 tf2-ros ];
-  rosExecDepends = [ sensor-msgs-py std-msgs tf2-ros-py ];
+  rosExecDepends = [ geometry-msgs sensor-msgs sensor-msgs-py std-msgs tf2 tf2-ros tf2-ros-py ];
 
   meta = {
     description = "Small lib to transform sensor_msgs with tf. Most notably, PointCloud2";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ example-interfaces geometry-msgs jig rclcpp rclpy std-msgs std-srvs ];
   checkInputs = [ launch-ros launch-testing launch-testing-ament-cmake lifecycle-msgs rcl-interfaces tf2-msgs ];
   rosBuildExportDepends = [ example-interfaces geometry-msgs jig rclcpp rclpy std-msgs std-srvs ];
+  rosExecDepends = [ example-interfaces geometry-msgs jig rclcpp rclpy std-msgs std-srvs ];
 
   meta = {
     description = "An example node using the jig system.";

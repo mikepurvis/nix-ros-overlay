@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ curl jsoncpp spdlog ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ class-loader cv-bridge geometry-msgs ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs std-msgs std-srvs tf2-ros ];
-  rosExecDepends = [ launch launch-ros rosidl-default-runtime ];
+  rosExecDepends = [ class-loader cv-bridge geometry-msgs launch launch-ros ouster-sensor-msgs pcl-conversions rclcpp rclcpp-components rclcpp-lifecycle rosidl-default-runtime sensor-msgs std-msgs std-srvs tf2-ros ];
 
   meta = {
     description = "Ouster ROS2 driver";

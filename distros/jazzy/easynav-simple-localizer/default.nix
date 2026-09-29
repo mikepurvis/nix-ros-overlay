@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ easynav-common easynav-core easynav-localizer easynav-sensors easynav-simple-common geometry-msgs nav-msgs pluginlib tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ easynav-common easynav-core easynav-localizer easynav-sensors easynav-simple-common geometry-msgs nav-msgs pluginlib tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Easy Navigation: Simple Localizer package.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake controller-interface kuka-drivers-core pluginlib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-interface kuka-drivers-core pluginlib ];
+  rosExecDepends = [ controller-interface kuka-drivers-core pluginlib ];
 
   meta = {
     description = "Controller for setting the control mode of KUKA robots in runtime";

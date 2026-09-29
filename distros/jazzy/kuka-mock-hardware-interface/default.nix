@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake hardware-interface pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pluginlib rclcpp ];
+  rosExecDepends = [ hardware-interface pluginlib rclcpp ];
 
   meta = {
     description = "ROS2 control mock hardware for KUKA robots";

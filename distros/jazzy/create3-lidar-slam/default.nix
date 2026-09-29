@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake irobot-create-msgs launch-ros ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ irobot-create-msgs launch-ros ];
-  rosExecDepends = [ rplidar-ros slam-toolbox ];
+  rosExecDepends = [ irobot-create-msgs launch-ros rplidar-ros slam-toolbox ];
 
   meta = {
     description = "Example for using an RPLIDAR A1 with a Create 3";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake-ros gtest-vendor rclcpp rclcpp-components sensor-msgs std-msgs ];
+  rosExecDepends = [ ament-cmake-ros gtest-vendor rclcpp rclcpp-components sensor-msgs std-msgs ];
 
   meta = {
     description = "The tuw_geometry package";

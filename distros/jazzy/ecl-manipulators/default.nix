@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-build ecl-exceptions ecl-formatters ecl-geometry ecl-license ];
+  rosExecDepends = [ ecl-build ecl-exceptions ecl-formatters ecl-geometry ecl-license ];
 
   meta = {
     description = "Deploys various manipulation algorithms, currently just

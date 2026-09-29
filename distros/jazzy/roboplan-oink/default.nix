@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock gtest roboplan-example-models ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ proxsuite roboplan ];
+  rosExecDepends = [ proxsuite roboplan ];
 
   meta = {
     description = "OInK - Optimal Inverse Kinematics solver for RoboPlan.";

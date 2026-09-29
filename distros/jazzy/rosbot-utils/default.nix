@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ alsa-utils python3Packages.argcomplete python3Packages.libgpiod python3Packages.pyftdi python3Packages.pyserial python3Packages.pyudev python3Packages.sh stm32flash usbutils ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ generate-parameter-library rclcpp sensor-msgs std-srvs ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ generate-parameter-library launch-ros rclcpp sensor-msgs std-srvs ];
 
   meta = {
     description = "Utilities for ROSbot Series";

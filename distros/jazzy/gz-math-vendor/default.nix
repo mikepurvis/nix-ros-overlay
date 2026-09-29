@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-math7 7.7.0

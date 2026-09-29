@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen openssl websocketpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces geometry-msgs rclcpp rclcpp-components rmf-traffic rmf-traffic-msgs rmf-traffic-ros2 rmf-visualization-msgs rosidl-default-generators visualization-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclcpp rclcpp-components rmf-traffic rmf-traffic-msgs rmf-traffic-ros2 rmf-visualization-msgs rosidl-default-generators visualization-msgs ];
 
   meta = {
     description = "A visualizer for trajectories in rmf schedule";

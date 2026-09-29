@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ httplib nlohmann_json openssl sqlite ];
   nativeBuildInputs = [ ament-cmake ros2-medkit-cmake ];
   rosBuildExportDepends = [ action-msgs ament-index-cpp lifecycle-msgs rcl-interfaces rclcpp ros2-medkit-msgs ros2-medkit-serialization rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs std-msgs std-srvs yaml-cpp-vendor ];
-  rosExecDepends = [ ament-index-python launch launch-ros ros2-medkit-action-status-bridge ros2-medkit-diagnostic-bridge ros2-medkit-fault-manager ros2-medkit-log-bridge rosidl-parser rosidl-runtime-py ];
+  rosExecDepends = [ action-msgs ament-index-cpp ament-index-python launch launch-ros lifecycle-msgs rcl-interfaces rclcpp ros2-medkit-action-status-bridge ros2-medkit-diagnostic-bridge ros2-medkit-fault-manager ros2-medkit-log-bridge ros2-medkit-msgs ros2-medkit-serialization rosidl-parser rosidl-runtime-py rosidl-typesupport-cpp rosidl-typesupport-introspection-cpp sensor-msgs std-msgs std-srvs yaml-cpp-vendor ];
 
   meta = {
     description = "HTTP gateway for ros2_medkit diagnostics system";

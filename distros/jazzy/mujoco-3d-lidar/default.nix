@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake mujoco-vendor ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ mujoco-vendor ];
+  rosExecDepends = [ mujoco-vendor ];
 
   meta = {
     description = "Plugin for mujoco to use raycasters to simulate lidar";

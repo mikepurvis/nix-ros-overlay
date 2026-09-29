@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ message-filters pluginlib rclcpp rcpputils rosidl-runtime-cpp ];
+  rosExecDepends = [ message-filters pluginlib rclcpp rcpputils rosidl-runtime-cpp ];
 
   meta = {
     description = "Provides an rqt_image_overlay_layer plugin interface, and a template impelementation class";

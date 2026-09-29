@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ autoware-point-types autoware-utils-debug autoware-utils-system autoware-utils-tf geometry-msgs rclcpp rclcpp-components sensor-msgs tf2-eigen ];
+  rosExecDepends = [ autoware-point-types autoware-utils-debug autoware-utils-system autoware-utils-tf geometry-msgs rclcpp rclcpp-components sensor-msgs tf2-eigen ];
 
   meta = {
     description = "The ROS 2 autoware_crop_box_filter package";

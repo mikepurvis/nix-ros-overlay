@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-core-common ];
+  rosExecDepends = [ nebula-core-common ];
 
   meta = {
     description = "Nebula HW Interfaces Base";

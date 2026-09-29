@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ ament-cmake ament-index-python python-cmake-module rmw rosidl-generator-c rosidl-pycommon rosidl-runtime-c rosidl-typesupport-c rosidl-typesupport-interface ];
-  rosExecDepends = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-pep257 ament-cmake-uncrustify rosidl-cli rosidl-parser rpyutils ];
+  rosExecDepends = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-pep257 ament-cmake-uncrustify ament-index-python rosidl-cli rosidl-generator-c rosidl-parser rosidl-runtime-c rpyutils ];
 
   meta = {
     description = "Generate the ROS interfaces in Python.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "The wrapper of ioctl for command line tool extension for Agnocast.";

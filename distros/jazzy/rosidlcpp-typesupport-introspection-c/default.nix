@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ rosidl-cmake rosidl-runtime-c rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
-  rosExecDepends = [ ament-index-python rosidl-cli rosidl-generator-c rosidl-parser rosidl-pycommon ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-generator-c rosidl-parser rosidl-pycommon rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the message type support for dynamic message construction in C.";

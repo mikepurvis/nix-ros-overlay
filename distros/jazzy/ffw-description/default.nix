@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake urdf ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ urdf ];
-  rosExecDepends = [ joint-state-publisher joint-state-publisher-gui robot-state-publisher rviz2 xacro ];
+  rosExecDepends = [ joint-state-publisher joint-state-publisher-gui robot-state-publisher rviz2 urdf xacro ];
 
   meta = {
     description = "3D models of the FFW for simulation and visualization";

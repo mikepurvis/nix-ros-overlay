@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ lifecycle-msgs rcl rcutils rmw rosidl-runtime-c tracetools ];
+  rosExecDepends = [ lifecycle-msgs rcl rcutils rmw rosidl-runtime-c tracetools ];
 
   meta = {
     description = "Package containing a C-based lifecycle implementation";

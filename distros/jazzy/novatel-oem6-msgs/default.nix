@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-xmllint ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS messages and services for Novatel OEM6";

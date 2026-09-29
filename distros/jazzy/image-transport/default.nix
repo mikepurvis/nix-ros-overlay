@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ message-filters pluginlib rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ message-filters pluginlib rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "image_transport should always be used to subscribe to and publish images. It provides transparent

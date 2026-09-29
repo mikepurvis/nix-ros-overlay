@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-ros rclcpp-lifecycle std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ image-transport rclcpp sensor-msgs tf2-ros ];
+  rosExecDepends = [ image-transport rclcpp sensor-msgs tf2-ros ];
 
   meta = {
     description = "Improved ROS message filters";

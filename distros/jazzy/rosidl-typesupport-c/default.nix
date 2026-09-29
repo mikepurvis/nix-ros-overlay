@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3 ];
   nativeBuildInputs = [ ament-cmake-ros python3 ];
   rosBuildExportDepends = [ ament-cmake-core rcpputils rcutils rosidl-runtime-c ];
-  rosExecDepends = [ ament-index-python rosidl-cli rosidl-generator-c rosidl-pycommon rosidl-typesupport-interface ];
+  rosExecDepends = [ ament-index-python rcpputils rcutils rosidl-cli rosidl-generator-c rosidl-pycommon rosidl-typesupport-interface ];
 
   meta = {
     description = "Generate the type support for C messages.";

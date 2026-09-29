@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ yaml-cpp ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rcutils rosbag2-cpp rosidl-typesupport-cpp zstd-vendor ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ rclcpp rclcpp-components rcutils rosbag2-cpp rosidl-default-runtime rosidl-typesupport-cpp zstd-vendor ];
 
   meta = {
     description = "ROS 2 Domain Bridge";

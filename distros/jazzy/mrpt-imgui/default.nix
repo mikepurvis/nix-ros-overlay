@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mrpt-opengl ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-opengl ];
+  rosExecDepends = [ mrpt-opengl ];
 
   meta = {
     description = "The MRPT C++ library mrpt_imgui, wrapping rendering objects as a Dear ImGUI component";

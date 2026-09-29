@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ zbar ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge rclcpp sensor-msgs std-msgs zbar-ros-interfaces ];
+  rosExecDepends = [ cv-bridge rclcpp sensor-msgs std-msgs zbar-ros-interfaces ];
 
   meta = {
     description = "Lightweight ROS wrapper for Zbar barcode/qrcode reader library (http://zbar.sourceforge

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake rosbot-controller rosbot-description rosbot-hardware-interfaces rosbot-joy rosbot-localization rosbot-moveit rosbot-utils ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rosbot-controller rosbot-description rosbot-hardware-interfaces rosbot-joy rosbot-localization rosbot-moveit rosbot-utils ];
+  rosExecDepends = [ rosbot-controller rosbot-description rosbot-hardware-interfaces rosbot-joy rosbot-localization rosbot-moveit rosbot-utils ];
 
   meta = {
     description = "Meta package that contains all packages of ROSbot Series";

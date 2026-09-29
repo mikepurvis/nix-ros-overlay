@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ urdf xacro ];
-  rosExecDepends = [ controller-manager kuka-resources moveit moveit-planners robot-state-publisher ];
+  rosExecDepends = [ controller-manager kuka-resources moveit moveit-planners robot-state-publisher urdf xacro ];
 
   meta = {
     description = "Package containing moveit configurations for KUKA LBR iiwa family";

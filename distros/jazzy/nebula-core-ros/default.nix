@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ros-environment ros-testing ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common rclcpp rosbag2-storage ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater nebula-core-common rclcpp rosbag2-storage ];
 
   meta = {
     description = "Nebula ROS Base Libraries";

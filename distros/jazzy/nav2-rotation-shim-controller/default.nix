@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common nav2-regulated-pure-pursuit-controller ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles geometry-msgs nav2-common nav2-controller nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp tf2 ];
+  rosExecDepends = [ angles geometry-msgs nav2-common nav2-controller nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp tf2 ];
 
   meta = {
     description = "Rotation Shim Controller";

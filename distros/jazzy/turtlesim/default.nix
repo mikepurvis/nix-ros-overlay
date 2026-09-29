@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ ament-index-cpp geometry-msgs rcl-interfaces rclcpp rclcpp-action std-msgs std-srvs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ ament-index-cpp geometry-msgs rcl-interfaces rclcpp rclcpp-action rosidl-default-runtime std-msgs std-srvs ];
 
   meta = {
     description = "turtlesim is a tool made for teaching ROS and ROS packages.";

@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake cv-bridge gps-msgs mola-kernel mrpt-libobs mrpt-libros-bridge rosbag2-cpp sensor-msgs tf2-geometry-msgs tf2-msgs tf2-ros ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ cv-bridge gps-msgs mola-kernel mrpt-libobs mrpt-libros-bridge rosbag2-cpp sensor-msgs tf2-geometry-msgs tf2-msgs tf2-ros ];
+  rosExecDepends = [ cv-bridge gps-msgs mola-kernel mrpt-libobs mrpt-libros-bridge rosbag2-cpp sensor-msgs tf2-geometry-msgs tf2-msgs tf2-ros ];
 
   meta = {
     description = "Offline RawDataSource from rosbag2 datasets";

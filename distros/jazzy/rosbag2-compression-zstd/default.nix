@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common rclcpp rosbag2-test-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib rcutils rosbag2-compression zstd-vendor ];
+  rosExecDepends = [ pluginlib rcutils rosbag2-compression zstd-vendor ];
 
   meta = {
     description = "Zstandard compression library implementation of rosbag2_compression";

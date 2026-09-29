@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch-testing rcutils ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
-  rosExecDepends = [ launch launch-ros ];
+  rosExecDepends = [ launch launch-ros rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
 
   meta = {
     description = "Wraps FMUs for co-simulation";

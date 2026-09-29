@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ console-bridge tinyxml-2 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ console-bridge-vendor tinyxml2-vendor urdfdom-headers ];
+  rosExecDepends = [ console-bridge-vendor tinyxml2-vendor urdfdom-headers ];
 
   meta = {
     description = "A library to access URDFs using the DOM model.";

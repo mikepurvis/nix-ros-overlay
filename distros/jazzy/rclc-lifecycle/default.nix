@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ lifecycle-msgs rcl-lifecycle rclc std-msgs ];
+  rosExecDepends = [ lifecycle-msgs rcl-lifecycle rclc std-msgs ];
 
   meta = {
     description = "rclc lifecycle convenience methods.";

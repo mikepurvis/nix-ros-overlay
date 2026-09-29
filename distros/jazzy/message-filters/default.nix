@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto rclcpp-lifecycle sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros python-cmake-module ];
   rosBuildExportDepends = [ rclcpp rcutils std-msgs ];
-  rosExecDepends = [ builtin-interfaces rclpy ];
+  rosExecDepends = [ builtin-interfaces rclcpp rclpy rcutils std-msgs ];
 
   meta = {
     description = "A set of ROS 2 message filters which take in messages and may output those messages at a later time, based on the conditions that filter needs met.";

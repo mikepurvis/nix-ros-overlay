@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-build ecl-license ];
+  rosExecDepends = [ ecl-build ecl-license ];
 
   meta = {
     description = "These tools inspect and describe your system with macros, types

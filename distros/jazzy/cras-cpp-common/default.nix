@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
   rosBuildExportDepends = [ backward-ros builtin-interfaces filters geometry-msgs rcl rclcpp rclcpp-components rcutils rmw sensor-msgs tf2 tf2-eigen tf2-geometry-msgs urdf ];
+  rosExecDepends = [ backward-ros builtin-interfaces filters geometry-msgs rcl rclcpp rclcpp-components rcutils rmw sensor-msgs tf2 tf2-eigen tf2-geometry-msgs urdf ];
 
   meta = {
     description = "A Czech-army knife for ROS code written in C++.";

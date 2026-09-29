@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ bullet eigen gbenchmark ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
   rosBuildExportDepends = [ gz-cmake-vendor gz-common-vendor gz-dartsim-vendor gz-math-vendor gz-plugin-vendor gz-utils-vendor sdformat-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-common-vendor gz-dartsim-vendor gz-math-vendor gz-plugin-vendor gz-utils-vendor sdformat-vendor ];
 
   meta = {
     description = "Vendor package for: gz-physics7 7.8.0

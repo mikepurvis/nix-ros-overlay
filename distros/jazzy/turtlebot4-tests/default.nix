@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   propagatedBuildInputs = [ python3Packages.psutil ];
   rosBuildExportDepends = [ irobot-create-msgs sensor-msgs std-msgs turtlebot4-msgs ];
+  rosExecDepends = [ irobot-create-msgs sensor-msgs std-msgs turtlebot4-msgs ];
 
   meta = {
     description = "Turtlebot4 System Tests";

@@ -16,7 +16,7 @@ buildRosPackage {
   buildType = "ament_python";
   buildInputs = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
   rosBuildExportDepends = [ dynamixel-hardware-interface rclpy ros-gz-bridge ros-gz-image ros-gz-sim ];
-  rosExecDepends = [ gz-ros2-control open-manipulator-description robot-state-publisher ros2-control ros2-controllers rviz2 xacro ];
+  rosExecDepends = [ dynamixel-hardware-interface gz-ros2-control open-manipulator-description rclpy robot-state-publisher ros-gz-bridge ros-gz-image ros-gz-sim ros2-control ros2-controllers rviz2 xacro ];
 
   meta = {
     description = "OpenMANIPULATOR bringup ROS 2 package.";

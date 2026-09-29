@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ clearpath-platform-msgs diagnostic-updater rclcpp sensor-msgs ];
-  rosExecDepends = [ diagnostic-aggregator foxglove-bridge ros2launch ];
+  rosExecDepends = [ clearpath-platform-msgs diagnostic-aggregator diagnostic-updater foxglove-bridge rclcpp ros2launch sensor-msgs ];
 
   meta = {
     description = "Clearpath Robot Diagnostics Monitor";

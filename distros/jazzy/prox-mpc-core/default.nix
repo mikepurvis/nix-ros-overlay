@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs pluginlib proxsuite rclcpp ];
+  rosExecDepends = [ geometry-msgs nav-msgs pluginlib proxsuite rclcpp ];
 
   meta = {
     description = "ProxMPC core: a nonlinear Model Predictive Control solved by a

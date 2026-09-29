@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json proj util-linux yaml-cpp zlib ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ backward-ros rclcpp rmf-building-map-msgs rmf-fleet-msgs rmf-site-map-msgs rmf-traffic rmf-traffic-msgs rmf-utils ];
+  rosExecDepends = [ backward-ros rclcpp rmf-building-map-msgs rmf-fleet-msgs rmf-site-map-msgs rmf-traffic rmf-traffic-msgs rmf-utils ];
 
   meta = {
     description = "A package containing messages used by the RMF traffic management system.";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake geometry-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ autoware-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ geometry-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages for Continental sensors";

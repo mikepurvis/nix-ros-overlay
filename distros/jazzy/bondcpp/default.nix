@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ util-linux ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ bond rclcpp rclcpp-lifecycle smclib ];
+  rosExecDepends = [ bond rclcpp rclcpp-lifecycle smclib ];
 
   meta = {
     description = "C++ implementation of bond, a mechanism for checking when

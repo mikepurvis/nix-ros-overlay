@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs nav-msgs nav2-core nav2-costmap-2d nav2-util pluginlib prox-mpc-core prox-mpc-msgs proxsuite rclcpp rclcpp-lifecycle tf2 tf2-ros visualization-msgs ];
+  rosExecDepends = [ geometry-msgs nav-msgs nav2-core nav2-costmap-2d nav2-util pluginlib prox-mpc-core prox-mpc-msgs proxsuite rclcpp rclcpp-lifecycle tf2 tf2-ros visualization-msgs ];
 
   meta = {
     description = "Nav2 nav2_core::Controller plugin built on the ProxMPC core: it

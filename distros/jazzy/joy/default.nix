@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rclcpp-components sdl2-vendor sensor-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components sdl2-vendor sensor-msgs ];
 
   meta = {
     description = "The joy package contains joy_node, a node that interfaces a generic joystick to ROS

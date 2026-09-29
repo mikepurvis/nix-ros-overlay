@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib tinyxml2-vendor ];
-  rosExecDepends = [ qt-gui ];
+  rosExecDepends = [ pluginlib qt-gui tinyxml2-vendor ];
 
   meta = {
     description = "qt_gui_cpp provides the foundation for C++-bindings for qt_gui and creates bindings for every generator available.

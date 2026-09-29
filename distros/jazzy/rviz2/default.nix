@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rviz-common rviz-ogre-vendor ];
-  rosExecDepends = [ rviz-default-plugins ];
+  rosExecDepends = [ rviz-common rviz-default-plugins rviz-ogre-vendor ];
 
   meta = {
     description = "3D visualization tool for ROS.";

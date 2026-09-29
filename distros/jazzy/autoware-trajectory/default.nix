@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake python-cmake-module ];
   rosBuildExportDepends = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-planning-msgs autoware-utils-geometry geometry-msgs lanelet2-core rclcpp tf2 tf2-geometry-msgs tl-expected ];
+  rosExecDepends = [ autoware-internal-planning-msgs autoware-lanelet2-utils autoware-planning-msgs autoware-utils-geometry geometry-msgs lanelet2-core rclcpp tf2 tf2-geometry-msgs tl-expected ];
 
   meta = {
     description = "The autoware_trajectory package";

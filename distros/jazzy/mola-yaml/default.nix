@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mrpt-libbase ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mrpt-libbase ];
+  rosExecDepends = [ mola-common mrpt-libbase ];
 
   meta = {
     description = "YAML helper library common to MOLA modules";

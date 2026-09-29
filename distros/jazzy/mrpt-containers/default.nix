@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake libfyaml mrpt-common mrpt-core mrpt-typemeta python3 python3Packages.pybind11 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-common mrpt-core mrpt-typemeta ];
+  rosExecDepends = [ mrpt-common mrpt-core mrpt-typemeta ];
 
   meta = {
     description = "The MRPT C++ library mrpt_containers";

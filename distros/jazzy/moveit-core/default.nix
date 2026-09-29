@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ assimp boost bullet eigen fcl octomap ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module pkg-config ];
   rosBuildExportDepends = [ angles common-interfaces eigen-stl-containers eigen3-cmake-module generate-parameter-library geometric-shapes geometry-msgs google-benchmark-vendor kdl-parser moveit-common moveit-msgs octomap-msgs osqp-vendor pluginlib random-numbers rclcpp rsl ruckig sensor-msgs shape-msgs srdfdom std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-kdl trajectory-msgs urdf urdfdom urdfdom-headers visualization-msgs ];
+  rosExecDepends = [ angles common-interfaces eigen-stl-containers generate-parameter-library geometric-shapes geometry-msgs google-benchmark-vendor kdl-parser moveit-common moveit-msgs octomap-msgs osqp-vendor pluginlib random-numbers rclcpp rsl ruckig sensor-msgs shape-msgs srdfdom std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-kdl trajectory-msgs urdf urdfdom urdfdom-headers visualization-msgs ];
 
   meta = {
     description = "Core libraries used by MoveIt";

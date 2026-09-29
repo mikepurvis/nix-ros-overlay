@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   propagatedBuildInputs = [ wirelesstools ];
   rosBuildExportDepends = [ diagnostic-updater rclcpp wireless-msgs ];
+  rosExecDepends = [ diagnostic-updater rclcpp wireless-msgs ];
 
   meta = {
     description = "A node which publishes connection information about a linux wireless interface.";

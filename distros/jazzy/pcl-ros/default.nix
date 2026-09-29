@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen pcl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs pcl-conversions rclcpp rclcpp-components sensor-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "PCL (Point Cloud Library) ROS interface stack. PCL-ROS is the preferred

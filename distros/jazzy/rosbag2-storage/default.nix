@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common rosbag2-test-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
+  rosExecDepends = [ pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
 
   meta = {
     description = "ROS2 independent storage format to store serialized ROS2 messages";

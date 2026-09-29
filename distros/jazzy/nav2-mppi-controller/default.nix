@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ gbenchmark llvmPackages.openmp xsimd xtensor ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ];
   rosBuildExportDepends = [ geometry-msgs nav2-common nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
+  rosExecDepends = [ geometry-msgs nav2-common nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp std-msgs tf2 tf2-eigen tf2-geometry-msgs tf2-ros visualization-msgs ];
 
   meta = {
     description = "nav2_mppi_controller";

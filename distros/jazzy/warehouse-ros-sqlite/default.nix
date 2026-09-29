@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ sqlite ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ class-loader rclcpp warehouse-ros ];
+  rosExecDepends = [ class-loader rclcpp warehouse-ros ];
 
   meta = {
     description = "Implementation of warehouse_ros for sqlite";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.shapely ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ geometry-msgs polygon-msgs ];
+  rosExecDepends = [ geometry-msgs polygon-msgs ];
 
   meta = {
     description = "Utilities for working with polygons, including triangulation";

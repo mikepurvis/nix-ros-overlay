@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ autoware-cmake builtin-interfaces rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ autoware-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ builtin-interfaces std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS message definition for the Hesai PandarQT/Pandar64/Pandar40P/Pandar20A/Pandar20B/Pandar40M LiDAR

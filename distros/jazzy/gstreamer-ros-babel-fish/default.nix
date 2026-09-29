@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gstreamer ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp sensor-msgs ];
+  rosExecDepends = [ rclcpp sensor-msgs ];
 
   meta = {
     description = "GStreamer elements for bidirectional ROS 2 image streaming";

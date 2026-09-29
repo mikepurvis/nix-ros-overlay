@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ autoware-common-msgs geometry-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ autoware-common-msgs geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The autoware_internal_localization_msgs package";

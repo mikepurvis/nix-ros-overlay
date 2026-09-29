@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ assimp boost eigen fcl qhull ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module rosidl-default-generators ];
   rosBuildExportDepends = [ console-bridge-vendor eigen-stl-containers eigen3-cmake-module geometry-msgs random-numbers rclcpp resource-retriever shape-msgs visualization-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ console-bridge-vendor eigen-stl-containers geometry-msgs random-numbers rclcpp resource-retriever rosidl-default-runtime shape-msgs visualization-msgs ];
 
   meta = {
     description = "This package contains generic definitions of geometric shapes and bodies.";

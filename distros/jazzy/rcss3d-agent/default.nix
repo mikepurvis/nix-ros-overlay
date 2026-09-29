@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ rclcpp rcss3d-agent-msgs ];
+  rosExecDepends = [ rclcpp rcss3d-agent-msgs ];
 
   meta = {
     description = "Launches a RoboCup 3D Simulation Agent, and converts data to and from ROS2 msgs";

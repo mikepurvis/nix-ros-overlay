@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-clang-format ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ros-environment ];
   rosBuildExportDepends = [ apriltag-msgs cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ apriltag-msgs cv-bridge image-transport rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "ROS package for drawing apriltags on image";

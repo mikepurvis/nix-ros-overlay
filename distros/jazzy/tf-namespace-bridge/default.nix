@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ generate-parameter-library rclcpp tf2-msgs ];
+  rosExecDepends = [ generate-parameter-library rclcpp tf2-msgs ];
 
   meta = {
     description = "Bridge namespaced TF topics into the global TF tree for multi-robot setups";

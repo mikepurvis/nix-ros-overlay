@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake eigen mrpt-gui mrpt-libapps-cli wxGTK32 ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-gui mrpt-libapps-cli ];
+  rosExecDepends = [ mrpt-gui mrpt-libapps-cli ];
 
   meta = {
     description = "The MRPT C++ library mrpt_libapps_gui";

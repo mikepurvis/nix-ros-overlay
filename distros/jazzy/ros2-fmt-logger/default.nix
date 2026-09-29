@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake-auto ];
   rosBuildExportDepends = [ backward-ros rclcpp rcutils ];
+  rosExecDepends = [ backward-ros rclcpp rcutils ];
 
   meta = {
     description = "A modern, ROS 2 logging library that provides fmt-style formatting as a replacement for RCLCPP logging macros";

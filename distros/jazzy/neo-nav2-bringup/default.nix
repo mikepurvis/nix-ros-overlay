@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake nav2-common navigation2 slam-toolbox ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nav2-common navigation2 slam-toolbox ];
+  rosExecDepends = [ nav2-common navigation2 slam-toolbox ];
 
   meta = {
     description = "ROS-2 navigation bringup packages for neobotix robots";

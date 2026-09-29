@@ -10,10 +10,10 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "mikepurvis";
     repo = "superflore";
-    # ref = "refs/heads/nix-passthru-deps";
-    rev = "5b58917152e7b7ace4051ad52b0f98fdd36ecf12";
-    hash = "sha256-Nne11xFvHvSQAL+Tz+HYRBK+gYNrpFGLG2PCnN1aSbo=";
-    # date = "2026-09-20T19:33:50+02:00";
+    # ref = "refs/heads/nix-dev-out-split";
+    rev = "bb33f539151c077828c4c8c20b664d051c50b3a0";
+    hash = "sha256-7S2BlbI6wUM5+huqm2h3V7ztZpA2KND249gY1bBTpuE=";
+    # date = "2026-09-29";
   };
 
   pyproject = true;

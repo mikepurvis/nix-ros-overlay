@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-build ecl-config ecl-errors ecl-license ];
+  rosExecDepends = [ ecl-build ecl-config ecl-errors ecl-license ];
 
   meta = {
     description = "Cross platform filesystem utilities (until c++11 makes its way in).";

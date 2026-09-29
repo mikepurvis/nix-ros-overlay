@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-tutorials-interfaces ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
   rosBuildExportDepends = [ action-tutorials-interfaces ];
-  rosExecDepends = [ rclpy ];
+  rosExecDepends = [ action-tutorials-interfaces rclpy ];
 
   meta = {
     description = "Python action tutorial code";

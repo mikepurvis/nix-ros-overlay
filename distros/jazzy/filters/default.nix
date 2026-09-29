@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib rclcpp ];
+  rosExecDepends = [ pluginlib rclcpp ];
 
   meta = {
     description = "This library provides a standardized interface for processing data as a sequence

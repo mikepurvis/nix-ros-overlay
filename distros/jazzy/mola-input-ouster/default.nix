@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ curl ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-kernel mola-yaml mrpt-libmaps mrpt-libobs ];
+  rosExecDepends = [ mola-kernel mola-yaml mrpt-libmaps mrpt-libobs ];
 
   meta = {
     description = "MOLA input module for Ouster LiDAR sensors using the native Ouster C++ SDK.

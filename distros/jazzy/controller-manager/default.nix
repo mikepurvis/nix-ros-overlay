@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ fmt python3Packages.filelock python3Packages.pyyaml ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ament-cmake-python ];
   rosBuildExportDepends = [ backward-ros controller-interface controller-manager-msgs diagnostic-updater generate-parameter-library hardware-interface libstatistics-collector lifecycle-msgs pluginlib rclcpp realtime-tools std-msgs ];
-  rosExecDepends = [ launch launch-ros launch-testing-ros rcl-interfaces rclpy ros2param sensor-msgs ];
+  rosExecDepends = [ backward-ros controller-interface controller-manager-msgs diagnostic-updater generate-parameter-library hardware-interface launch launch-ros launch-testing-ros libstatistics-collector lifecycle-msgs pluginlib rcl-interfaces rclcpp rclpy realtime-tools ros2param sensor-msgs std-msgs ];
 
   meta = {
     description = "The main runnable entrypoint of ros2_control and home of controller management and resource management.";

@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake moveit-msgs rosidl-default-generators visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ moveit-msgs visualization-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ moveit-msgs rosidl-default-runtime visualization-msgs ];
 
   meta = {
     description = "Messages for MoveIt Task Pipeline";

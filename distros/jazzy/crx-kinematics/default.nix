@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ moveit-core pluginlib tf2-eigen ];
+  rosExecDepends = [ moveit-core pluginlib tf2-eigen ];
 
   meta = {
     description = "C++ implementation of FK/IK for Fanuc CRX series cobots";

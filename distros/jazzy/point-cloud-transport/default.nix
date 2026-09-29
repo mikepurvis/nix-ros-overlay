@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
   rosBuildExportDepends = [ message-filters pluginlib rclcpp rclcpp-components rcpputils rmw sensor-msgs ];
+  rosExecDepends = [ message-filters pluginlib rclcpp rclcpp-components rcpputils rmw sensor-msgs ];
 
   meta = {
     description = "Support for transporting PointCloud2 messages in compressed format and plugin interface for implementing additional PointCloud2 transports.";

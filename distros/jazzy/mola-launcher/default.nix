@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gtest cmake ];
   rosBuildExportDepends = [ mola-kernel mrpt-libbase ];
+  rosExecDepends = [ mola-kernel mrpt-libbase ];
 
   meta = {
     description = "Launcher app for MOLA systems";

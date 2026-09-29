@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-gmock ament-cmake-gtest ament-cmake-pep257 ament-cmake-uncrustify ament-index-python ament-lint-auto launch-testing-ament-cmake launch-testing-ros ros2run ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces rclcpp rclcpp-lifecycle system-modes-msgs ];
-  rosExecDepends = [ launch-ros ];
+  rosExecDepends = [ builtin-interfaces launch-ros rclcpp rclcpp-lifecycle system-modes-msgs ];
 
   meta = {
     description = "The system modes concept assumes that a robotics system is built

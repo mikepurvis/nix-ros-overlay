@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mola-kernel mrpt-libmaps ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mola-kernel mrpt-libmaps ];
+  rosExecDepends = [ mola-common mola-kernel mrpt-libmaps ];
 
   meta = {
     description = "Offline RawDataSource from LiDAR datasets stored as `.bin` files in the Kitti binary format";

@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt6.qtdeclarative ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rqml-core ];
-  rosExecDepends = [ qml6-ros2-plugin ];
+  rosExecDepends = [ qml6-ros2-plugin rqml-core ];
 
   meta = {
     description = "An example plugin for RQml";

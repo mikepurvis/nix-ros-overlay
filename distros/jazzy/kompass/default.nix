@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ automatika-ros-sugar kompass-interfaces ];
   propagatedBuildInputs = [ python3Packages.pykdl ];
   rosBuildExportDepends = [ automatika-ros-sugar kompass-interfaces ];
+  rosExecDepends = [ automatika-ros-sugar kompass-interfaces ];
 
   meta = {
     description = "Kompass: Event-driven navigation system";

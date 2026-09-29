@@ -18,7 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ qt5or6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rcl-interfaces rclcpp rcutils rmw rosbag2-storage rosbag2-transport ];
-  rosExecDepends = [ rosbag2-storage-mcap ];
+  rosExecDepends = [ rcl-interfaces rclcpp rcutils rmw rosbag2-storage rosbag2-storage-mcap rosbag2-transport ];
 
   meta = {
     description = "A rosout GUI viewer developed at Southwest Research Institute as an

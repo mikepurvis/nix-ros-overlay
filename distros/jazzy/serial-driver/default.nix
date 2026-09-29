@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ asio ];
   nativeBuildInputs = [ ament-cmake-auto asio-cmake-module ];
   rosBuildExportDepends = [ io-context rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
+  rosExecDepends = [ io-context rclcpp rclcpp-components rclcpp-lifecycle std-msgs ];
 
   meta = {
     description = "A template class and associated utilities which encapsulate basic reading from serial ports";

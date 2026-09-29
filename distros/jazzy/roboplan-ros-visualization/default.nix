@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake ament-cmake-python ament-index-cpp geometry-msgs interactive-markers python3 python3Packages.nanobind python3Packages.typing-extensions rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik sensor-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ ament-index-cpp geometry-msgs interactive-markers rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik sensor-msgs visualization-msgs ];
-  rosExecDepends = [ rviz2 ];
+  rosExecDepends = [ ament-index-cpp geometry-msgs interactive-markers rclcpp rclpy roboplan roboplan-ros-cpp roboplan-simple-ik rviz2 sensor-msgs visualization-msgs ];
 
   meta = {
     description = "ROS 2 visualization tools for the RoboPlan library.";

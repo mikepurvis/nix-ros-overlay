@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen python3 python3Packages.numpy ];
   nativeBuildInputs = [ clang cmake ];
   rosBuildExportDepends = [ coal eigenpy ros-environment urdfdom ];
+  rosExecDepends = [ coal eigenpy ros-environment urdfdom ];
 
   meta = {
     description = "A fast and flexible implementation of Rigid Body Dynamics algorithms and their analytical derivatives.";

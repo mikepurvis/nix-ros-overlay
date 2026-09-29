@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ protobuf python3Packages.jinja2 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cx-plugin cx-utils pluginlib protobuf-comm rclcpp ];
+  rosExecDepends = [ cx-plugin cx-utils pluginlib protobuf-comm rclcpp ];
 
   meta = {
     description = "CX plugin to send and receive protobuf messages";

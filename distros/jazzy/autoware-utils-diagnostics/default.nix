@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
   rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
+  rosExecDepends = [ diagnostic-msgs diagnostic-updater rclcpp ];
 
   meta = {
     description = "The autoware_utils_diagnostics package";

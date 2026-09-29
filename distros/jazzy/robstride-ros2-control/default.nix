@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle robstride-driver ];
-  rosExecDepends = [ xacro ];
+  rosExecDepends = [ hardware-interface pluginlib rclcpp rclcpp-lifecycle robstride-driver xacro ];
 
   meta = {
     description = "ros2_control SystemInterface for multi-axis RobStride private-CAN actuators.";

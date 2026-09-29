@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen python python3Packages.matplotlib python3Packages.numpy python3Packages.tabulate ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ pluginlib rclcpp rosbag2-cpp rosbag2-storage rosbag2-storage-default-plugins sensor-msgs urdf ];
+  rosExecDepends = [ pluginlib rclcpp rosbag2-cpp rosbag2-storage rosbag2-storage-default-plugins sensor-msgs urdf ];
 
   meta = {
     description = "A library implementing an inverse dynamics solver for serial manipulators.";

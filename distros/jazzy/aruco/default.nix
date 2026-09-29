@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ cv-bridge ];
+  rosExecDepends = [ cv-bridge ];
 
   meta = {
     description = "The ARUCO Library has been developed by the Ava group of the Univeristy of Cordoba(Spain).

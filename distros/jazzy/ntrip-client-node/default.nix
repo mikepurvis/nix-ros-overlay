@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ curl ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ rclcpp rclcpp-components rtcm-msgs ];
-  rosExecDepends = [ std-msgs ];
+  rosExecDepends = [ rclcpp rclcpp-components rtcm-msgs std-msgs ];
 
   meta = {
     description = "Publishes RTCM ntrip messages from an external mountpoint";

@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost nlohmann_json websocketpp ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ nlohmann-json-schema-validator-vendor rclcpp rmf-utils ];
+  rosExecDepends = [ nlohmann-json-schema-validator-vendor rclcpp rmf-utils ];
 
   meta = {
     description = "A package managing the websocket api endpoints in RMF system.";

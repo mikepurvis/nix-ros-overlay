@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake eigen mrpt-kinematics mrpt-maps mrpt-viz ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mrpt-kinematics mrpt-maps mrpt-viz ];
+  rosExecDepends = [ mrpt-kinematics mrpt-maps mrpt-viz ];
 
   meta = {
     description = "The MRPT C++ library mrpt_nav";

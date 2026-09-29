@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ builtin-interfaces rosidl-default-generators std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-generators std-msgs ];
 
   meta = {
     description = "urg_node_msgs";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ gz-ros2-control joint-state-publisher-gui launch robot-state-publisher rviz2 xacro ];
+  rosExecDepends = [ gz-ros2-control joint-state-publisher-gui launch robot-state-publisher rviz2 xacro ];
 
   meta = {
     description = "CRANE+ V2 description package";

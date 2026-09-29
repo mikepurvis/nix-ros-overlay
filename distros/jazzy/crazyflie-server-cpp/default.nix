@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen libusb1 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ crazyflie-interfaces geometry-msgs motion-capture-tracking-interfaces nav-msgs rclcpp ros-environment sensor-msgs std-srvs tf2-ros ];
+  rosExecDepends = [ crazyflie-interfaces geometry-msgs motion-capture-tracking-interfaces nav-msgs rclcpp ros-environment sensor-msgs std-srvs tf2-ros ];
 
   meta = {
     description = "C++ ROS 2 server node for Bitcraze Crazyflie robots";

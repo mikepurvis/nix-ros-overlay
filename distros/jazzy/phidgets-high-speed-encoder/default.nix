@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
-  rosExecDepends = [ launch ];
+  rosExecDepends = [ launch phidgets-api phidgets-msgs rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "Driver for the Phidgets high speed encoder devices";

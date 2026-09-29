@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake python-cmake-module ];
   rosBuildExportDepends = [ geometry-msgs orocos-kdl-vendor tf2 tf2-ros ];
-  rosExecDepends = [ tf2-ros-py ];
+  rosExecDepends = [ geometry-msgs orocos-kdl-vendor tf2 tf2-ros tf2-ros-py ];
 
   meta = {
     description = "tf2_geometry_msgs";

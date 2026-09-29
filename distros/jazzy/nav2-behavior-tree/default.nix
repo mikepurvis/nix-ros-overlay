@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common test-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ behaviortree-cpp builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs nav2-msgs nav2-util rclcpp rclcpp-action rclcpp-lifecycle sensor-msgs std-msgs std-srvs tf2 tf2-geometry-msgs tf2-ros ];
+  rosExecDepends = [ behaviortree-cpp builtin-interfaces geometry-msgs lifecycle-msgs nav-msgs nav2-msgs nav2-util rclcpp rclcpp-action rclcpp-lifecycle sensor-msgs std-msgs tf2 tf2-geometry-msgs tf2-ros ];
 
   meta = {
     description = "Nav2 behavior tree wrappers, nodes, and utilities";

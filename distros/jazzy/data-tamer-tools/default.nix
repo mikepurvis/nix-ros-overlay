@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nlohmann_json protobuf ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ data-tamer-cpp data-tamer-msgs foxglove-sdk-vendor geographic-msgs geometry-msgs mcap-vendor rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs tf2-msgs visualization-msgs ];
+  rosExecDepends = [ data-tamer-cpp data-tamer-msgs foxglove-sdk-vendor geographic-msgs geometry-msgs mcap-vendor rcl-interfaces rclcpp rclcpp-components rclcpp-lifecycle sensor-msgs tf2-msgs visualization-msgs ];
 
   meta = {
     description = "Set of tools for using Foxglove with data tamer";

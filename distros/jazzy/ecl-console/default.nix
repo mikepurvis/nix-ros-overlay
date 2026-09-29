@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-build ecl-config ecl-license ];
+  rosExecDepends = [ ecl-build ecl-config ecl-license ];
 
   meta = {
     description = "Color codes for ansii consoles.";

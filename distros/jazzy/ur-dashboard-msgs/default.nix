@@ -17,7 +17,7 @@ buildRosPackage {
   buildInputs = [ action-msgs ament-cmake rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ action-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Messages around the UR Dashboard server.";

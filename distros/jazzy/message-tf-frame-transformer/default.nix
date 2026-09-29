@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake geometry-msgs rclcpp sensor-msgs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ geometry-msgs rclcpp sensor-msgs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs ];
+  rosExecDepends = [ geometry-msgs rclcpp sensor-msgs tf2 tf2-geometry-msgs tf2-ros tf2-sensor-msgs ];
 
   meta = {
     description = "Transforms messages of arbitrary type to a different frame using tf2::doTransform";

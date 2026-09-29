@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros cv-bridge geometry-msgs nav-msgs rclcpp ros-environment rtabmap-msgs rtabmap-sync std-msgs std-srvs tf2 ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ cv-bridge geometry-msgs nav-msgs rclcpp rtabmap-msgs rtabmap-sync std-msgs std-srvs tf2 ];
+  rosExecDepends = [ cv-bridge geometry-msgs nav-msgs rclcpp rtabmap-msgs rtabmap-sync std-msgs std-srvs tf2 ];
 
   meta = {
     description = "RTAB-Map's visualization package.";

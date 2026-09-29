@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ portaudio ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
   rosBuildExportDepends = [ action-msgs geometry-msgs sensor-msgs std-msgs vision-msgs ];
-  rosExecDepends = [ nav2-msgs nav2-simple-commander rosidl-default-runtime tf-transformations ];
+  rosExecDepends = [ action-msgs geometry-msgs nav2-msgs nav2-simple-commander rosidl-default-runtime sensor-msgs std-msgs tf-transformations vision-msgs ];
 
   meta = {
     description = "Interfaces for RAI communication";

@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ agnocast-cie-config-msgs launch-testing-ament-cmake ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ agnocast-cie-thread-configurator agnocast-components agnocastlib rclcpp rclcpp-components std-msgs ];
+  rosExecDepends = [ agnocast-cie-thread-configurator agnocast-components agnocastlib rclcpp rclcpp-components std-msgs ];
 
   meta = {
     description = "E2E test for Agnocast.";

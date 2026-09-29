@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake etsi-its-primitives-conversion etsi-its-vam-ts-coding etsi-its-vam-ts-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ etsi-its-primitives-conversion etsi-its-vam-ts-coding etsi-its-vam-ts-msgs ];
+  rosExecDepends = [ etsi-its-primitives-conversion etsi-its-vam-ts-coding etsi-its-vam-ts-msgs ];
 
   meta = {
     description = "Conversion functions for converting ROS messages to and from ASN.1-encoded ETSI ITS VAMs (TS)";

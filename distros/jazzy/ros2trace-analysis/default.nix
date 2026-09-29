@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ros2cli tracetools-analysis ];
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 ament-xmllint python3Packages.pytest ];
   rosBuildExportDepends = [ ros2cli tracetools-analysis ];
+  rosExecDepends = [ ros2cli tracetools-analysis ];
 
   meta = {
     description = "The trace-analysis command for ROS 2 command line tools.";

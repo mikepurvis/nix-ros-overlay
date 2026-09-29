@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ cmake mola-common mola-imu-preintegration mola-kernel mrpt-libobs ];
   nativeBuildInputs = [ cmake ];
   rosBuildExportDepends = [ mola-common mola-imu-preintegration mola-kernel mrpt-libobs ];
+  rosExecDepends = [ mola-common mola-imu-preintegration mola-kernel mrpt-libobs ];
 
   meta = {
     description = "SE(3) pose and twist path data fusion estimator";

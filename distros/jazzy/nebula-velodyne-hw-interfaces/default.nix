@@ -18,6 +18,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ autoware-cmake ];
   rosBuildExportDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-velodyne-common ];
+  rosExecDepends = [ nebula-core-common nebula-core-hw-interfaces nebula-velodyne-common ];
 
   meta = {
     description = "Nebula HW Interfaces Velodyne";

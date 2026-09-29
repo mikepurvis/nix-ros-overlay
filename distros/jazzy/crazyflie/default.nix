@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ crazyflie-interfaces geometry-msgs rclcpp rclpy sensor-msgs std-srvs ];
-  rosExecDepends = [ crazyflie-description crazyflie-server-cpp ];
+  rosExecDepends = [ crazyflie-description crazyflie-interfaces crazyflie-server-cpp geometry-msgs rclcpp rclpy sensor-msgs std-srvs ];
 
   meta = {
     description = "ROS 2 Package for Bitcraze Crazyflie robots";

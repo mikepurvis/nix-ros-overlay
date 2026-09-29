@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ urdf-tutorial ];
+  rosExecDepends = [ urdf-tutorial ];
 
   meta = {
     description = "robot description files including urdf, meshes and launch files for the bcr arm";

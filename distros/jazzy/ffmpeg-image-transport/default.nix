@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-black ament-cmake-clang-format ament-cmake-gtest ament-lint-auto ament-lint-common ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros ros-environment ];
   rosBuildExportDepends = [ ffmpeg-encoder-decoder ffmpeg-image-transport-msgs image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
+  rosExecDepends = [ ffmpeg-encoder-decoder ffmpeg-image-transport-msgs image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
 
   meta = {
     description = "ffmpeg_image_transport provides a plugin to image_transport for

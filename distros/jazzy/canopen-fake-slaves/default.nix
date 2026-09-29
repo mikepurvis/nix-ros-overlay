@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-lint-auto ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ lely-core-libraries lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ lely-core-libraries lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Package with mock canopen slave";

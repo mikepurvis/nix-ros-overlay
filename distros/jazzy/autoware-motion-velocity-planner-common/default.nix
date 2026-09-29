@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ boost eigen ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake eigen3-cmake-module ];
   rosBuildExportDepends = [ autoware-behavior-velocity-planner-common autoware-internal-debug-msgs autoware-internal-planning-msgs autoware-lanelet2-extension autoware-motion-utils autoware-object-recognition-utils autoware-perception-msgs autoware-planning-msgs autoware-route-handler autoware-utils-debug autoware-utils-geometry autoware-utils-math autoware-utils-rclcpp autoware-utils-visualization autoware-velocity-smoother geometry-msgs rclcpp visualization-msgs ];
+  rosExecDepends = [ autoware-behavior-velocity-planner-common autoware-internal-debug-msgs autoware-internal-planning-msgs autoware-lanelet2-extension autoware-motion-utils autoware-object-recognition-utils autoware-perception-msgs autoware-planning-msgs autoware-route-handler autoware-utils-debug autoware-utils-geometry autoware-utils-math autoware-utils-rclcpp autoware-utils-visualization autoware-velocity-smoother geometry-msgs rclcpp visualization-msgs ];
 
   meta = {
     description = "Common functions and interfaces for motion_velocity_planner modules";

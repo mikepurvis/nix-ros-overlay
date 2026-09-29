@@ -19,6 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ nanoflann nlohmann_json ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ angles backward-ros geometry-msgs nav-msgs nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp rclcpp-lifecycle std-msgs tf2 tf2-ros visualization-msgs ];
+  rosExecDepends = [ angles backward-ros geometry-msgs nav-msgs nav2-core nav2-costmap-2d nav2-msgs nav2-util pluginlib rclcpp rclcpp-lifecycle std-msgs tf2 tf2-ros visualization-msgs ];
 
   meta = {
     description = "A Route Graph planner to compliment the Planner Server";

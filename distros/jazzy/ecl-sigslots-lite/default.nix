@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-errors ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
   rosBuildExportDepends = [ ecl-config ecl-errors ecl-license ];
+  rosExecDepends = [ ecl-config ecl-errors ecl-license ];
 
   meta = {
     description = "This avoids use of dynamic storage (malloc/new) and thread safety (mutexes) to

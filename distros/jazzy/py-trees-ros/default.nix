@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ geometry-msgs py-trees py-trees-ros-interfaces python3Packages.setuptools rcl-interfaces rclpy ros2topic sensor-msgs std-msgs std-srvs tf2-ros-py unique-identifier-msgs ];
   checkInputs = [ python3Packages.pytest ];
   rosBuildExportDepends = [ geometry-msgs py-trees py-trees-ros-interfaces rcl-interfaces rclpy ros2topic sensor-msgs std-msgs std-srvs tf2-ros-py unique-identifier-msgs ];
+  rosExecDepends = [ geometry-msgs py-trees py-trees-ros-interfaces rcl-interfaces rclpy ros2topic sensor-msgs std-msgs std-srvs tf2-ros-py unique-identifier-msgs ];
 
   meta = {
     description = "ROS 2 extensions and behaviours for py_trees.";

@@ -19,7 +19,7 @@ buildRosPackage {
   propagatedBuildInputs = [ python3Packages.httpx python3Packages.platformdirs python3Packages.tqdm python3Packages.websockets ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
   rosBuildExportDepends = [ automatika-ros-sugar builtin-interfaces sensor-msgs std-msgs ];
-  rosExecDepends = [ rosidl-default-runtime ];
+  rosExecDepends = [ automatika-ros-sugar builtin-interfaces rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "agents";

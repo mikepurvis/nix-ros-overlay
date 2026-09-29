@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest roboplan-example-models ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
   rosBuildExportDepends = [ roboplan roboplan-oink roboplan-toppra ];
+  rosExecDepends = [ roboplan roboplan-oink roboplan-toppra ];
 
   meta = {
     description = "Cartesian path planner for RoboPlan.";

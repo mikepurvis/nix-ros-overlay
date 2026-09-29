@@ -18,7 +18,7 @@ buildRosPackage {
   checkInputs = [ launch-testing-ament-cmake rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ urdf xacro ];
-  rosExecDepends = [ joint-state-publisher-gui kuka-resources launch-ros robot-state-publisher ];
+  rosExecDepends = [ joint-state-publisher-gui kuka-resources launch-ros robot-state-publisher urdf xacro ];
 
   meta = {
     description = "ROS2 support package for the KUKA LBR iiwa";

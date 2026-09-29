@@ -18,6 +18,7 @@ buildRosPackage {
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common geometry-msgs plansys2-msgs test-msgs ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ action-msgs behaviortree-cpp plansys2-executor rclcpp rclcpp-action rclcpp-lifecycle ];
+  rosExecDepends = [ action-msgs behaviortree-cpp plansys2-executor rclcpp rclcpp-action rclcpp-lifecycle ];
 
   meta = {
     description = "This package contains the Problem Expert module for the ROS2 Planning System";

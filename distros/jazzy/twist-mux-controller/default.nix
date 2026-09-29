@@ -17,6 +17,7 @@ buildRosPackage {
   buildInputs = [ ament-cmake controller-interface generate-parameter-library geometry-msgs hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
   nativeBuildInputs = [ ament-cmake ];
   rosBuildExportDepends = [ controller-interface generate-parameter-library geometry-msgs hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
+  rosExecDepends = [ controller-interface generate-parameter-library geometry-msgs hardware-interface pluginlib rclcpp rclcpp-lifecycle realtime-tools ];
 
   meta = {
     description = "Controller for managing multiple twist inputs";
