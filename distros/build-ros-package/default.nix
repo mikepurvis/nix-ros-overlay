@@ -41,6 +41,8 @@ let
         (lib.filter isRos (buildInputs ++ nativeBuildInputs ++ propagatedBuildInputs));
       operator = { drv, ... }: map (d: { key = d.name; drv = d; }) (runDepends drv);
     }));
+  pythonRuntimeInputs = map (d: d.out or d)
+    (lib.filter (d: d != null && d ? pythonModule && !isRos d) propagatedBuildInputs);
 in
 
 (if buildType == "ament_python" then python3Packages.buildPythonPackage
@@ -59,6 +61,13 @@ else stdenv.mkDerivation) (finalAttrs: (removeAttrs args [ "rosBuildExportDepend
     source ${./split-dev-output.sh}
     splitDevOutput
   '' + preFixup;
+  # Propagated inputs are recorded on dev, but Python wrappers build their
+  # PYTHONPATH by following nix-support/propagated-build-inputs from out
+  # (rclpy -> pyyaml for ros2cli, say), so out keeps its Python modules.
+  postFixup = postFixup + lib.optionalString (pythonRuntimeInputs != [ ]) ''
+    mkdir -p "$out/nix-support"
+    echo -n " ${toString pythonRuntimeInputs}" >> "$out/nix-support/propagated-build-inputs"
+  '';
 } // {
   passthru = passthru // {
     rosPackage = true;
