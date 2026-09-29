@@ -80,6 +80,14 @@ splitDevOutput() {
         _mergeToDev "${d#"$out"/}" config-outside-dev
     done < <(find "$out" -depth -type d \( -name cmake -o -name CMake \) -print0)
 
+    # Helper modules installed next to a config that is already in dev, by a
+    # form the pre-patch doesn't match, such as rosidl_generator_c's
+    # install(DIRECTORY cmake resource DESTINATION share/${PROJECT_NAME}).
+    for d in "$out"/share/*/cmake; do
+        [ -d "$d" ] && [ -d "$dev/share/$(basename "$(dirname "$d")")/cmake" ] || continue
+        _mergeToDev "${d#"$out"/}" helpers-outside-dev
+    done
+
     # A config that baked the absolute $out path of something that then moved.
     for d in "${_movedToDev[@]}"; do
         while IFS= read -r -d '' f; do
