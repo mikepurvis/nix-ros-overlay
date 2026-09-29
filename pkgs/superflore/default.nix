@@ -11,8 +11,8 @@ buildPythonPackage rec {
     owner = "mikepurvis";
     repo = "superflore";
     # ref = "refs/heads/nix-passthru-deps";
-    rev = "54aa21972f7153070c560d58f19404cdec224de3";
-    hash = "sha256-dLvjGG6fq51VLcp/82V5psIyFqW7KtEFJ7A5Ze8XfCc=";
+    rev = "5b58917152e7b7ace4051ad52b0f98fdd36ecf12";
+    hash = "sha256-Nne11xFvHvSQAL+Tz+HYRBK+gYNrpFGLG2PCnN1aSbo=";
     # date = "2026-09-20T19:33:50+02:00";
   };
 
