@@ -21,20 +21,6 @@ _splitDevRel() {
     echo "${p/#$dev/\$dev}"
 }
 
-# Before configuring: packages that ship CMake helpers next to their config
-# install them with a literal share/${PROJECT_NAME}, which would leave them
-# in out while the config that includes them goes to dev. This is the same
-# swap ament_cmake#641 makes in ament_cmake's own packages.
-splitDevPrePatch() {
-    local f
-    while IFS= read -r -d '' f; do
-        if grep -qzE 'install\(\s*DIRECTORY\s+cmake/?\s+DESTINATION\s+"?share/\$\{PROJECT_NAME\}/?"?\s*\)' "$f"; then
-            sed -i -z -E 's#install\(\s*DIRECTORY\s+cmake/?\s+DESTINATION\s+"?share/\$\{PROJECT_NAME\}/?"?\s*\)#ament_package_config_install_dir(_nix_config_install_dir)\ninstall(DIRECTORY cmake/ DESTINATION ${_nix_config_install_dir})#g' "$f"
-            _splitDevFixup cmake-dir-install "${f#./}"
-        fi
-    done < <(find . -name CMakeLists.txt -print0)
-}
-
 # Like moveToOutput, but merges into a directory that already exists, as when
 # a package honours the absolute CMAKE_INSTALL_INCLUDEDIR for some headers but
 # installs others to a hardcoded include/.
@@ -80,12 +66,15 @@ splitDevOutput() {
         _mergeToDev "${d#"$out"/}" config-outside-dev
     done < <(find "$out" -depth -type d \( -name cmake -o -name CMake \) -print0)
 
-    # Helper modules installed next to a config that is already in dev, by a
-    # form the pre-patch doesn't match, such as rosidl_generator_c's
-    # install(DIRECTORY cmake resource DESTINATION share/${PROJECT_NAME}).
+    # CMake helpers installed next to a config that is already in dev, with a
+    # literal share/${PROJECT_NAME} rather than the config install dir:
+    # install(DIRECTORY cmake DESTINATION share/${PROJECT_NAME}) in pluginlib,
+    # rcl, rclcpp_components and many more, or rosidl_generator_c's
+    # install(DIRECTORY cmake resource ...). They're copied verbatim, so moving
+    # them after install is the same as installing them there.
     for d in "$out"/share/*/cmake; do
         [ -d "$d" ] && [ -d "$dev/share/$(basename "$(dirname "$d")")/cmake" ] || continue
-        _mergeToDev "${d#"$out"/}" helpers-outside-dev
+        _mergeToDev "${d#"$out"/}" cmake-helpers
     done
 
     # A config that baked the absolute $out path of something that then moved.
