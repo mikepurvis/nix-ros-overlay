@@ -208,15 +208,27 @@ self: super: with self.lib; {
 
   superflore = self.python3Packages.callPackage ./superflore { };
 
-  pclWithQt5 = self.pcl.override {
+  # vtk and pcl propagate their dependencies' dev outputs, which a single
+  # output carries into every runtime closure that uses them (vtk alone brings
+  # ~1.5 GiB of Qt, Boost, HDF5 and X11 headers into desktop_full). Split them
+  # with the same fixup buildRosPackage uses.
+  splitDevAttrs = { preFixup ? "", ... }: {
+    outputs = [ "out" "dev" ];
+    preFixup = ''
+      source ${../distros/build-ros-package/split-dev-output.sh}
+      splitDevOutput
+    '' + preFixup;
+  };
+
+  pclWithQt5 = (self.pcl.override {
     qt6 = self.qt5;
     vtk = self.vtkWithQt5;
-  };
+  }).overrideAttrs self.splitDevAttrs;
   pclWithQt6 = self.pcl.override {
     vtk = self.vtkWithQt6;
   };
 
-  vtkWithQt5 = self.vtk.overrideAttrs ({
+  vtkWithQt5 = (self.vtk.overrideAttrs ({
     cmakeFlags ? [], nativeBuildInputs ? [], propagatedBuildInputs ? [], ...
   }: {
     cmakeFlags = cmakeFlags ++ [
@@ -231,7 +243,7 @@ self: super: with self.lib; {
       self.qt5.wrapQtAppsHook
       self.ninja
     ];
-  });
+  })).overrideAttrs self.splitDevAttrs;
   # TODO: Remove after https://github.com/NixOS/nixpkgs/pull/536748 is
   # merged and available in this overlay.
   vtkWithQt6 = super.vtkWithQt6.overrideAttrs ({
