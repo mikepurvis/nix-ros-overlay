@@ -223,7 +223,18 @@ self: super: with self.lib; {
   pclWithQt5 = (self.pcl.override {
     qt6 = self.qt5;
     vtk = self.vtkWithQt5;
-  }).overrideAttrs self.splitDevAttrs;
+  }).overrideAttrs (old: self.splitDevAttrs old // {
+    # PCLConfig.cmake lives in share/pcl-<ver>, which the dev split doesn't
+    # otherwise move. It finds its prefix two levels up, now dev, which is
+    # right for headers; libraries are pointed back at out.
+    postInstall = (old.postInstall or "") + ''
+      moveToOutput "share/pcl-*" "$dev"
+    '';
+    postFixup = (old.postFixup or "") + ''
+      substituteInPlace "$dev"/share/pcl-*/PCLConfig.cmake \
+        --replace-fail 'set(PCL_LIBRARY_DIRS "''${PCL_ROOT}/lib")' "set(PCL_LIBRARY_DIRS \"$out/lib\")"
+    '';
+  });
   pclWithQt6 = self.pcl.override {
     vtk = self.vtkWithQt6;
   };
@@ -243,7 +254,17 @@ self: super: with self.lib; {
       self.qt5.wrapQtAppsHook
       self.ninja
     ];
-  })).overrideAttrs self.splitDevAttrs;
+  })).overrideAttrs (old: self.splitDevAttrs old // {
+    # VTK refuses an absolute install destination for its CMake files, so
+    # they move after install. vtk-prefix.cmake then finds its prefix in dev,
+    # which is right for headers and CMAKE_PREFIX_PATH, provided the module
+    # hierarchy files (build-time wrapping metadata) move there too.
+    postInstall = (old.postInstall or "") + ''
+      moveToOutput lib/vtk "$dev"
+    '';
+    # The find modules nixpkgs removes have moved to dev by then.
+    postFixup = builtins.replaceStrings [ "$out/lib/cmake/vtk" ] [ "$dev/lib/cmake/vtk" ] (old.postFixup or "");
+  });
   # TODO: Remove after https://github.com/NixOS/nixpkgs/pull/536748 is
   # merged and available in this overlay.
   vtkWithQt6 = super.vtkWithQt6.overrideAttrs ({
