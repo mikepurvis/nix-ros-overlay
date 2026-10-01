@@ -1,7 +1,7 @@
 let
   lock = builtins.fromJSON (builtins.readFile ./flake.lock);
   lockedNixpkgs = builtins.fetchTarball {
-    url = "https://github.com/lopsided98/nixpkgs/archive/${lock.nodes.nixpkgs.locked.rev}.tar.gz";
+    url = "https://github.com/${lock.nodes.nixpkgs.locked.owner}/${lock.nodes.nixpkgs.locked.repo}/archive/${lock.nodes.nixpkgs.locked.rev}.tar.gz";
     sha256 = lock.nodes.nixpkgs.locked.narHash;
   };
 in
