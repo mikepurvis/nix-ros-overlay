@@ -385,7 +385,16 @@ in {
     nativeBuildInputs = nativeBuildInputs ++ [ self.pkg-config ];
   });
 
-  gz-dartsim-vendor = lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor { };
+  gz-dartsim-vendor = (lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor { }).overrideAttrs ({
+    env ? { }, ...
+  }: {
+    # DART builds with -Werror, and newer GCC flags its implicit [=] capture
+    # of this (deprecated in C++20). Set through the environment so it reaches
+    # the vendored external project too.
+    env = env // {
+      NIX_CFLAGS_COMPILE = toString (env.NIX_CFLAGS_COMPILE or "") + " -Wno-error=deprecated";
+    };
+  });
 
   gz-fuel-tools-vendor = lib.patchGzAmentVendorGit rosSuper.gz-fuel-tools-vendor { };
 
