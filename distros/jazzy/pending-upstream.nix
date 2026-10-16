@@ -1,8 +1,11 @@
-# ament/ament_cmake#641 applied to jazzy's ament_cmake packages until it is
-# released: AMENT_CMAKE_CONFIG_INSTALL_PREFIX lets CMake config files be
-# installed into the dev output, with generated files naming the install
-# prefix absolutely. #641 targets rolling and builds on #631, which jazzy
-# lacks, so both are applied. Each package is built from its own release
+# Upstream ROS changes this overlay relies on that haven't been released for
+# jazzy yet, applied as patches to the packages they change. Listed in
+# PENDING-UPSTREAM.md.
+#
+# ament/ament_cmake#641: AMENT_CMAKE_CONFIG_INSTALL_PREFIX lets CMake config
+# files be installed into the dev output, with generated files naming the
+# install prefix absolutely. #641 targets rolling and builds on #631, which
+# jazzy lacks, so both are applied. Each package is built from its own release
 # tarball, so each takes only its directory's part of the diffs.
 self: rosSuper:
 let
