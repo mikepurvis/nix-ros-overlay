@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake git ros-environment ];
+  buildInputs = [ ament-cmake ament-index-cpp git rclcpp ros-environment ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ ament-index-cpp cppzmq rclcpp sqlite tinyxml-2 ];
+  propagatedBuildInputs = [ cppzmq sqlite tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake git ];
+  rosBuildExportDepends = [ ament-index-cpp rclcpp ];
+  rosExecDepends = [ ament-index-cpp rclcpp ];
 
   meta = {
     description = "This package provides the Behavior Trees core library.";

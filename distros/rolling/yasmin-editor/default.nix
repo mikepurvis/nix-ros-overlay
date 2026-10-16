@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ros-environment ];
+  buildInputs = [ ament-cmake ament-cmake-python rclpy ros-environment yasmin yasmin-factory yasmin-plugins-manager ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ python3Packages.pyqt6 python3Packages.tqdm rclpy yasmin yasmin-factory yasmin-plugins-manager yasmin-ros ];
+  propagatedBuildInputs = [ python3Packages.pyqt6 python3Packages.tqdm ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ rclpy yasmin yasmin-factory yasmin-plugins-manager ];
+  rosExecDepends = [ rclpy yasmin yasmin-factory yasmin-plugins-manager yasmin-ros ];
 
   meta = {
     description = "Editor for YASMIN (Yet Another State MachINe)";

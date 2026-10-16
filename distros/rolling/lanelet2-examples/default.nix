@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core lanelet2-core lanelet2-io lanelet2-matching lanelet2-projection lanelet2-python lanelet2-routing lanelet2-traffic-rules mrt-cmake-modules ];
   checkInputs = [ gtest ];
-  propagatedBuildInputs = [ lanelet2-core lanelet2-io lanelet2-matching lanelet2-projection lanelet2-python lanelet2-routing lanelet2-traffic-rules mrt-cmake-modules ros2cli ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosBuildExportDepends = [ lanelet2-core lanelet2-io lanelet2-matching lanelet2-projection lanelet2-python lanelet2-routing lanelet2-traffic-rules mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core lanelet2-io lanelet2-matching lanelet2-projection lanelet2-python lanelet2-routing lanelet2-traffic-rules ros2cli ];
 
   meta = {
     description = "Examples for working with Lanelet2";

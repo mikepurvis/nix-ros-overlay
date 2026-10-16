@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake gz-cmake-vendor ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ gz-cmake-vendor ruby ];
+  propagatedBuildInputs = [ ruby ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  rosBuildExportDepends = [ gz-cmake-vendor ];
+  rosExecDepends = [ gz-cmake-vendor ];
 
   meta = {
     description = "Vendor package for: gz-tools 3.0.0

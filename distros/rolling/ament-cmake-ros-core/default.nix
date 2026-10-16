@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-export-dependencies ament-cmake-export-targets ];
+  buildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-export-targets ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-libraries ];
-  nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-export-targets ament-cmake-libraries ];
+  nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ament-cmake-export-targets ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-libraries ];
 
   meta = {
     description = "Core ROS specific CMake bits in the ament buildsystem.";

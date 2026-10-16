@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros-core geometry-msgs rclcpp rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common builtin-interfaces ];
-  propagatedBuildInputs = [ ament-cmake-ros-core builtin-interfaces geometry-msgs rclcpp rclpy rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-cmake-ros-core geometry-msgs rclcpp rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rclcpp rclpy rcutils rmw std-msgs tf2 tf2-geometry-msgs visualization-msgs ];
 
   meta = {
     description = "3D interactive marker communication library for RViz and similar tools.";

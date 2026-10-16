@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators vision-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime vision-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ vision-msgs ];
+  rosExecDepends = [ rosidl-default-runtime vision-msgs ];
 
   meta = {
     description = "Package containing interfaces for zbar_ros to use to publish results";

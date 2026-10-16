@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Interfaces for motion_capture_tracking package.";

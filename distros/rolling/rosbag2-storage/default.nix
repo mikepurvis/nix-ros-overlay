@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common rosbag2-test-common ];
-  propagatedBuildInputs = [ pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
+  rosExecDepends = [ pluginlib rclcpp rcutils rmw yaml-cpp-vendor ];
 
   meta = {
     description = "ROS2 independent storage format to store serialized ROS2 messages";

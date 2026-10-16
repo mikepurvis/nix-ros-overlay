@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint xorg.xorgserver ];
-  propagatedBuildInputs = [ freeglut glew gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor libGL libGLU libxi libxmu ogre1_9 util-linux vulkan-loader ];
+  propagatedBuildInputs = [ freeglut glew libGL libGLU libxi libxmu ogre1_9 util-linux vulkan-loader ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  rosBuildExportDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-common-vendor gz-math-vendor gz-ogre-next-vendor gz-plugin-vendor gz-utils-vendor ];
 
   meta = {
     description = "Vendor package for: gz-rendering 11.0.0

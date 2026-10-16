@@ -14,7 +14,8 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ament-lint python3Packages.flake8 python3Packages.flake8-blind-except python3Packages.flake8-class-newline python3Packages.flake8-deprecated python3Packages.flake8-import-order ];
+  propagatedBuildInputs = [ python3Packages.flake8 python3Packages.flake8-blind-except python3Packages.flake8-class-newline python3Packages.flake8-deprecated python3Packages.flake8-import-order ];
+  rosExecDepends = [ ament-lint ];
 
   meta = {
     description = "The ability to check code for style and syntax conventions with flake8.";

@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ example-interfaces rclpy sensor-msgs ];
+  rosExecDepends = [ example-interfaces rclpy sensor-msgs ];
 
   meta = {
     description = "Python Demo applications for Quality of Service features";

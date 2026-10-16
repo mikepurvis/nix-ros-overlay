@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rclcpp resource-retriever resource-retriever-interfaces ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp resource-retriever resource-retriever-interfaces ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rclcpp resource-retriever resource-retriever-interfaces ];
+  rosExecDepends = [ rclcpp resource-retriever resource-retriever-interfaces ];
 
   meta = {
     description = "A resource retriever plugin that relies on talking to a service (specified by resource_retriever_interfaces) for retrieving resources like meshes.";

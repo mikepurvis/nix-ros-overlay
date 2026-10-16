@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ camera-calibration depth-image-proc image-proc image-publisher image-rotate image-view stereo-image-proc ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ camera-calibration depth-image-proc image-proc image-publisher image-rotate image-view stereo-image-proc ];
 
   meta = {
     description = "image_pipeline fills the gap between getting raw images from a camera driver and higher-level vision processing.";

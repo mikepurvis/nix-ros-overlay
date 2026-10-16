@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake ament-index-python rosidl-cli rosidl-pycommon ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python rosidl-cli rosidl-pycommon ];
 
   meta = {
     description = "Generate the DDS interfaces for ROS interfaces.";

@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint launch-testing launch-testing-ros python3Packages.pytest ros2topic ];
-  propagatedBuildInputs = [ python3Packages.packaging rclpy sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.packaging ];
+  rosExecDepends = [ rclpy sensor-msgs std-msgs ];
 
   meta = {
     description = "This package contains a tool for setting and publishing joint state values for a given URDF.";

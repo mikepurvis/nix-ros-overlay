@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake geometry-msgs ros-environment sensor-msgs ];
-  checkInputs = [ ament-cmake-gtest ament-lint-auto asio nlohmann_json std-msgs std-srvs test-msgs websocketpp ];
-  propagatedBuildInputs = [ ament-index-cpp rcl-interfaces rclcpp rclcpp-components rcpputils rcutils resource-retriever rosgraph-msgs rosidl-typesupport-introspection-cpp rosx-introspection service-msgs std-msgs ];
+  buildInputs = [ ament-cmake ament-index-cpp geometry-msgs rcl-interfaces rclcpp rclcpp-components rcpputils rcutils resource-retriever ros-environment rosgraph-msgs rosidl-typesupport-introspection-cpp rosx-introspection sensor-msgs std-msgs ];
+  checkInputs = [ ament-cmake-gtest ament-lint-auto asio nlohmann_json std-srvs test-msgs websocketpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp rcl-interfaces rclcpp rclcpp-components rcpputils rcutils resource-retriever rosgraph-msgs rosidl-typesupport-introspection-cpp rosx-introspection std-msgs ];
+  rosExecDepends = [ ament-index-cpp rcl-interfaces rclcpp rclcpp-components rcpputils rcutils resource-retriever rosgraph-msgs rosidl-typesupport-introspection-cpp rosx-introspection service-msgs std-msgs ];
 
   meta = {
     description = "ROS Foxglove Bridge";

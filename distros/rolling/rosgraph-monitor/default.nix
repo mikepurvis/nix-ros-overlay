@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake generate-parameter-library ];
+  buildInputs = [ ament-cmake diagnostic-msgs diagnostic-updater generate-parameter-library rclcpp rclcpp-components rosgraph-monitor-msgs ];
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common launch-ros launch-testing-ament-cmake rmw-implementation rmw-stats-shim ];
-  propagatedBuildInputs = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rosgraph-monitor-msgs ];
   nativeBuildInputs = [ ament-cmake generate-parameter-library ];
+  rosBuildExportDepends = [ diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rosgraph-monitor-msgs ];
+  rosExecDepends = [ diagnostic-aggregator diagnostic-msgs diagnostic-updater rclcpp rclcpp-components rosgraph-monitor-msgs ];
 
   meta = {
     description = "Monitors the ROS graph to detect error conditions";

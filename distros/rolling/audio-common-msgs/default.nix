@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages for transmitting audio via ROS";

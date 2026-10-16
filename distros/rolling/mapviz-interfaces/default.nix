@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ builtin-interfaces marti-common-msgs rosidl-default-generators ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ rosidl-default-generators ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "ROS interfaces used by Mapviz";

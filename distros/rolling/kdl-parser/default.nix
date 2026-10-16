@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros eigen eigen3-cmake-module ];
+  buildInputs = [ ament-cmake-ros eigen eigen3-cmake-module rcutils urdf urdfdom-headers ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ orocos-kdl rcutils urdf urdfdom-headers ];
+  propagatedBuildInputs = [ orocos-kdl ];
   nativeBuildInputs = [ ament-cmake-ros eigen3-cmake-module ];
+  rosBuildExportDepends = [ rcutils urdf urdfdom-headers ];
+  rosExecDepends = [ rcutils urdf ];
 
   meta = {
     description = "The Kinematics and Dynamics Library (KDL) defines a tree structure

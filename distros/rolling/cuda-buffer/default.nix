@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cuda-buffer-backend-msgs rcutils rmw rosidl-buffer ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cuda-buffer-backend-msgs cudaPackages.cudatoolkit rcutils rmw rosidl-buffer ];
+  propagatedBuildInputs = [ cudaPackages.cudatoolkit ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cuda-buffer-backend-msgs rcutils rmw rosidl-buffer ];
+  rosExecDepends = [ cuda-buffer-backend-msgs rcutils rmw rosidl-buffer ];
 
   meta = {
     description = "CUDA-backed rosidl::Buffer storage and synchronization utilities,

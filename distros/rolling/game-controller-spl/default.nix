@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ game-controller-spl-interfaces python3Packages.construct rclpy ];
+  propagatedBuildInputs = [ python3Packages.construct ];
+  rosExecDepends = [ game-controller-spl-interfaces rclpy ];
 
   meta = {
     description = "GameController-Robot communication in RoboCup SPL";

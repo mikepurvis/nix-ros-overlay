@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake rosidl-buffer rosidl-runtime-c ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common performance-test-fixture ];
-  propagatedBuildInputs = [ ament-cmake rosidl-buffer rosidl-runtime-c ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake rosidl-buffer rosidl-runtime-c ];
+  rosExecDepends = [ rosidl-buffer rosidl-runtime-c ];
 
   meta = {
     description = "Provides definitions and templated functions for getting and working with rosidl typesupport types in C++.";

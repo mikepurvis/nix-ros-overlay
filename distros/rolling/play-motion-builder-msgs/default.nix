@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake builtin-interfaces rosidl-default-generators ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs builtin-interfaces rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs builtin-interfaces ];
+  rosExecDepends = [ action-msgs builtin-interfaces rosidl-default-runtime ];
 
   meta = {
     description = "The play_motion_builder_msgs package";

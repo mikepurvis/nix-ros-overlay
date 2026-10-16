@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-configs-utils moveit-kinematics moveit-planners moveit-planners-chomp moveit-ros-move-group moveit-ros-visualization moveit-servo moveit-simple-controller-manager ur-description warehouse-ros-sqlite xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ moveit-configs-utils moveit-kinematics moveit-planners moveit-planners-chomp moveit-ros-move-group moveit-ros-visualization moveit-servo moveit-simple-controller-manager ur-description warehouse-ros-sqlite xacro ];
 
   meta = {
     description = "An example package with MoveIt2 configurations for UR robots.";

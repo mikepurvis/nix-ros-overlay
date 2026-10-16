@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rosidl-cmake ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "A package containing some sensor data related message and service definitions.";

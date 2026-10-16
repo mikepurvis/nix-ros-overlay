@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-qt-binding qt-gui qt-gui-py-common rqt-gui rqt-gui-py ];
+  rosExecDepends = [ python-qt-binding qt-gui qt-gui-py-common rqt-gui rqt-gui-py ];
 
   meta = {
     description = "rqt_shell is a Python GUI plugin providing an interactive shell.";

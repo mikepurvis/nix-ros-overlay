@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake pkg-config python3 python3Packages.pybind11 ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ lttng-tools rpyutils ];
+  propagatedBuildInputs = [ lttng-tools ];
   nativeBuildInputs = [ ament-cmake pkg-config ];
+  rosExecDepends = [ rpyutils ];
 
   meta = {
     description = "liblttng-ctl Python bindings";

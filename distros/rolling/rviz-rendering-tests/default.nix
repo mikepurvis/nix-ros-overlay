@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core qt6.qtbase ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core qt6.qtbase resource-retriever rviz-rendering ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-index-cpp ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ resource-retriever rviz-rendering ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ resource-retriever rviz-rendering ];
+  rosExecDepends = [ resource-retriever rviz-rendering ];
 
   meta = {
     description = "Example plugin for RViz - documents and tests RViz plugin development";

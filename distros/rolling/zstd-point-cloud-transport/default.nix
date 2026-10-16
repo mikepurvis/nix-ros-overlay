@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake pluginlib point-cloud-interfaces point-cloud-transport rclcpp zstd-cmake-module ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ pluginlib point-cloud-interfaces point-cloud-transport rclcpp zstd-cmake-module ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ pluginlib point-cloud-interfaces point-cloud-transport rclcpp zstd-cmake-module ];
+  rosExecDepends = [ pluginlib point-cloud-interfaces point-cloud-transport rclcpp zstd-cmake-module ];
 
   meta = {
     description = "zstd_point_cloud_transport provides a plugin to point_cloud_transport for sending point clouds

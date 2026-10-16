@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   buildInputs = [ python3Packages.setuptools rosidl-default-generators ];
-  propagatedBuildInputs = [ python-qt-binding rclpy rqt-gui rqt-gui-py rqt-py-common rqt-topic sensor-msgs ];
   nativeBuildInputs = [ python3Packages.setuptools rosidl-default-generators ];
+  rosExecDepends = [ python-qt-binding rclpy rqt-gui rqt-gui-py rqt-py-common rqt-topic sensor-msgs ];
 
   meta = {
     description = "An rqt-based tool that assists monitoring tasks

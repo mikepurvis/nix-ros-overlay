@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python builtin-interfaces geometry-msgs python3Packages.numpy python3Packages.pillow python3Packages.pycairo rclpy rosbag2 rqt-bag rqt-gui rqt-gui-py rqt-plot sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.pillow python3Packages.pycairo ];
+  rosExecDepends = [ ament-index-python builtin-interfaces geometry-msgs rclpy rosbag2 rqt-bag rqt-gui rqt-gui-py rqt-plot sensor-msgs std-msgs ];
 
   meta = {
     description = "rqt_bag provides a GUI plugin for displaying and replaying ROS bag files.";

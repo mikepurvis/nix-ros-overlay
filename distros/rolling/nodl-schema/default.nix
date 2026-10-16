@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.jsonschema python3Packages.pydantic python3Packages.pyyaml python3Packages.ruamel_yaml ];
+  propagatedBuildInputs = [ python3Packages.jsonschema python3Packages.pydantic python3Packages.pyyaml python3Packages.ruamel_yaml ];
+  rosExecDepends = [ ament-index-python ];
 
   meta = {
     description = "ROS 2 Node Definition Language (NoDL) schema and validation.";

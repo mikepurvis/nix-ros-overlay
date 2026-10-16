@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ _unresolved_python3-junitparser ament-cmake-pytest geometry-msgs python3Packages.pytest ros2run ros2topic ];
-  propagatedBuildInputs = [ launch python3Packages.boto3 python3Packages.pydantic python3Packages.requests python3Packages.termcolor rclpy ros2bag rosbag2-py rosbag2-storage-mcap ];
+  propagatedBuildInputs = [ python3Packages.boto3 python3Packages.pydantic python3Packages.requests python3Packages.termcolor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch rclpy ros2bag rosbag2-py rosbag2-storage-mcap ];
 
   meta = {
     description = "A testing library and CLI for replaying ROS nodes.";

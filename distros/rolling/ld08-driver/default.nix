@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ boost rclcpp sensor-msgs udev ];
+  buildInputs = [ ament-cmake rclcpp sensor-msgs ];
+  propagatedBuildInputs = [ boost udev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp sensor-msgs ];
+  rosExecDepends = [ rclcpp sensor-msgs ];
 
   meta = {
     description = "ROS package for LDS-02(LD08) Lidar.

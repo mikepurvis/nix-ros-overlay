@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  buildInputs = [ ament-cmake-auto autoware-planning-msgs builtin-interfaces rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ autoware-planning-msgs builtin-interfaces rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  rosBuildExportDepends = [ autoware-planning-msgs builtin-interfaces std-msgs ];
+  rosExecDepends = [ autoware-planning-msgs builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Interfaces between core Autoware vehicle components";

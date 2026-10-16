@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core qt6.qtbase ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core qt6.qtbase rviz-common rviz-ogre-vendor ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-pytest ament-lint-auto ament-lint-common geometry-msgs python3Packages.pyyaml rclcpp sensor-msgs ];
-  propagatedBuildInputs = [ python3 rviz-common rviz-default-plugins rviz-ogre-vendor ];
+  propagatedBuildInputs = [ python3 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ rviz-common rviz-ogre-vendor ];
+  rosExecDepends = [ rviz-common rviz-default-plugins rviz-ogre-vendor ];
 
   meta = {
     description = "3D visualization tool for ROS.";

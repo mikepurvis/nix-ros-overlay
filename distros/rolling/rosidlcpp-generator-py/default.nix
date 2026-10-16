@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ rosidl-runtime-c ];
-  propagatedBuildInputs = [ ament-cmake ament-index-python fmt nlohmann_json rmw rosidl-generator-c rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
-  nativeBuildInputs = [ ament-cmake ament-index-python rosidl-generator-c rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface ];
+  buildInputs = [ ament-cmake rosidl-runtime-c rosidlcpp-generator-core rosidlcpp-parser ];
+  propagatedBuildInputs = [ fmt nlohmann_json ];
+  nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake ament-index-python rmw rosidl-generator-c rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface rosidlcpp-generator-core rosidlcpp-parser ];
+  rosExecDepends = [ rosidlcpp-generator-core rosidlcpp-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in Python.";

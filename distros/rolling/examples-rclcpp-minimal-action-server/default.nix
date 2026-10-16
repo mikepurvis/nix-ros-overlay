@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-action ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-action ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-action ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-action ];
 
   meta = {
     description = "Minimal action server examples";

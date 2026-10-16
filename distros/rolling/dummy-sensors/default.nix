@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rclcpp sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp sensor-msgs ];
+  rosExecDepends = [ rclcpp sensor-msgs ];
 
   meta = {
     description = "dummy sensor nodes";

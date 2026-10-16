@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-components rmw-fastrtps-cpp ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-components rmw-fastrtps-cpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-components rmw-fastrtps-cpp ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-components rmw-fastrtps-cpp ];
 
   meta = {
     description = "C++ nodes which access the native handles of the rmw implementation.";

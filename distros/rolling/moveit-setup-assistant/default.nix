@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest moveit-resources-panda-moveit-config ];
-  propagatedBuildInputs = [ ament-index-cpp moveit-configs-utils moveit-setup-app-plugins moveit-setup-controllers moveit-setup-core-plugins moveit-setup-framework moveit-setup-srdf-plugins pluginlib qt6.qtbase rclcpp ];
+  propagatedBuildInputs = [ qt6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
+  rosExecDepends = [ ament-index-cpp moveit-configs-utils moveit-setup-app-plugins moveit-setup-controllers moveit-setup-core-plugins moveit-setup-framework moveit-setup-srdf-plugins pluginlib rclcpp ];
 
   meta = {
     description = "Generates a configuration package that makes it easy to use MoveIt";

@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rcl-logging-interface rcpputils rcutils ];
   checkInputs = [ ament-lint-auto ament-lint-common performance-test-fixture ];
-  propagatedBuildInputs = [ rcl-logging-interface rcpputils rcutils rsyslog ];
+  propagatedBuildInputs = [ rsyslog ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rcl-logging-interface rcpputils rcutils ];
+  rosExecDepends = [ rcl-logging-interface rcpputils rcutils ];
 
   meta = {
     description = "Implementation of rcl_logging API for an syslog/rsyslog backend.";

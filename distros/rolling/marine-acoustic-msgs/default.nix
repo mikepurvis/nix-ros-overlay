@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ geometry-msgs rosidl-default-runtime std-msgs ];
+  buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ geometry-msgs std-msgs ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The marine_acoustic_msgs package, including messages for common

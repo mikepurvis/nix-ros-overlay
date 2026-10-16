@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ros-environment ];
-  propagatedBuildInputs = [ automotive-navigation-msgs automotive-platform-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ automotive-navigation-msgs automotive-platform-msgs ];
 
   meta = {
     description = "Messages for vehicle automation";

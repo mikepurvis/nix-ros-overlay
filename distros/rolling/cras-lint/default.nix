@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake-core ament-cmake-test ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-test ament-lint-common ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-test ];
+  rosExecDepends = [ ament-lint-common ];
 
   meta = {
     description = "Various utilities to work with bag files";

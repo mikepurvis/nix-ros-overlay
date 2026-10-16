@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ robot-state-publisher xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ robot-state-publisher xacro ];
 
   meta = {
     description = "URDF Description package for Leo Rover";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ cx-plugin cx-utils pluginlib rclcpp ];
+  buildInputs = [ ament-cmake cx-plugin cx-utils pluginlib rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cx-plugin cx-utils pluginlib rclcpp ];
+  rosExecDepends = [ cx-plugin cx-utils pluginlib rclcpp ];
 
   meta = {
     description = "CLIPS plugin to retrieve ROS params from own or other nodes";

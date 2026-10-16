@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ python3Packages.pytest ];
-  propagatedBuildInputs = [ nodl-schema ];
+  rosExecDepends = [ nodl-schema ];
 
   meta = {
     description = "Pure semantic comparison for NoDL node interface documents.";

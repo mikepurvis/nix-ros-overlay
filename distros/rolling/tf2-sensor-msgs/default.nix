@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake eigen3-cmake-module geometry-msgs sensor-msgs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-cmake-ros-core ament-lint-auto ament-lint-common rclcpp tf2-geometry-msgs ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module geometry-msgs python3Packages.numpy sensor-msgs sensor-msgs-py std-msgs tf2 tf2-ros tf2-ros-py ];
+  propagatedBuildInputs = [ eigen python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module geometry-msgs sensor-msgs tf2 tf2-ros ];
+  rosExecDepends = [ geometry-msgs sensor-msgs sensor-msgs-py std-msgs tf2 tf2-ros tf2-ros-py ];
 
   meta = {
     description = "Small lib to transform sensor_msgs with tf. Most notably, PointCloud2";

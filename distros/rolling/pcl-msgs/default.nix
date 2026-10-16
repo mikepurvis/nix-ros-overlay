@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ sensor-msgs std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Package containing PCL (Point Cloud Library)-related ROS messages.";

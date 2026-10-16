@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ launch ];
+  rosExecDepends = [ launch ];
 
   meta = {
     description = "XML frontend for the launch package.";

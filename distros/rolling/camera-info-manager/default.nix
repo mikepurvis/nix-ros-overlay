@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core ament-index-cpp camera-calibration-parsers rclcpp rclcpp-lifecycle rcpputils sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-ros-core ament-index-cpp camera-calibration-parsers rclcpp rclcpp-lifecycle rcpputils sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-cmake-ros-core ament-index-cpp camera-calibration-parsers rclcpp rclcpp-lifecycle rcpputils sensor-msgs ];
+  rosExecDepends = [ ament-index-cpp camera-calibration-parsers rclcpp rclcpp-lifecycle rcpputils sensor-msgs ];
 
   meta = {
     description = "This package provides a C++ interface for camera calibration

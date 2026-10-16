@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-cmake-ros gtest-vendor ];
+  buildInputs = [ ament-cmake ament-cmake-ros gtest-vendor ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-ros gtest-vendor ];
+  rosExecDepends = [ ament-cmake-ros gtest-vendor ];
 
   meta = {
     description = "The fuse_doc package provides documentation and examples for the fuse package.";

@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake proj ];
-  propagatedBuildInputs = [ _unresolved_libpointmatcher cv-bridge gtsam libg2o octomap onetbb pcl qt5.qtbase sqlite zlib ];
+  buildInputs = [ cmake cv-bridge gtsam libg2o proj ];
+  propagatedBuildInputs = [ _unresolved_libpointmatcher octomap onetbb pcl qt5.qtbase sqlite zlib ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ cv-bridge gtsam libg2o ];
+  rosExecDepends = [ cv-bridge gtsam libg2o ];
 
   meta = {
     description = "RTAB-Map's standalone library. RTAB-Map is a RGB-D SLAM approach with real-time constraints.";

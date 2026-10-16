@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-index-cpp geometry-msgs rclcpp rclcpp-action std-msgs std-srvs turtlesim-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-cpp geometry-msgs qt6.qtbase rclcpp rclcpp-action std-msgs std-srvs turtlesim-msgs ];
+  propagatedBuildInputs = [ qt6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-index-cpp geometry-msgs rclcpp rclcpp-action std-msgs std-srvs turtlesim-msgs ];
+  rosExecDepends = [ ament-index-cpp geometry-msgs rclcpp rclcpp-action std-msgs std-srvs turtlesim-msgs ];
 
   meta = {
     description = "turtlesim is a tool made for teaching ROS and ROS packages.";

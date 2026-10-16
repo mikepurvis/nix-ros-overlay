@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake ros-environment ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rosidl-generator-c rosidl-pycommon ];
-  propagatedBuildInputs = [ ament-cmake ros-environment rosidl-generator-c rosidl-parser rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface ];
-  nativeBuildInputs = [ ament-cmake ros-environment rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface ];
+  nativeBuildInputs = [ ament-cmake ros-environment ];
+  rosBuildExportDepends = [ ament-cmake ros-environment rosidl-generator-c rosidl-pycommon rosidl-typesupport-c rosidl-typesupport-interface ];
+  rosExecDepends = [ rosidl-generator-c rosidl-parser ];
 
   meta = {
     description = "Generate the ROS interfaces in Rust.";

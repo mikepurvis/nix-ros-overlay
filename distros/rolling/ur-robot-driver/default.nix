@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface motion-primitives-controllers pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
   checkInputs = [ launch-testing-ament-cmake ros2run ];
-  propagatedBuildInputs = [ backward-ros control-msgs controller-manager controller-manager-msgs force-torque-sensor-broadcaster forward-command-controller geometry-msgs hardware-interface joint-state-broadcaster joint-state-publisher joint-trajectory-controller launch launch-ros motion-primitives-controllers pluginlib pose-broadcaster rclcpp rclcpp-action rclcpp-lifecycle rclpy robot-state-publisher ros2-controllers-test-nodes rviz2 socat std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs urdf xacro ];
+  propagatedBuildInputs = [ socat ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ backward-ros control-msgs controller-manager controller-manager-msgs geometry-msgs hardware-interface motion-primitives-controllers pluginlib rclcpp rclcpp-action rclcpp-lifecycle rclpy std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs ];
+  rosExecDepends = [ backward-ros control-msgs controller-manager controller-manager-msgs force-torque-sensor-broadcaster forward-command-controller geometry-msgs hardware-interface joint-state-broadcaster joint-state-publisher joint-trajectory-controller launch launch-ros motion-primitives-controllers pluginlib pose-broadcaster rclcpp rclcpp-action rclcpp-lifecycle rclpy robot-state-publisher ros2-controllers-test-nodes rviz2 std-msgs std-srvs tf2-geometry-msgs ur-client-library ur-controllers ur-dashboard-msgs ur-description ur-msgs urdf xacro ];
 
   meta = {
     description = "The ROS 2 driver for Universal Robots manipulators. This driver supports all robot

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core python3 rmw-implementation rmw-implementation-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core python3 rcpputils rcutils rmw rmw-implementation rmw-implementation-cmake rmw-test-fixture ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rcpputils rcutils rmw rmw-test-fixture rpyutils ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ rcpputils rcutils rmw rmw-test-fixture ];
+  rosExecDepends = [ rcpputils rcutils rmw rmw-test-fixture rpyutils ];
 
   meta = {
     description = "Tools for isolating ROS environments at the RMW layer";

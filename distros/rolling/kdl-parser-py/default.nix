@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-orocos-kdl-vendor urdfdom-py ];
+  rosExecDepends = [ python-orocos-kdl-vendor urdfdom-py ];
 
   meta = {
     description = "<tt>kdl_parser_py</tt> provides Python tools to construct a KDL

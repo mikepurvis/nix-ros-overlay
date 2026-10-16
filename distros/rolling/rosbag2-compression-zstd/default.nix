@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core pluginlib rcutils rosbag2-compression zstd-cmake-module ];
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common rclcpp rosbag2-test-common ];
-  propagatedBuildInputs = [ pluginlib rcutils rosbag2-compression zstd-cmake-module ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ pluginlib rcutils rosbag2-compression zstd-cmake-module ];
+  rosExecDepends = [ pluginlib rcutils rosbag2-compression zstd-cmake-module ];
 
   meta = {
     description = "Zstandard compression library implementation of rosbag2_compression";

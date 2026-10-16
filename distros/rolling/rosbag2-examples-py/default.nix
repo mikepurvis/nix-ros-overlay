@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ example-interfaces rclpy rosbag2-compression rosbag2-py std-msgs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ example-interfaces rclpy rosbag2-compression rosbag2-py rosidl-runtime-py std-msgs ];
+  rosBuildExportDepends = [ example-interfaces rclpy rosbag2-compression rosbag2-py std-msgs ];
+  rosExecDepends = [ example-interfaces rclpy rosbag2-compression rosbag2-py rosidl-runtime-py std-msgs ];
 
   meta = {
     description = "Python bag writing tutorial";

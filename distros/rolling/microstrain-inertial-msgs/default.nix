@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ rosidl-default-generators ];
-  propagatedBuildInputs = [ geometry-msgs std-msgs ];
+  buildInputs = [ geometry-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ rosidl-default-generators ];
+  rosBuildExportDepends = [ geometry-msgs std-msgs ];
+  rosExecDepends = [ geometry-msgs std-msgs ];
 
   meta = {
     description = "A package that contains ROS message corresponding to microstrain message types.";

@@ -14,8 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  propagatedBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  rosBuildExportDepends = [ ament-cmake-core ament-cmake-test ];
 
   meta = {
     description = "The auto-magic functions for ease to use of the ament linters in CMake.";

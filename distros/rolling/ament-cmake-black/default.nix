@@ -14,10 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ ament-black ament-cmake-test ];
-  nativeBuildInputs = [ ament-black ament-cmake-core ament-cmake-test ];
+  nativeBuildInputs = [ ament-cmake-core ament-cmake-test ];
+  rosBuildExportDepends = [ ament-black ament-cmake-test ];
 
   meta = {
     description = "The CMake API for ament_black to lint Python code using black.";

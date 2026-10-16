@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rclcpp resource-retriever-interfaces ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rclcpp resource-retriever-interfaces ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rclcpp resource-retriever-interfaces ];
+  rosExecDepends = [ rclcpp resource-retriever-interfaces ];
 
   meta = {
     description = "An in memory implementation of the resource_retriever_interfaces service.";

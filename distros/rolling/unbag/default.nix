@@ -16,8 +16,9 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.setuptools qt5.qtbase ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml python3Packages.tqdm qt5.qtsvg rclpy ros2cli rosbag2-py rosidl-runtime-py sensor-msgs tf2-msgs ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.opencv4 python3Packages.pyyaml python3Packages.tqdm qt5.qtsvg ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ ament-index-python rclpy ros2cli rosbag2-py rosidl-runtime-py sensor-msgs tf2-msgs ];
 
   meta = {
     description = "A ROS 2 tool for exporting bags to human readable files. Supports pluggable export routines to handle any message type.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake autoware-utils-tf pcl-conversions pcl-ros ];
   checkInputs = [ ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ autoware-utils-tf pcl-conversions pcl-ros ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ autoware-utils-tf pcl-conversions pcl-ros ];
+  rosExecDepends = [ autoware-utils-tf pcl-conversions pcl-ros ];
 
   meta = {
     description = "The autoware_utils_pcl package";

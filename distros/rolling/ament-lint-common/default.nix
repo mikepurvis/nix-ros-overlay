@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-export-dependencies ];
-  propagatedBuildInputs = [ ament-cmake-copyright ament-cmake-core ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ];
+  buildInputs = [ ament-cmake-core ament-cmake-export-dependencies ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-export-dependencies ];
+  rosBuildExportDepends = [ ament-cmake-core ];
+  rosExecDepends = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ];
 
   meta = {
     description = "The list of commonly used linters in the ament build system in CMake.";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces lifecycle-msgs rosidl-default-runtime std-msgs ];
+  buildInputs = [ ament-cmake builtin-interfaces lifecycle-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces lifecycle-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces lifecycle-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Messages and services for the controller manager.";

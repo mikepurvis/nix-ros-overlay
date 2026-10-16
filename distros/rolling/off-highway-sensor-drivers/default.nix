@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ off-highway-can off-highway-general-purpose-radar off-highway-general-purpose-radar-msgs off-highway-premium-radar off-highway-premium-radar-msgs off-highway-premium-radar-sample off-highway-premium-radar-sample-msgs off-highway-radar off-highway-radar-msgs off-highway-uss off-highway-uss-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ off-highway-can off-highway-general-purpose-radar off-highway-general-purpose-radar-msgs off-highway-premium-radar off-highway-premium-radar-msgs off-highway-premium-radar-sample off-highway-premium-radar-sample-msgs off-highway-radar off-highway-radar-msgs off-highway-uss off-highway-uss-msgs ];
 
   meta = {
     description = "The off_highway_sensor_drivers package";

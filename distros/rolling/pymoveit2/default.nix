@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-python ];
-  propagatedBuildInputs = [ action-msgs control-msgs geometry-msgs moveit-msgs rclpy sensor-msgs shape-msgs std-srvs trajectory-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosExecDepends = [ action-msgs control-msgs geometry-msgs moveit-msgs rclpy sensor-msgs shape-msgs std-srvs trajectory-msgs ];
 
   meta = {
     description = "Basic Python interface for MoveIt 2 built on top of ROS 2 actions and services";

@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest python3Packages.pytest ];
-  propagatedBuildInputs = [ launch launch-ros launch-testing launch-testing-ament-cmake ros2nodl ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ launch launch-ros launch-testing launch-testing-ament-cmake ros2nodl ];
 
   meta = {
     description = "CMake integration for NoDL features, such as ament index registration and test target creation.";

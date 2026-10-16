@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros2-control-cmake ];
-  checkInputs = [ ament-cmake-gmock controller-manager hardware-interface ros2-control-test-assets ];
-  propagatedBuildInputs = [ control-msgs controller-interface eigen generate-parameter-library geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools tf2 tf2-msgs ];
+  buildInputs = [ ament-cmake control-msgs controller-interface generate-parameter-library geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools ros2-control-cmake tf2 tf2-msgs ];
+  checkInputs = [ ament-cmake-gmock controller-manager ros2-control-test-assets ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ control-msgs controller-interface generate-parameter-library geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools tf2 tf2-msgs ];
+  rosExecDepends = [ control-msgs controller-interface generate-parameter-library geometry-msgs hardware-interface nav-msgs pluginlib rclcpp rclcpp-lifecycle realtime-tools tf2 tf2-msgs ];
 
   meta = {
     description = "A chainable controller for mobile robots with omnidirectional drive with three or

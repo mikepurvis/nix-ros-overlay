@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces rcl-interfaces rosidl-default-generators ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rcl-interfaces rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces rcl-interfaces ];
+  rosExecDepends = [ builtin-interfaces rcl-interfaces rosidl-default-runtime ];
 
   meta = {
     description = "Messages relating to the ROS Computation Graph.

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake geographic-msgs geometry-msgs rcl-interfaces rosidl-default-generators sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geographic-msgs geometry-msgs rcl-interfaces rosidl-default-runtime sensor-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ geographic-msgs geometry-msgs rcl-interfaces sensor-msgs ];
+  rosExecDepends = [ geographic-msgs geometry-msgs rcl-interfaces rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "Messages for <a href=\"http://wiki.ros.org/mavros\">MAVROS</a>.";

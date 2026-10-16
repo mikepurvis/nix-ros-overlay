@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mrpt-common mrpt-libapps-cli ];
+  buildInputs = [ cmake mrpt-common mrpt-libapps-cli ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-common mrpt-libapps-cli ];
+  rosExecDepends = [ mrpt-common mrpt-libapps-cli ];
 
   meta = {
     description = "MRPT command line applications";

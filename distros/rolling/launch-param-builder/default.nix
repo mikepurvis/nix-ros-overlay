@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.pyyaml rclpy xacro ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosExecDepends = [ ament-index-python rclpy xacro ];
 
   meta = {
     description = "Python library for loading parameters in launch files";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces lifecycle-msgs rclcpp rclcpp-lifecycle ];
   checkInputs = [ ament-lint-auto ament-lint-common ros-testing ];
-  propagatedBuildInputs = [ example-interfaces lifecycle-msgs rclcpp rclcpp-lifecycle ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ example-interfaces lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ example-interfaces lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Package containing demos for lifecycle implementation";

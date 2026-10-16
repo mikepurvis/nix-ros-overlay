@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  buildInputs = [ ament-cmake-auto builtin-interfaces geographic-msgs geometry-msgs rosidl-default-generators shape-msgs std-msgs unique-identifier-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime shape-msgs std-msgs unique-identifier-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ builtin-interfaces geographic-msgs geometry-msgs shape-msgs std-msgs unique-identifier-msgs ];
+  rosExecDepends = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime shape-msgs std-msgs unique-identifier-msgs ];
 
   meta = {
     description = "The Autoware AD API interfaces";

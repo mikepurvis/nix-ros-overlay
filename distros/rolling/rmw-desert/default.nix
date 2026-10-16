@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros-core ];
-  propagatedBuildInputs = [ ament-cmake rcpputils rcutils rmw rmw-dds-common rosidl-cmake rosidl-runtime-c rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core rcpputils rcutils rmw rmw-dds-common rosidl-cmake rosidl-runtime-c rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core rosidl-cmake ];
+  rosBuildExportDepends = [ ament-cmake rcpputils rcutils rmw rmw-dds-common rosidl-cmake rosidl-runtime-c rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
+  rosExecDepends = [ rcpputils rcutils rmw rosidl-typesupport-introspection-c rosidl-typesupport-introspection-cpp ];
 
   meta = {
     description = "Implement the ROS middleware interface using the DESERT protocol stack for underwater communications.";

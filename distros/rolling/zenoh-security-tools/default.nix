@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros-core nlohmann_json ];
+  buildInputs = [ ament-cmake-ros-core nlohmann_json rcpputils rcutils rmw rmw-security-common zenoh-cpp-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rcpputils rcutils rmw rmw-security-common tinyxml-2 zenoh-cpp-vendor ];
+  propagatedBuildInputs = [ tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-ros-core ];
+  rosBuildExportDepends = [ rcpputils rcutils rmw rmw-security-common zenoh-cpp-vendor ];
+  rosExecDepends = [ rcpputils rcutils rmw rmw-security-common zenoh-cpp-vendor ];
 
   meta = {
     description = "This package generates config files to enforce security with Zenoh";

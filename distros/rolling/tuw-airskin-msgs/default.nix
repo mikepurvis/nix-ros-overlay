@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators std-msgs ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The tuw_airskin_msgs package";

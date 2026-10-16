@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto autoware-cmake ];
+  buildInputs = [ ament-cmake-auto autoware-cmake logging-demo rclcpp ];
   checkInputs = [ ament-cmake-ros ament-lint-auto autoware-lint-common ];
-  propagatedBuildInputs = [ logging-demo rclcpp ];
   nativeBuildInputs = [ ament-cmake-auto autoware-cmake ];
+  rosBuildExportDepends = [ logging-demo rclcpp ];
+  rosExecDepends = [ logging-demo rclcpp ];
 
   meta = {
     description = "The autoware_utils_logging package";

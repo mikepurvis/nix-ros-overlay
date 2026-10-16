@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rmf-building-map-msgs rmf-fleet-adapter rmf-reservation-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rmf-building-map-msgs rmf-fleet-adapter rmf-reservation-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rmf-building-map-msgs rmf-fleet-adapter rmf-reservation-msgs ];
+  rosExecDepends = [ rmf-building-map-msgs rmf-fleet-adapter rmf-reservation-msgs ];
 
   meta = {
     description = "Node that handles current state of parking spots.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  checkInputs = [ ament-cmake-gtest example-interfaces rclcpp std-srvs ];
-  propagatedBuildInputs = [ rclcpp rosidl-default-runtime rosidl-typesupport-introspection-cpp std-msgs ];
+  buildInputs = [ ament-cmake rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
+  checkInputs = [ ament-cmake-gtest example-interfaces std-srvs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp rosidl-typesupport-introspection-cpp std-msgs ];
+  rosExecDepends = [ rclcpp rosidl-default-runtime rosidl-typesupport-introspection-cpp std-msgs ];
 
   meta = {
     description = "This package helps ROS2 services implement load balancing functionality.";

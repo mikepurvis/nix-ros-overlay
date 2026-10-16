@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-cmake-ros-core rmw-test-fixture-implementation ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-cmake-ros-core ];
+  nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake ament-cmake-gmock ament-cmake-gtest ament-cmake-pytest ament-cmake-ros-core ];
+  rosExecDepends = [ rmw-test-fixture-implementation ];
 
   meta = {
     description = "The ROS specific CMake bits in the ament buildsystem.";

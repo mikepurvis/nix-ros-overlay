@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ ament-index-python controller-manager forward-command-controller joint-state-broadcaster launch launch-ros robot-state-publisher robstride-ros2-control ros2-socketcan xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python controller-manager forward-command-controller joint-state-broadcaster launch launch-ros robot-state-publisher robstride-ros2-control ros2-socketcan xacro ];
 
   meta = {
     description = "Ready-to-use Xacro profiles, ros2_control configuration, and launch examples for RobStride actuators.";

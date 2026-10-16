@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ bond bondcpp smclib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ bond bondcpp smclib ];
 
   meta = {
     description = "A bond allows two processes, A and B, to know when the other has

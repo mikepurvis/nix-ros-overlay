@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-gen-version-h ros2-control-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-gen-version-h backward-ros control-msgs joint-limits lifecycle-msgs pal-statistics pluginlib rclcpp-lifecycle rcpputils rcutils realtime-tools ros2-control-cmake sdformat-urdf urdf ];
   checkInputs = [ ament-cmake-gmock ros2-control-test-assets ];
-  propagatedBuildInputs = [ backward-ros control-msgs fmt joint-limits lifecycle-msgs pal-statistics pluginlib rclcpp-lifecycle rcpputils rcutils realtime-tools sdformat-urdf tinyxml-2 urdf ];
+  propagatedBuildInputs = [ fmt tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake ament-cmake-gen-version-h ];
+  rosBuildExportDepends = [ backward-ros control-msgs joint-limits lifecycle-msgs pal-statistics pluginlib rclcpp-lifecycle rcpputils rcutils realtime-tools sdformat-urdf urdf ];
+  rosExecDepends = [ backward-ros control-msgs joint-limits lifecycle-msgs pal-statistics pluginlib rclcpp-lifecycle rcpputils rcutils realtime-tools sdformat-urdf urdf ];
 
   meta = {
     description = "Base classes for hardware abstraction and tooling for them";

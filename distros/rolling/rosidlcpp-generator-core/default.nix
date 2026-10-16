@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake nlohmann_json ];
+  buildInputs = [ ament-cmake nlohmann_json rosidlcpp-parser ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ fmt rosidlcpp-parser ];
+  propagatedBuildInputs = [ fmt ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rosidlcpp-parser ];
+  rosExecDepends = [ rosidlcpp-parser ];
 
   meta = {
     description = "This package provides the basis for all rosidlcpp generators";

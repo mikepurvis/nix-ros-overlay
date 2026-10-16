@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake ros-environment rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Common messages used by CRAS";

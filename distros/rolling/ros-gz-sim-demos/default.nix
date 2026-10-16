@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake gz-sim-vendor ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ gz-sim-vendor image-transport-plugins marine-acoustic-msgs robot-state-publisher ros-gz-bridge ros-gz-image ros-gz-sim rqt-image-view rqt-plot rqt-topic rviz-imu-plugin rviz2 sdformat-urdf tf2-ros xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ gz-sim-vendor ];
+  rosExecDepends = [ gz-sim-vendor image-transport-plugins marine-acoustic-msgs robot-state-publisher ros-gz-bridge ros-gz-image ros-gz-sim rqt-image-view rqt-plot rqt-topic rviz-imu-plugin rviz2 sdformat-urdf tf2-ros xacro ];
 
   meta = {
     description = "Demos using Gazebo Sim simulation with ROS.";

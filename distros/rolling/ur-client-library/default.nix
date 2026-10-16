@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "cmake";
   buildInputs = [ cmake ];
-  propagatedBuildInputs = [ ament-cmake ];
   nativeBuildInputs = [ cmake ];
+  rosExecDepends = [ ament-cmake ];
 
   meta = {
     description = "Standalone C++ library for accessing Universal Robots interfaces. This has been forked off the ur_robot_driver.";

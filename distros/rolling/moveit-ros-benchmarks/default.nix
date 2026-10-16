@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake moveit-core ];
-  propagatedBuildInputs = [ boost launch-param-builder moveit-common moveit-configs-utils moveit-ros-planning moveit-ros-warehouse pluginlib rclcpp tf2-eigen ];
+  buildInputs = [ ament-cmake moveit-common moveit-core moveit-ros-planning moveit-ros-warehouse pluginlib rclcpp tf2-eigen ];
+  propagatedBuildInputs = [ boost ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ moveit-common moveit-ros-planning moveit-ros-warehouse pluginlib rclcpp tf2-eigen ];
+  rosExecDepends = [ launch-param-builder moveit-common moveit-configs-utils moveit-ros-planning moveit-ros-warehouse pluginlib rclcpp tf2-eigen ];
 
   meta = {
     description = "Enhanced tools for benchmarks in MoveIt";

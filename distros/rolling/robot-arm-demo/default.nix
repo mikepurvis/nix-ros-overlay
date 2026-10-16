@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake libtorch-vendor rclcpp rclcpp-components tensor-msgs torch-conversions ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ SDL2 cudaPackages.cudatoolkit glew libGL libGLU libtorch-vendor libx11 rclcpp rclcpp-components tensor-msgs torch-conversions ];
+  propagatedBuildInputs = [ SDL2 cudaPackages.cudatoolkit glew libGL libGLU libx11 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ libtorch-vendor rclcpp rclcpp-components tensor-msgs torch-conversions ];
+  rosExecDepends = [ libtorch-vendor rclcpp rclcpp-components tensor-msgs torch-conversions ];
 
   meta = {
     description = "GPU-rendered frames published as tensor_msgs/ExperimentalTensor and

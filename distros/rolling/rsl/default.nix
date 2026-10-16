@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ doxygen ];
+  buildInputs = [ doxygen rclcpp tcb-span ];
   checkInputs = [ ament-cmake-ros clang git range-v3 ];
-  propagatedBuildInputs = [ eigen fmt rclcpp tcb-span tl-expected-nixpkgs ];
+  propagatedBuildInputs = [ eigen fmt tl-expected-nixpkgs ];
   nativeBuildInputs = [ doxygen ];
+  rosBuildExportDepends = [ rclcpp tcb-span ];
+  rosExecDepends = [ rclcpp tcb-span ];
 
   meta = {
     description = "ROS Support Library";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake ros-environment rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake ros-environment ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "messages for event based cameras";

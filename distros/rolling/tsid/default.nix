@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake doxygen git jrl-cmakemodules ];
-  propagatedBuildInputs = [ ament-cmake boost eigenpy eiquadprog graphviz pinocchio ];
+  buildInputs = [ cmake doxygen eigenpy eiquadprog git jrl-cmakemodules pinocchio ];
+  propagatedBuildInputs = [ boost graphviz ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ eigenpy eiquadprog pinocchio ];
+  rosExecDepends = [ ament-cmake eigenpy eiquadprog pinocchio ];
 
   meta = {
     description = "Efficient Task Space Inverse Dynamics (TSID) based on Pinocchio";

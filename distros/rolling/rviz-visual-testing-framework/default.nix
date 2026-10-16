@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake qt6.qtbase ];
+  buildInputs = [ ament-cmake ament-cmake-gtest ament-cmake-ros-core geometry-msgs qt6.qtbase rclcpp rcutils rviz-common rviz-ogre-vendor rviz-rendering std-msgs tf2 tf2-ros ];
   checkInputs = [ ament-cmake-gmock ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-gtest ament-cmake-ros-core geometry-msgs rclcpp rcutils rviz-common rviz-ogre-vendor rviz-rendering std-msgs tf2 tf2-ros ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-cmake-gtest ament-cmake-ros-core geometry-msgs rclcpp rcutils rviz-common rviz-ogre-vendor rviz-rendering std-msgs tf2 tf2-ros ];
+  rosExecDepends = [ ament-cmake-gtest geometry-msgs rclcpp rcutils rviz-common rviz-ogre-vendor rviz-rendering std-msgs tf2 tf2-ros ];
 
   meta = {
     description = "3D testing framework for RViz.";

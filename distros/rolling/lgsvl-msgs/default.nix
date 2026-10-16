@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ros-environment rosidl-default-generators ];
+  buildInputs = [ builtin-interfaces geometry-msgs ros-environment rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs sensor-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Message definitions for interfacing with the LGSVL Simulator for ROS and ROS 2.";

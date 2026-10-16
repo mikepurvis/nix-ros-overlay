@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs std-msgs ];
+  rosExecDepends = [ action-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS2 Messages package for GRBL devices";

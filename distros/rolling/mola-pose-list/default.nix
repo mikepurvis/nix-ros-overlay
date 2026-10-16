@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ mola-common mrpt-libmaps mrpt-libposes ];
+  buildInputs = [ cmake mola-common mrpt-libmaps mrpt-libposes ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mrpt-libmaps mrpt-libposes ];
+  rosExecDepends = [ mola-common mrpt-libmaps mrpt-libposes ];
 
   meta = {
     description = "C++ library for searchable pose lists";

@@ -14,8 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ qt-gui ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python-qt-binding python3Packages.catkin-pkg qt-gui rclpy ];
+  propagatedBuildInputs = [ python3Packages.catkin-pkg ];
+  rosBuildExportDepends = [ qt-gui ];
+  rosExecDepends = [ ament-index-python python-qt-binding qt-gui rclpy ];
 
   meta = {
     description = "rqt_gui provides the main to start an instance of the ROS integrated graphical user interface provided by qt_gui.";

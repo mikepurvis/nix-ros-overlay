@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp rcutils sensor-msgs statistics-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rcutils sensor-msgs statistics-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ example-interfaces rclcpp rcutils sensor-msgs statistics-msgs ];
+  rosExecDepends = [ example-interfaces rclcpp rcutils sensor-msgs statistics-msgs ];
 
   meta = {
     description = "C++ demo application for topic statistics feature.";

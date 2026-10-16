@@ -14,7 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ament-index-python python3Packages.lxml rclpy yasmin yasmin-factory ];
+  buildInputs = [ yasmin yasmin-factory ];
+  propagatedBuildInputs = [ python3Packages.lxml ];
+  rosBuildExportDepends = [ yasmin yasmin-factory ];
+  rosExecDepends = [ ament-index-python rclpy yasmin yasmin-factory ];
 
   meta = {
     description = "Plugin discovery and caching for YASMIN states.";

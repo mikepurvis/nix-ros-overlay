@@ -14,8 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ rclpy rmf-fleet-adapter ];
   checkInputs = [ ament-cmake-pytest ];
-  propagatedBuildInputs = [ _unresolved_pybind11-json-dev python3Packages.pybind11 rclpy rmf-fleet-adapter ];
+  propagatedBuildInputs = [ _unresolved_pybind11-json-dev python3Packages.pybind11 ];
+  rosBuildExportDepends = [ rclpy rmf-fleet-adapter ];
+  rosExecDepends = [ rclpy rmf-fleet-adapter ];
 
   meta = {
     description = "Python bindings for the rmf_fleet_adapter";

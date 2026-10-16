@@ -14,7 +14,7 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ ament-index-python launch launch-param-builder launch-ros srdfdom ];
+  rosExecDepends = [ ament-index-python launch launch-param-builder launch-ros srdfdom ];
 
   meta = {
     description = "Python library for loading moveit config parameters in launch files";

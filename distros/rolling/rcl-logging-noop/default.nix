@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros rcl-logging-interface rcutils ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rcl-logging-interface rcutils ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ rcl-logging-interface rcutils ];
+  rosExecDepends = [ rcl-logging-interface rcutils ];
 
   meta = {
     description = "An rcl logger implementation that doesn't do anything with log messages.";

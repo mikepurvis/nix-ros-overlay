@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  buildInputs = [ ament-cmake-auto autoware-common-msgs builtin-interfaces geometry-msgs nav-msgs rosidl-default-generators std-msgs unique-identifier-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ autoware-common-msgs builtin-interfaces geometry-msgs nav-msgs rosidl-default-runtime std-msgs unique-identifier-msgs ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ autoware-common-msgs builtin-interfaces geometry-msgs nav-msgs std-msgs unique-identifier-msgs ];
+  rosExecDepends = [ autoware-common-msgs builtin-interfaces geometry-msgs nav-msgs rosidl-default-runtime std-msgs unique-identifier-msgs ];
 
   meta = {
     description = "Autoware planning messages package.";

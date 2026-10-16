@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-flake8 ament-xmllint ];
-  propagatedBuildInputs = [ ament-index-python qt-gui qt-gui-py-common rclpy rqt-gui rqt-gui-py ];
+  rosExecDepends = [ ament-index-python qt-gui qt-gui-py-common rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "Visualization plugin for several sensors.";

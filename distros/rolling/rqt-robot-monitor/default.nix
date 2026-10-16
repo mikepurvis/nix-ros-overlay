@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_python";
   buildInputs = [ rosidl-default-generators ];
-  propagatedBuildInputs = [ diagnostic-msgs python-qt-binding python3Packages.rospkg qt-gui qt-gui-py-common rclpy rqt-gui rqt-gui-py rqt-py-common ];
+  propagatedBuildInputs = [ python3Packages.rospkg ];
   nativeBuildInputs = [ rosidl-default-generators ];
+  rosExecDepends = [ diagnostic-msgs python-qt-binding qt-gui qt-gui-py-common rclpy rqt-gui rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "rqt_robot_monitor displays diagnostics_agg topics messages that

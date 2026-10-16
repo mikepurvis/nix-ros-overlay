@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake eigen ];
-  propagatedBuildInputs = [ mrpt-gui mrpt-slam ];
+  buildInputs = [ cmake eigen mrpt-gui mrpt-slam ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mrpt-gui mrpt-slam ];
+  rosExecDepends = [ mrpt-gui mrpt-slam ];
 
   meta = {
     description = "The MRPT C++ library mrpt_graphslam";

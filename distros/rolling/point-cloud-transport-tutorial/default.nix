@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros point-cloud-transport rclcpp rosbag2-cpp sensor-msgs ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-lint-cmake ament-cmake-uncrustify ament-cmake-xmllint ];
-  propagatedBuildInputs = [ point-cloud-transport point-cloud-transport-plugins rclcpp rosbag2-cpp sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ point-cloud-transport rclcpp rosbag2-cpp sensor-msgs ];
+  rosExecDepends = [ point-cloud-transport point-cloud-transport-plugins rclcpp rosbag2-cpp sensor-msgs ];
 
   meta = {
     description = "Tutorial for point_cloud_transport.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake rosidl-default-generators sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ sensor-msgs ];
+  rosExecDepends = [ rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "Interfaces for the sick_safetyscanners ros2 driver";

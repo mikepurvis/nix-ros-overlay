@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake libtorch-vendor rcutils rmw rosidl-buffer tensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common launch-testing-ament-cmake rclcpp rclcpp-components std-msgs ];
-  propagatedBuildInputs = [ libtorch-vendor rcutils rmw rosidl-buffer tensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ libtorch-vendor rcutils rmw rosidl-buffer tensor-msgs ];
+  rosExecDepends = [ libtorch-vendor rcutils rmw rosidl-buffer tensor-msgs ];
 
   meta = {
     description = "Header-only helper library that converts between a

@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-default-runtime ];
 
   meta = {
     description = "Package defining sensor msgs to be received from NAO robot.";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
-  propagatedBuildInputs = [ controller-interface example-interfaces geometry-msgs hardware-interface rclcpp realtime-tools ];
+  buildInputs = [ ament-cmake-ros controller-interface example-interfaces geometry-msgs hardware-interface rclcpp realtime-tools ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ controller-interface example-interfaces geometry-msgs hardware-interface rclcpp realtime-tools ];
+  rosExecDepends = [ controller-interface example-interfaces geometry-msgs hardware-interface rclcpp realtime-tools ];
 
   meta = {
     description = "Subscribes to twist msg and forwards to hardware";

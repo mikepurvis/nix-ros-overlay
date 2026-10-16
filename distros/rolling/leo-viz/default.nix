@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ joint-state-publisher joint-state-publisher-gui leo-description rviz2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joint-state-publisher joint-state-publisher-gui leo-description rviz2 ];
 
   meta = {
     description = "Visualization launch files and RViz configurations for Leo Rover";

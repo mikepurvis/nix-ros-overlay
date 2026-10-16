@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
-  propagatedBuildInputs = [ launch phidgets-api rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
+  buildInputs = [ ament-cmake-ros phidgets-api rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ phidgets-api rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
+  rosExecDepends = [ launch phidgets-api rclcpp rclcpp-components sensor-msgs std-msgs std-srvs ];
 
   meta = {
     description = "Driver for the Phidgets Spatial 3/3/3 devices";

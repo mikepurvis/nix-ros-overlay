@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-index-python qt-gui ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python qt-gui ];
 
   meta = {
     description = "qt_gui_app provides the main to start an instance of the integrated graphical user interface provided by qt_gui.";

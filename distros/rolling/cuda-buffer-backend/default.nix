@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto ];
+  buildInputs = [ ament-cmake-auto cuda-buffer cuda-buffer-backend-msgs pluginlib rcutils rosidl-buffer-backend rosidl-buffer-backend-registry rosidl-runtime-cpp rosidl-typesupport-cpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common launch-ros launch-testing launch-testing-ament-cmake rclcpp rclcpp-components sensor-msgs std-msgs ];
-  propagatedBuildInputs = [ cuda-buffer cuda-buffer-backend-msgs pluginlib rcutils rosidl-buffer-backend rosidl-buffer-backend-registry rosidl-runtime-cpp rosidl-typesupport-cpp ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ cuda-buffer cuda-buffer-backend-msgs pluginlib rcutils rosidl-buffer-backend rosidl-buffer-backend-registry rosidl-runtime-cpp rosidl-typesupport-cpp ];
+  rosExecDepends = [ cuda-buffer cuda-buffer-backend-msgs pluginlib rcutils rosidl-buffer-backend rosidl-buffer-backend-registry rosidl-runtime-cpp rosidl-typesupport-cpp ];
 
   meta = {
     description = "Pluginlib backend for CUDA-backed rosidl::Buffer transport,

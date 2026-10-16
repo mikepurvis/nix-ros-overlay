@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosBuildExportDepends = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
+  rosExecDepends = [ cascade-lifecycle-msgs lifecycle-msgs rclcpp rclcpp-lifecycle ];
 
   meta = {
     description = "Provides a mechanism to make trees of lifecycle nodes to propagate state changes in python";

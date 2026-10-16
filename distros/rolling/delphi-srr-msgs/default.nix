@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces ros-environment rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Message definitions for the Delphi SRR";

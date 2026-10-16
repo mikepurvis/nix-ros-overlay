@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ gps-msgs gps-tools gpsd-client ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ gps-msgs gps-tools gpsd-client ];
 
   meta = {
     description = "gps_umd metapackage";

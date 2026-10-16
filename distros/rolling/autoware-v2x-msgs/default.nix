@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-auto rosidl-default-generators ];
+  buildInputs = [ ament-cmake-auto builtin-interfaces geometry-msgs rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Autoware v2x messages package.";

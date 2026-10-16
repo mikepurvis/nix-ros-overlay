@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake geometry-msgs rosidl-default-generators ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ geometry-msgs rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs ];
+  rosExecDepends = [ geometry-msgs rosidl-default-runtime ];
 
   meta = {
     description = "A package containing msgs that extend geometry_msgs for use in soccer-related packages";

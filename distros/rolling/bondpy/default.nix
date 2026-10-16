@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ bond rclpy smclib ];
+  rosExecDepends = [ bond rclpy smclib ];
 
   meta = {
     description = "Python implementation of bond, a mechanism for checking when

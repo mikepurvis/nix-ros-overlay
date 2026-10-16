@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-qt-binding python3Packages.pydot python3Packages.pygraphviz ];
+  propagatedBuildInputs = [ python3Packages.pydot python3Packages.pygraphviz ];
+  rosExecDepends = [ python-qt-binding ];
 
   meta = {
     description = "qt_dotgraph provides helpers to work with dot graphs.";

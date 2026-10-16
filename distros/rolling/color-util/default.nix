@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake std-msgs ];
   checkInputs = [ ament-cmake-gtest ];
-  propagatedBuildInputs = [ std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ std-msgs ];
 
   meta = {
     description = "An almost dependency-less library for converting between color spaces";

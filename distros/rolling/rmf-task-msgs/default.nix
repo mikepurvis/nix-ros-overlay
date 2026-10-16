@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces rmf-dispenser-msgs rosidl-default-generators ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rmf-dispenser-msgs rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces rmf-dispenser-msgs ];
+  rosExecDepends = [ builtin-interfaces rmf-dispenser-msgs rosidl-default-runtime ];
 
   meta = {
     description = "A package containing messages used to specify tasks";

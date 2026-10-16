@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ rmf-traffic ];
+  buildInputs = [ cmake rmf-traffic ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ rmf-traffic ];
+  rosExecDepends = [ rmf-traffic ];
 
   meta = {
     description = "Examples of how to use the rmf_traffic library";

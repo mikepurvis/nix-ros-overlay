@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ros-environment ];
-  propagatedBuildInputs = [ cli11 freeglut glfw3 mola-common mp2p-icp-core mrpt-libgui ];
+  buildInputs = [ cmake mola-common mp2p-icp-core mrpt-libgui ros-environment ];
+  propagatedBuildInputs = [ cli11 freeglut glfw3 ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ mola-common mp2p-icp-core mrpt-libgui ];
+  rosExecDepends = [ mola-common mp2p-icp-core mrpt-libgui ];
 
   meta = {
     description = "GUI applications for mp2p_icp: mm-viewer (interactive *.mm map viewer) and icp-log-viewer (ICP log inspector). Kept in a separate package from mp2p_icp_core so headless consumers don't need to pull in mrpt_libgui.";

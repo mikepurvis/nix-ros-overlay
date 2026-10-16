@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake image-transport pluginlib rclcpp rqt-gui rqt-gui-cpp rqt-image-overlay-layer ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common compressed-image-transport std-msgs ];
-  propagatedBuildInputs = [ _unresolved_ros_image_to_qimage image-transport pluginlib qt5.qtbase rclcpp rqt-gui rqt-gui-cpp rqt-image-overlay-layer ];
+  propagatedBuildInputs = [ _unresolved_ros_image_to_qimage qt5.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ image-transport pluginlib rclcpp rqt-gui rqt-gui-cpp rqt-image-overlay-layer ];
+  rosExecDepends = [ image-transport pluginlib rclcpp rqt-gui rqt-gui-cpp rqt-image-overlay-layer ];
 
   meta = {
     description = "An rqt plugin to display overlays for custom msgs on an image using plugins.";

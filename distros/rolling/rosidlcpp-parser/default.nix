@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake fmt nlohmann_json ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-pycommon ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rosidl-pycommon ];
 
   meta = {
     description = "This package provides utilities to parse idl files into a json data structure";

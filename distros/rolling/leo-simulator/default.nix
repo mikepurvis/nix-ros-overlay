@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ leo-gz-bringup leo-gz-plugins leo-gz-worlds ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ leo-gz-bringup leo-gz-plugins leo-gz-worlds ];
 
   meta = {
     description = "Metapackage for Leo Rover Gazebo simulation in ROS2";

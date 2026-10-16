@@ -14,8 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ ros2cli ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest test-msgs ];
-  propagatedBuildInputs = [ python3Packages.numpy python3Packages.pyyaml rclpy ros2cli rosidl-runtime-py ];
+  propagatedBuildInputs = [ python3Packages.numpy python3Packages.pyyaml ];
+  rosBuildExportDepends = [ ros2cli ];
+  rosExecDepends = [ rclpy ros2cli rosidl-runtime-py ];
 
   meta = {
     description = "The acceleration command for ROS 2 command line tools.";

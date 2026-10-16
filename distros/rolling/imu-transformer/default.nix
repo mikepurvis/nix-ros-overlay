@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake message-filters rclcpp rclcpp-components sensor-msgs tf2-ros tf2-sensor-msgs ];
   checkInputs = [ ament-cmake-gtest geometry-msgs tf2-geometry-msgs ];
-  propagatedBuildInputs = [ message-filters rclcpp rclcpp-components sensor-msgs tf2-ros tf2-sensor-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ message-filters rclcpp rclcpp-components sensor-msgs tf2-ros tf2-sensor-msgs ];
+  rosExecDepends = [ message-filters rclcpp rclcpp-components sensor-msgs tf2-ros tf2-sensor-msgs ];
 
   meta = {
     description = "Node/components to transform sensor_msgs::Imu data from one frame into another.";

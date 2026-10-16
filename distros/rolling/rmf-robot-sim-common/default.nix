@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake eigen3-cmake-module ];
-  propagatedBuildInputs = [ eigen geometry-msgs rclcpp rmf-building-map-msgs rmf-fleet-msgs tf2-ros ];
+  buildInputs = [ ament-cmake eigen3-cmake-module geometry-msgs rclcpp rmf-building-map-msgs rmf-fleet-msgs tf2-ros ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake eigen3-cmake-module ];
+  rosBuildExportDepends = [ geometry-msgs rclcpp rmf-building-map-msgs rmf-fleet-msgs tf2-ros ];
+  rosExecDepends = [ geometry-msgs rclcpp rmf-building-map-msgs rmf-fleet-msgs tf2-ros ];
 
   meta = {
     description = "Common utility functions for Gazebo-classic and Gazebo RMF plugins";

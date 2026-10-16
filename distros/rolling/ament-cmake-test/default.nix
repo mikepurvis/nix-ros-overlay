@@ -14,9 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ];
-  propagatedBuildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core ament-cmake-python ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-python ];
+  rosBuildExportDepends = [ ament-cmake-core ];
 
   meta = {
     description = "The ability to add tests in the ament buildsystem in CMake.";

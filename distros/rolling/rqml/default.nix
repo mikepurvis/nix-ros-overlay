@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rqml-core rqml-default-plugins ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rqml-core rqml-default-plugins ];
 
   meta = {
     description = "QML-based robotics visualization and control tool for ROS 2.";

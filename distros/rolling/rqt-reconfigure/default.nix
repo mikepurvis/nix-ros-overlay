@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python-qt-binding python3Packages.pyyaml qt-gui-py-common rclpy rqt-console rqt-gui rqt-gui-py rqt-py-common ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosExecDepends = [ ament-index-python python-qt-binding qt-gui-py-common rclpy rqt-console rqt-gui rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "This rqt plugin provides a way to view and edit parameters on nodes.";

@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cv-bridge geometry-msgs image-transport qt-gui-cpp rclcpp rqt-gui rqt-gui-cpp sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common opencv opencv.cxxdev ];
-  propagatedBuildInputs = [ cv-bridge geometry-msgs image-transport qt-gui-cpp qt6.qtbase rclcpp rqt-gui rqt-gui-cpp sensor-msgs ];
+  propagatedBuildInputs = [ qt6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cv-bridge geometry-msgs image-transport qt-gui-cpp rclcpp rqt-gui rqt-gui-cpp sensor-msgs ];
+  rosExecDepends = [ cv-bridge geometry-msgs image-transport qt-gui-cpp rclcpp rqt-gui rqt-gui-cpp sensor-msgs ];
 
   meta = {
     description = "rqt_image_view provides a GUI plugin for displaying images using image_transport.";

@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ geometry-msgs gps-msgs mapviz mapviz-interfaces marti-common-msgs pluginlib python3Packages.pyproj python3Packages.pyyaml qt-gui-cpp qt5or6.qtbase rclcpp rclpy swri-math-util swri-transform-util tf2 ];
+  buildInputs = [ ament-cmake geometry-msgs mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
+  propagatedBuildInputs = [ python3Packages.pyproj python3Packages.pyyaml qt5or6.qtbase ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ geometry-msgs mapviz pluginlib qt-gui-cpp rclcpp swri-math-util swri-transform-util tf2 ];
+  rosExecDepends = [ geometry-msgs gps-msgs mapviz mapviz-interfaces marti-common-msgs pluginlib qt-gui-cpp rclcpp rclpy swri-math-util swri-transform-util tf2 ];
 
   meta = {
     description = "multires_image";

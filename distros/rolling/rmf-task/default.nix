@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake rmf-battery rmf-utils ];
   checkInputs = [ ament-cmake-catch2 ament-cmake-uncrustify ];
-  propagatedBuildInputs = [ eigen nlohmann_json rmf-battery rmf-utils ];
+  propagatedBuildInputs = [ eigen nlohmann_json ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ rmf-battery rmf-utils ];
+  rosExecDepends = [ rmf-battery rmf-utils ];
 
   meta = {
     description = "Package for managing tasks in the Robotics Middleware Framework";

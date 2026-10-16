@@ -14,8 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ rclpy std-msgs std-srvs ];
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ rclpy std-msgs std-srvs ];
+  rosBuildExportDepends = [ rclpy std-msgs std-srvs ];
+  rosExecDepends = [ rclpy std-msgs std-srvs ];
 
   meta = {
     description = "ROS2 recorder node that logs selected topics to ReductStore, with YAML-driven pipelines (mcap/raw, compression, splitting, down-sampling, labelling).";

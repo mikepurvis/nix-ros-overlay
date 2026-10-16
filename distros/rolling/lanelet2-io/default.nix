@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ];
+  buildInputs = [ ament-cmake-core lanelet2-core mrt-cmake-modules ];
   checkInputs = [ gtest ];
-  propagatedBuildInputs = [ boost lanelet2-core mrt-cmake-modules pugixml ];
+  propagatedBuildInputs = [ boost pugixml ];
   nativeBuildInputs = [ ament-cmake-core mrt-cmake-modules ];
+  rosBuildExportDepends = [ lanelet2-core mrt-cmake-modules ];
+  rosExecDepends = [ lanelet2-core ];
 
   meta = {
     description = "Parser/Writer module for lanelet2";

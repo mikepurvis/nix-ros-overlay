@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces rosidl-default-runtime sensor-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces sensor-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "msg definitions for use with point_cloud_transport plugins.";

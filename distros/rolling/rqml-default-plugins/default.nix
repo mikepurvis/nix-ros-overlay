@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rqml-core ];
   checkInputs = [ ament-lint-auto qml6-ros2-plugin rcl-interfaces ros-babel-fish-test-msgs ];
-  propagatedBuildInputs = [ control-msgs controller-manager-msgs geometry-msgs moveit-msgs pal-statistics-msgs qml6-ros2-plugin qt6.qtdeclarative qt6.qtmultimedia rqml-core sensor-msgs tf2-msgs ];
+  propagatedBuildInputs = [ qt6.qtdeclarative qt6.qtmultimedia ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rqml-core ];
+  rosExecDepends = [ control-msgs controller-manager-msgs geometry-msgs moveit-msgs pal-statistics-msgs qml6-ros2-plugin rqml-core sensor-msgs tf2-msgs ];
 
   meta = {
     description = "Default plugins for the QML-based robotics visualization and control tool RQml for ROS 2.";

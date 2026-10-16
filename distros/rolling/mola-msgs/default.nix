@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ action-msgs mrpt-msgs nav-msgs rosidl-default-runtime ];
+  buildInputs = [ action-msgs ament-cmake mrpt-msgs nav-msgs rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ action-msgs mrpt-msgs nav-msgs ];
+  rosExecDepends = [ action-msgs mrpt-msgs nav-msgs rosidl-default-runtime ];
 
   meta = {
     description = "ROS message, services, and actions used in other MOLA packages.";

@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ros-base ros-gz-bridge ros-gz-image ros-gz-interfaces ros-gz-sim ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ros-base ros-gz-bridge ros-gz-image ros-gz-interfaces ros-gz-sim ];
 
   meta = {
     description = "A package which extends 'ros_base' and includes simulation packages.";

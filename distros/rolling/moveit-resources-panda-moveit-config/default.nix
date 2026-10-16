@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-manager joint-state-publisher joint-state-publisher-gui moveit-resources-panda-description parallel-gripper-controller robot-state-publisher ros2cli-common-extensions topic-tools xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ controller-manager joint-state-publisher joint-state-publisher-gui moveit-resources-panda-description parallel-gripper-controller robot-state-publisher ros2cli-common-extensions topic-tools xacro ];
 
   meta = {
     description = "<p>

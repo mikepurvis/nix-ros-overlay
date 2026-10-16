@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python tf2-geometry-msgs ];
+  buildInputs = [ ament-cmake ament-cmake-python eigen3-cmake-module rclcpp sensor-msgs tf2 tf2-geometry-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen eigen3-cmake-module python3Packages.numpy rclcpp rclpy sensor-msgs sensor-msgs-py tf2 ];
+  propagatedBuildInputs = [ eigen python3Packages.numpy ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python eigen3-cmake-module ];
+  rosBuildExportDepends = [ eigen3-cmake-module rclcpp sensor-msgs tf2 ];
+  rosExecDepends = [ rclcpp rclpy sensor-msgs sensor-msgs-py tf2 ];
 
   meta = {
     description = "This package contains a class for converting from a 2D laser scan as defined by

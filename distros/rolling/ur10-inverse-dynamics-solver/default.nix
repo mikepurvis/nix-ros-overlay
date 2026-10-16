@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake inverse-dynamics-solver pluginlib ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp ros-testing rosbag2-cpp rosbag2-storage rosbag2-storage-default-plugins trajectory-msgs ];
-  propagatedBuildInputs = [ inverse-dynamics-solver pluginlib ur-description ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ inverse-dynamics-solver pluginlib ];
+  rosExecDepends = [ inverse-dynamics-solver pluginlib ur-description ];
 
   meta = {
     description = "A C++ library implementing the inverse dynamics solver for the UR10 real robot.";

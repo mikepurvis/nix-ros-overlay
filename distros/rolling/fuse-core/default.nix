@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common geometry-msgs launch launch-pytest rclcpp ];
-  propagatedBuildInputs = [ ament-cmake-ros boost ceres-solver eigen fuse-msgs glog gtest-vendor pluginlib rcl-interfaces rclcpp rclcpp-components ];
+  buildInputs = [ ament-cmake ament-cmake-ros fuse-msgs gtest-vendor pluginlib rcl-interfaces rclcpp rclcpp-components ];
+  checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common geometry-msgs launch launch-pytest ];
+  propagatedBuildInputs = [ boost ceres-solver eigen glog ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-ros fuse-msgs gtest-vendor pluginlib rcl-interfaces rclcpp rclcpp-components ];
+  rosExecDepends = [ ament-cmake-ros fuse-msgs gtest-vendor pluginlib rcl-interfaces rclcpp rclcpp-components ];
 
   meta = {
     description = "The fuse_core package provides the base class interfaces for the various fuse components. Concrete implementations of these

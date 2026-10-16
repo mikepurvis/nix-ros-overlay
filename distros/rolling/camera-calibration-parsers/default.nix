@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core rclcpp sensor-msgs yaml-cpp-vendor ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-index-python ament-lint-auto ament-lint-common python3Packages.pyyaml ];
-  propagatedBuildInputs = [ ament-cmake-ros-core rclcpp sensor-msgs yaml-cpp-vendor ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-cmake-ros-core rclcpp sensor-msgs yaml-cpp-vendor ];
+  rosExecDepends = [ rclcpp sensor-msgs yaml-cpp-vendor ];
 
   meta = {
     description = "camera_calibration_parsers contains routines for reading and writing camera calibration parameters.";

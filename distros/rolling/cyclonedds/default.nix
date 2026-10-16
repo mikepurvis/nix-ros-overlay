@@ -14,9 +14,11 @@ buildRosPackage {
   };
 
   buildType = "cmake";
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ iceoryx-hoofs iceoryx-posh openssl ];
+  buildInputs = [ cmake iceoryx-hoofs iceoryx-posh ];
+  propagatedBuildInputs = [ openssl ];
   nativeBuildInputs = [ cmake ];
+  rosBuildExportDepends = [ iceoryx-hoofs iceoryx-posh ];
+  rosExecDepends = [ iceoryx-hoofs iceoryx-posh ];
 
   meta = {
     description = "Eclipse Cyclone DDS is a very performant and robust open-source DDS implementation. Cyclone DDS is developed completely in the open as an Eclipse IoT project.";

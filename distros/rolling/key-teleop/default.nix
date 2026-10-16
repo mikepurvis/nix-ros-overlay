@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ geometry-msgs rclpy ];
+  rosExecDepends = [ geometry-msgs rclpy ];
 
   meta = {
     description = "A text-based interface to send a robot movement commands.";

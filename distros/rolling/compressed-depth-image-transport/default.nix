@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake cv-bridge image-transport pluginlib rcl-interfaces rclcpp sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge image-transport opencv opencv.cxxdev pluginlib rcl-interfaces rclcpp sensor-msgs ];
+  propagatedBuildInputs = [ opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ cv-bridge image-transport pluginlib rcl-interfaces rclcpp sensor-msgs ];
+  rosExecDepends = [ cv-bridge image-transport pluginlib rcl-interfaces rclcpp sensor-msgs ];
 
   meta = {
     description = "Compressed_depth_image_transport provides a plugin to image_transport for transparently sending

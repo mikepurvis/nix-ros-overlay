@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ launch-testing launch-testing-ros ];
-  propagatedBuildInputs = [ controller-manager controller-manager-msgs rclpy rqt-gui rqt-gui-py ];
+  rosExecDepends = [ controller-manager controller-manager-msgs rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "Graphical frontend for interacting with the controller manager.";

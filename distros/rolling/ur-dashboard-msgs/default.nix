@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ action-msgs rosidl-default-runtime ];
+  buildInputs = [ action-msgs ament-cmake rosidl-default-generators ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs ];
+  rosExecDepends = [ action-msgs rosidl-default-runtime ];
 
   meta = {
     description = "Messages around the UR Dashboard server.";

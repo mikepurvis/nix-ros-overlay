@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ control-msgs moveit-common moveit-core pluginlib rclcpp rclcpp-action ];
+  buildInputs = [ ament-cmake control-msgs moveit-common moveit-core pluginlib rclcpp rclcpp-action ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ control-msgs moveit-common moveit-core pluginlib rclcpp rclcpp-action ];
+  rosExecDepends = [ control-msgs moveit-common moveit-core pluginlib rclcpp rclcpp-action ];
 
   meta = {
     description = "A generic, simple controller manager plugin for MoveIt.";

@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geographic-msgs geometry-msgs rosidl-default-generators std-msgs ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geographic-msgs geometry-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geographic-msgs geometry-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The tuw_object_map_msgs package";

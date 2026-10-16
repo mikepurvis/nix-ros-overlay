@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake builtin-interfaces ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces ros-environment rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The rtcm_msgs package contains messages related to data in the RTCM format.";

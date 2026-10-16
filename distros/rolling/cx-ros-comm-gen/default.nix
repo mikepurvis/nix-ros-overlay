@@ -15,8 +15,9 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ ament-index-python cx-plugin cx-utils pluginlib python3 python3Packages.jinja2 rclcpp rclcpp-action rosidl-runtime-py ];
+  propagatedBuildInputs = [ python3 python3Packages.jinja2 ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ ament-index-python cx-plugin cx-utils pluginlib rclcpp rclcpp-action rosidl-runtime-py ];
 
   meta = {
     description = "Generate CLIPS bindings to use ROS messages, actions and services";

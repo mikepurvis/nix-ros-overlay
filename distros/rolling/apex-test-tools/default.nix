@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-auto ];
+  buildInputs = [ ament-cmake ament-cmake-auto ament-cmake-gtest osrf-testing-tools-cpp ];
   checkInputs = [ ament-cmake-pclint ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-gtest osrf-testing-tools-cpp ];
   nativeBuildInputs = [ ament-cmake ament-cmake-auto ];
+  rosBuildExportDepends = [ ament-cmake-gtest osrf-testing-tools-cpp ];
+  rosExecDepends = [ ament-cmake-gtest osrf-testing-tools-cpp ];
 
   meta = {
     description = "The package Apex.OS Test Tools contains test helpers";

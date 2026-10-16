@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
+  buildInputs = [ ament-cmake cv-bridge image-transport pkg-config pluginlib rclcpp rcutils rosidl-default-generators sensor-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ cv-bridge image-transport libogg libtheora opencv opencv.cxxdev pluginlib rclcpp rcutils rosidl-default-runtime sensor-msgs std-msgs ];
+  propagatedBuildInputs = [ libogg libtheora opencv opencv.cxxdev ];
   nativeBuildInputs = [ ament-cmake pkg-config rosidl-default-generators ];
+  rosBuildExportDepends = [ cv-bridge image-transport pluginlib rclcpp rcutils sensor-msgs std-msgs ];
+  rosExecDepends = [ cv-bridge image-transport pluginlib rclcpp rcutils rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "Theora_image_transport provides a plugin to image_transport for

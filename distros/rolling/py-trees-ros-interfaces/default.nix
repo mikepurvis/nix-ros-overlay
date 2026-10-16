@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ action-msgs ament-cmake diagnostic-msgs geometry-msgs rosidl-default-generators unique-identifier-msgs ];
   checkInputs = [ ament-lint-common ];
-  propagatedBuildInputs = [ action-msgs diagnostic-msgs geometry-msgs rosidl-default-runtime unique-identifier-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ action-msgs diagnostic-msgs geometry-msgs unique-identifier-msgs ];
+  rosExecDepends = [ action-msgs diagnostic-msgs geometry-msgs rosidl-default-runtime unique-identifier-msgs ];
 
   meta = {
     description = "Interfaces used by py_trees_ros and py_trees_ros_tutorials.";

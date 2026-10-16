@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-qt-binding qt-gui rclpy rqt-gui ];
+  rosExecDepends = [ python-qt-binding qt-gui rclpy rqt-gui ];
 
   meta = {
     description = "rqt_gui_py enables GUI plugins to use the Python client library for ROS.";

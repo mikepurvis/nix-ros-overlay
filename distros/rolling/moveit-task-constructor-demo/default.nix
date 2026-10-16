@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ controller-manager generate-parameter-library moveit-configs-utils moveit-core moveit-resources-panda-moveit-config moveit-ros-planning-interface moveit-task-constructor-capabilities moveit-task-constructor-core moveit-task-constructor-visualization py-binding-tools ];
+  buildInputs = [ ament-cmake generate-parameter-library moveit-core moveit-ros-planning-interface moveit-task-constructor-core ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ generate-parameter-library moveit-core moveit-ros-planning-interface moveit-task-constructor-core ];
+  rosExecDepends = [ controller-manager generate-parameter-library moveit-configs-utils moveit-core moveit-resources-panda-moveit-config moveit-ros-planning-interface moveit-task-constructor-capabilities moveit-task-constructor-core moveit-task-constructor-visualization py-binding-tools ];
 
   meta = {
     description = "demo tasks illustrating various capabilities of MTC.";

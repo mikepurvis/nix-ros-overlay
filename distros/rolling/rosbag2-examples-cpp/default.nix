@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core example-interfaces rclcpp rosbag2-compression rosbag2-cpp rosbag2-transport ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rosbag2-compression rosbag2-cpp rosbag2-transport ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ example-interfaces rclcpp rosbag2-compression rosbag2-cpp rosbag2-transport ];
+  rosExecDepends = [ example-interfaces rclcpp rosbag2-compression rosbag2-cpp rosbag2-transport ];
 
   meta = {
     description = "rosbag2 C++ API tutorials and examples";

@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ backward-ros ];
+  buildInputs = [ ament-cmake backward-ros ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ backward-ros ];
+  rosExecDepends = [ backward-ros ];
 
   meta = {
     description = "Common support functionality used throughout MoveIt";

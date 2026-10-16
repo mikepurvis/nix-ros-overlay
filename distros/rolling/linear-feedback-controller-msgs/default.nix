@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake jrl-cmakemodules rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs jrl-cmakemodules rosidl-default-generators sensor-msgs std-msgs tf2-eigen ];
   checkInputs = [ ament-cmake-cppcheck ament-cmake-cpplint ament-cmake-flake8 ament-cmake-gtest ament-cmake-pep257 ament-cmake-pytest ament-cmake-uncrustify ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces eigen geometry-msgs rosidl-default-runtime sensor-msgs std-msgs tf2-eigen ];
+  propagatedBuildInputs = [ eigen ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs sensor-msgs std-msgs tf2-eigen ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs std-msgs ];
 
   meta = {
     description = "ROS msgs that interface the linear_feedback_controller package.";

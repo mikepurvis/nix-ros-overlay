@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ xacro ];
 
   meta = {
     description = "URDF and stl files for MicroStrain sensors.";

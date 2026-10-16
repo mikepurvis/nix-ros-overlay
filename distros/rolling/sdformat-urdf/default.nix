@@ -14,9 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
+  buildInputs = [ ament-cmake-ros pluginlib rcutils sdformat-vendor urdf urdf-parser-plugin ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common sdformat-test-files ];
-  propagatedBuildInputs = [ ament-cmake-ros pluginlib rcutils sdformat-vendor tinyxml-2 urdf urdf-parser-plugin urdfdom-headers ];
+  propagatedBuildInputs = [ tinyxml-2 urdfdom-headers ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ ament-cmake-ros pluginlib rcutils sdformat-vendor urdf urdf-parser-plugin ];
+  rosExecDepends = [ sdformat-vendor urdf urdf-parser-plugin ];
 
   meta = {
     description = "URDF plugin to parse SDFormat XML into URDF C++ DOM objects.";

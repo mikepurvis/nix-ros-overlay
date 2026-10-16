@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ rosidl-default-runtime std-msgs ];
+  buildInputs = [ ament-cmake rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ std-msgs ];
+  rosExecDepends = [ rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "Message and service definitions for mqtt_client";

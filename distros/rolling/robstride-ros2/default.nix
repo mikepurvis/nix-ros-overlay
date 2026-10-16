@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ robstride-driver robstride-examples robstride-ros2-control ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ robstride-driver robstride-examples robstride-ros2-control ];
 
   meta = {
     description = "Aggregate installation package for the RobStride driver, ros2_control component, and examples.";

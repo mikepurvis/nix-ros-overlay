@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.nanobind python3Packages.typing-extensions ];
+  buildInputs = [ ament-cmake ament-cmake-python python3 python3Packages.nanobind python3Packages.typing-extensions roboplan ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest roboplan-example-models ];
-  propagatedBuildInputs = [ roboplan ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ];
+  rosBuildExportDepends = [ roboplan ];
+  rosExecDepends = [ roboplan ];
 
   meta = {
     description = "Rapidly-Exploring Random Tree (RRT) implementation for RoboPlan.";

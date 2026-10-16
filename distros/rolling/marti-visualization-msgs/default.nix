@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators sensor-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs sensor-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime sensor-msgs ];
 
   meta = {
     description = "marti_visualization_msgs";

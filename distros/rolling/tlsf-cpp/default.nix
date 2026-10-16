@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake rcl rclcpp rmw std-msgs tlsf ];
   checkInputs = [ ament-cmake-ros ament-lint-auto ament-lint-common rcpputils rmw-implementation-cmake ];
-  propagatedBuildInputs = [ rcl rclcpp rmw std-msgs tlsf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rcl rclcpp rmw std-msgs tlsf ];
+  rosExecDepends = [ rcl rclcpp rmw std-msgs tlsf ];
 
   meta = {
     description = "C++ stdlib-compatible wrapper around tlsf allocator and ROS2 examples";

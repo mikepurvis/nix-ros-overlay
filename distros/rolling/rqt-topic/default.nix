@@ -14,8 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
+  buildInputs = [ python-qt-binding rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
   checkInputs = [ ament-copyright ament-flake8 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ python-qt-binding python3Packages.pydantic rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
+  propagatedBuildInputs = [ python3Packages.pydantic ];
+  rosBuildExportDepends = [ python-qt-binding rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
+  rosExecDepends = [ python-qt-binding rclpy ros2topic rqt-gui rqt-gui-py rqt-py-common ];
 
   meta = {
     description = "rqt_topic provides a GUI plugin for displaying debug information about ROS topics including publishers, subscribers, publishing rate, and ROS Messages.";

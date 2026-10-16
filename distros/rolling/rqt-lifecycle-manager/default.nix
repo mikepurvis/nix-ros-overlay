@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ lifecycle-msgs python-qt-binding rclpy rqt-gui rqt-gui-py ];
+  rosExecDepends = [ lifecycle-msgs python-qt-binding rclpy rqt-gui rqt-gui-py ];
 
   meta = {
     description = "rqt plugin to list ROS 2 lifecycle nodes and change their states from a non-blocking graphical interface.";

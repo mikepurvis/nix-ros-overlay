@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros ament-cmake-ros-core ament-index-cpp eigen3-cmake-module resource-retriever rviz-ogre-vendor ];
   checkInputs = [ ament-cmake-gmock ament-cmake-gtest ament-lint-auto ament-lint-common assimp ];
-  propagatedBuildInputs = [ ament-cmake-ros-core ament-index-cpp assimp eigen eigen3-cmake-module qt6.qtbase qt6.qtsvg resource-retriever rviz-ogre-vendor ];
+  propagatedBuildInputs = [ assimp eigen qt6.qtbase qt6.qtsvg ];
   nativeBuildInputs = [ ament-cmake-ros ament-cmake-ros-core eigen3-cmake-module ];
+  rosBuildExportDepends = [ ament-cmake-ros-core ament-index-cpp eigen3-cmake-module resource-retriever rviz-ogre-vendor ];
+  rosExecDepends = [ ament-index-cpp resource-retriever rviz-ogre-vendor ];
 
   meta = {
     description = "Library which provides the 3D rendering functionality in rviz.";

@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake ament-cmake-ros fuse-core gtest-vendor pluginlib rclcpp ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common gbenchmark ];
-  propagatedBuildInputs = [ ament-cmake-ros ceres-solver fuse-core gtest-vendor pluginlib rclcpp ];
+  propagatedBuildInputs = [ ceres-solver ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ ament-cmake-ros fuse-core gtest-vendor pluginlib rclcpp ];
+  rosExecDepends = [ ament-cmake-ros fuse-core gtest-vendor pluginlib rclcpp ];
 
   meta = {
     description = "The fuse_graphs package provides some concrete implementations of the fuse_core::Graph interface.";

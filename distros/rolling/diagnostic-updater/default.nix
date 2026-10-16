@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros diagnostic-msgs rclcpp rclpy std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ros python3Packages.pytest rclcpp-lifecycle ];
-  propagatedBuildInputs = [ diagnostic-msgs rclcpp rclpy std-msgs ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros ];
+  rosBuildExportDepends = [ diagnostic-msgs rclcpp rclpy std-msgs ];
+  rosExecDepends = [ diagnostic-msgs rclcpp rclpy std-msgs ];
 
   meta = {
     description = "Update and publish diagnostic information.";

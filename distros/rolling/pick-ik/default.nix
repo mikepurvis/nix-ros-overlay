@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros generate-parameter-library moveit-core pluginlib rclcpp rsl tf2 tf2-geometry-msgs tf2-kdl ];
   checkInputs = [ git moveit-resources-panda-moveit-config ];
-  propagatedBuildInputs = [ fmt generate-parameter-library moveit-core pluginlib range-v3 rclcpp rsl tf2 tf2-geometry-msgs tf2-kdl tl-expected-nixpkgs ];
+  propagatedBuildInputs = [ fmt range-v3 tl-expected-nixpkgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ generate-parameter-library moveit-core pluginlib rclcpp rsl tf2 tf2-geometry-msgs tf2-kdl ];
+  rosExecDepends = [ generate-parameter-library moveit-core pluginlib rclcpp rsl tf2 tf2-geometry-msgs tf2-kdl ];
 
   meta = {
     description = "Inverse Kinematics solver for MoveIt";

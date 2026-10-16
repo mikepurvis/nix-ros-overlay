@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-lint-auto ];
-  propagatedBuildInputs = [ urdf-launch ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ urdf-launch ];
 
   meta = {
     description = "This package contains a number of URDF tutorials.";

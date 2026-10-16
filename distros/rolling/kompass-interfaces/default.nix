@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
-  propagatedBuildInputs = [ action-msgs builtin-interfaces geometry-msgs nav-msgs rosidl-default-runtime std-msgs ];
+  buildInputs = [ action-msgs ament-cmake builtin-interfaces geometry-msgs nav-msgs rosidl-default-generators std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ action-msgs builtin-interfaces geometry-msgs nav-msgs std-msgs ];
+  rosExecDepends = [ action-msgs builtin-interfaces geometry-msgs nav-msgs rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "ROS2 Interfaces for Kompass";

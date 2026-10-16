@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake example-interfaces rcl rcl-interfaces rclcpp rclcpp-components rcpputils rcutils rmw ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros ];
-  propagatedBuildInputs = [ example-interfaces launch-ros launch-xml rcl rcl-interfaces rclcpp rclcpp-components rcpputils rcutils rmw ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ example-interfaces rcl rcl-interfaces rclcpp rclcpp-components rcpputils rcutils rmw ];
+  rosExecDepends = [ example-interfaces launch-ros launch-xml rcl rcl-interfaces rclcpp rclcpp-components rcpputils rcutils rmw ];
 
   meta = {
     description = "C++ nodes which were previously in the ros2/examples repository but are now just used for demo purposes.";

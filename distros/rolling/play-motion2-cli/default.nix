@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 ament-xmllint launch launch-ros launch-testing launch-testing-ros python3Packages.pytest python3Packages.pytest-timeout ];
-  propagatedBuildInputs = [ play-motion2 rclpy ros2cli ];
+  rosExecDepends = [ play-motion2 rclpy ros2cli ];
 
   meta = {
     description = "The play_motion command for ROS 2 command line tools.";

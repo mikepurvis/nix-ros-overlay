@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ rclcpp ];
+  buildInputs = [ ament-cmake rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ rclcpp ];
+  rosExecDepends = [ rclcpp ];
 
   meta = {
     description = "Utility functions for interacting with console";

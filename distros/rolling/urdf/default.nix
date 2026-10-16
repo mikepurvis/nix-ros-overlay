@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake-ros ament-cmake-ros-core pluginlib rcutils urdf-parser-plugin urdfdom urdfdom-headers ];
   checkInputs = [ ament-cmake-google-benchmark ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ pluginlib rcutils tinyxml-2 urdf-parser-plugin urdfdom urdfdom-headers ];
+  propagatedBuildInputs = [ tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ pluginlib rcutils urdf-parser-plugin urdfdom urdfdom-headers ];
+  rosExecDepends = [ pluginlib rcutils urdf-parser-plugin urdfdom urdfdom-headers ];
 
   meta = {
     description = "This package contains a C++ parser for the Unified Robot Description

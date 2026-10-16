@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-python rclcpp rclcpp-components rosidl-default-generators topic-tools-interfaces ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rosidl-runtime-py std-msgs ];
-  propagatedBuildInputs = [ rclcpp rclcpp-components rclpy ros2cli ros2topic rosidl-runtime-py topic-tools-interfaces ];
   nativeBuildInputs = [ ament-cmake ament-cmake-python rosidl-default-generators ];
+  rosBuildExportDepends = [ rclcpp rclcpp-components topic-tools-interfaces ];
+  rosExecDepends = [ rclcpp rclcpp-components rclpy ros2cli ros2topic rosidl-runtime-py topic-tools-interfaces ];
 
   meta = {
     description = "Tools for directing, throttling, selecting, and otherwise messing with

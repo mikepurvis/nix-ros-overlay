@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ moveit-ros-planning-interface rclcpp ];
+  buildInputs = [ ament-cmake moveit-ros-planning-interface rclcpp ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ moveit-ros-planning-interface rclcpp ];
+  rosExecDepends = [ moveit-ros-planning-interface rclcpp ];
 
   meta = {
     description = "This package provides an example for utilizing the MoveIt API with the OpenMANIPULATOR,

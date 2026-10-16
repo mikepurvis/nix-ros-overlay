@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros lifecycle-msgs rcl-lifecycle rclc std-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common osrf-testing-tools-cpp ];
-  propagatedBuildInputs = [ lifecycle-msgs rcl-lifecycle rclc std-msgs ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ lifecycle-msgs rcl-lifecycle rclc std-msgs ];
+  rosExecDepends = [ lifecycle-msgs rcl-lifecycle rclc std-msgs ];
 
   meta = {
     description = "rclc lifecycle convenience methods.";

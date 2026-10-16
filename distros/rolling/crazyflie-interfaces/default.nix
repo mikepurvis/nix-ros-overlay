@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs rosidl-default-generators std-msgs std-srvs ];
   checkInputs = [ ament-cmake-cppcheck ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs std-srvs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs std-msgs std-srvs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime std-msgs std-srvs ];
 
   meta = {
     description = "Interfaces for Crazyswarm2 package.";

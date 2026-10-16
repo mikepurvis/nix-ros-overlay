@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-python ];
+  buildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros-core fastcdr rmw rosidl-runtime-c rosidl-typesupport-fastrtps-cpp ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common osrf-testing-tools-cpp performance-test-fixture rcutils ];
-  propagatedBuildInputs = [ ament-cmake-ros-core ament-index-python fastcdr python3 rmw rosidl-cli rosidl-generator-c rosidl-pycommon rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-fastrtps-cpp rosidl-typesupport-interface ];
-  nativeBuildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros-core python3 rosidl-generator-c ];
+  propagatedBuildInputs = [ python3 ];
+  nativeBuildInputs = [ ament-cmake ament-cmake-python ament-cmake-ros-core python3 ];
+  rosBuildExportDepends = [ ament-cmake-ros-core fastcdr rmw rosidl-generator-c rosidl-runtime-c rosidl-runtime-cpp rosidl-typesupport-fastrtps-cpp rosidl-typesupport-interface ];
+  rosExecDepends = [ ament-index-python fastcdr rmw rosidl-cli rosidl-pycommon rosidl-runtime-c rosidl-typesupport-fastrtps-cpp ];
 
   meta = {
     description = "Generate the C interfaces for eProsima FastRTPS.";

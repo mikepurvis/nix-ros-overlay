@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake ament-cmake-ros geometry-msgs gtest-vendor rosidl-default-generators std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ ament-cmake-ros geometry-msgs gtest-vendor rosidl-default-runtime std-msgs ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ ament-cmake-ros geometry-msgs gtest-vendor std-msgs ];
+  rosExecDepends = [ ament-cmake-ros geometry-msgs gtest-vendor rosidl-default-runtime std-msgs ];
 
   meta = {
     description = "The fuse_msgs package contains messages capable of holding serialized fuse objects.";

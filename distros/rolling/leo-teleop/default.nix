@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
   checkInputs = [ ament-cmake-lint-cmake ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ joy-linux teleop-twist-joy teleop-twist-keyboard ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ joy-linux teleop-twist-joy teleop-twist-keyboard ];
 
   meta = {
     description = "Scripts and launch files for Leo Rover teleoperation";

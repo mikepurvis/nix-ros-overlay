@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake-auto ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ realsense2-description xacro ];
   nativeBuildInputs = [ ament-cmake-auto ];
+  rosExecDepends = [ realsense2-description xacro ];
 
   meta = {
     description = "This package contains the color materials of common elements of PAL Robotics' robot.

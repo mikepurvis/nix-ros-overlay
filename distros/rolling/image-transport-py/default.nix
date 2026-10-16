@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-python ament-cmake-ros ament-cmake-ros-core python3 python3Packages.pybind11 ];
+  buildInputs = [ ament-cmake-python ament-cmake-ros ament-cmake-ros-core image-transport python3 python3Packages.pybind11 rclcpp sensor-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ image-transport rclcpp rpyutils sensor-msgs ];
   nativeBuildInputs = [ ament-cmake-python ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ image-transport rclcpp sensor-msgs ];
+  rosExecDepends = [ image-transport rclcpp rpyutils sensor-msgs ];
 
   meta = {
     description = "Python API for image_transport";

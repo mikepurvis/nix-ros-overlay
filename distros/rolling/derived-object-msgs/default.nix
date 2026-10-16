@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ros-environment rosidl-default-generators ];
+  buildInputs = [ ament-cmake builtin-interfaces geometry-msgs ros-environment rosidl-default-generators shape-msgs std-msgs ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ builtin-interfaces geometry-msgs rosidl-default-runtime shape-msgs std-msgs ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ builtin-interfaces geometry-msgs shape-msgs std-msgs ];
+  rosExecDepends = [ builtin-interfaces geometry-msgs rosidl-default-runtime shape-msgs std-msgs ];
 
   meta = {
     description = "Abstracted Messages from Perception Modalities";

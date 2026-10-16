@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake-ros ament-cmake-ros-core ament-index-cpp ament-index-python ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-cpp ament-index-python curl ];
+  propagatedBuildInputs = [ curl ];
   nativeBuildInputs = [ ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-index-cpp ament-index-python ];
+  rosExecDepends = [ ament-index-cpp ament-index-python ];
 
   meta = {
     description = "This package retrieves data from url-format files such as http://,

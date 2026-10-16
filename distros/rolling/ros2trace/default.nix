@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-mypy ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ ros2cli tracetools-trace ];
+  rosExecDepends = [ ros2cli tracetools-trace ];
 
   meta = {
     description = "The trace command for ROS 2 command line tools.";

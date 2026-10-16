@@ -14,7 +14,9 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ rclpy rmf-fleet-msgs ];
+  buildInputs = [ rclpy rmf-fleet-msgs ];
+  rosBuildExportDepends = [ rclpy rmf-fleet-msgs ];
+  rosExecDepends = [ rclpy rmf-fleet-msgs ];
 
   meta = {
     description = "Node for a fixed 24-hour rotating charger usage schedule";

@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ament-cmake-ros-core ];
+  buildInputs = [ ament-cmake ament-cmake-ros-core tf2 ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ eigen orocos-kdl tf2 ];
+  propagatedBuildInputs = [ eigen orocos-kdl ];
   nativeBuildInputs = [ ament-cmake ament-cmake-ros-core ];
+  rosBuildExportDepends = [ tf2 ];
+  rosExecDepends = [ tf2 ];
 
   meta = {
     description = "Conversion functions between:

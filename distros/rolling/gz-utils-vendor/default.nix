@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake gz-cmake-vendor spdlog-vendor ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ cli11 gz-cmake-vendor spdlog-vendor ];
+  propagatedBuildInputs = [ cli11 ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake ];
+  rosBuildExportDepends = [ gz-cmake-vendor spdlog-vendor ];
+  rosExecDepends = [ gz-cmake-vendor spdlog-vendor ];
 
   meta = {
     description = "Vendor package for: gz-utils 5.0.0

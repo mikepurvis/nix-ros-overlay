@@ -15,7 +15,7 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-copyright ament-flake8 ament-pep257 python3Packages.pytest ];
-  propagatedBuildInputs = [ rclpy splsm-7-conversion ];
+  rosExecDepends = [ rclpy splsm-7-conversion ];
 
   meta = {
     description = "Robot-To-Robot communication in RoboCup SPL using SPLSM V7";

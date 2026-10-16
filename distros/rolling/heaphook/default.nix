@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake ];
+  buildInputs = [ ament-cmake tlsf ];
   checkInputs = [ ament-lint-auto ament-lint-common ];
-  propagatedBuildInputs = [ tlsf ];
   nativeBuildInputs = [ ament-cmake ];
+  rosBuildExportDepends = [ tlsf ];
+  rosExecDepends = [ tlsf ];
 
   meta = {
     description = "Replace all the dynamic heap allocation functions by LD_PRELOAD";

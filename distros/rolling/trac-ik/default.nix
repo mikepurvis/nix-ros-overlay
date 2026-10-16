@@ -15,8 +15,8 @@ buildRosPackage {
 
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ];
-  propagatedBuildInputs = [ trac-ik-kinematics-plugin trac-ik-lib ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ trac-ik-kinematics-plugin trac-ik-lib ];
 
   meta = {
     description = "The ROS packages in this repository were created to provide an improved

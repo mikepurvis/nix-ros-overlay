@@ -14,7 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_python";
-  propagatedBuildInputs = [ python3Packages.tkinter rclpy ];
+  buildInputs = [ rclpy ];
+  propagatedBuildInputs = [ python3Packages.tkinter ];
+  rosBuildExportDepends = [ rclpy ];
+  rosExecDepends = [ rclpy ];
 
   meta = {
     description = "FFW teleop ROS 2 package.";

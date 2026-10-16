@@ -15,7 +15,8 @@ buildRosPackage {
 
   buildType = "ament_python";
   checkInputs = [ ament-cmake-mypy ament-copyright ament-flake8 ament-pep257 ament-xmllint python3Packages.pytest ];
-  propagatedBuildInputs = [ ament-index-python python3Packages.pyyaml rclpy sensor-msgs ];
+  propagatedBuildInputs = [ python3Packages.pyyaml ];
+  rosExecDepends = [ ament-index-python rclpy sensor-msgs ];
 
   meta = {
     description = "Python interface for camera calibration information.

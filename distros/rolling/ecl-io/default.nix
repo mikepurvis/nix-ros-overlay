@@ -14,9 +14,10 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ecl-build ];
-  propagatedBuildInputs = [ ecl-config ecl-errors ecl-license ];
+  buildInputs = [ ament-cmake-ros ecl-build ecl-config ecl-errors ecl-license ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ ecl-config ecl-errors ecl-license ];
+  rosExecDepends = [ ecl-config ecl-errors ecl-license ];
 
   meta = {
     description = "Most implementations (windows, posix, ...) have slightly different api for

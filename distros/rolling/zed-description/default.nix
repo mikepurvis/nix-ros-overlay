@@ -16,8 +16,8 @@ buildRosPackage {
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake ament-cmake-auto ];
   checkInputs = [ ament-cmake-copyright ament-cmake-cppcheck ament-cmake-lint-cmake ament-cmake-pep257 ament-cmake-uncrustify ament-cmake-xmllint ament-lint-auto ];
-  propagatedBuildInputs = [ rviz2 xacro ];
   nativeBuildInputs = [ ament-cmake ];
+  rosExecDepends = [ rviz2 xacro ];
 
   meta = {
     description = "Contains URDF and meshes to create models of Stereolabs ZED Cameras.";

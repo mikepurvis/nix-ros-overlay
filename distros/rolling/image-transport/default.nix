@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ];
+  buildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core message-filters pluginlib rclcpp rclcpp-components sensor-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common rclcpp-lifecycle ];
-  propagatedBuildInputs = [ ament-cmake-ros-core message-filters pluginlib rclcpp rclcpp-components sensor-msgs tinyxml-2 ];
+  propagatedBuildInputs = [ tinyxml-2 ];
   nativeBuildInputs = [ ament-cmake-gen-version-h ament-cmake-ros ament-cmake-ros-core ];
+  rosBuildExportDepends = [ ament-cmake-ros-core message-filters pluginlib rclcpp rclcpp-components sensor-msgs ];
+  rosExecDepends = [ message-filters pluginlib rclcpp rclcpp-components sensor-msgs ];
 
   meta = {
     description = "image_transport should always be used to subscribe to and publish images. It provides transparent

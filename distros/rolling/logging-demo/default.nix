@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake rosidl-default-generators ];
+  buildInputs = [ ament-cmake example-interfaces rclcpp rclcpp-components rcutils rosidl-default-generators ];
   checkInputs = [ ament-cmake-pytest ament-lint-auto ament-lint-common launch launch-testing launch-testing-ament-cmake launch-testing-ros rmw-implementation-cmake ];
-  propagatedBuildInputs = [ example-interfaces rclcpp rclcpp-components rcutils rosidl-default-runtime ];
   nativeBuildInputs = [ ament-cmake rosidl-default-generators ];
+  rosBuildExportDepends = [ example-interfaces rclcpp rclcpp-components rcutils ];
+  rosExecDepends = [ example-interfaces rclcpp rclcpp-components rcutils rosidl-default-runtime ];
 
   meta = {
     description = "Examples for using and configuring loggers.";

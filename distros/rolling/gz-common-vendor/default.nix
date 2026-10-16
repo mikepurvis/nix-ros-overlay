@@ -14,10 +14,12 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake pkg-config ];
+  buildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake gz-cmake-vendor gz-math-vendor gz-utils-vendor pkg-config spdlog-vendor ];
   checkInputs = [ ament-cmake-copyright ament-cmake-lint-cmake ament-cmake-xmllint ];
-  propagatedBuildInputs = [ assimp ffmpeg gbenchmark gdal gz-cmake-vendor gz-math-vendor gz-utils-vendor spdlog-vendor tinyxml-2 util-linux ];
+  propagatedBuildInputs = [ assimp ffmpeg gbenchmark gdal tinyxml-2 util-linux ];
   nativeBuildInputs = [ ament-cmake-core ament-cmake-test ament-cmake-vendor-package cmake pkg-config ];
+  rosBuildExportDepends = [ gz-cmake-vendor gz-math-vendor gz-utils-vendor spdlog-vendor ];
+  rosExecDepends = [ gz-cmake-vendor gz-math-vendor gz-utils-vendor spdlog-vendor ];
 
   meta = {
     description = "Vendor package for: gz-common 8.0.0

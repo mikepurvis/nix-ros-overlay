@@ -14,10 +14,11 @@ buildRosPackage {
   };
 
   buildType = "ament_cmake";
-  buildInputs = [ ament-cmake-ros ];
+  buildInputs = [ ament-cmake-ros moveit-setup-framework pluginlib ];
   checkInputs = [ ament-cmake-gtest moveit-resources-fanuc-description ];
-  propagatedBuildInputs = [ moveit-setup-framework pluginlib ];
   nativeBuildInputs = [ ament-cmake-ros ];
+  rosBuildExportDepends = [ moveit-setup-framework pluginlib ];
+  rosExecDepends = [ moveit-setup-framework pluginlib ];
 
   meta = {
     description = "SRDF-based plugins for MoveIt Setup Assistant";
