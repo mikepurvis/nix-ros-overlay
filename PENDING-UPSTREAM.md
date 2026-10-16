@@ -5,6 +5,11 @@ always builds the current state of the dev/out output split. Background and
 the plan for the upstream changes:
 https://gist.github.com/mikepurvis/dc08a98959c4d499b2c83ad7f6e0ccbc
 
+The split itself is switched on per distro by `splitDevOutputs` in
+`distros/distro-overlay.nix` (jazzy only, for now), or for one build with
+`rosPackages.<distro>.overrideScope (_: _: { splitDevOutputs = true; })`. The
+ROS patches below only apply where it is on.
+
 Each one lives in a single file per layer, and comes out when its condition
 below is met.
 

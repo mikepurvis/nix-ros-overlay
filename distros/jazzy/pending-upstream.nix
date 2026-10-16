@@ -7,7 +7,7 @@
 # install prefix absolutely. #641 targets rolling and builds on #631, which
 # jazzy lacks, so both are applied. Each package is built from its own release
 # tarball, so each takes only its directory's part of the diffs.
-self: rosSuper:
+self: rosSelf: rosSuper:
 let
   inherit (self) lib;
 
@@ -51,5 +51,8 @@ let
 in
 builtins.listToAttrs (map (dir: {
   name = name dir;
-  value = rosSuper.${name dir}.overrideAttrs (patchPackage dir);
+  # Only needed for the dev/out split; otherwise build what jazzy released.
+  value = if rosSelf.splitDevOutputs
+    then rosSuper.${name dir}.overrideAttrs (patchPackage dir)
+    else rosSuper.${name dir};
 }) (builtins.filter (dir: rosSuper ? ${name dir}) dirs))

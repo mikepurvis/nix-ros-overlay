@@ -1,4 +1,4 @@
-{ stdenv, lib, python3Packages, rosDistro, rosVersion, buildEnv }:
+{ stdenv, lib, python3Packages, rosDistro, rosVersion, buildEnv, splitDevOutputs ? false }:
 { buildType ? "catkin"
   # Too difficult to fix all the problems with the tests in each package
 , doCheck ? false
@@ -16,7 +16,7 @@
 , separateDebugInfo ? true
 # Put headers and CMake configs in a dev output, so that runtime environments,
 # which only need out, don't carry them or the -dev outputs they refer to.
-, splitDev ? rosVersion == 2 && buildType != "ament_python"
+, splitDev ? splitDevOutputs && buildType != "ament_python"
 , preFixup ? ""
 , preConfigure ? ""
 # ROS dependencies are not propagated. Instead, each package records which ROS

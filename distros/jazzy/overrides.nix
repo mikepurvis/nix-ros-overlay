@@ -1458,4 +1458,4 @@ in {
   zmqpp-vendor = lib.patchAmentVendorGit rosSuper.zmqpp-vendor {
     patchesFor.zmqpp_vendor = [ ../humble/zmqpp-vendor/cmake-version.patch ];
   };
-} // import ./pending-upstream.nix self rosSuper
+} // import ./pending-upstream.nix self rosSelf rosSuper

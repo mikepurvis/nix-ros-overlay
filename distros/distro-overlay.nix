@@ -18,6 +18,12 @@ let
 
     callPackage = self.newScope rosSelf;
 
+    # Build CMake-based ROS 2 packages with separate out and dev outputs, so
+    # runtime closures leave out headers, CMake files and the dev outputs they
+    # name. On only for distros it has been built and checked on; set it for
+    # another with rosPackages.<distro>.overrideScope.
+    splitDevOutputs = version == 2 && builtins.elem distro [ "jazzy" ];
+
     buildRosPackage = rosSelf.callPackage ./build-ros-package {
       rosVersion = version;
       rosDistro = distro;
