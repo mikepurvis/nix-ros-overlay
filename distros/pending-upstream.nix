@@ -33,11 +33,20 @@ in
     };
     # ament/ament_cmake#641: AMENT_CMAKE_CONFIG_INSTALL_PREFIX, so CMake config
     # files can be installed into the dev output and name the install prefix
-    # absolutely. Pinned to the PR's head commit so the hash stays put as it
-    # moves.
+    # absolutely. Pinned to its review-641 state on the fork (the version with
+    # AMENT_INSTALL_CMAKEDIR and the defaulted ament_package_install_prefix,
+    # which the rosidl change uses) until that is pushed to the PR.
     ament_cmake_641 = self.fetchurl {
-      url = "https://github.com/ament/ament_cmake/compare/8d22f5797ab128744cfc25a1fce2cbffc7b4611f...92d2f36c25ba3f582a71aef0ccff24346d08e0b3.diff";
-      hash = "sha256-3EJcluyksbUgxoGYRKrUdogVapAy0wgOyjEaHxPpDLM=";
+      url = "https://github.com/mikepurvis/ament_cmake/compare/35465d2f104c29a9da879d3bbb4a74a362355abc...a533aee54d4b5bbb41220f041e28484ad1e111f5.diff";
+      hash = "sha256-PLSfVnYNCeReiqzUDJg9rI55EWGZeYlRRvA3Ao6HAo4=";
+    };
+    # Prototype, not yet a PR: interface packages export <pkg>_DATADIR, which
+    # rosidl_find_package_idl (ros2/rosidl#754) already prefers, and
+    # rosidl_cmake and its generators find their lib and share directories
+    # through ament_package_install_prefix instead of ${pkg_DIR}/.. walks.
+    rosidl_share_dir = self.fetchurl {
+      url = "https://github.com/mikepurvis/rosidl/compare/4537874f320ef8b350c3df7f5b6b487b409fa22f...5838cd2fd1348bdd6a062b1f84b7ef93cddc4f9e.diff";
+      hash = "sha256-uXuijR1/mVDGUaNGNo67zGiV/vpt+gYPbzvf0VRDdcA=";
     };
   };
 
@@ -49,6 +58,16 @@ in
     "ament_cmake_export_include_directories"
     "ament_cmake_export_libraries"
     "ament_cmake_export_targets"
+  ];
+
+  # The ros2/rosidl packages the rosidl_share_dir prototype changes.
+  rosidlShareDirDirs = [
+    "rosidl_cmake"
+    "rosidl_generator_c"
+    "rosidl_generator_cpp"
+    "rosidl_generator_type_description"
+    "rosidl_typesupport_introspection_c"
+    "rosidl_typesupport_introspection_cpp"
   ];
 
   apply = { diffs, dirs }: builtins.listToAttrs (map (dir: {
