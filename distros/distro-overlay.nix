@@ -22,7 +22,7 @@ let
     # runtime closures leave out headers, CMake files and the dev outputs they
     # name. On only for distros it has been built and checked on; set it for
     # another with rosPackages.<distro>.overrideScope.
-    splitDevOutputs = version == 2 && builtins.elem distro [ "jazzy" ];
+    splitDevOutputs = version == 2 && builtins.elem distro [ "jazzy" "rolling" ];
 
     buildRosPackage = rosSelf.callPackage ./build-ros-package {
       rosVersion = version;

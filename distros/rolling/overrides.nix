@@ -916,4 +916,4 @@ in {
       '';
     };
   };
-}
+} // import ./pending-upstream.nix self rosSelf rosSuper
