@@ -48,7 +48,24 @@ in
       url = "https://github.com/mikepurvis/rosidl/compare/4537874f320ef8b350c3df7f5b6b487b409fa22f...5838cd2fd1348bdd6a062b1f84b7ef93cddc4f9e.diff";
       hash = "sha256-uXuijR1/mVDGUaNGNo67zGiV/vpt+gYPbzvf0VRDdcA=";
     };
+    # The same prototype for the generators and typesupports in other repos,
+    # which also find dependency IDL through rosidl_find_package_idl.
+    rosidl_typesupport_share_dir = self.fetchurl {
+      url = "https://github.com/mikepurvis/rosidl_typesupport/compare/6ee2aff71b5f547d707450b94a911d06ec29347e...72e8ef518e831773a2ab78a2b8847707eafc1272.diff";
+      hash = "sha256-SBRH+K8eruafU68QaS7xiWY5GgeKjU+/cg9L9it1oU8=";
+    };
+    rosidl_typesupport_fastrtps_share_dir = self.fetchurl {
+      url = "https://github.com/mikepurvis/rosidl_typesupport_fastrtps/compare/55bc71056c17097e316fd75116e709656d032a5c...45e896e5a7ce87814204dc47d41209fa7c92cc1d.diff";
+      hash = "sha256-Ukx5xb/gtz2we54H4Zbi+N4/AQTqQH0e2SZFbt99z9A=";
+    };
+    rosidl_python_share_dir = self.fetchurl {
+      url = "https://github.com/mikepurvis/rosidl_python/compare/fb4cb9a9ee8c33c6fd8861f42ef28c3c8628a48d...47fc40e72cbe019271404540f3da7c662802c752.diff";
+      hash = "sha256-2d/b+aQBvr77rtZy02iLZAemvPeuP3BVSn9wD+A9FiU=";
+    };
   };
+
+  # The share-dir prototype across the rosidl repos. Each package takes only
+  # its own directory's part, so all of them can be applied to every package.
 
   # The ament_cmake packages whose output #641 changes. It also has the
   # build-tool packages install their CMake modules into the config directory,
@@ -60,7 +77,9 @@ in
     "ament_cmake_export_targets"
   ];
 
-  # The ros2/rosidl packages the rosidl_share_dir prototype changes.
+  # The packages the rosidl share-dir prototype changes, across ros2/rosidl,
+  # rosidl_typesupport, rosidl_typesupport_fastrtps and rosidl_python. Each
+  # package takes only its own directory's part of the diffs.
   rosidlShareDirDirs = [
     "rosidl_cmake"
     "rosidl_generator_c"
@@ -68,6 +87,11 @@ in
     "rosidl_generator_type_description"
     "rosidl_typesupport_introspection_c"
     "rosidl_typesupport_introspection_cpp"
+    "rosidl_typesupport_c"
+    "rosidl_typesupport_cpp"
+    "rosidl_typesupport_fastrtps_c"
+    "rosidl_typesupport_fastrtps_cpp"
+    "rosidl_generator_py"
   ];
 
   apply = { diffs, dirs }: builtins.listToAttrs (map (dir: {
