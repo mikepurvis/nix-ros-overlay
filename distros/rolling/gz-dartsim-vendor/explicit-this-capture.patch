@@ -1,0 +1,67 @@
+Capture this explicitly in lambdas that use it
+
+These lambdas reach this through an implicit [=] capture, which C++20
+deprecates. DART sets no language standard, so it builds as C++20 under
+GCC 16, where that is the default, and DART's -Werror turns the warning
+into an error. [this] (plus the one by-value bool) means the same thing and
+is valid in both C++17 and C++20.
+
+--- a/dart/dynamics/InverseKinematics.cpp
++++ b/dart/dynamics/InverseKinematics.cpp
+@@ -1011,7 +1011,7 @@
+       mOutOfReachCache.push_back(s);
+   }
+
+-  auto comparator = [=](const Solution& s1, const Solution& s2) {
++  auto comparator = [this](const Solution& s1, const Solution& s2) {
+     return mAnalyticalP.mQualityComparator(s1.mConfig, s2.mConfig, mIK);
+   };
+
+@@ -1779,7 +1779,7 @@
+ {
+   mTargetConnection.disconnect();
+   mTargetConnection = mTarget->onTransformUpdated.connect(
+-      [=](const Entity*) { this->clearCaches(); });
++      [this](const Entity*) { this->clearCaches(); });
+   clearCaches();
+ }
+
+@@ -1788,7 +1788,7 @@
+ {
+   mNodeConnection.disconnect();
+   mNodeConnection = mNode->onTransformUpdated.connect(
+-      [=](const Entity*) { this->clearCaches(); });
++      [this](const Entity*) { this->clearCaches(); });
+   clearCaches();
+ }
+
+--- a/dart/optimizer/Function.cpp
++++ b/dart/optimizer/Function.cpp
+@@ -129,7 +129,7 @@
+ //==============================================================================
+ void ModularFunction::clearCostFunction(bool _printWarning)
+ {
+-  mCostFunction = [=](const Eigen::VectorXd&) {
++  mCostFunction = [this, _printWarning](const Eigen::VectorXd&) {
+     if (_printWarning) {
+       dterr
+           << "A cost function has not yet been assigned to the ModularFunction "
+--- a/dart/simulation/World.cpp
++++ b/dart/simulation/World.cpp
+@@ -313,7 +313,7 @@
+   mMapForSkeletons[_skeleton] = _skeleton;
+
+   mNameConnectionsForSkeletons.push_back(_skeleton->onNameChanged.connect(
+-      [=](dynamics::ConstMetaSkeletonPtr skel,
++      [this](dynamics::ConstMetaSkeletonPtr skel,
+           const std::string&,
+           const std::string&) { this->handleSkeletonNameChange(skel); }));
+
+@@ -473,7 +473,7 @@
+   mSimpleFrameToShared[_frame.get()] = _frame;
+
+   mNameConnectionsForSimpleFrames.push_back(_frame->onNameChanged.connect(
+-      [=](const dynamics::Entity* _entity,
++      [this](const dynamics::Entity* _entity,
+           const std::string&,
+           const std::string&) { this->handleSimpleFrameNameChange(_entity); }));
