@@ -103,11 +103,12 @@ in {
     buildInputs = buildInputs ++ [ self.zlib ];
   });
 
-  gz-dartsim-vendor = lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor {
+  gz-dartsim-vendor = (lib.patchAmentVendorGit rosSuper.gz-dartsim-vendor { }).overrideAttrs ({ patches ? [], ... }: {
     # DART builds with -Werror and no -std, so as C++20 under GCC 16, which
-    # rejects its implicit [=] captures of this.
-    patchesFor.gz_dartsim_vendor = [ ./gz-dartsim-vendor/explicit-this-capture.patch ];
-  };
+    # rejects its implicit [=] captures of this. Pin the vendored build to
+    # C++17: https://github.com/gazebo-release/gz_dartsim_vendor/pull/12
+    patches = patches ++ [ ./gz-dartsim-vendor/build-dart-as-cxx17.patch ];
+  });
 
   gz-fuel-tools-vendor = lib.patchAmentVendorGit rosSuper.gz-fuel-tools-vendor { };
 

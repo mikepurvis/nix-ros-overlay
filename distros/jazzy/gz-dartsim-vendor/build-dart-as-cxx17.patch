@@ -1,0 +1,35 @@
+From 5112f5bfd9dbb7173612994620f223ce9c8952d3 Mon Sep 17 00:00:00 2001
+From: Mike Purvis <mike.purvis@simberobotics.com>
+Date: Sat, 17 Oct 2026 14:46:06 -0400
+Subject: [PATCH] Build vendored DART as C++17
+
+DART sets no language standard before 6.20 (dartsim/dart#3505), so a
+compiler that defaults to C++20, such as GCC 16, builds it as C++20.
+Its implicit [=] captures of this are deprecated there, and DART's
+-Werror turns that into an error.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Rz4Zs3SLnKowSZhUs8Yrme
+Epiq-Ref: HWMHQWJ
+Signed-off-by: Mike Purvis <mike.purvis@simberobotics.com>
+---
+ CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 77ca936..c59f3b0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -43,6 +43,9 @@ ament_vendor(${PROJECT_NAME}
+     -DDART_BUILD_GUI_OSG:BOOL=FALSE
+     -DDART_BUILD_DARTPY:BOOL=FALSE
+     -DDART_BUILD_EXTRAS:BOOL=FALSE
++    # DART before 6.20 sets no language standard, so compilers that default to
++    # C++20 (GCC 16) reject its implicit [=] captures of this under -Werror.
++    -DCMAKE_CXX_STANDARD:STRING=17
+   GLOBAL_HOOK
+   PATCHES patches
+ )
+-- 
+2.43.0
+
