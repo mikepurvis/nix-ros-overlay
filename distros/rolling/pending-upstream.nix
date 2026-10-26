@@ -8,11 +8,7 @@ upstream.apply {
   diffs = [ upstream.diffs.ament_cmake_641 ];
   dirs = upstream.amentCmake641Dirs;
 } // upstream.apply {
-  diffs = with upstream.diffs; [
-    rosidl_share_dir
-    rosidl_typesupport_share_dir
-    rosidl_typesupport_fastrtps_share_dir
-    rosidl_python_share_dir
-  ];
+  diffs = upstream.rosidlDiffs;
   dirs = upstream.rosidlShareDirDirs;
+  addedDeps = upstream.rosidlAddedDeps;
 }

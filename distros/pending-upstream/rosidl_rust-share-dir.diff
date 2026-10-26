@@ -1,0 +1,57 @@
+diff --git a/rosidl_generator_rs/CMakeLists.txt b/rosidl_generator_rs/CMakeLists.txt
+index e6dca30..f5f1614 100644
+--- a/rosidl_generator_rs/CMakeLists.txt
++++ b/rosidl_generator_rs/CMakeLists.txt
+@@ -16,6 +16,15 @@ ament_index_register_resource("rosidl_generator_packages")
+ 
+ ament_python_install_package(${PROJECT_NAME})
+ 
++# Where the extras find this package's executable, Python module and
++# templates: relative to the installed CMake config, or absolute when the
++# config files are installed apart (AMENT_CMAKE_CONFIG_INSTALL_PREFIX).
++# ament_cmake releases without that option get the relative walk directly.
++if(COMMAND ament_package_install_prefix)
++  ament_package_install_prefix(_install_prefix)
++else()
++  set(_install_prefix "\${rosidl_generator_rs_DIR}/../../..")
++endif()
+ ament_package(
+   CONFIG_EXTRAS
+     "rosidl_generator_rs-extras.cmake.in"
+diff --git a/rosidl_generator_rs/cmake/rosidl_generator_rs_generate_interfaces.cmake b/rosidl_generator_rs/cmake/rosidl_generator_rs_generate_interfaces.cmake
+index 023cb0a..385b0f1 100644
+--- a/rosidl_generator_rs/cmake/rosidl_generator_rs_generate_interfaces.cmake
++++ b/rosidl_generator_rs/cmake/rosidl_generator_rs_generate_interfaces.cmake
+@@ -30,8 +30,15 @@ set(_dependency_files "")
+ set(_dependencies "")
+ foreach(_pkg_name ${rosidl_generate_interfaces_DEPENDENCY_PACKAGE_NAMES})
+   foreach(_idl_file ${${_pkg_name}_IDL_FILES})
+-    set(_abs_idl_file "${${_pkg_name}_DIR}/../${_idl_file}")
+-    normalize_path(_abs_idl_file "${_abs_idl_file}")
++    # rosidl_find_package_idl also finds the file when the dependency's
++    # CMake config is installed apart from its share directory. Humble's
++    # rosidl_cmake predates it.
++    if(COMMAND rosidl_find_package_idl)
++      rosidl_find_package_idl(_abs_idl_file "${_pkg_name}" "${_idl_file}")
++    else()
++      set(_abs_idl_file "${${_pkg_name}_DIR}/../${_idl_file}")
++      normalize_path(_abs_idl_file "${_abs_idl_file}")
++    endif()
+     list(APPEND _dependency_files "${_abs_idl_file}")
+     list(APPEND _dependencies "${_pkg_name}:${_abs_idl_file}")
+   endforeach()
+diff --git a/rosidl_generator_rs/rosidl_generator_rs-extras.cmake.in b/rosidl_generator_rs/rosidl_generator_rs-extras.cmake.in
+index 14ba02d..628264f 100644
+--- a/rosidl_generator_rs/rosidl_generator_rs-extras.cmake.in
++++ b/rosidl_generator_rs/rosidl_generator_rs-extras.cmake.in
+@@ -2,7 +2,7 @@
+ find_package(rosidl_typesupport_c REQUIRED)
+ include("${CMAKE_CURRENT_LIST_DIR}/register_rs.cmake")
+ rosidl_generator_rs_extras(
+-  "${rosidl_generator_rs_DIR}/../../../lib/rosidl_generator_rs/rosidl_generator_rs"
+-  "${rosidl_generator_rs_DIR}/../../../@PYTHON_INSTALL_DIR@/rosidl_generator_rs/__init__.py"
+-  "${rosidl_generator_rs_DIR}/../resource"
++  "@_install_prefix@/lib/rosidl_generator_rs/rosidl_generator_rs"
++  "@_install_prefix@/@PYTHON_INSTALL_DIR@/rosidl_generator_rs/__init__.py"
++  "@_install_prefix@/share/rosidl_generator_rs/resource"
+ )
