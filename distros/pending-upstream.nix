@@ -90,11 +90,14 @@ rec {
       url = "https://github.com/mikepurvis/rosidl_python/compare/f99517a26d277002e16ff51b87918c7a4dc1e80f...ce5f8beaf9d9b37fe92690dabf24430686fd9c29.diff";
       hash = "sha256-DvAGEqMjRO14RhOHtlSOPLnLw+7lE9hiikNi71pwRbI=";
     };
-    # The same for rosidl_dds and rosidl_rust, kept in-tree until they have
-    # a fork to live on. rosidl_rust's also finds dependency IDL through
-    # rosidl_find_package_idl, as #1013 and friends do for the others.
+    # rosidl_rust's also finds dependency IDL through rosidl_find_package_idl,
+    # as #1013 and friends do for the others.
+    rosidl_rust_share_dir = self.fetchurl {
+      url = "https://github.com/mikepurvis/rosidl_rust/compare/19d57818dab3b51e418c0893b70b3a1a8b64c495...dfc8ae838f6d49672df200e16765d09250381a81.diff";
+      hash = "sha256-+nX4SkgjjtnvZxDgoSyTpGU6nXGTMRouQAzT9KfIAhc=";
+    };
+    # The same for rosidl_dds, kept in-tree until it has a fork to live on.
     rosidl_dds_share_dir = ./pending-upstream/rosidl_dds-share-dir.diff;
-    rosidl_rust_share_dir = ./pending-upstream/rosidl_rust-share-dir.diff;
   };
 
   # The ament_cmake packages whose output #641 changes. It also has the
